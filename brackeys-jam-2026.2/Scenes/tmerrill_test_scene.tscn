@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dsfbyq633v5x6"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0tpda"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vlngc"]
+sky_material = SubResource("ProceduralSkyMaterial_0tpda")
+
+[sub_resource type="Environment" id="Environment_v111v"]
+background_mode = 2
+sky = SubResource("Sky_vlngc")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
+
+[node name="Node3D" type="Node3D" unique_id=1609880321]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
+environment = SubResource("Environment_v111v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1025473701]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="floor" type="MeshInstance3D" parent="." unique_id=837541700]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.55605036, 0)
+mesh = SubResource("BoxMesh_i0uuj")
+
+[node name="ProtoController" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
