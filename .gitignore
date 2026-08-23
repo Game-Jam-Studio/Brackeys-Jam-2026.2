@@ -1,17 +1,17 @@
 # Godot 4+ specific ignores
-.godot/
-.nomedia
+./brackeys-jam-2026.2/godot/
+./brackeys-jam-2026.2/nomedia
 
 # Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
+./brackeys-jam-2026.2/import/
+./brackeys-jam-2026.2/export.cfg
+./brackeys-jam-2026.2/export_credentials.cfg
 *.tmp
 
 # Imported translations (automatically generated from CSV files)
 *.translation
 
 # Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+./brackeys-jam-2026.2/mono/
+./brackeys-jam-2026.2/data_*/
+./brackeys-jam-2026.2/mono_crash.*.json
