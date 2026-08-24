@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dp65i8pg1ea8i"]
 
-[ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scenes/Menus/Main Menu/main_menu.gd" id="1_38aua"]
+[ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
 
 [node name="MainMenu" type="Node2D" unique_id=2001629756]
-script = ExtResource("1_38aua")
+script = ExtResource("1_6ucrw")
 
 [node name="Title" type="Label" parent="." unique_id=886373517]
 offset_left = 402.0

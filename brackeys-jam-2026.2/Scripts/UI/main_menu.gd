@@ -12,11 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/tmerrill_test_scene.tscn")
+	get_tree().change_scene_to_file("res://Levels/submarine.tscn")
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menus/Options/options.tscn")
+	get_tree().change_scene_to_file("res://Prefabs/UI/options_menu.tscn")
 
 
 func _on_quit_pressed() -> void:
@@ -24,4 +24,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menus/Credits/credits.tscn")
+	get_tree().change_scene_to_file("res://Prefabs/UI/credits_menu.tscn")
