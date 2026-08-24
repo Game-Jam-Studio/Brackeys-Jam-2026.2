@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bfyjyjraimqq8"]
+
+[ext_resource type="Texture2D" uid="uid://knxdqxxf14dt" path="res://Art/2D/ClickIcon.png" id="1_3624w"]
+[ext_resource type="Script" uid="uid://coojaylwwsll2" path="res://Scripts/UI/click_indicator.gd" id="2_1whxd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3624w"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_3624w")
+
+[sub_resource type="QuadMesh" id="QuadMesh_i0uuj"]
+size = Vector2(0.8, 0.8)
+orientation = 1
+
+[node name="Node2D" type="MeshInstance3D" unique_id=239824613]
+material_override = SubResource("StandardMaterial3D_3624w")
+mesh = SubResource("QuadMesh_i0uuj")
+script = ExtResource("2_1whxd")
