@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var click_indicator_scene: PackedScene = preload("res://TaylorJunk/click_indicator.tscn")
+@export var click_indicator_scene: PackedScene = preload("res://Taylor/click_indicator.tscn")
 
 @onready var camera: Camera3D = $Camera3D
 @onready var player: CharacterBody3D = $Player

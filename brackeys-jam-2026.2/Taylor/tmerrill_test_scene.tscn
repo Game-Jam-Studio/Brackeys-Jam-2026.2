@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsfbyq633v5x6"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0tpda"]
-[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Levels/tmerrill_test_scene.gd" id="1_l3bda"]
+[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/tmerrill_test_scene.gd" id="1_pa3bi"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_tl3pp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,7 +27,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 size = Vector3(50, 0.2, 50)
 
 [node name="World" type="Node3D" unique_id=1609880321]
-script = ExtResource("1_l3bda")
+script = ExtResource("1_pa3bi")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -36,7 +36,7 @@ environment = SubResource("Environment_v111v")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
+[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
 
 [node name="column" type="CSGMesh3D" parent="." unique_id=1064343758]
 transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, 11.106498, 4.0165186, 1.1967812)
