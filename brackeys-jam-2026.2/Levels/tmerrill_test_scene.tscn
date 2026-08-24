@@ -26,7 +26,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[node name="Node3D" type="Node3D" unique_id=1609880321]
+[node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_l3bda")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
