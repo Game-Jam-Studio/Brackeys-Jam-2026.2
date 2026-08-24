@@ -16,7 +16,7 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menus/Options/options.gd")
+	get_tree().change_scene_to_file("res://Scenes/Menus/Options/options.tscn")
 
 
 func _on_quit_pressed() -> void:
@@ -24,4 +24,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://Scenes/Menus/Credits/credits.tscn")
