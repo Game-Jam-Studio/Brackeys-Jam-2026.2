@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://sbraufdsvmok" path="res://Van/Scripts/steam_hacking_game.gd" id="1_o40pi"]
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="2_o40pi"]
 [ext_resource type="Script" uid="uid://upu4sh8i87sp" path="res://Van/Scripts/UI_dial.gd" id="2_wmosv"]
+[ext_resource type="Texture2D" uid="uid://bf0d7sofra06a" path="res://Van/Textures/Gauge.png" id="5_sybhk"]
+[ext_resource type="Texture2D" uid="uid://dre0urnp777bt" path="res://Van/Textures/needle.png" id="6_uyix2"]
+[ext_resource type="Texture2D" uid="uid://c3alr5petkbli" path="res://Van/Textures/valid.png" id="7_gk8mc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o40pi"]
+font_size = 112
+font_color = Color(0, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
 font_size = 112
-font_color = Color(0, 1, 0, 1)
+font_color = Color(1, 0, 0, 1)
 
 [node name="SteamHackingGame" type="Control" unique_id=456800813]
 layout_mode = 3
@@ -17,12 +24,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o40pi")
 
-[node name="Control" type="Control" parent="." unique_id=1618307718]
+[node name="Controls" type="Control" parent="." unique_id=1618307718]
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 256.0
 
-[node name="Dial1" type="TextureRect" parent="Control" unique_id=654662642]
+[node name="Dial1" type="TextureRect" parent="Controls" unique_id=654662642]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -41,7 +48,7 @@ script = ExtResource("2_wmosv")
 max_rotation = 75.0
 notches = 10.0
 
-[node name="Dial2" type="TextureRect" parent="Control" unique_id=1108047291]
+[node name="Dial2" type="TextureRect" parent="Controls" unique_id=1108047291]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -61,7 +68,7 @@ script = ExtResource("2_wmosv")
 max_rotation = 75.0
 notches = 10.0
 
-[node name="Dial3" type="TextureRect" parent="Control" unique_id=1918079205]
+[node name="Dial3" type="TextureRect" parent="Controls" unique_id=1918079205]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -81,7 +88,7 @@ script = ExtResource("2_wmosv")
 max_rotation = 75.0
 notches = 10.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1560814889]
+[node name="Menu" type="VBoxContainer" parent="." unique_id=1560814889]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,15 +98,129 @@ grow_vertical = 2
 mouse_filter = 2
 alignment = 2
 
-[node name="Accept" type="Button" parent="VBoxContainer" unique_id=317052462]
+[node name="Accept" type="Button" parent="Menu" unique_id=317052462]
 layout_mode = 2
-text = "Hello!"
+text = "Accept"
 
-[node name="Close" type="Button" parent="VBoxContainer" unique_id=408480530]
+[node name="Close" type="Button" parent="Menu" unique_id=408480530]
 layout_mode = 2
-text = "Goodbye!"
+text = "Close"
 
-[node name="Good Job" type="Label" parent="." unique_id=418109587]
+[node name="Gauge1" type="Control" parent="." unique_id=282637429]
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 2.0
+offset_right = 219.0
+offset_bottom = 190.0
+mouse_filter = 2
+
+[node name="Housing" type="TextureRect" parent="Gauge1" unique_id=216694030]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_sybhk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Needle" type="TextureRect" parent="Gauge1/Housing" unique_id=793209690]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_uyix2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ValidArea" type="TextureRect" parent="Gauge1/Housing" unique_id=211610817]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_gk8mc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Gauge2" type="Control" parent="." unique_id=346354533]
+anchors_preset = 0
+offset_left = 482.0
+offset_top = 133.0
+offset_right = 670.0
+offset_bottom = 321.0
+mouse_filter = 2
+
+[node name="Housing" type="TextureRect" parent="Gauge2" unique_id=1106736391]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_sybhk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Needle" type="TextureRect" parent="Gauge2/Housing" unique_id=226546163]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_uyix2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ValidArea" type="TextureRect" parent="Gauge2/Housing" unique_id=284504056]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_gk8mc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Gauge3" type="Control" parent="." unique_id=671667532]
+anchors_preset = 0
+offset_left = 904.0
+offset_top = -2.0
+offset_right = 1092.0
+offset_bottom = 186.0
+mouse_filter = 2
+
+[node name="Housing" type="TextureRect" parent="Gauge3" unique_id=1500399471]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_sybhk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Needle" type="TextureRect" parent="Gauge3/Housing" unique_id=267279265]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_uyix2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ValidArea" type="TextureRect" parent="Gauge3/Housing" unique_id=407458565]
+layout_mode = 0
+offset_right = 188.0
+offset_bottom = 188.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_gk8mc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Conditions" type="Control" parent="." unique_id=1285258311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Success" type="Label" parent="Conditions" unique_id=418109587]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -108,15 +229,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Good Job!!!!!!"
+label_settings = SubResource("LabelSettings_o40pi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Failure" type="Label" parent="Conditions" unique_id=373560533]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bad Job :("
 label_settings = SubResource("LabelSettings_1hd16")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="gui_input" from="Control/Dial1" to="Control/Dial1" method="_on_gui_input"]
-[connection signal="value_changed" from="Control/Dial1" to="." method="_on_dial_1_value_changed"]
-[connection signal="gui_input" from="Control/Dial2" to="Control/Dial2" method="_on_gui_input"]
-[connection signal="value_changed" from="Control/Dial2" to="." method="_on_dial_2_value_changed"]
-[connection signal="gui_input" from="Control/Dial3" to="Control/Dial3" method="_on_gui_input"]
-[connection signal="value_changed" from="Control/Dial3" to="." method="_on_dial_3_value_changed"]
-[connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/Close" to="." method="_on_close_button_down"]
+[connection signal="gui_input" from="Controls/Dial1" to="Controls/Dial1" method="_on_gui_input"]
+[connection signal="value_changed" from="Controls/Dial1" to="." method="_on_dial_1_value_changed"]
+[connection signal="value_changed" from="Controls/Dial1" to="Gauge1" method="_on_dial_1_value_changed"]
+[connection signal="value_set" from="Controls/Dial1" to="." method="_on_dial_1_value_set"]
+[connection signal="gui_input" from="Controls/Dial2" to="Controls/Dial2" method="_on_gui_input"]
+[connection signal="value_changed" from="Controls/Dial2" to="." method="_on_dial_2_value_changed"]
+[connection signal="value_set" from="Controls/Dial2" to="." method="_on_dial_2_value_set"]
+[connection signal="gui_input" from="Controls/Dial3" to="Controls/Dial3" method="_on_gui_input"]
+[connection signal="value_changed" from="Controls/Dial3" to="." method="_on_dial_3_value_changed"]
+[connection signal="value_set" from="Controls/Dial3" to="." method="_on_dial_3_value_set"]
+[connection signal="button_down" from="Menu/Accept" to="." method="_on_accept_button_down"]
+[connection signal="button_down" from="Menu/Close" to="." method="_on_close_button_down"]
