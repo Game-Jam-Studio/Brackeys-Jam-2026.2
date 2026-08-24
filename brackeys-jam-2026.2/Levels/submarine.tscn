@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://du876lyklyltv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q4lj5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_hoywf"]
+sky_material = SubResource("ProceduralSkyMaterial_q4lj5")
+
+[sub_resource type="Environment" id="Environment_l3o2k"]
+background_mode = 2
+sky = SubResource("Sky_hoywf")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
+
+[node name="Submarine" type="Node3D" unique_id=788403022]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1948119014]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1158600895]
+environment = SubResource("Environment_l3o2k")
+
+[node name="Floor" type="CSGMesh3D" parent="." unique_id=1386168802]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.5114026, 0)
+mesh = SubResource("BoxMesh_i0uuj")
+
+[node name="Camera3D" type="Camera3D" parent="Floor" unique_id=814214213]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.6978394, 0.7162544, 0, -0.071625434, 0.069783926, 0, 4.455469, 0.628895)

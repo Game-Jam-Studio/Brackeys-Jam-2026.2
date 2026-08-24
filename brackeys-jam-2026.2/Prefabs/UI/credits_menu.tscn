@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b6bgno4ecqu4g"]
+
+[ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
+
+[sub_resource type="GDScript" id="GDScript_y0d7i"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Credits" type="Node2D" unique_id=1731630272]
+script = ExtResource("1_6vvtk")
+
+[node name="Title" type="Label" parent="." unique_id=825116045]
+offset_left = 409.0
+offset_top = 37.0
+offset_right = 803.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_manager" type="Control" parent="." unique_id=1423515082]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="button_manager" unique_id=445819736]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 523.0
+offset_right = 676.0
+offset_bottom = 558.0
+text = "Back"
+script = SubResource("GDScript_y0d7i")
+
+[connection signal="pressed" from="button_manager/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dp65i8pg1ea8i"]
+
+[ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
+
+[node name="MainMenu" type="Node2D" unique_id=2001629756]
+script = ExtResource("1_6ucrw")
+
+[node name="Title" type="Label" parent="." unique_id=886373517]
+offset_left = 402.0
+offset_top = 175.0
+offset_right = 796.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 48
+text = "TBD Game Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_manager" type="Control" parent="." unique_id=1002316191]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="New Game" type="Button" parent="button_manager" unique_id=288408914]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 375.0
+offset_right = 678.0
+offset_bottom = 410.0
+text = "New Game"
+
+[node name="Options" type="Button" parent="button_manager" unique_id=2027421149]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 425.0
+offset_right = 678.0
+offset_bottom = 460.0
+text = "Options
+"
+
+[node name="Credits" type="Button" parent="button_manager" unique_id=1333945265]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 475.0
+offset_right = 678.0
+offset_bottom = 510.0
+text = "Credits"
+
+[node name="Quit" type="Button" parent="button_manager" unique_id=231071800]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 525.0
+offset_right = 678.0
+offset_bottom = 560.0
+text = "Quit"
+
+[connection signal="pressed" from="button_manager/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="button_manager/Quit" to="." method="_on_quit_pressed"]

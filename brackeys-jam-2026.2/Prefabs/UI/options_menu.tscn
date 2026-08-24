@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bpcxbanh6ewu3"]
+
+[ext_resource type="Script" uid="uid://bwk5652wpo720" path="res://Scripts/UI/options_menu.gd" id="1_c8ppq"]
+
+[node name="Options" type="Node2D" unique_id=1768793562]
+script = ExtResource("1_c8ppq")
+
+[node name="Title" type="Label" parent="." unique_id=1635061970]
+offset_left = 409.0
+offset_top = 37.0
+offset_right = 803.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 36
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_manager" type="Control" parent="." unique_id=2043813663]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="button_manager" unique_id=1735744750]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 492.0
+offset_right = 677.0
+offset_bottom = 527.0
+text = "Back"
+
+[connection signal="pressed" from="button_manager/Back" to="." method="_on_back_pressed"]
