@@ -3,16 +3,30 @@
 [ext_resource type="Script" uid="uid://c10sj2b0qxh30" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="Texture2D" uid="uid://c3037a5ob40r2" path="res://Scenes/Player/Rogue_rogue_texture.png" id="2_2yh8o"]
 [ext_resource type="Animation" uid="uid://dnl1c2l7isdtd" path="res://Scenes/Player/Animations/Jump_Full_Long.res" id="3_cisnj"]
-[ext_resource type="Animation" uid="uid://cm1jubxxswd28" path="res://Scenes/Player/Animations/Jump_Full_Short.res" id="4_gxq8o"]
+[ext_resource type="Animation" uid="uid://cpy1clu7i71" path="res://Scenes/Player/Animations/Death_A.res" id="3_uwwlx"]
+[ext_resource type="Animation" uid="uid://rhhoanvik0sw" path="res://Scenes/Player/Animations/Death_A_Pose.res" id="4_5m5cv"]
+[ext_resource type="Animation" uid="uid://cib1e0uyip5r4" path="res://Scenes/Player/Animations/Jump_Full_Short.res" id="4_gxq8o"]
+[ext_resource type="Animation" uid="uid://bj75yobewubeu" path="res://Scenes/Player/Animations/Death_B.res" id="5_67dbh"]
 [ext_resource type="Animation" uid="uid://0kjlesx7dxrt" path="res://Scenes/Player/Animations/Jump_Idle.res" id="5_f4vau"]
-[ext_resource type="Animation" uid="uid://dbee8g5e2b7l4" path="res://Scenes/Player/Animations/Jump_Land.res" id="6_3o3af"]
-[ext_resource type="Animation" uid="uid://bd46stdec6fcm" path="res://Scenes/Player/Animations/Jump_Start.res" id="7_ymooi"]
+[ext_resource type="Animation" uid="uid://bnqgnqynyvsa0" path="res://Scenes/Player/Animations/Jump_Land.res" id="6_3o3af"]
+[ext_resource type="Animation" uid="uid://hh8qotd17j0d" path="res://Scenes/Player/Animations/Death_B_Pose.res" id="6_r6xfq"]
+[ext_resource type="Animation" uid="uid://bip2dip1l18bl" path="res://Scenes/Player/Animations/Hit_A.res" id="7_kwktf"]
+[ext_resource type="Animation" uid="uid://b4hgkqfqfw5ny" path="res://Scenes/Player/Animations/Jump_Start.res" id="7_ymooi"]
 [ext_resource type="Animation" uid="uid://dmve2uur34vnp" path="res://Scenes/Player/Animations/Running_A.res" id="8_jc6e2"]
+[ext_resource type="Animation" uid="uid://pqiias4wsjqp" path="res://Scenes/Player/Animations/Hit_B.res" id="8_my838"]
 [ext_resource type="Animation" uid="uid://boy04xy3j6ien" path="res://Scenes/Player/Animations/Running_B.res" id="9_6s64k"]
+[ext_resource type="Animation" uid="uid://2mc8miky330q" path="res://Scenes/Player/Animations/Idle_A.res" id="9_yfih1"]
+[ext_resource type="Animation" uid="uid://dygquj1usljrc" path="res://Scenes/Player/Animations/Idle_B.res" id="10_wf4iu"]
 [ext_resource type="Animation" uid="uid://5hbt0fbrf5rt" path="res://Scenes/Player/Animations/T-Pose.res" id="10_xqi1m"]
 [ext_resource type="Animation" uid="uid://7kpvcne11rpy" path="res://Scenes/Player/Animations/Walking_A.res" id="11_c35km"]
+[ext_resource type="Animation" uid="uid://cnxua4h00bgg7" path="res://Scenes/Player/Animations/Interact.res" id="11_vbg4x"]
 [ext_resource type="Animation" uid="uid://cisgd5kcyff5n" path="res://Scenes/Player/Animations/Walking_B.res" id="12_q1enc"]
 [ext_resource type="Animation" uid="uid://b4pdp4exiwhlc" path="res://Scenes/Player/Animations/Walking_C.res" id="13_mda26"]
+[ext_resource type="Animation" uid="uid://doyo4ygtfucdu" path="res://Scenes/Player/Animations/PickUp.res" id="17_6c3s7"]
+[ext_resource type="Animation" uid="uid://6r5yxpm7ft7s" path="res://Scenes/Player/Animations/Spawn_Air.res" id="20_hty6k"]
+[ext_resource type="Animation" uid="uid://ba6vlf1aqqhnu" path="res://Scenes/Player/Animations/Spawn_Ground.res" id="21_7u7mq"]
+[ext_resource type="Animation" uid="uid://cy2m7hwfmjy2i" path="res://Scenes/Player/Animations/Throw.res" id="23_6ebsp"]
+[ext_resource type="Animation" uid="uid://dl4aay4y47fnc" path="res://Scenes/Player/Animations/Use_Item.res" id="24_32aud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -240,14 +254,28 @@ blend_shape_mode = 0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yfih1"]
 _data = {
+&"Death_A": ExtResource("3_uwwlx"),
+&"Death_A_Pose": ExtResource("4_5m5cv"),
+&"Death_B": ExtResource("5_67dbh"),
+&"Death_B_Pose": ExtResource("6_r6xfq"),
+&"Hit_A": ExtResource("7_kwktf"),
+&"Hit_B": ExtResource("8_my838"),
+&"Idle_A": ExtResource("9_yfih1"),
+&"Idle_B": ExtResource("10_wf4iu"),
+&"Interact": ExtResource("11_vbg4x"),
 &"Jump_Full_Long": ExtResource("3_cisnj"),
 &"Jump_Full_Short": ExtResource("4_gxq8o"),
 &"Jump_Idle": ExtResource("5_f4vau"),
 &"Jump_Land": ExtResource("6_3o3af"),
 &"Jump_Start": ExtResource("7_ymooi"),
+&"PickUp": ExtResource("17_6c3s7"),
 &"Running_A": ExtResource("8_jc6e2"),
 &"Running_B": ExtResource("9_6s64k"),
+&"Spawn_Air": ExtResource("20_hty6k"),
+&"Spawn_Ground": ExtResource("21_7u7mq"),
 &"T-Pose": ExtResource("10_xqi1m"),
+&"Throw": ExtResource("23_6ebsp"),
+&"Use_Item": ExtResource("24_32aud"),
 &"Walking_A": ExtResource("11_c35km"),
 &"Walking_B": ExtResource("12_q1enc"),
 &"Walking_C": ExtResource("13_mda26")
@@ -366,8 +394,8 @@ bones/14/parent = 13
 bones/14/rest = Transform3D(0.99857867, 0.053297248, 6.1252675e-10, -0.053297248, 0.99857867, -1.1873953e-10, -6.1798466e-10, 8.592478e-11, 0.99999994, -7.426282e-09, 0.26004383, 6.127964e-11)
 bones/14/enabled = true
 bones/14/position = Vector3(-7.426282e-09, 0.26004383, 6.127964e-11)
-bones/14/rotation = Quaternion(5.1184276e-11, 3.0773722e-10, -0.0266581, 0.99964464)
-bones/14/scale = Vector3(0.99999994, 0.99999994, 0.99999994)
+bones/14/rotation = Quaternion(7.300499e-09, -7.3388096e-09, -0.0266581, 0.99964464)
+bones/14/scale = Vector3(1.0000001, 1, 1)
 bones/15/name = "hand.r"
 bones/15/parent = 14
 bones/15/rest = Transform3D(1, -1.091039e-05, -1.8421935e-07, 1.0910391e-05, 0.99999994, -2.4008373e-09, 1.8421939e-07, 2.3988274e-09, 0.99999994, 3.996803e-15, 0.073825836, -2.220446e-16)
@@ -408,8 +436,8 @@ bones/20/parent = 19
 bones/20/rest = Transform3D(0.99857867, -0.053297248, -6.125374e-10, 0.053297248, 0.99857867, -1.1874038e-10, 6.179954e-10, 8.5925066e-11, 0.99999994, 7.426282e-09, 0.26004383, 6.127964e-11)
 bones/20/enabled = true
 bones/20/position = Vector3(7.426282e-09, 0.26004383, 6.127964e-11)
-bones/20/rotation = Quaternion(5.118456e-11, -3.0774258e-10, 0.0266581, 0.99964464)
-bones/20/scale = Vector3(0.99999994, 0.99999994, 0.99999994)
+bones/20/rotation = Quaternion(7.250843e-09, 9.200791e-09, 0.026658095, 0.99964464)
+bones/20/scale = Vector3(0.99999994, 1, 1.0000001)
 bones/21/name = "hand.l"
 bones/21/parent = 20
 bones/21/rest = Transform3D(1, 1.091039e-05, 2.7178578e-07, -1.0910391e-05, 0.99999994, -2.40181e-09, -2.7178584e-07, 2.398845e-09, 0.99999994, 9.054979e-13, 0.073825836, -2.220446e-16)
@@ -464,7 +492,7 @@ skeleton = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Rig_Medium/Skeleton3D/Head" unique_id=943635540]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.28898454, 0.6694014)
+transform = Transform3D(-1, 0, 8.742278e-08, 7.080754e-08, 0.58650744, 0.8099439, -5.1274103e-08, 0.8099439, -0.58650744, 0, 6.4154663, -1.1753857)
 cull_mask = 1048573
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1759676466]

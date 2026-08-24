@@ -14,7 +14,9 @@ background_mode = 2
 sky = SubResource("Sky_vlngc")
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
+[sub_resource type="BoxMesh" id="BoxMesh_nlb7l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
 
 [node name="Node3D" type="Node3D" unique_id=1609880321]
 
@@ -25,8 +27,22 @@ environment = SubResource("Environment_v111v")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="floor" type="MeshInstance3D" parent="." unique_id=837541700]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.55605036, 0)
-mesh = SubResource("BoxMesh_i0uuj")
+[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7840471, 0)
 
-[node name="ProtoController" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
+[node name="floor" type="CSGMesh3D" parent="." unique_id=1522752110]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.55605036, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_nlb7l")
+
+[node name="column" type="CSGMesh3D" parent="." unique_id=1064343758]
+transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, 11.106498, 4.0165186, 1.1967812)
+mesh = SubResource("CylinderMesh_i0uuj")
+
+[node name="column2" type="CSGMesh3D" parent="." unique_id=1554298359]
+transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, 13.022829)
+mesh = SubResource("CylinderMesh_i0uuj")
+
+[node name="column3" type="CSGMesh3D" parent="." unique_id=1743219531]
+transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, -12.469452)
+mesh = SubResource("CylinderMesh_i0uuj")
