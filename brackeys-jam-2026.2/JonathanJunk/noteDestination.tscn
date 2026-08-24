@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bfnqoc2u2w0hi"]
+
+[ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://JonathanJunk/noteDestination.gd" id="1_pwesx"]
+[ext_resource type="Texture2D" uid="uid://d2kgxwg4udo06" path="res://JonathanJunk/A.png" id="2_5qk1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
+
+[node name="destination" type="Node2D" unique_id=1104253604]
+script = ExtResource("1_pwesx")
+
+[node name="ErrorArea2D" type="Area2D" parent="." unique_id=857884499]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ErrorArea2D" unique_id=267687191]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_03pib")
+
+[node name="ValidArea2D" type="Area2D" parent="." unique_id=824186424]
+position = Vector2(0, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ValidArea2D" unique_id=1030608906]
+position = Vector2(0, -30)
+scale = Vector2(3, 6)
+shape = SubResource("RectangleShape2D_03pib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245203376]
+modulate = Color(1, 1, 1, 0.42745098)
+position = Vector2(0, -92)
+texture = ExtResource("2_5qk1e")
+
+[connection signal="area_entered" from="ErrorArea2D" to="." method="_on_error_area_2d_area_entered"]

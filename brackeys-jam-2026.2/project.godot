@@ -25,6 +25,11 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
 
+[editor]
+
+movie_writer/movie_file="C:/Users/YolBolsun/source/Godot/Brackeys-Jam-2026.2/brackeys-jam-2026.2/JonathanJunk/testMovie.avi"
+movie_writer/disable_vsync=true
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

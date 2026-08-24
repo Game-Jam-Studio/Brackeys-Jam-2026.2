@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ccvsn7you7jn0"]
+
+[ext_resource type="Script" uid="uid://d0hxdc2d14lat" path="res://JonathanJunk/note_manager.gd" id="1_kejbh"]
+[ext_resource type="PackedScene" uid="uid://kgm86s8gbmrx" path="res://JonathanJunk/notePrefab.tscn" id="2_am6i7"]
+[ext_resource type="PackedScene" uid="uid://bfnqoc2u2w0hi" path="res://JonathanJunk/noteDestination.tscn" id="3_7gexx"]
+[ext_resource type="Texture2D" uid="uid://d2kgxwg4udo06" path="res://JonathanJunk/A.png" id="4_bdy5s"]
+[ext_resource type="Texture2D" uid="uid://cc0mt5lqb66nd" path="res://JonathanJunk/S.png" id="5_ew3ma"]
+[ext_resource type="Texture2D" uid="uid://ckgg778w3hm0b" path="res://JonathanJunk/D.png" id="6_kisbj"]
+[ext_resource type="Texture2D" uid="uid://ceiqi5iny7i7w" path="res://JonathanJunk/F.png" id="7_lbbk6"]
+
+[node name="Node2D" type="Node2D" unique_id=541058863]
+
+[node name="NoteManager" type="Node" parent="." unique_id=645761098 node_paths=PackedStringArray("spawnTargets", "noteDestinations", "timer")]
+script = ExtResource("1_kejbh")
+noteObjectToSpawn = ExtResource("2_am6i7")
+spawnTargets = [NodePath("../NoteSpawns/spawn"), NodePath("../NoteSpawns/spawn2"), NodePath("../NoteSpawns/spawn3"), NodePath("../NoteSpawns/spawn4")]
+noteDestinations = [NodePath("../NoteDestinations/destination"), NodePath("../NoteDestinations/destination2"), NodePath("../NoteDestinations/destination3"), NodePath("../NoteDestinations/destination4")]
+spawnTimes = Array[float]([1.0, 0.4, 1.0, 0.4, 1.5, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4, 0.4, 0.8, 0.8])
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="NoteManager" unique_id=1768962444]
+autostart = true
+
+[node name="NoteSpawns" type="Node" parent="." unique_id=2071971942]
+
+[node name="spawn4" type="Node2D" parent="NoteSpawns" unique_id=1676008687]
+position = Vector2(650, 40)
+
+[node name="spawn3" type="Node2D" parent="NoteSpawns" unique_id=2063829193]
+position = Vector2(550, 40)
+
+[node name="spawn2" type="Node2D" parent="NoteSpawns" unique_id=937573812]
+position = Vector2(450, 40)
+
+[node name="spawn" type="Node2D" parent="NoteSpawns" unique_id=1890805705]
+position = Vector2(350, 40)
+
+[node name="NoteDestinations" type="Node" parent="." unique_id=418239248]
+
+[node name="destination" parent="NoteDestinations" unique_id=1104253604 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_7gexx")]
+position = Vector2(200, 550)
+noteTexture = ExtResource("4_bdy5s")
+normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
+
+[node name="destination2" parent="NoteDestinations" unique_id=611207214 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_7gexx")]
+position = Vector2(400, 550)
+key = 83
+noteTexture = ExtResource("5_ew3ma")
+normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
+
+[node name="destination3" parent="NoteDestinations" unique_id=2023369719 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_7gexx")]
+position = Vector2(600, 550)
+key = 68
+noteTexture = ExtResource("6_kisbj")
+normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
+
+[node name="destination4" parent="NoteDestinations" unique_id=171437335 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_7gexx")]
+position = Vector2(800, 550)
+key = 70
+noteTexture = ExtResource("7_lbbk6")
+normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1558556078]
+position = Vector2(576, 326)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
