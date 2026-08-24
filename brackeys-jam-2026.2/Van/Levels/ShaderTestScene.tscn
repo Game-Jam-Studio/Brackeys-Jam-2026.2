@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df3i42rcoq6of"]
 
-[ext_resource type="Shader" uid="uid://ccqmiw8p44e86" path="res://Van/Shaders/edge_detection.gdshader" id="1_7hk1g"]
-[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Van/Textures/Tentical Test.png" id="2_yk8su"]
+[ext_resource type="Shader" uid="uid://ccqmiw8p44e86" path="res://Van/Shaders/edge_detection.gdshader" id="1_mnh47"]
+[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Van/Textures/Tentical Test.png" id="2_81orc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1hd16"]
 
@@ -21,9 +21,9 @@ size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yk8su"]
 render_priority = 0
-shader = ExtResource("1_7hk1g")
-shader_parameter/tentacles = ExtResource("2_yk8su")
-shader_parameter/intensity = 0.481
+shader = ExtResource("1_mnh47")
+shader_parameter/tentacles = ExtResource("2_81orc")
+shader_parameter/intensity = 0.446
 
 [node name="TestScene" type="Node3D" unique_id=1270418402]
 
