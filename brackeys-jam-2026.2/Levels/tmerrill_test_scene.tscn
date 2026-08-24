@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsfbyq633v5x6"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0tpda"]
+[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Levels/tmerrill_test_scene.gd" id="1_l3bda"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,11 +15,19 @@ background_mode = 2
 sky = SubResource("Sky_vlngc")
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_nlb7l"]
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_i0uuj"]
+vertices = PackedVector3Array(-24.5, 0.23099205, -24.5, -24.5, 0.23099205, 24.5, 24.5, 0.23099205, 24.5, 24.5, 0.23099205, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gl5qx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
+size = Vector3(50, 0.2, 50)
+
 [node name="Node3D" type="Node3D" unique_id=1609880321]
+script = ExtResource("1_l3bda")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -28,12 +37,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7840471, 0)
-
-[node name="floor" type="CSGMesh3D" parent="." unique_id=1522752110]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.55605036, 0)
-use_collision = true
-mesh = SubResource("BoxMesh_nlb7l")
 
 [node name="column" type="CSGMesh3D" parent="." unique_id=1064343758]
 transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, 11.106498, 4.0165186, 1.1967812)
@@ -46,3 +49,20 @@ mesh = SubResource("CylinderMesh_i0uuj")
 [node name="column3" type="CSGMesh3D" parent="." unique_id=1743219531]
 transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, -12.469452)
 mesh = SubResource("CylinderMesh_i0uuj")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841]
+transform = Transform3D(-1, 6.696973e-08, -5.619428e-08, 0, 0.64278764, 0.76604444, 8.742278e-08, 0.76604444, -0.64278764, 0, 10, -5.567)
+cull_mask = 1048573
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
+navigation_mesh = SubResource("NavigationMesh_i0uuj")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=63868684]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.169, 0)
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1176603071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16900796, 0)
+shape = SubResource("BoxShape3D_i0uuj")
