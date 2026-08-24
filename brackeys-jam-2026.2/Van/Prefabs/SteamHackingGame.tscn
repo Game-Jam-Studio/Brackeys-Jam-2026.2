@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dfhu1j7aiq656"]
+
+[ext_resource type="Script" uid="uid://sbraufdsvmok" path="res://Van/Scripts/steam_hacking_game.gd" id="1_o40pi"]
+[ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="2_o40pi"]
+[ext_resource type="Script" uid="uid://upu4sh8i87sp" path="res://Van/Scripts/UI_dial.gd" id="2_wmosv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
+font_size = 112
+font_color = Color(0, 1, 0, 1)
+
+[node name="SteamHackingGame" type="Control" unique_id=456800813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o40pi")
+
+[node name="Control" type="Control" parent="." unique_id=1618307718]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="Dial1" type="TextureRect" parent="Control" unique_id=654662642]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_o40pi")
+expand_mode = 1
+script = ExtResource("2_wmosv")
+max_rotation = 75.0
+notches = 10.0
+
+[node name="Dial2" type="TextureRect" parent="Control" unique_id=1108047291]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 417.0
+offset_top = 77.0
+offset_right = 481.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_o40pi")
+expand_mode = 1
+script = ExtResource("2_wmosv")
+max_rotation = 75.0
+notches = 10.0
+
+[node name="Dial3" type="TextureRect" parent="Control" unique_id=1918079205]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 838.805
+offset_top = -68.0
+offset_right = 902.80493
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_o40pi")
+expand_mode = 1
+script = ExtResource("2_wmosv")
+max_rotation = 75.0
+notches = 10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1560814889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="Accept" type="Button" parent="VBoxContainer" unique_id=317052462]
+layout_mode = 2
+text = "Hello!"
+
+[node name="Close" type="Button" parent="VBoxContainer" unique_id=408480530]
+layout_mode = 2
+text = "Goodbye!"
+
+[node name="Good Job" type="Label" parent="." unique_id=418109587]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Good Job!!!!!!"
+label_settings = SubResource("LabelSettings_1hd16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Control/Dial1" to="Control/Dial1" method="_on_gui_input"]
+[connection signal="value_changed" from="Control/Dial1" to="." method="_on_dial_1_value_changed"]
+[connection signal="gui_input" from="Control/Dial2" to="Control/Dial2" method="_on_gui_input"]
+[connection signal="value_changed" from="Control/Dial2" to="." method="_on_dial_2_value_changed"]
+[connection signal="gui_input" from="Control/Dial3" to="Control/Dial3" method="_on_gui_input"]
+[connection signal="value_changed" from="Control/Dial3" to="." method="_on_dial_3_value_changed"]
+[connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Close" to="." method="_on_close_button_down"]

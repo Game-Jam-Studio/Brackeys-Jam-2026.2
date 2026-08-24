@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://df3i42rcoq6of"]
+
+[ext_resource type="Shader" uid="uid://ccqmiw8p44e86" path="res://Van/Shaders/edge_detection.gdshader" id="1_mnh47"]
+[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Van/Textures/Tentical Test.png" id="2_81orc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hd16"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1hd16"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ye1jw"]
+left_to_right = 1.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_i72gw"]
+inner_radius = 0.25
+outer_radius = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_1hd16"]
+lightmap_size_hint = Vector2i(12, 12)
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk8su"]
+render_priority = 0
+shader = ExtResource("1_mnh47")
+shader_parameter/tentacles = ExtResource("2_81orc")
+shader_parameter/intensity = 0.446
+
+[node name="TestScene" type="Node3D" unique_id=1270418402]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1067747159]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1330216938]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Meshes" type="Node" parent="SubViewportContainer/SubViewport" unique_id=926531320]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1007033941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+mesh = SubResource("BoxMesh_1hd16")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1067181234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+mesh = SubResource("SphereMesh_1hd16")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=145865740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 1)
+mesh = SubResource("PrismMesh_ye1jw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1431088229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.13085163, 1)
+mesh = SubResource("TorusMesh_i72gw")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=597313507]
+transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -1.6777501, 2.498698, 2.1426265)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=172634407]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_1hd16")
+surface_material_override/0 = SubResource("ShaderMaterial_yk8su")

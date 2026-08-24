@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bl7e1k4y3870t"]
+
+[ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/pressure_hacking_game.gd" id="1_ncqte"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
+font_size = 112
+font_color = Color(0, 1, 0, 1)
+
+[node name="PressureHackingGame" type="Control" unique_id=456800813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncqte")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1269513548]
+custom_minimum_size = Vector2(-5, 0)
+custom_maximum_size = Vector2(5, -1)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.845337
+offset_top = -2.4609923
+offset_right = 0.15466309
+offset_bottom = -2.4613037
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.5, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1560814889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Accept" type="Button" parent="VBoxContainer" unique_id=317052462]
+layout_mode = 2
+text = "Hello!"
+
+[node name="Close" type="Button" parent="VBoxContainer" unique_id=408480530]
+layout_mode = 2
+text = "Goodbye!"
+
+[node name="Good Job" type="Label" parent="." unique_id=418109587]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Good Job!!!!!!"
+label_settings = SubResource("LabelSettings_1hd16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Close" to="." method="_on_close_button_down"]
