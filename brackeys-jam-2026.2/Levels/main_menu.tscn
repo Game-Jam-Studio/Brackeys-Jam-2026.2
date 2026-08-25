@@ -1,60 +1,80 @@
 [gd_scene format=3 uid="uid://dp65i8pg1ea8i"]
 
 [ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
+[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_jy27m"]
 
-[node name="MainMenu" type="Node2D" unique_id=2001629756]
+[node name="MainMenu" type="Control" unique_id=1948344224]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_6ucrw")
 
 [node name="Title" type="Label" parent="." unique_id=886373517]
-offset_left = 402.0
-offset_top = 175.0
-offset_right = 796.0
-offset_bottom = 242.0
-theme_override_font_sizes/font_size = 48
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -344.5
+offset_top = 143.58
+offset_right = 344.5
+offset_bottom = 258.58032
+grow_horizontal = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 84
 text = "TBD Game Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="button_manager" type="Control" parent="." unique_id=1002316191]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="New Game" type="Button" parent="button_manager" unique_id=288408914]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 375.0
-offset_right = 678.0
-offset_bottom = 410.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=768510217]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -1.0499878
+offset_right = 112.5
+offset_bottom = 242.95001
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="New Game" type="Button" parent="VBoxContainer" unique_id=288408914]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme = ExtResource("2_jy27m")
+theme_override_font_sizes/font_size = 36
 text = "New Game"
 
-[node name="Options" type="Button" parent="button_manager" unique_id=2027421149]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 425.0
-offset_right = 678.0
-offset_bottom = 460.0
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1333945265]
+layout_mode = 2
+theme = ExtResource("2_jy27m")
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=2027421149]
+layout_mode = 2
+theme = ExtResource("2_jy27m")
+theme_override_font_sizes/font_size = 36
 text = "Options
 "
 
-[node name="Credits" type="Button" parent="button_manager" unique_id=1333945265]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 475.0
-offset_right = 678.0
-offset_bottom = 510.0
-text = "Credits"
-
-[node name="Quit" type="Button" parent="button_manager" unique_id=231071800]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 525.0
-offset_right = 678.0
-offset_bottom = 560.0
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=231071800]
+layout_mode = 2
+theme = ExtResource("2_jy27m")
+theme_override_font_sizes/font_size = 36
 text = "Quit"
 
-[connection signal="pressed" from="button_manager/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="button_manager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="button_manager/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
