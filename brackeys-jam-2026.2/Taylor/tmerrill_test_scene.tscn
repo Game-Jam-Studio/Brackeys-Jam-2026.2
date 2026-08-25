@@ -15,8 +15,6 @@ background_mode = 2
 sky = SubResource("Sky_vlngc")
 glow_enabled = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_i0uuj"]
 vertices = PackedVector3Array(-24.5, 0.23099205, -24.5, -24.5, 0.23099205, 24.5, 24.5, 0.23099205, 24.5, 24.5, 0.23099205, -24.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -38,20 +36,8 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
 
-[node name="column" type="CSGMesh3D" parent="." unique_id=1064343758]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, 11.106498, 4.0165186, 1.1967812)
-mesh = SubResource("CylinderMesh_i0uuj")
-
-[node name="column2" type="CSGMesh3D" parent="." unique_id=1554298359]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, 13.022829)
-mesh = SubResource("CylinderMesh_i0uuj")
-
-[node name="column3" type="CSGMesh3D" parent="." unique_id=1743219531]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, -12.469452)
-mesh = SubResource("CylinderMesh_i0uuj")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=836225841]
-transform = Transform3D(-1, 6.696973e-08, -5.619428e-08, 0, 0.64278764, 0.76604444, 8.742278e-08, 0.76604444, -0.64278764, 0, 10, -5.567)
+transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
 cull_mask = 1048573
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
