@@ -10,6 +10,7 @@ var dragging: bool = false
 var start_pos: Vector2
 var current_rot: float
 var freeze: bool = false
+var mouse_movement_threshold: float
 
 #Exposed variables
 @export var max_rotation: float = 180
@@ -42,6 +43,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				warp_mouse(start_pos)
 				#print(value)
 	elif event is InputEventMouseMotion and dragging and !freeze:
+		print(event.screen_relative.x)
 	#Handle Dial Rotation
 		if value > 0.5:
 			rotation += deg_to_rad(15)
@@ -57,9 +59,9 @@ func _on_gui_input(event: InputEvent) -> void:
 			value = 0
 			#print(new_value)
 			play_dial_sound()
-		if event.relative.x > 0:
+		if event.screen_relative.x > mouse_movement_threshold:
 			value += 0.025
-		else:
+		elif event.screen_relative.x < -mouse_movement_threshold:
 			value -= 0.025
 
 func play_dial_sound():

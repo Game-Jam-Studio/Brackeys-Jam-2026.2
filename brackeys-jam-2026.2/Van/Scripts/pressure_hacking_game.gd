@@ -1,29 +1,32 @@
 extends Control
 @onready var color_rect: ColorRect = $ColorRect
-@onready var accept_button: Button = $VBoxContainer/Accept
+@onready var accept_button: Button = %Accept
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")
 
 var deltaTime : float = 0.0
+var submitted: bool
 
 @export var tolerance: float = 10
+@export var speed: float = 10
+
+func _ready() -> void:
+	$TextureProgressBar.value = tolerance
+	$TextureProgressBar.rotation = deg_to_rad(180 - (tolerance / 2))
 
 
 func _process(delta: float) -> void:
-	color_rect.rotation = deg_to_rad(0) + sin(deltaTime * 4)
-	deltaTime += delta
-	if is_equal_custom(abs(color_rect.rotation), deg_to_rad(0), deg_to_rad(tolerance)):
-		color_rect.color = Color.GREEN
-	else:
-		color_rect.color = Color.RED
+	if !submitted:
+		color_rect.rotation = sin(deltaTime * speed)
+		deltaTime += delta
+
 
 
 func _on_button_button_down() -> void:
-	if is_equal_custom(abs(color_rect.rotation), deg_to_rad(0), deg_to_rad(tolerance)):
+	submitted = true
+	if is_equal_custom(abs(color_rect.rotation), deg_to_rad(0), deg_to_rad(tolerance / 1.5)):
 		$Conditions/Success.visible = true
-		$VBoxContainer/Accept.visible = false
 		accept_button.visible = false
-		color_rect.visible = false
 	#Win signal goes here
 		print("YOU WIN!")
 		$AudioStreamPlayer.play()
@@ -31,9 +34,8 @@ func _on_button_button_down() -> void:
 		queue_free()
 	else:
 		$Conditions/Failure.visible = true
-		$VBoxContainer/Accept.visible = false
 		accept_button.visible = false
-		color_rect.visible = false
+		submitted = true
 	#Win signal goes here
 		print("YOU LOSE!")
 		$AudioStreamPlayer.stream = UI_ERROR
