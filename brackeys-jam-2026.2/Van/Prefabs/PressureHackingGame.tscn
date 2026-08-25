@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bl7e1k4y3870t"]
 
 [ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/pressure_hacking_game.gd" id="1_ncqte"]
+[ext_resource type="AudioStream" uid="uid://ci0u00xywksjx" path="res://Audio/SFX/UI_accept.wav" id="2_akc8o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
 font_size = 112
 font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncqte"]
+font_size = 112
+font_color = Color(1, 0, 0, 1)
 
 [node name="PressureHackingGame" type="Control" unique_id=456800813]
 layout_mode = 3
@@ -14,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ncqte")
+tolerance = 15.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1269513548]
 custom_minimum_size = Vector2(-5, 0)
@@ -42,18 +48,29 @@ alignment = 2
 
 [node name="Accept" type="Button" parent="VBoxContainer" unique_id=317052462]
 layout_mode = 2
-text = "Hello!"
+text = "Accept"
 
-[node name="Close" type="Button" parent="VBoxContainer" unique_id=408480530]
-layout_mode = 2
-text = "Goodbye!"
-
-[node name="Good Job" type="Label" parent="." unique_id=418109587]
-visible = false
+[node name="Conditions" type="Control" parent="." unique_id=2118943559]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Success" type="Label" parent="Conditions" unique_id=418109587]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -76.5
+offset_right = 337.0
+offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Good Job!!!!!!"
@@ -61,5 +78,27 @@ label_settings = SubResource("LabelSettings_1hd16")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Failure" type="Label" parent="Conditions" unique_id=785038330]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -76.5
+offset_right = 252.5
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bad Job :("
+label_settings = SubResource("LabelSettings_ncqte")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
+stream = ExtResource("2_akc8o")
+bus = &"UI"
+
 [connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/Close" to="." method="_on_close_button_down"]

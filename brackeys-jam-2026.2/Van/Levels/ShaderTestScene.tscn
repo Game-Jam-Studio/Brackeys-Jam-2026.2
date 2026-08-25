@@ -1,11 +1,62 @@
 [gd_scene format=3 uid="uid://df3i42rcoq6of"]
 
-[ext_resource type="Shader" uid="uid://ccqmiw8p44e86" path="res://Van/Shaders/edge_detection.gdshader" id="1_mnh47"]
-[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Van/Textures/Tentical Test.png" id="2_81orc"]
+[ext_resource type="Shader" uid="uid://bkrpjwlq34x30" path="res://Van/Shaders/gore_shader.gdshader" id="1_81orc"]
+[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Art/2D/Placeholder/Tentical Test.png" id="2_81orc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mnh47"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_81orc"]
+sky_material = SubResource("ProceduralSkyMaterial_mnh47")
+
+[sub_resource type="Environment" id="Environment_vpjbg"]
+background_mode = 2
+sky = SubResource("Sky_81orc")
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_1hd16"]
 
+[sub_resource type="Gradient" id="Gradient_vpjbg"]
+offsets = PackedFloat32Array(0, 0.017595308, 1)
+colors = PackedColorArray(0.2, 0.2, 0.2, 1, 0.2105572, 0.2105572, 0.2105572, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_81orc"]
+noise_type = 0
+frequency = 0.0077
+domain_warp_amplitude = 219.225
+domain_warp_frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_81orc"]
+noise = SubResource("FastNoiseLite_81orc")
+color_ramp = SubResource("Gradient_vpjbg")
+seamless = true
+seamless_blend_skirt = 0.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vpjbg"]
+noise_type = 3
+frequency = 0.0684
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vpjbg"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_vpjbg")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnh47"]
+render_priority = 0
+shader = ExtResource("1_81orc")
+shader_parameter/displacement = 0.2
+shader_parameter/noise = SubResource("NoiseTexture2D_81orc")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_vpjbg")
+
 [sub_resource type="SphereMesh" id="SphereMesh_1hd16"]
+material = SubResource("ShaderMaterial_mnh47")
+radial_segments = 128
+rings = 64
 
 [sub_resource type="PrismMesh" id="PrismMesh_ye1jw"]
 left_to_right = 1.0
@@ -14,54 +65,85 @@ left_to_right = 1.0
 inner_radius = 0.25
 outer_radius = 0.5
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_1hd16"]
+size = Vector2(3, 3)
+
 [sub_resource type="QuadMesh" id="QuadMesh_1hd16"]
 lightmap_size_hint = Vector2i(12, 12)
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="Shader" id="Shader_mnh47"]
+code = "shader_type spatial;
+render_mode unshaded;
+uniform sampler2D tentacles : source_color;
+uniform float intensity;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
+}
+
+void fragment() {
+	vec2 uv = UV;
+	uv.x += sin(uv.y * (10.0) + sin(TIME) * (0.75)) *  intensity/10.0;
+	uv.y += sin(uv.x * (5.0) - TIME * (0.75)) *  intensity/20.0;
+	vec3 color;
+	color.r = texture(tentacles, uv).x * clamp(intensity, 0 ,1);
+	ALBEDO = color;
+	ALPHA = color.r;
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the material.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yk8su"]
 render_priority = 0
-shader = ExtResource("1_mnh47")
+shader = SubResource("Shader_mnh47")
 shader_parameter/tentacles = ExtResource("2_81orc")
-shader_parameter/intensity = 0.446
+shader_parameter/intensity = 0.411
 
 [node name="TestScene" type="Node3D" unique_id=1270418402]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1067747159]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=655393381]
+environment = SubResource("Environment_vpjbg")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1330216938]
-handle_input_locally = false
-size = Vector2i(1152, 648)
-render_target_update_mode = 4
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=429672904]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
-[node name="Meshes" type="Node" parent="SubViewportContainer/SubViewport" unique_id=926531320]
+[node name="Meshes" type="Node" parent="." unique_id=926531320]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1007033941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+[node name="Cube" type="MeshInstance3D" parent="Meshes" unique_id=1007033941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+visible = false
 mesh = SubResource("BoxMesh_1hd16")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1067181234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+[node name="Sphere" type="MeshInstance3D" parent="Meshes" unique_id=1067181234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
 mesh = SubResource("SphereMesh_1hd16")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=145865740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 1)
+[node name="Ramp" type="MeshInstance3D" parent="Meshes" unique_id=145865740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+visible = false
 mesh = SubResource("PrismMesh_ye1jw")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1431088229]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.13085163, 1)
+[node name="Torus" type="MeshInstance3D" parent="Meshes" unique_id=1431088229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.13085163, 0.5)
 mesh = SubResource("TorusMesh_i72gw")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=597313507]
-transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -1.6777501, 2.498698, 2.1426265)
+[node name="Plane" type="MeshInstance3D" parent="Meshes" unique_id=1733415965]
+mesh = SubResource("PlaneMesh_1hd16")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=172634407]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=597313507]
+transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -2, 2, 2)
+current = true
+
+[node name="ShaderQuad" type="MeshInstance3D" parent="Camera3D" unique_id=172634407]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_1hd16")
 surface_material_override/0 = SubResource("ShaderMaterial_yk8su")
