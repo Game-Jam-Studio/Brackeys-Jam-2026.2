@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		update_animations(Vector2.ZERO)
 		return
-
+		
 	var current_position := global_position
 	var next_path_position := nav_agent.get_next_path_position()
 	var new_velocity := (next_path_position - current_position)

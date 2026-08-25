@@ -1,20 +1,76 @@
 extends Node3D
 
+const PRESSURE_GAME_SCENE = preload("res://Van/Prefabs/PressureHackingGame.tscn")
+const STEAM_GAME_SCENE = preload("res://Van/Prefabs/SteamHackingGame.tscn")
+const RHYTHM_GAME_SCENE = preload("res://Levels/rhythmMinigame.tscn")
+
 @export var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
 
 @onready var camera: Camera3D = $Camera3D
 @onready var player: CharacterBody3D = $Player
+@onready var ui_layer: CanvasLayer = $UI
 
 var click_indicator: MeshInstance3D = null
 var is_mouse_held: bool = false
 
 
 func _ready() -> void:
+	# Connect to all repair stations currently registered in the group
+	for trigger: RepairTrigger in get_tree().get_nodes_in_group("repair_triggers"):
+		trigger.launch_minigame_requested.connect(_on_repair_requested)
+	
 	if click_indicator_scene:
 		var instance := click_indicator_scene.instantiate()
 		click_indicator = instance as MeshInstance3D
 		if click_indicator:
 			add_child(click_indicator)
+
+# Orchestrates the repair interaction
+func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
+	# 1. Lock player physics and interaction inputs
+	if player:
+		player.set_physics_process(false)
+		player.set_process_unhandled_input(false)
+
+	# 2. Transition camera to the station's focus point
+	if camera and trigger.camera_focus_point:
+		await camera.transition_to_station(trigger.camera_focus_point).finished
+
+	# 3. Instantiate the requested minigame overlay
+	var game_instance: Control = null
+	match system_id:
+		"Pressure":
+			game_instance = PRESSURE_GAME_SCENE.instantiate()
+		"Steam":
+			game_instance = STEAM_GAME_SCENE.instantiate()
+		"Rhythm":
+			game_instance = RHYTHM_GAME_SCENE.instantiate()
+		
+	if not game_instance:
+		_restore_control(trigger)
+		return
+	
+	ui_layer.add_child(game_instance)
+	
+	# 4. Await minigame result signal
+	var success: bool = await game_instance.minigame_completed
+	
+	# 5. Resolve repair state on the station
+	trigger.end_repair(success)
+	
+	# 6. Reset camera and restore player control
+	_restore_control(trigger)
+
+
+func _restore_control(trigger: RepairTrigger) -> void:
+	# Return camera to original overhead position
+	if camera and trigger.camera_focus_point:
+		await camera.return_from_station().finished
+	
+	# Re-enable player movement and interaction
+	if player:
+		player.set_physics_process(true)
+		player.set_process_unhandled_input(true)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -58,4 +114,3 @@ func raycast_to_floor(screen_position: Vector2) -> Vector3:
 	if result:
 		return result.position
 	return Vector3.INF
-	
