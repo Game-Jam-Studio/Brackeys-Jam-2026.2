@@ -37,6 +37,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7121282)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=836225841 node_paths=PackedStringArray("player_character")]
 transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
@@ -45,6 +46,7 @@ script = ExtResource("3_tl3pp")
 player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01343441, -0.01240921, -0.04453659)
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]

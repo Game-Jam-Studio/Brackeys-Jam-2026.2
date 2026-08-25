@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://fa5imaomcpyx"]
+
+[ext_resource type="Script" uid="uid://hbyifi4sowx0" path="res://Scripts/Common/door.gd" id="1_65tkf"]
+[ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="1_dn2we"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65tkf"]
+albedo_color = Color(0.9064933, 0.9064934, 0.9064934, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
+material = SubResource("StandardMaterial3D_65tkf")
+size = Vector3(1.5, 2.5, 0.2)
+
+[sub_resource type="TorusMesh" id="TorusMesh_nlb7l"]
+outer_radius = 0.614
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
+size = Vector3(1.5, 2.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn2we"]
+size = Vector3(1.5, 2.5, 2.5)
+
+[node name="Door" type="StaticBody3D" unique_id=490510366]
+script = ExtResource("1_65tkf")
+
+[node name="Hinge" type="AnimatableBody3D" parent="." unique_id=1555385922]
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Hinge" unique_id=1411593906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+material_override = SubResource("StandardMaterial3D_65tkf")
+mesh = SubResource("BoxMesh_i0uuj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge" unique_id=1387657739]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, -0.75, 0, 0.128)
+material_override = SubResource("StandardMaterial3D_65tkf")
+mesh = SubResource("TorusMesh_nlb7l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=1464446871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="DoorTrigger" type="Area3D" parent="." unique_id=1813961388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+visible = false
+script = ExtResource("1_dn2we")
+
+[node name="TriggerShape" type="CollisionShape3D" parent="DoorTrigger" unique_id=897058467]
+shape = SubResource("BoxShape3D_dn2we")
+debug_color = Color(0, 0.6, 0.7019608, 0.5882353)

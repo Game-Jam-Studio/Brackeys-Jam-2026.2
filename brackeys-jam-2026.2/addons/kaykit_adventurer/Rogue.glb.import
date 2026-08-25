@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b13n3p0xitvde"
-path="res://.godot/imported/Rogue.glb-b34080c5840b2b9cc85df062ed8e44e3.scn"
+path="res://.godot/imported/Rogue.glb-114873de0db3126ef7e7af04c05bb403.scn"
 
 [deps]
 
-source_file="res://Scenes/Player/Rogue.glb"
-dest_files=["res://.godot/imported/Rogue.glb-b34080c5840b2b9cc85df062ed8e44e3.scn"]
+source_file="res://addons/kaykit_adventurer/Rogue.glb"
+dest_files=["res://.godot/imported/Rogue.glb-114873de0db3126ef7e7af04c05bb403.scn"]
 
 [params]
 
