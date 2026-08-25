@@ -6,7 +6,6 @@ extends Node2D
 @export var initial_scale: Vector2 = Vector2(0.1, 0.1) # Starting size when spawned
 @export var target_scale: Vector2 = Vector2(1.0, 1.0) # Full size at destination
 
-var direction: Vector2
 var start_position: Vector2
 var total_distance: float = 0.0
 
@@ -19,7 +18,6 @@ func initialize(note: int) -> void:
 func _ready() -> void:
 	start_position = position
 	total_distance = start_position.distance_to(destination)
-	direction = global_position.direction_to(destination)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -94,7 +94,7 @@ script = ExtResource("8_4wcyy")
 
 [node name="CircleSane" type="Sprite2D" parent="." unique_id=1390548275]
 position = Vector2(596, 264)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.28, 0.28)
 texture = ExtResource("10_h250t")
 
 [connection signal="pressed" from="Example/Button" to="Example/Button" method="_on_pressed"]
