@@ -44,12 +44,14 @@ func _on_gui_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and dragging and !freeze:
 	#Handle Dial Rotation
 		if value > 0.5:
+			rotation += deg_to_rad(15)
 			new_value = deg_to_rad(15)
 			value_changed.emit(new_value)
 			value = 0
 			#print(new_value)
 			play_dial_sound()
 		elif value < -0.5:
+			rotation -= deg_to_rad(15)
 			new_value = deg_to_rad(-15)
 			value_changed.emit(new_value)
 			value = 0
