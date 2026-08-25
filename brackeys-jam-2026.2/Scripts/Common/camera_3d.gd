@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	global_position = global_position.lerp(target_position, follow_speed * delta)
 
 
-func transition_to_station(focus_point: Node3D, duration: float = 0.6) -> Tween:
+func transition_to_station(duration: float = 0.6) -> Tween:
 	# Cache the current overhead transform before moving
 	return_transform = global_transform
 	
@@ -46,7 +46,7 @@ func transition_to_station(focus_point: Node3D, duration: float = 0.6) -> Tween:
 		active_tween.kill()
 	
 	active_tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
-	active_tween.tween_property(self, "global_transform", focus_point.global_transform, duration)
+	active_tween.tween_property(self, "fov", 20, duration)
 	return active_tween
 
 
@@ -56,5 +56,5 @@ func return_from_station(duration: float = 0.6) -> Tween:
 		active_tween.kill()
 	
 	active_tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
-	active_tween.tween_property(self, "global_transform", return_transform, duration)
+	active_tween.tween_property(self, "fov", 75, duration)
 	return active_tween

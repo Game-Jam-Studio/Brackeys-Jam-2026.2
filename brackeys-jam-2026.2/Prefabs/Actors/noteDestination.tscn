@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfnqoc2u2w0hi"]
 
 [ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://Scripts/Rhythm/note_destination.gd" id="1_8od7r"]
-[ext_resource type="Texture2D" uid="uid://d2kgxwg4udo06" path="res://JonathanJunk/A.png" id="2_mtlwo"]
+[ext_resource type="Texture2D" uid="uid://bes1nmdmcooi4" path="res://Art/2D/Placeholder/A.png" id="2_8od7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
 
@@ -9,13 +9,14 @@
 script = ExtResource("1_8od7r")
 
 [node name="ErrorArea2D" type="Area2D" parent="." unique_id=857884499]
+position = Vector2(0.20000076, 92.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ErrorArea2D" unique_id=267687191]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_03pib")
 
 [node name="ValidArea2D" type="Area2D" parent="." unique_id=824186424]
-position = Vector2(0, -62)
+position = Vector2(0.20000076, 30.199997)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValidArea2D" unique_id=1030608906]
 position = Vector2(0, -30)
@@ -24,7 +25,8 @@ shape = SubResource("RectangleShape2D_03pib")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245203376]
 modulate = Color(1, 1, 1, 0.42745098)
-position = Vector2(0, -92)
-texture = ExtResource("2_mtlwo")
+position = Vector2(0.20000075, 0.19998932)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_8od7r")
 
 [connection signal="area_entered" from="ErrorArea2D" to="." method="_on_error_area_2d_area_entered"]

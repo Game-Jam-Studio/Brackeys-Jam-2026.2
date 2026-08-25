@@ -4,14 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://ci0u00xywksjx" path="res://Audio/SFX/UI_accept.wav" id="2_akc8o"]
 [ext_resource type="Texture2D" uid="uid://knxdqxxf14dt" path="res://Art/2D/ClickIcon.png" id="2_bqt6w"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
-font_size = 112
-font_color = Color(0, 1, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ncqte"]
-font_size = 112
-font_color = Color(1, 0, 0, 1)
-
 [node name="PressureHackingGame" type="Control" unique_id=456800813]
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_ncqte")
 tolerance = 15.0
 speed = 4.0
@@ -36,6 +29,7 @@ grow_horizontal = 2
 rotation = 3.1415927
 scale = Vector2(2.2, 2.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 max_value = 360.0
 step = 0.1
 value = 360.0
@@ -50,18 +44,27 @@ anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1560814889]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -68.0
+offset_right = 470.0
+offset_bottom = -37.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+mouse_filter = 2
 alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=653509207]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 440
 theme_override_constants/margin_right = 440
 
@@ -70,55 +73,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Accept"
 
-[node name="Conditions" type="Control" parent="." unique_id=2118943559]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Success" type="Label" parent="Conditions" unique_id=418109587]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -337.0
-offset_top = -76.5
-offset_right = 337.0
-offset_bottom = 76.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Good Job!!!!!!"
-label_settings = SubResource("LabelSettings_1hd16")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Failure" type="Label" parent="Conditions" unique_id=785038330]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -252.5
-offset_top = -76.5
-offset_right = 252.5
-offset_bottom = 76.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Bad Job :("
-label_settings = SubResource("LabelSettings_ncqte")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
 stream = ExtResource("2_akc8o")
-bus = &"UI"
 
 [connection signal="button_down" from="VBoxContainer/MarginContainer/Accept" to="." method="_on_button_button_down"]
