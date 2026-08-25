@@ -10,10 +10,6 @@ var storyTrackerDictionary: Dictionary = {}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 # CurrKeys SubmarineLevel, RhythmLevel, PressureLevel, SteamLevel
 func show_next_text(levelKey: String) -> void:
@@ -39,6 +35,7 @@ func launch_terminal(text: String) -> void:
 	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
 	$CanvasLayer.visible = true
 	
+
 func close_terminal() -> void:
 	get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()
 	$CanvasLayer.visible = false

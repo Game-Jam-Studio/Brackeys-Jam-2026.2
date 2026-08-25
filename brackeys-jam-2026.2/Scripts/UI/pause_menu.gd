@@ -12,11 +12,6 @@ func _ready() -> void:
 	hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	# Listens for the "ui_cancel" action (Escape / UI Back).
 	if event.is_action_pressed("ui_cancel"):

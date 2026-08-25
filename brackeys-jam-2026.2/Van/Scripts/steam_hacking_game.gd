@@ -50,24 +50,20 @@ func _on_accept_button_down() -> void:
 	$AudioStreamPlayer.pitch_scale = 1.0
 	$AudioStreamPlayer.volume_linear = 1.0
 	if gauge1_correct and gauge2_correct and gauge3_correct:
-		$"Conditions/Success".visible = true
 		$Menu.visible = false
 		%UIRoot.visible = false
 		minigame_completed.emit(true)
-		print("YOU WIN!")
 		$AudioStreamPlayer.stream = UI_ACCEPT
 		$AudioStreamPlayer.play()
 		await get_tree().create_timer(1).timeout
 		queue_free()
 	else:
-		$"Conditions/Failure".visible = true
 		%UIRoot.visible = false
 		$Menu.visible = false
 		dial_1.freeze = true
 		dial_2.freeze = true
 		dial_3.freeze = true
 		minigame_completed.emit(false)
-		print("YOU LOSE!")
 		$AudioStreamPlayer.stream = UI_ERROR
 		$AudioStreamPlayer.play()
 		await get_tree().create_timer(1).timeout
@@ -93,24 +89,18 @@ func _on_dial_3_value_changed(value: Variant) -> void:
 
 func check_dial_1():
 	if snapped(%Gauge1/Needle.rotation, 0.1) == snapped(%Gauge1/ValidArea.rotation, 0.1):
-		print("Dial1 Correct")
 		gauge1_correct = true
 	else:
-		print("Dial1 Wrong")
 		gauge1_correct = false
 
 func check_dial_2():
 	if snapped(%Gauge2/Needle.rotation, 0.1) == snapped(%Gauge2/ValidArea.rotation, 0.1):
-		print("Dial2 Correct")
 		gauge2_correct = true
 	else:
-		print("Dial2 Wrong")
 		gauge2_correct = false
 
 func check_dial_3():
 	if snapped(%Gauge3/Needle.rotation, 0.1) == snapped(%Gauge3/ValidArea.rotation, 0.1):
-		print("Dial3 Correct")
 		gauge3_correct = true
 	else:
-		print("Dial3 Wrong")
 		gauge3_correct = false

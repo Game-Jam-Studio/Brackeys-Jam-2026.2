@@ -7,7 +7,6 @@ extends Node2D
 @export var normalColor: Color = Color.WHITE
 @export var noteManager: NoteManager
 
-signal minigame_completed(success: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,10 +28,6 @@ func _flash_color(color: Color) -> void:
 	$Sprite2D.modulate = color
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "modulate", normalColor, 0.25)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_error_area_2d_area_entered(note: Area2D) -> void:
