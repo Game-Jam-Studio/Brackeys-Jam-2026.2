@@ -14,6 +14,7 @@ narrativeText = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
+layer = 90
 visible = false
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]

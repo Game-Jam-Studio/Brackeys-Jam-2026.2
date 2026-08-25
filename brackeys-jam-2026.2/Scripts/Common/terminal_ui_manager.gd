@@ -35,12 +35,12 @@ func show_next_text(levelKey: String) -> void:
 # Example usage of launchTerminal - TerminalUI.launch_terminal("show some text\nsomemoretext")
 # BBCode example: log_label.text = "You take [color=crimson][font_size=24]50[/font_size] damage[/color]!"
 func launch_terminal(text: String) -> void:
-	get_tree().paused = true
+	get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
 	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
 	$CanvasLayer.visible = true
 	
 func close_terminal() -> void:
-	get_tree().paused = false
+	get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()
 	$CanvasLayer.visible = false
 
 # Resume button
