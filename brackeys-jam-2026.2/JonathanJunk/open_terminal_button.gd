@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	TerminalUI.launch_terminal("##show some text\nsomemoretext")
+	TerminalUI.show_next_text("SubmarineLevel")
