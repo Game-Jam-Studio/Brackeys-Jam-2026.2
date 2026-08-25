@@ -60,6 +60,7 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 		return
 	
 	ui_layer.add_child(game_instance)
+	ui_layer.move_child(game_instance, 0)
 	
 	# 4. Await minigame result signal
 	var success: bool = await game_instance.minigame_completed
