@@ -1,32 +1,33 @@
 [gd_scene format=4 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://c10sj2b0qxh30" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="Texture2D" uid="uid://c3037a5ob40r2" path="res://Scenes/Player/Rogue_rogue_texture.png" id="2_2yh8o"]
-[ext_resource type="Animation" uid="uid://0xq4yfa0jkkt" path="res://Scenes/Player/Animations/Jump_Full_Long.res" id="3_cisnj"]
-[ext_resource type="Animation" uid="uid://bsqj4yvv21qkb" path="res://Scenes/Player/Animations/Death_A.res" id="3_uwwlx"]
-[ext_resource type="Animation" uid="uid://dgpl77etuehy2" path="res://Scenes/Player/Animations/Death_A_Pose.res" id="4_5m5cv"]
-[ext_resource type="Animation" uid="uid://cib1e0uyip5r4" path="res://Scenes/Player/Animations/Jump_Full_Short.res" id="4_gxq8o"]
-[ext_resource type="Animation" uid="uid://rkrwpb538tvs" path="res://Scenes/Player/Animations/Death_B.res" id="5_67dbh"]
-[ext_resource type="Animation" uid="uid://0kjlesx7dxrt" path="res://Scenes/Player/Animations/Jump_Idle.res" id="5_f4vau"]
-[ext_resource type="Animation" uid="uid://bnqgnqynyvsa0" path="res://Scenes/Player/Animations/Jump_Land.res" id="6_3o3af"]
-[ext_resource type="Animation" uid="uid://cxtn4cfbt6ib4" path="res://Scenes/Player/Animations/Death_B_Pose.res" id="6_r6xfq"]
-[ext_resource type="Animation" uid="uid://be3i8w4vow848" path="res://Scenes/Player/Animations/Hit_A.res" id="7_kwktf"]
-[ext_resource type="Animation" uid="uid://b4hgkqfqfw5ny" path="res://Scenes/Player/Animations/Jump_Start.res" id="7_ymooi"]
-[ext_resource type="Animation" uid="uid://dmve2uur34vnp" path="res://Scenes/Player/Animations/Running_A.res" id="8_jc6e2"]
-[ext_resource type="Animation" uid="uid://b5sqo0ey553nf" path="res://Scenes/Player/Animations/Hit_B.res" id="8_my838"]
-[ext_resource type="Animation" uid="uid://boy04xy3j6ien" path="res://Scenes/Player/Animations/Running_B.res" id="9_6s64k"]
-[ext_resource type="Animation" uid="uid://blf4hp80lnspi" path="res://Scenes/Player/Animations/Idle_A.res" id="9_yfih1"]
-[ext_resource type="Animation" uid="uid://b4aup7faqupqx" path="res://Scenes/Player/Animations/Idle_B.res" id="10_wf4iu"]
-[ext_resource type="Animation" uid="uid://c823j43edb3nr" path="res://Scenes/Player/Animations/T-Pose.res" id="10_xqi1m"]
-[ext_resource type="Animation" uid="uid://7kpvcne11rpy" path="res://Scenes/Player/Animations/Walking_A.res" id="11_c35km"]
-[ext_resource type="Animation" uid="uid://b7u8d7h2bohww" path="res://Scenes/Player/Animations/Interact.res" id="11_vbg4x"]
-[ext_resource type="Animation" uid="uid://cisgd5kcyff5n" path="res://Scenes/Player/Animations/Walking_B.res" id="12_q1enc"]
-[ext_resource type="Animation" uid="uid://b4pdp4exiwhlc" path="res://Scenes/Player/Animations/Walking_C.res" id="13_mda26"]
-[ext_resource type="Animation" uid="uid://c304xy2fmgtrl" path="res://Scenes/Player/Animations/PickUp.res" id="17_6c3s7"]
-[ext_resource type="Animation" uid="uid://drecsenf622ve" path="res://Scenes/Player/Animations/Spawn_Air.res" id="20_hty6k"]
-[ext_resource type="Animation" uid="uid://j5m32vgj6a4i" path="res://Scenes/Player/Animations/Spawn_Ground.res" id="21_7u7mq"]
-[ext_resource type="Animation" uid="uid://dqjl5oljdl5p1" path="res://Scenes/Player/Animations/Throw.res" id="23_6ebsp"]
-[ext_resource type="Animation" uid="uid://crcw04aqucg4d" path="res://Scenes/Player/Animations/Use_Item.res" id="24_32aud"]
+[ext_resource type="Texture2D" uid="uid://c3037a5ob40r2" path="res://addons/kaykit_adventurer/Rogue_rogue_texture.png" id="2_2yh8o"]
+[ext_resource type="Animation" uid="uid://0xq4yfa0jkkt" path="res://Animations/Jump_Full_Long.res" id="3_cisnj"]
+[ext_resource type="Animation" uid="uid://bsqj4yvv21qkb" path="res://Animations/Death_A.res" id="3_uwwlx"]
+[ext_resource type="Animation" uid="uid://dgpl77etuehy2" path="res://Animations/Death_A_Pose.res" id="4_5m5cv"]
+[ext_resource type="Animation" uid="uid://cib1e0uyip5r4" path="res://Animations/Jump_Full_Short.res" id="4_gxq8o"]
+[ext_resource type="Animation" uid="uid://rkrwpb538tvs" path="res://Animations/Death_B.res" id="5_67dbh"]
+[ext_resource type="Animation" uid="uid://cbvl70v64wh0f" path="res://Animations/Jump_Idle.res" id="5_f4vau"]
+[ext_resource type="Animation" uid="uid://bnqgnqynyvsa0" path="res://Animations/Jump_Land.res" id="6_3o3af"]
+[ext_resource type="Animation" uid="uid://cxtn4cfbt6ib4" path="res://Animations/Death_B_Pose.res" id="6_r6xfq"]
+[ext_resource type="Animation" uid="uid://be3i8w4vow848" path="res://Animations/Hit_A.res" id="7_kwktf"]
+[ext_resource type="Animation" uid="uid://b4hgkqfqfw5ny" path="res://Animations/Jump_Start.res" id="7_ymooi"]
+[ext_resource type="Animation" uid="uid://cp8ax8emm5evc" path="res://Animations/Running_A.res" id="8_jc6e2"]
+[ext_resource type="Animation" uid="uid://b5sqo0ey553nf" path="res://Animations/Hit_B.res" id="8_my838"]
+[ext_resource type="Animation" uid="uid://dg80o0nkck2bi" path="res://Animations/Running_B.res" id="9_6s64k"]
+[ext_resource type="Animation" uid="uid://blf4hp80lnspi" path="res://Animations/Idle_A.res" id="9_yfih1"]
+[ext_resource type="Animation" uid="uid://b4aup7faqupqx" path="res://Animations/Idle_B.res" id="10_wf4iu"]
+[ext_resource type="Animation" uid="uid://c823j43edb3nr" path="res://Animations/T-Pose.res" id="10_xqi1m"]
+[ext_resource type="Animation" uid="uid://djbo55vfjbegt" path="res://Animations/Walking_A.res" id="11_c35km"]
+[ext_resource type="Animation" uid="uid://b7u8d7h2bohww" path="res://Animations/Interact.res" id="11_vbg4x"]
+[ext_resource type="Animation" uid="uid://b10ugs1k0jsjb" path="res://Animations/Walking_B.res" id="12_q1enc"]
+[ext_resource type="Animation" uid="uid://cul6qjle26x8i" path="res://Animations/Walking_C.res" id="13_mda26"]
+[ext_resource type="Animation" uid="uid://c304xy2fmgtrl" path="res://Animations/PickUp.res" id="17_6c3s7"]
+[ext_resource type="Animation" uid="uid://drecsenf622ve" path="res://Animations/Spawn_Air.res" id="20_hty6k"]
+[ext_resource type="Animation" uid="uid://j5m32vgj6a4i" path="res://Animations/Spawn_Ground.res" id="21_7u7mq"]
+[ext_resource type="Animation" uid="uid://dqjl5oljdl5p1" path="res://Animations/Throw.res" id="23_6ebsp"]
+[ext_resource type="Animation" uid="uid://crcw04aqucg4d" path="res://Animations/Use_Item.res" id="24_32aud"]
+[ext_resource type="Script" uid="uid://br3su2e7gffoc" path="res://Scripts/Common/interaction_detector.gd" id="28_5m5cv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -281,6 +282,8 @@ _data = {
 &"Walking_C": ExtResource("13_mda26")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0uuj"]
+
 [node name="Player" type="CharacterBody3D" unique_id=2087870960]
 script = ExtResource("1_ucva2")
 
@@ -495,3 +498,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 libraries/Player = SubResource("AnimationLibrary_yfih1")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1461336576]
+
+[node name="InteractionDetector" type="Area3D" parent="." unique_id=386173163]
+script = ExtResource("28_5m5cv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionDetector" unique_id=240153194]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.1077778, 0)
+shape = SubResource("SphereShape3D_i0uuj")
