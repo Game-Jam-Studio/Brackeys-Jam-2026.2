@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6bgno4ecqu4g"]
 
 [ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
+[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_n3fdw"]
 
 [sub_resource type="GDScript" id="GDScript_y0d7i"]
 script/source = "extends Button
@@ -16,32 +17,46 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="Credits" type="Node2D" unique_id=1731630272]
+[node name="Credits" type="Control" unique_id=2135353185]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_6vvtk")
 
 [node name="Title" type="Label" parent="." unique_id=825116045]
-offset_left = 409.0
-offset_top = 37.0
-offset_right = 803.0
-offset_bottom = 104.0
-theme_override_font_sizes/font_size = 36
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.64499
+offset_top = 50.0
+offset_right = 203.3551
+offset_bottom = 117.0
+grow_horizontal = 2
+theme = ExtResource("2_n3fdw")
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="button_manager" type="Control" parent="." unique_id=1423515082]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Back" type="Button" parent="button_manager" unique_id=445819736]
-layout_mode = 0
-offset_left = 523.0
-offset_top = 523.0
-offset_right = 676.0
-offset_bottom = 558.0
+[node name="Back" type="Button" parent="." unique_id=445819736]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -98.0
+offset_right = 37.5
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_n3fdw")
 text = "Back"
 script = SubResource("GDScript_y0d7i")
 
-[connection signal="pressed" from="button_manager/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
