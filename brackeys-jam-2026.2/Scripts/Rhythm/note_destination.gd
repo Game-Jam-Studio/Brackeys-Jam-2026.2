@@ -5,7 +5,9 @@ extends Node2D
 @export var errorColor: Color = Color.RED
 @export var successColor: Color = Color.GREEN
 @export var normalColor: Color = Color.WHITE
-@export var noteManager: Node
+@export var noteManager: NoteManager
+
+signal minigame_completed(success: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -12,12 +12,14 @@ const RHYTHM_GAME_SCENE = preload("res://Levels/rhythmMinigame.tscn")
 
 var click_indicator: MeshInstance3D = null
 var is_mouse_held: bool = false
+var is_repair_active: bool = false
 
 
 func _ready() -> void:
-	# Connect to all repair stations currently registered in the group
+	# Connect to all repair stations currently registered in the group without duplicating connections
 	for trigger: RepairTrigger in get_tree().get_nodes_in_group("repair_triggers"):
-		trigger.launch_minigame_requested.connect(_on_repair_requested)
+		if not trigger.launch_minigame_requested.is_connected(_on_repair_requested):
+			trigger.launch_minigame_requested.connect(_on_repair_requested)
 	
 	if click_indicator_scene:
 		var instance := click_indicator_scene.instantiate()
@@ -25,17 +27,23 @@ func _ready() -> void:
 		if click_indicator:
 			add_child(click_indicator)
 
+
 # Orchestrates the repair interaction
 func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
+	# Guard against duplicate emissions while a minigame/transition is in progress
+	if is_repair_active:
+		return
+	is_repair_active = true
+	
 	# 1. Lock player physics and interaction inputs
 	if player:
 		player.set_physics_process(false)
 		player.set_process_unhandled_input(false)
-
+	
 	# 2. Transition camera to the station's focus point
 	if camera and trigger.camera_focus_point:
 		await camera.transition_to_station(trigger.camera_focus_point).finished
-
+	
 	# 3. Instantiate the requested minigame overlay
 	var game_instance: Control = null
 	match system_id:
@@ -48,6 +56,7 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 		
 	if not game_instance:
 		_restore_control(trigger)
+		is_repair_active = false
 		return
 	
 	ui_layer.add_child(game_instance)
@@ -59,7 +68,8 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 	trigger.end_repair(success)
 	
 	# 6. Reset camera and restore player control
-	_restore_control(trigger)
+	await _restore_control(trigger)
+	is_repair_active = false
 
 
 func _restore_control(trigger: RepairTrigger) -> void:

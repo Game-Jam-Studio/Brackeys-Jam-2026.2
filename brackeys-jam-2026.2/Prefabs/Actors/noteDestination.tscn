@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfnqoc2u2w0hi"]
 
 [ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://Scripts/Rhythm/note_destination.gd" id="1_8od7r"]
-[ext_resource type="Texture2D" uid="uid://d2kgxwg4udo06" path="res://JonathanJunk/A.png" id="2_mtlwo"]
+[ext_resource type="Texture2D" uid="uid://bes1nmdmcooi4" path="res://Art/2D/Placeholder/A.png" id="2_8od7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
 
@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_03pib")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245203376]
 modulate = Color(1, 1, 1, 0.42745098)
 position = Vector2(0, -92)
-texture = ExtResource("2_mtlwo")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_8od7r")
 
 [connection signal="area_entered" from="ErrorArea2D" to="." method="_on_error_area_2d_area_entered"]

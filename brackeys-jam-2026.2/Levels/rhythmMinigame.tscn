@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://ccvsn7you7jn0"]
 
+[ext_resource type="Script" uid="uid://cs3nure02ep45" path="res://Scripts/Rhythm/rhythm_minigame.gd" id="1_irvol"]
 [ext_resource type="Script" uid="uid://d0hxdc2d14lat" path="res://Scripts/Rhythm/note_manager.gd" id="1_wdrkg"]
 [ext_resource type="PackedScene" uid="uid://kgm86s8gbmrx" path="res://Prefabs/Actors/notePrefab.tscn" id="2_4wcyy"]
 [ext_resource type="PackedScene" uid="uid://bfnqoc2u2w0hi" path="res://Prefabs/Actors/noteDestination.tscn" id="3_irvol"]
-[ext_resource type="Texture2D" uid="uid://d2kgxwg4udo06" path="res://JonathanJunk/A.png" id="4_h250t"]
-[ext_resource type="Texture2D" uid="uid://cc0mt5lqb66nd" path="res://JonathanJunk/S.png" id="5_6p81i"]
-[ext_resource type="Texture2D" uid="uid://ckgg778w3hm0b" path="res://JonathanJunk/D.png" id="6_htvd5"]
-[ext_resource type="Texture2D" uid="uid://ceiqi5iny7i7w" path="res://JonathanJunk/F.png" id="7_3p2b6"]
+[ext_resource type="Texture2D" uid="uid://bes1nmdmcooi4" path="res://Art/2D/Placeholder/A.png" id="5_irvol"]
+[ext_resource type="Texture2D" uid="uid://bmcu7rw8276xn" path="res://Art/2D/Placeholder/S.png" id="6_irvol"]
+[ext_resource type="Texture2D" uid="uid://boquoxdoxkkjd" path="res://Art/2D/Placeholder/D.png" id="7_h250t"]
 [ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
+[ext_resource type="Texture2D" uid="uid://cd8dj1lrnkyqh" path="res://Art/2D/Placeholder/F.png" id="8_6p81i"]
 
-[node name="Node2D" type="Node2D" unique_id=541058863]
+[node name="Control" type="Control" unique_id=917470935]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_irvol")
 
 [node name="NoteManager" type="Node" parent="." unique_id=645761098 node_paths=PackedStringArray("spawnTargets", "noteDestinations", "timer")]
 script = ExtResource("1_wdrkg")
@@ -40,33 +48,34 @@ position = Vector2(350, 40)
 
 [node name="destination" parent="NoteDestinations" unique_id=1104253604 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(200, 550)
-noteTexture = ExtResource("4_h250t")
+noteTexture = ExtResource("5_irvol")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination2" parent="NoteDestinations" unique_id=611207214 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(400, 550)
 key = 83
-noteTexture = ExtResource("5_6p81i")
+noteTexture = ExtResource("6_irvol")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination3" parent="NoteDestinations" unique_id=2023369719 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(600, 550)
 key = 68
-noteTexture = ExtResource("6_htvd5")
+noteTexture = ExtResource("7_h250t")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination4" parent="NoteDestinations" unique_id=171437335 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(800, 550)
 key = 70
-noteTexture = ExtResource("7_3p2b6")
+noteTexture = ExtResource("8_6p81i")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1558556078]
 position = Vector2(576, 326)
+enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 1152

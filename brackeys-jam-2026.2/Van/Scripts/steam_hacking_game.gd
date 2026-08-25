@@ -5,6 +5,9 @@ extends Control
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")
 
+# Emitted on outcome so the caller can return the camera and call end_repair() on the trigger.
+signal minigame_completed(success: bool)
+
 var gauge1_value: float
 var gauge2_value: float
 var gauge3_value: float
@@ -50,7 +53,7 @@ func _on_accept_button_down() -> void:
 		$"Conditions/Success".visible = true
 		$Menu.visible = false
 		%UIRoot.visible = false
-	#Win signal goes here
+		minigame_completed.emit(true)
 		print("YOU WIN!")
 		$AudioStreamPlayer.stream = UI_ACCEPT
 		$AudioStreamPlayer.play()
@@ -63,7 +66,7 @@ func _on_accept_button_down() -> void:
 		dial_1.freeze = true
 		dial_2.freeze = true
 		dial_3.freeze = true
-	#Lose signal goes here
+		minigame_completed.emit(false)
 		print("YOU LOSE!")
 		$AudioStreamPlayer.stream = UI_ERROR
 		$AudioStreamPlayer.play()

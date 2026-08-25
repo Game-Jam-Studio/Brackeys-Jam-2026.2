@@ -1,4 +1,8 @@
+class_name NoteManager
 extends Node
+
+# Emitted on outcome so the caller can return the camera and call end_repair() on the trigger.
+signal minigame_completed(success: bool)
 
 @export var noteObjectToSpawn: PackedScene
 @export var spawnTargets: Array[Node2D]
@@ -8,6 +12,9 @@ extends Node
 
 var currNoteSpawned = 0
 var errorCount = 0
+
+# Error limit to pass the repair
+@export var max_allowed_errors: int = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,9 +34,15 @@ func _on_next_note_time() -> void:
 	if currNoteSpawned == len(spawnTimes):
 		timer.stop()
 		
+		# Allow the final note to reach the destination line
+		await get_tree().create_timer(2.0).timeout
+		
+		# Emit outcome to level manager
+		var success: bool = errorCount <= max_allowed_errors
+		minigame_completed.emit(success)
 		#WARNING this will print at the time the last note spawns so more errors 
 		# could still come and this is just a placeholder
-		print("error count: " + str(errorCount))
+		#print("error count: " + str(errorCount))
 		return
 	timer.start(spawnTimes[currNoteSpawned])
 
