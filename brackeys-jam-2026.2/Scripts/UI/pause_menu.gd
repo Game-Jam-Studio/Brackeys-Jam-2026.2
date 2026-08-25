@@ -4,6 +4,7 @@ extends Control
 @onready var main_menu_button: Button = $BlurBackground/CenterContainer/MenuBackground/ButtonContainer/MainMenuButton
 @onready var quit_button: Button = $BlurBackground/CenterContainer/MenuBackground/ButtonContainer/QuitButton
 
+var pause_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,22 +20,35 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# Listens for the "ui_cancel" action (Escape / UI Back).
 	if event.is_action_pressed("ui_cancel"):
-		toggle_pause()
-		get_viewport().set_input_as_handled()
-
-## Toggles UI visibility and the engine pause state
-func toggle_pause() -> void:
-	var should_pause: bool = not get_tree().paused
-	get_tree().paused = should_pause
-	visible = should_pause
-
+		# whether we should have escape be a pause or resume to the player
+		# is just based on whether they currently see the pause menu or not
+		if visible:
+			try_resume()
+		else:
+			pause()
+		_toggle_menu_visibility()
+		#get_viewport().set_input_as_handled()
+	
+func pause() -> void:
+	pause_counter += 1
+	get_tree().paused = true
+	
+func try_resume() -> void:
+	pause_counter -= 1
+	if pause_counter <= 0:
+		pause_counter = 0
+		get_tree().paused = false
 
 func _on_resume_button_pressed() -> void:
-	toggle_pause()
+	try_resume()
+	visible = false
 
+func _toggle_menu_visibility() -> void:
+	visible = !visible
 
 func _on_main_menu_button_pressed() -> void:
 	# Must unpause the tree before loading scenes, or the new scene starts paused
+	# 
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Levels/main_menu.tscn")
 
