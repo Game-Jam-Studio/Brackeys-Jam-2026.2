@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/tmerrill_test_scene.gd" id="1_pa3bi"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_tl3pp"]
+[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Taylor/camera_3d.gd" id="3_tl3pp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,9 +37,11 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841 node_paths=PackedStringArray("player_character")]
 transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
 cull_mask = 1048573
+script = ExtResource("3_tl3pp")
+player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
