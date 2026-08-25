@@ -1,6 +1,8 @@
 extends Control
 @onready var color_rect: ColorRect = $ColorRect
 @onready var accept_button: Button = $VBoxContainer/Accept
+const UI_ACCEPT = preload("uid://ci0u00xywksjx")
+const UI_ERROR = preload("uid://44cjuy6hy1ge")
 
 var deltaTime : float = 0.0
 
@@ -24,6 +26,7 @@ func _on_button_button_down() -> void:
 		color_rect.visible = false
 	#Win signal goes here
 		print("YOU WIN!")
+		$AudioStreamPlayer.play()
 		await get_tree().create_timer(2).timeout
 		queue_free()
 	else:
@@ -33,6 +36,8 @@ func _on_button_button_down() -> void:
 		color_rect.visible = false
 	#Win signal goes here
 		print("YOU LOSE!")
+		$AudioStreamPlayer.stream = UI_ERROR
+		$AudioStreamPlayer.play()
 		await get_tree().create_timer(2).timeout
 		queue_free()
 

@@ -2,10 +2,11 @@ extends TextureRect
 
 signal value_set(value)
 signal value_changed(value)
-@onready var steam_hacking_game: Control = $"../.."
+@onready var steam_hacking_game: Control = $"../../../../.."
+
 
 var value: float = 0.5
-var new_value: float
+var new_value: float = 0.5
 var dragging: bool = false
 var start_pos: Vector2
 var current_rot: float
@@ -48,7 +49,12 @@ func _on_gui_input(event: InputEvent) -> void:
 			value_changed.emit(value)
 			new_value = value
 			#print(new_value)
+			play_dial_sound()
 		current_rot = clampf(current_rot + deg_to_rad(event.screen_relative.x)/10, deg_to_rad(-max_rotation), deg_to_rad(max_rotation))
 		rotation = snapped(current_rot, deg_to_rad(max_rotation / (notches / 2)))
 		value = (snapped(remap(roundf(rad_to_deg(rotation)), -max_rotation, max_rotation, 0, 1), 0.01))
 		
+
+func play_dial_sound():
+	%AudioStreamPlayer.pitch_scale = randf_range(0.975, 1.025)
+	%AudioStreamPlayer.play()

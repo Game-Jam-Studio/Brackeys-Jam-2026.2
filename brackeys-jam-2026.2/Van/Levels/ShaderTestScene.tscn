@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df3i42rcoq6of"]
 
 [ext_resource type="Shader" uid="uid://bkrpjwlq34x30" path="res://Van/Shaders/gore_shader.gdshader" id="1_81orc"]
-[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Van/Textures/Tentical Test.png" id="2_81orc"]
+[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Art/2D/Placeholder/Tentical Test.png" id="2_81orc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mnh47"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -104,7 +104,7 @@ void fragment() {
 render_priority = 0
 shader = SubResource("Shader_mnh47")
 shader_parameter/tentacles = ExtResource("2_81orc")
-shader_parameter/intensity = 0.241
+shader_parameter/intensity = 0.411
 
 [node name="TestScene" type="Node3D" unique_id=1270418402]
 

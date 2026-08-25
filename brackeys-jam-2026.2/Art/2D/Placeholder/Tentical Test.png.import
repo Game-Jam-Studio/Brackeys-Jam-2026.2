@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0arx7wn30pbd"
-path.s3tc="res://.godot/imported/Tentical Test.png-77a06f5f1cc2a67c34796e4bd82fe0ae.s3tc.ctex"
+path.s3tc="res://.godot/imported/Tentical Test.png-83ecb3475c462f7364cc97c4bc57d675.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Van/Textures/Tentical Test.png"
-dest_files=["res://.godot/imported/Tentical Test.png-77a06f5f1cc2a67c34796e4bd82fe0ae.s3tc.ctex"]
+source_file="res://Art/2D/Placeholder/Tentical Test.png"
+dest_files=["res://.godot/imported/Tentical Test.png-83ecb3475c462f7364cc97c4bc57d675.s3tc.ctex"]
 
 [params]
 

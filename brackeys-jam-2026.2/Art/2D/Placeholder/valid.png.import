@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf0d7sofra06a"
-path="res://.godot/imported/Gauge.png-204ec2169bbb32f1246dcc55e003f2e7.ctex"
+uid="uid://c3alr5petkbli"
+path="res://.godot/imported/valid.png-ce5cd5f6bc6091785ff243365c58bf19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Van/Textures/Gauge.png"
-dest_files=["res://.godot/imported/Gauge.png-204ec2169bbb32f1246dcc55e003f2e7.ctex"]
+source_file="res://Art/2D/Placeholder/valid.png"
+dest_files=["res://.godot/imported/valid.png-ce5cd5f6bc6091785ff243365c58bf19.ctex"]
 
 [params]
 

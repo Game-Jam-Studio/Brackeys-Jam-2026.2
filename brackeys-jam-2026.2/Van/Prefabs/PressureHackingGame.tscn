@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl7e1k4y3870t"]
 
 [ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/pressure_hacking_game.gd" id="1_ncqte"]
+[ext_resource type="AudioStream" uid="uid://ci0u00xywksjx" path="res://Audio/SFX/UI_accept.wav" id="2_akc8o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
 font_size = 112
@@ -18,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ncqte")
+tolerance = 15.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1269513548]
 custom_minimum_size = Vector2(-5, 0)
@@ -94,5 +96,9 @@ text = "Bad Job :("
 label_settings = SubResource("LabelSettings_ncqte")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
+stream = ExtResource("2_akc8o")
+bus = &"UI"
 
 [connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]

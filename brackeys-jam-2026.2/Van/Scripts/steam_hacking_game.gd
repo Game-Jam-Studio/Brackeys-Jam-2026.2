@@ -1,91 +1,92 @@
 extends Control
-@onready var dial_1: TextureRect = $Controls/Dial1
-@onready var dial_2: TextureRect = $Controls/Dial2
-@onready var dial_3: TextureRect = $Controls/Dial3
-@onready var gauge_1_display: Control = $Gauge1
-@onready var gauge_2_display: Control = $Gauge2
-@onready var gauge_3_display: Control = $Gauge3
+@onready var dial_1: TextureRect = %Dial1
+@onready var dial_2: TextureRect = %Dial2
+@onready var dial_3: TextureRect = %Dial3
+const UI_ACCEPT = preload("uid://ci0u00xywksjx")
+const UI_ERROR = preload("uid://44cjuy6hy1ge")
 
-var gauge_1: float
-var gauge_2: float
-var gauge_3: float
-var gauge_1_correct: bool
-var gauge_2_correct: bool
-var gauge_3_correct: bool
+var gauge1_value: float
+var gauge2_value: float
+var gauge3_value: float
+
+var gauge1_correct: bool
+var gauge2_correct: bool
+var gauge3_correct: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer.volume_linear = 0.4
 #Set random values
-	gauge_1 = snapped(randf_range(0, 1), 0.1)
-	gauge_2 = snapped(randf_range(0, 1), 0.1)
-	gauge_3 = snapped(randf_range(0, 1), 0.1)
+	gauge1_value = snapped(randf_range(0, 1), 0.1)
+	gauge2_value = snapped(randf_range(0, 1), 0.1)
+	gauge3_value = snapped(randf_range(0, 1), 0.1)
 #Set goal gauge rotation
-	$Gauge1/Housing/ValidArea.rotation = remap(gauge_1, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	$Gauge2/Housing/ValidArea.rotation = remap(gauge_2, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	$Gauge3/Housing/ValidArea.rotation = remap(gauge_3, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	#print("Dial 1 ", gauge_1)
-	#print("Dial 2 ", gauge_2)
+	%Gauge1/ValidArea.rotation = remap(gauge1_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge2/ValidArea.rotation = remap(gauge2_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge3/ValidArea.rotation = remap(gauge3_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	#print("Dial 1 ", gauge1_value)
+	#print("Dial 2 ", gauge2_value)
 	#print("Dial 3 ", gauge_3)
 
 func _on_dial_1_value_set(value: Variant) -> void:
-	if value == gauge_1:
+	if value == gauge1_value:
 		#print("Dial1 Correct")
 		dial_1.freeze = true
-		gauge_1_correct = true
+		gauge1_correct = true
 	else:
 		#print("Dial1 Wrong")
-		gauge_1_correct = false
+		gauge1_correct = false
 
 func _on_dial_2_value_set(value: Variant) -> void:
-	if value == gauge_2:
+	if value == gauge2_value:
 		#print("Dial2 Correct")
 		dial_2.freeze = true
-		gauge_2_correct = true
+		gauge2_correct = true
 	else:
 		#print("Dial2 Wrong")
-		gauge_2_correct = false
+		gauge2_correct = false
 
 func _on_dial_3_value_set(value: Variant) -> void:
-	if value == gauge_3:
+	if value == gauge3_value:
 		#print("Dial3 Correct")
 		dial_3.freeze = true
-		gauge_3_correct = true
+		gauge3_correct = true
 	else:
 		#print("Dial3 Wrong")
-		gauge_3_correct = false
+		gauge3_correct = false
 
 #Player submits their answer
 func _on_accept_button_down() -> void:
-	if gauge_1_correct and gauge_2_correct and gauge_3_correct:
+	$AudioStreamPlayer.pitch_scale = 1.0
+	$AudioStreamPlayer.volume_linear = 1.0
+	if gauge1_correct and gauge2_correct and gauge3_correct:
 		$"Conditions/Success".visible = true
-		$Controls.visible = false
-		$Menu/Accept.visible = false
-		$Gauge1.visible = false
-		$Gauge2.visible = false
-		$Gauge3.visible = false
+		$Menu.visible = false
+		%UIRoot.visible = false
 	#Win signal goes here
 		print("YOU WIN!")
-		await get_tree().create_timer(2).timeout
+		$AudioStreamPlayer.stream = UI_ACCEPT
+		$AudioStreamPlayer.play()
+		await get_tree().create_timer(1).timeout
 		queue_free()
 	else:
 		$"Conditions/Failure".visible = true
-		$Controls.visible = false
-		$Menu/Accept.visible = false
-		$Gauge1.visible = false
-		$Gauge2.visible = false
-		$Gauge3.visible = false
+		%UIRoot.visible = false
+		$Menu.visible = false
 		dial_1.freeze = true
 		dial_2.freeze = true
 		dial_3.freeze = true
 	#Lose signal goes here
 		print("YOU LOSE!")
-		await get_tree().create_timer(2).timeout
+		$AudioStreamPlayer.stream = UI_ERROR
+		$AudioStreamPlayer.play()
+		await get_tree().create_timer(1).timeout
 		queue_free()
 
 func _on_dial_1_value_changed(value: Variant) -> void:
-	$Gauge1/Housing/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge1/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
 
 func _on_dial_2_value_changed(value: Variant) -> void:
-	$Gauge2/Housing/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge2/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
 
 func _on_dial_3_value_changed(value: Variant) -> void:
-	$Gauge3/Housing/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge3/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
