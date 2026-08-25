@@ -41,5 +41,5 @@ func _on_button_button_down() -> void:
 		minigame_completed.emit(false)
 		queue_free()
 
-func is_equal_custom(a, b, tolerance):
-	return abs(a - b) <= tolerance
+func is_equal_custom(a, b, adjustedTolerance):
+	return abs(a - b) <= adjustedTolerance

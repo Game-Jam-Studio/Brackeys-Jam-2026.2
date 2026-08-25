@@ -41,8 +41,8 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 		player.set_process_unhandled_input(false)
 	
 	# 2. Transition camera to the station's focus point
-	if camera and trigger.camera_focus_point:
-		await camera.transition_to_station(trigger.camera_focus_point).finished
+	if camera:
+		await camera.transition_to_station().finished
 	
 	# 3. Instantiate the requested minigame overlay
 	var game_instance: Control = null
@@ -68,6 +68,7 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 	trigger.end_repair(success)
 	
 	# 6. Reset camera and restore player control
+	await camera.return_from_station()
 	await _restore_control(trigger)
 	is_repair_active = false
 
