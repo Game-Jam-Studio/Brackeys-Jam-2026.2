@@ -82,6 +82,7 @@ limit_right = 1152
 limit_bottom = 648
 
 [node name="Example" type="CanvasLayer" parent="." unique_id=975054927]
+process_mode = 1
 
 [node name="Button" type="Button" parent="Example" unique_id=218730659]
 offset_right = 8.0

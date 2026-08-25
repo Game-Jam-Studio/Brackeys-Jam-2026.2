@@ -6,6 +6,12 @@
 [node name="TerminalUI" type="Node" unique_id=1913051525]
 process_mode = 3
 script = ExtResource("1_iqysy")
+narrativeText = {
+"PressureLevel": ["PRESSURE 1", "PRESSURE 2"],
+"RhythmLevel": ["PLACEHOLDER RHYTHM text 1", "PLACEHOLDER RHYTHM text 2"],
+"SteamLevel": ["Steam1", "Steam2"],
+"SubmarineLevel": ["PLACEHOLDERSUBMARINETEXT 1", "PLACEHOLDERSUBMARINETEXT 2", "PLACEHOLDERSUBMARINETEXT 3", "PLACEHOLDERSUBMARINETEXT 4"]
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 visible = false

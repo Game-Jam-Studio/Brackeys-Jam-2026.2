@@ -17,10 +17,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == key:
 			if $ValidArea2D.has_overlapping_areas():
-				print("overlapping a note")
 				var overlappingNotes = $ValidArea2D.get_overlapping_areas()
 				for note in overlappingNotes:
-					print("killing " + str(note))
 					note.get_parent().queue_free()
 				_flash_color(successColor)
 			else:
