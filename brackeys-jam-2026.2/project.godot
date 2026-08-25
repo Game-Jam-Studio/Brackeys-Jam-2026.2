@@ -26,6 +26,7 @@ TerminalUI="*uid://m06rh5uwq514"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
@@ -34,6 +35,14 @@ window/vsync/vsync_mode=2
 
 movie_writer/movie_file="S:/Godot Movies/Test.avi"
 movie_writer/fps=120
+
+[input]
+
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [physics]
 
