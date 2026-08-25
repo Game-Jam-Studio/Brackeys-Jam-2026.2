@@ -17,19 +17,36 @@ glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_1hd16"]
 
-[sub_resource type="Gradient" id="Gradient_vpjbg"]
-offsets = PackedFloat32Array(0, 0.017595308, 1)
-colors = PackedColorArray(0.2, 0.2, 0.2, 1, 0.2105572, 0.2105572, 0.2105572, 1, 0.4, 0.4, 0.4, 1)
+[sub_resource type="Gradient" id="Gradient_mnh47"]
+offsets = PackedFloat32Array(0.2617647, 1)
+colors = PackedColorArray(0.05, 0, 0, 1, 0.2, 0, 0, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_81orc"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6o77m"]
 noise_type = 0
-frequency = 0.0077
+fractal_octaves = 1
 domain_warp_amplitude = 219.225
 domain_warp_frequency = 0.001
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_81orc"]
-noise = SubResource("FastNoiseLite_81orc")
-color_ramp = SubResource("Gradient_vpjbg")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pkvy3"]
+noise = SubResource("FastNoiseLite_6o77m")
+color_ramp = SubResource("Gradient_mnh47")
+seamless = true
+seamless_blend_skirt = 0.3
+
+[sub_resource type="Gradient" id="Gradient_81orc"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.00882353, 1)
+colors = PackedColorArray(0.20591716, 0.20591716, 0.20591716, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pkvy3"]
+noise_type = 0
+fractal_octaves = 1
+domain_warp_amplitude = 219.225
+domain_warp_frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ag00n"]
+noise = SubResource("FastNoiseLite_pkvy3")
+color_ramp = SubResource("Gradient_81orc")
 seamless = true
 seamless_blend_skirt = 0.3
 
@@ -45,12 +62,31 @@ seamless = true
 in_3d_space = true
 as_normal_map = true
 seamless_blend_skirt = 0.5
+bump_strength = 6.0
+
+[sub_resource type="Gradient" id="Gradient_lahmq"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kusd5"]
+noise_type = 0
+fractal_octaves = 1
+domain_warp_amplitude = 219.225
+domain_warp_frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rjqna"]
+noise = SubResource("FastNoiseLite_kusd5")
+color_ramp = SubResource("Gradient_lahmq")
+seamless = true
+seamless_blend_skirt = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mnh47"]
 render_priority = 0
 shader = ExtResource("1_81orc")
-shader_parameter/displacement = 0.2
-shader_parameter/noise = SubResource("NoiseTexture2D_81orc")
+shader_parameter/displacement = 0.025
+shader_parameter/displacementnoise = SubResource("NoiseTexture2D_ag00n")
+shader_parameter/roughnessnoise = SubResource("NoiseTexture2D_rjqna")
+shader_parameter/colornoise = SubResource("NoiseTexture2D_pkvy3")
 shader_parameter/normalmap = SubResource("NoiseTexture2D_vpjbg")
 
 [sub_resource type="SphereMesh" id="SphereMesh_1hd16"]
