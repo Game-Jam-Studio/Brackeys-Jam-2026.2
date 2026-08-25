@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dsfbyq633v5x6"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0tpda"]
-[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Levels/tmerrill_test_scene.gd" id="1_l3bda"]
+[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/tmerrill_test_scene.gd" id="1_pa3bi"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_tl3pp"]
+[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Taylor/camera_3d.gd" id="3_tl3pp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,8 +16,6 @@ background_mode = 2
 sky = SubResource("Sky_vlngc")
 glow_enabled = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_i0uuj"]
 vertices = PackedVector3Array(-24.5, 0.23099205, -24.5, -24.5, 0.23099205, 24.5, 24.5, 0.23099205, 24.5, 24.5, 0.23099205, -24.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -26,8 +25,8 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[node name="Node3D" type="Node3D" unique_id=1609880321]
-script = ExtResource("1_l3bda")
+[node name="World" type="Node3D" unique_id=1609880321]
+script = ExtResource("1_pa3bi")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -36,23 +35,13 @@ environment = SubResource("Environment_v111v")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("1_0tpda")]
+[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
 
-[node name="column" type="CSGMesh3D" parent="." unique_id=1064343758]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, 11.106498, 4.0165186, 1.1967812)
-mesh = SubResource("CylinderMesh_i0uuj")
-
-[node name="column2" type="CSGMesh3D" parent="." unique_id=1554298359]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, 13.022829)
-mesh = SubResource("CylinderMesh_i0uuj")
-
-[node name="column3" type="CSGMesh3D" parent="." unique_id=1743219531]
-transform = Transform3D(1, 0, 0, 0, 4.8843164, 0, 0, 0, 1, -13.484693, 4.0165186, -12.469452)
-mesh = SubResource("CylinderMesh_i0uuj")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841]
-transform = Transform3D(-1, 6.696973e-08, -5.619428e-08, 0, 0.64278764, 0.76604444, 8.742278e-08, 0.76604444, -0.64278764, 0, 10, -5.567)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841 node_paths=PackedStringArray("player_character")]
+transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
 cull_mask = 1048573
+script = ExtResource("3_tl3pp")
+player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 navigation_mesh = SubResource("NavigationMesh_i0uuj")

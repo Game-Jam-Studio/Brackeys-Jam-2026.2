@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://m06rh5uwq514"]
+
+[ext_resource type="Script" uid="uid://sork7ar11xek" path="res://Scripts/Common/terminal_ui_manager.gd" id="1_iqysy"]
+[ext_resource type="Texture2D" uid="uid://ckgg778w3hm0b" path="res://JonathanJunk/D.png" id="2_gjlas"]
+
+[node name="TerminalUI" type="Node" unique_id=1913051525]
+process_mode = 3
+script = ExtResource("1_iqysy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
+visible = false
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]
+offset_left = 502.0
+offset_top = 546.0
+offset_right = 572.0
+offset_bottom = 577.0
+text = "Resume"
+
+[node name="TerminalArt" type="TextureRect" parent="CanvasLayer" unique_id=2028318683]
+modulate = Color(0, 0, 0, 1)
+clip_contents = true
+offset_left = 236.0
+offset_top = 36.0
+offset_right = 876.0
+offset_bottom = 516.0
+focus_mode = 3
+mouse_filter = 0
+texture = ExtResource("2_gjlas")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
+offset_left = 236.0
+offset_top = 36.0
+offset_right = 876.0
+offset_bottom = 516.0
+bbcode_enabled = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
