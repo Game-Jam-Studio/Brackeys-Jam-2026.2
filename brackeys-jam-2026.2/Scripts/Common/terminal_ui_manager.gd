@@ -39,6 +39,7 @@ func launch_terminal(text: String) -> void:
 	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
 	$CanvasLayer.visible = true
 	
+
 func close_terminal() -> void:
 	get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()
 	$CanvasLayer.visible = false

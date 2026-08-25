@@ -27,22 +27,18 @@ func _process(delta: float) -> void:
 func _on_button_button_down() -> void:
 	submitted = true
 	if is_equal_custom(abs(color_rect.rotation), deg_to_rad(0), deg_to_rad(tolerance / 1.5)):
-		$Conditions/Success.visible = true
 		accept_button.visible = false
-		minigame_completed.emit(true)
-		print("YOU WIN!")
 		$AudioStreamPlayer.play()
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(.5).timeout
+		minigame_completed.emit(true)
 		queue_free()
 	else:
-		$Conditions/Failure.visible = true
 		accept_button.visible = false
 		submitted = true
-		minigame_completed.emit(false)
-		print("YOU LOSE!")
 		$AudioStreamPlayer.stream = UI_ERROR
 		$AudioStreamPlayer.play()
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(.5).timeout
+		minigame_completed.emit(false)
 		queue_free()
 
 func is_equal_custom(a, b, tolerance):

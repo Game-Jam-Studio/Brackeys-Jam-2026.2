@@ -8,14 +8,6 @@
 [ext_resource type="Script" uid="uid://8xturdjotrx2" path="res://Van/Scripts/UI_dial.gd" id="7_sybhk"]
 [ext_resource type="AudioStream" uid="uid://bgkircabxx6ma" path="res://Audio/SFX/UI_dial.wav" id="7_vwb1y"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_o40pi"]
-font_size = 112
-font_color = Color(0, 1, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_1hd16"]
-font_size = 112
-font_color = Color(1, 0, 0, 1)
-
 [node name="SteamHackingGame" type="Control" unique_id=456800813]
 layout_mode = 3
 anchors_preset = 15
@@ -23,15 +15,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_vwb1y")
 
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1560814889]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -68.0
+offset_right = 30.0
+offset_bottom = -37.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+scale = Vector2(0.9, 0.9)
 mouse_filter = 2
 alignment = 2
 
@@ -39,45 +39,9 @@ alignment = 2
 layout_mode = 2
 text = "Accept"
 
-[node name="Conditions" type="Control" parent="." unique_id=1285258311]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Success" type="Label" parent="Conditions" unique_id=418109587]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Good Job!!!!!!"
-label_settings = SubResource("LabelSettings_o40pi")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Failure" type="Label" parent="Conditions" unique_id=373560533]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Bad Job :("
-label_settings = SubResource("LabelSettings_1hd16")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2019624829]
 unique_name_in_owner = true
 stream = ExtResource("7_vwb1y")
-bus = &"UI"
 
 [node name="UIRoot" type="Control" parent="." unique_id=702778854]
 unique_name_in_owner = true
@@ -114,6 +78,7 @@ custom_minimum_size = Vector2(188, 188)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_sybhk")
 expand_mode = 1
 stretch_mode = 4
@@ -123,6 +88,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("6_uyix2")
 expand_mode = 1
 stretch_mode = 4
@@ -132,6 +98,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("7_gk8mc")
 expand_mode = 1
 stretch_mode = 4
@@ -174,6 +141,7 @@ custom_minimum_size = Vector2(188, 188)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_sybhk")
 expand_mode = 1
 stretch_mode = 4
@@ -183,6 +151,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("6_uyix2")
 expand_mode = 1
 stretch_mode = 4
@@ -192,6 +161,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("7_gk8mc")
 expand_mode = 1
 stretch_mode = 4
@@ -234,6 +204,7 @@ custom_minimum_size = Vector2(188, 188)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_sybhk")
 expand_mode = 1
 stretch_mode = 4
@@ -243,6 +214,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("6_uyix2")
 expand_mode = 1
 stretch_mode = 4
@@ -252,6 +224,7 @@ layout_mode = 0
 offset_right = 188.0
 offset_bottom = 188.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("7_gk8mc")
 expand_mode = 1
 stretch_mode = 4

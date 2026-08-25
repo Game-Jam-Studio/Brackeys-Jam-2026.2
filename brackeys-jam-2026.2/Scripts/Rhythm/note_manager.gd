@@ -35,7 +35,10 @@ func _on_next_note_time() -> void:
 		timer.stop()
 		
 		# Allow the final note to reach the destination line
-		await get_tree().create_timer(2.0).timeout
+		# The actual value required here for this would be the distance from 
+		# spawn to destination over the configured speed in note prefab, 
+		# but for the jam, we will just hardcode this
+		await get_tree().create_timer(3.25).timeout
 		
 		# Emit outcome to level manager
 		var success: bool = errorCount <= max_allowed_errors
