@@ -22,17 +22,19 @@ func _on_button_button_down() -> void:
 		$VBoxContainer/Accept.visible = false
 		accept_button.visible = false
 		color_rect.visible = false
+	#Win signal goes here
 		print("YOU WIN!")
+		await get_tree().create_timer(2).timeout
+		queue_free()
 	else:
 		$Conditions/Failure.visible = true
 		$VBoxContainer/Accept.visible = false
 		accept_button.visible = false
 		color_rect.visible = false
+	#Win signal goes here
 		print("YOU LOSE!")
+		await get_tree().create_timer(2).timeout
+		queue_free()
 
 func is_equal_custom(a, b, tolerance):
 	return abs(a - b) <= tolerance
-
-
-func _on_close_button_down() -> void:
-	get_tree().quit()

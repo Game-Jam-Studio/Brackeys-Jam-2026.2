@@ -48,10 +48,6 @@ alignment = 2
 layout_mode = 2
 text = "Accept"
 
-[node name="Close" type="Button" parent="VBoxContainer" unique_id=408480530]
-layout_mode = 2
-text = "Close"
-
 [node name="Conditions" type="Control" parent="." unique_id=2118943559]
 layout_mode = 1
 anchors_preset = 15
@@ -100,4 +96,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_down" from="VBoxContainer/Accept" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/Close" to="." method="_on_close_button_down"]

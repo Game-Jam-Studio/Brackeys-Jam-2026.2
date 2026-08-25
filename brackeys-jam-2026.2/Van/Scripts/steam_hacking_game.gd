@@ -64,6 +64,8 @@ func _on_accept_button_down() -> void:
 		$Gauge3.visible = false
 	#Win signal goes here
 		print("YOU WIN!")
+		await get_tree().create_timer(2).timeout
+		queue_free()
 	else:
 		$"Conditions/Failure".visible = true
 		$Controls.visible = false
@@ -76,10 +78,8 @@ func _on_accept_button_down() -> void:
 		dial_3.freeze = true
 	#Lose signal goes here
 		print("YOU LOSE!")
-
-#Player exits minigame
-func _on_close_button_down() -> void:
-	get_tree().quit()
+		await get_tree().create_timer(2).timeout
+		queue_free()
 
 func _on_dial_1_value_changed(value: Variant) -> void:
 	$Gauge1/Housing/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
