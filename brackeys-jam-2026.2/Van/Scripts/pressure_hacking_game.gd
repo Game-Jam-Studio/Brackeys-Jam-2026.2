@@ -15,7 +15,6 @@ var submitted: bool
 
 func _ready() -> void:
 	$TextureProgressBar.value = tolerance
-	$TextureProgressBar.rotation = deg_to_rad(180 - (tolerance / 2))
 
 
 func _process(delta: float) -> void:
