@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cc0mt5lqb66nd" path="res://JonathanJunk/S.png" id="5_6p81i"]
 [ext_resource type="Texture2D" uid="uid://ckgg778w3hm0b" path="res://JonathanJunk/D.png" id="6_htvd5"]
 [ext_resource type="Texture2D" uid="uid://ceiqi5iny7i7w" path="res://JonathanJunk/F.png" id="7_3p2b6"]
+[ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
 
 [node name="Node2D" type="Node2D" unique_id=541058863]
 
@@ -70,3 +71,13 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 648
+
+[node name="Example" type="CanvasLayer" parent="." unique_id=975054927]
+
+[node name="Button" type="Button" parent="Example" unique_id=218730659]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Placeholder Open Terminal"
+script = ExtResource("8_4wcyy")
+
+[connection signal="pressed" from="Example/Button" to="Example/Button" method="_on_pressed"]
