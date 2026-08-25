@@ -115,47 +115,34 @@ environment = SubResource("Environment_vpjbg")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1067747159]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 4
+[node name="Meshes" type="Node" parent="." unique_id=926531320]
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1330216938]
-handle_input_locally = false
-size = Vector2i(288, 162)
-render_target_update_mode = 4
-
-[node name="Meshes" type="Node" parent="SubViewportContainer/SubViewport" unique_id=926531320]
-
-[node name="Cube" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1007033941]
+[node name="Cube" type="MeshInstance3D" parent="Meshes" unique_id=1007033941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
 visible = false
 mesh = SubResource("BoxMesh_1hd16")
 
-[node name="Sphere" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1067181234]
+[node name="Sphere" type="MeshInstance3D" parent="Meshes" unique_id=1067181234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
 mesh = SubResource("SphereMesh_1hd16")
 
-[node name="Ramp" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=145865740]
+[node name="Ramp" type="MeshInstance3D" parent="Meshes" unique_id=145865740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
 visible = false
 mesh = SubResource("PrismMesh_ye1jw")
 
-[node name="Torus" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1431088229]
+[node name="Torus" type="MeshInstance3D" parent="Meshes" unique_id=1431088229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.13085163, 0.5)
 mesh = SubResource("TorusMesh_i72gw")
 
-[node name="Plane" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Meshes" unique_id=1733415965]
+[node name="Plane" type="MeshInstance3D" parent="Meshes" unique_id=1733415965]
 mesh = SubResource("PlaneMesh_1hd16")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=597313507]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=597313507]
 transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.70710677, 0.7071068, -0.5, 0.5, -2, 2, 2)
+current = true
 
-[node name="ShaderQuad" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=172634407]
+[node name="ShaderQuad" type="MeshInstance3D" parent="Camera3D" unique_id=172634407]
 visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_1hd16")
