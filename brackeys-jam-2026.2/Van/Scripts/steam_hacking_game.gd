@@ -21,38 +21,17 @@ func _ready() -> void:
 	gauge3_value = snapped(randf_range(0, 1), 0.1)
 #Set goal gauge rotation
 	%Gauge1/ValidArea.rotation = remap(gauge1_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	%Gauge2/ValidArea.rotation = remap(gauge2_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	%Gauge3/ValidArea.rotation = remap(gauge3_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
-	#print("Dial 1 ", gauge1_value)
-	#print("Dial 2 ", gauge2_value)
-	#print("Dial 3 ", gauge_3)
+	%Gauge2/ValidArea.rotation = remap(gauge2_value, 0, 1, -deg_to_rad(dial_2.max_rotation), deg_to_rad(dial_2.max_rotation))
+	%Gauge3/ValidArea.rotation = remap(gauge3_value, 0, 1, -deg_to_rad(dial_3.max_rotation), deg_to_rad(dial_3.max_rotation))
+#Set initial needle rotation
+	%Gauge1/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
+	%Gauge2/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
+	%Gauge3/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
+#Check if any needles are correct
+	check_dial_1()
+	check_dial_2()
+	check_dial_3()
 
-func _on_dial_1_value_set(value: Variant) -> void:
-	if value == gauge1_value:
-		#print("Dial1 Correct")
-		dial_1.freeze = true
-		gauge1_correct = true
-	else:
-		#print("Dial1 Wrong")
-		gauge1_correct = false
-
-func _on_dial_2_value_set(value: Variant) -> void:
-	if value == gauge2_value:
-		#print("Dial2 Correct")
-		dial_2.freeze = true
-		gauge2_correct = true
-	else:
-		#print("Dial2 Wrong")
-		gauge2_correct = false
-
-func _on_dial_3_value_set(value: Variant) -> void:
-	if value == gauge3_value:
-		#print("Dial3 Correct")
-		dial_3.freeze = true
-		gauge3_correct = true
-	else:
-		#print("Dial3 Wrong")
-		gauge3_correct = false
 
 #Player submits their answer
 func _on_accept_button_down() -> void:
@@ -83,10 +62,43 @@ func _on_accept_button_down() -> void:
 		queue_free()
 
 func _on_dial_1_value_changed(value: Variant) -> void:
-	%Gauge1/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge1/Needle.rotation = clamp(%Gauge1/Needle.rotation + value, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge2/Needle.rotation = clamp(%Gauge2/Needle.rotation + value, -deg_to_rad(dial_2.max_rotation), deg_to_rad(dial_2.max_rotation))
+	check_dial_1()
+	check_dial_2()
 
 func _on_dial_2_value_changed(value: Variant) -> void:
-	%Gauge2/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge2/Needle.rotation = clamp(%Gauge2/Needle.rotation + value, -deg_to_rad(dial_2.max_rotation), deg_to_rad(dial_2.max_rotation))
+	%Gauge3/Needle.rotation = clamp(%Gauge3/Needle.rotation - value, -deg_to_rad(dial_3.max_rotation), deg_to_rad(dial_3.max_rotation))
+	check_dial_2()
+	check_dial_3()
 
 func _on_dial_3_value_changed(value: Variant) -> void:
-	%Gauge3/Needle.rotation = remap(value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge1/Needle.rotation = clamp(%Gauge1/Needle.rotation - value, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
+	%Gauge3/Needle.rotation = clamp(%Gauge3/Needle.rotation + value, -deg_to_rad(dial_3.max_rotation), deg_to_rad(dial_3.max_rotation))
+	check_dial_1()
+	check_dial_3()
+
+func check_dial_1():
+	if snapped(%Gauge1/Needle.rotation, 0.1) == snapped(%Gauge1/ValidArea.rotation, 0.1):
+		print("Dial1 Correct")
+		gauge1_correct = true
+	else:
+		print("Dial1 Wrong")
+		gauge1_correct = false
+
+func check_dial_2():
+	if snapped(%Gauge2/Needle.rotation, 0.1) == snapped(%Gauge2/ValidArea.rotation, 0.1):
+		print("Dial2 Correct")
+		gauge2_correct = true
+	else:
+		print("Dial2 Wrong")
+		gauge2_correct = false
+
+func check_dial_3():
+	if snapped(%Gauge3/Needle.rotation, 0.1) == snapped(%Gauge3/ValidArea.rotation, 0.1):
+		print("Dial3 Correct")
+		gauge3_correct = true
+	else:
+		print("Dial3 Wrong")
+		gauge3_correct = false

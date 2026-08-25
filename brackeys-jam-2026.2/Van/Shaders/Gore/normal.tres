@@ -1,0 +1,15 @@
+[gd_resource type="NoiseTexture2D" format=3 uid="uid://bd8cfenbexnhq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vpjbg"]
+noise_type = 3
+frequency = 0.0684
+fractal_octaves = 1
+
+[resource]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_vpjbg")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+seamless_blend_skirt = 0.5
+bump_strength = 6.0

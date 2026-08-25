@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dfhu1j7aiq656"]
 
-[ext_resource type="Script" uid="uid://sbraufdsvmok" path="res://Van/Scripts/steam_hacking_game.gd" id="1_o40pi"]
+[ext_resource type="Script" uid="uid://dp8t8kmbphnf5" path="res://Van/Scripts/steam_hacking_game.gd" id="1_vwb1y"]
 [ext_resource type="Texture2D" uid="uid://dp5pvgb2tng5k" path="res://Art/2D/Placeholder/dial.png" id="2_vwb1y"]
-[ext_resource type="Script" uid="uid://upu4sh8i87sp" path="res://Van/Scripts/UI_dial.gd" id="2_wmosv"]
 [ext_resource type="Texture2D" uid="uid://bf0d7sofra06a" path="res://Art/2D/Placeholder/Gauge.png" id="5_sybhk"]
 [ext_resource type="Texture2D" uid="uid://dre0urnp777bt" path="res://Art/2D/Placeholder/needle.png" id="6_uyix2"]
 [ext_resource type="Texture2D" uid="uid://c3alr5petkbli" path="res://Art/2D/Placeholder/valid.png" id="7_gk8mc"]
+[ext_resource type="Script" uid="uid://8xturdjotrx2" path="res://Van/Scripts/UI_dial.gd" id="7_sybhk"]
 [ext_resource type="AudioStream" uid="uid://bgkircabxx6ma" path="res://Audio/SFX/UI_dial.wav" id="7_vwb1y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o40pi"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o40pi")
+script = ExtResource("1_vwb1y")
 
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1560814889]
 layout_mode = 1
@@ -154,7 +154,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_vwb1y")
 expand_mode = 1
 stretch_mode = 4
-script = ExtResource("2_wmosv")
+script = ExtResource("7_sybhk")
 max_rotation = 75.0
 notches = 10.0
 
@@ -214,7 +214,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_vwb1y")
 expand_mode = 1
 stretch_mode = 4
-script = ExtResource("2_wmosv")
+script = ExtResource("7_sybhk")
 max_rotation = 75.0
 notches = 10.0
 
@@ -272,17 +272,14 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_vwb1y")
 expand_mode = 1
 stretch_mode = 4
-script = ExtResource("2_wmosv")
+script = ExtResource("7_sybhk")
 max_rotation = 75.0
 notches = 10.0
 
 [connection signal="button_down" from="Menu/Accept" to="." method="_on_accept_button_down"]
 [connection signal="gui_input" from="UIRoot/HBoxContainer/VBoxContainer/Control/Dial1" to="UIRoot/HBoxContainer/VBoxContainer/Control/Dial1" method="_on_gui_input"]
 [connection signal="value_changed" from="UIRoot/HBoxContainer/VBoxContainer/Control/Dial1" to="." method="_on_dial_1_value_changed"]
-[connection signal="value_set" from="UIRoot/HBoxContainer/VBoxContainer/Control/Dial1" to="." method="_on_dial_1_value_set"]
 [connection signal="gui_input" from="UIRoot/HBoxContainer/VBoxContainer2/Control/Dial2" to="UIRoot/HBoxContainer/VBoxContainer2/Control/Dial2" method="_on_gui_input"]
 [connection signal="value_changed" from="UIRoot/HBoxContainer/VBoxContainer2/Control/Dial2" to="." method="_on_dial_2_value_changed"]
-[connection signal="value_set" from="UIRoot/HBoxContainer/VBoxContainer2/Control/Dial2" to="." method="_on_dial_2_value_set"]
 [connection signal="gui_input" from="UIRoot/HBoxContainer/VBoxContainer3/Control/Dial3" to="UIRoot/HBoxContainer/VBoxContainer3/Control/Dial3" method="_on_gui_input"]
 [connection signal="value_changed" from="UIRoot/HBoxContainer/VBoxContainer3/Control/Dial3" to="." method="_on_dial_3_value_changed"]
-[connection signal="value_set" from="UIRoot/HBoxContainer/VBoxContainer3/Control/Dial3" to="." method="_on_dial_3_value_set"]

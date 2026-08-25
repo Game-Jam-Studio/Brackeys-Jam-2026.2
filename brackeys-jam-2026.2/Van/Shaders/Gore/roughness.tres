@@ -1,0 +1,17 @@
+[gd_resource type="NoiseTexture2D" format=3 uid="uid://colllkq54hrli"]
+
+[sub_resource type="Gradient" id="Gradient_lahmq"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kusd5"]
+noise_type = 0
+fractal_octaves = 1
+domain_warp_amplitude = 219.225
+domain_warp_frequency = 0.001
+
+[resource]
+noise = SubResource("FastNoiseLite_kusd5")
+color_ramp = SubResource("Gradient_lahmq")
+seamless = true
+seamless_blend_skirt = 0.3
