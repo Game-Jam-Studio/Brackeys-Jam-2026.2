@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
 [ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_jy27m"]
+[ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_3es34"]
 
 [node name="MainMenu" type="Control" unique_id=1948344224]
 layout_mode = 3
@@ -73,6 +74,8 @@ layout_mode = 2
 theme = ExtResource("2_jy27m")
 theme_override_font_sizes/font_size = 36
 text = "Quit"
+
+[node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_3es34")]
 
 [connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

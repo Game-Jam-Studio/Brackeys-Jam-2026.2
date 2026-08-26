@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bnr5xdgqee4aw"]
+
+[ext_resource type="AudioStream" uid="uid://7k77cnqmiyuh" path="res://Audio/Music/Menu Sounds underwater_sea_diving_bubbles_loop_01.wav" id="1_ey7ek"]
+
+[node name="MenuBackgroundSound" type="AudioStreamPlayer" unique_id=1328179579]
+stream = ExtResource("1_ey7ek")
+autoplay = true

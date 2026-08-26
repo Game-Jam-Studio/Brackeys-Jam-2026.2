@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
 [ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_n3fdw"]
+[ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_whv12"]
 
 [sub_resource type="GDScript" id="GDScript_y0d7i"]
 script/source = "extends Button
@@ -58,5 +59,7 @@ grow_vertical = 0
 theme = ExtResource("2_n3fdw")
 text = "Back"
 script = SubResource("GDScript_y0d7i")
+
+[node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_whv12")]
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
