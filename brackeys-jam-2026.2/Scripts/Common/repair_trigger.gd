@@ -28,14 +28,16 @@ func interact(_player: CharacterBody3D) -> void:
 		# TerminalUI.launch_terminal("System in need of repair.")
 		launch_minigame_requested.emit(system_id, self)
 	else:
-		TerminalUI.launch_terminal("System fully operational.")
+		TerminalUI.launch_terminal("System operational.")
 
 
 func end_repair(success: bool) -> void:
-	is_broken = not success
+	# we are leaving the state as repaired even if the player
+	# fails the minigame to not allow retries
+	is_broken = false
 	if success:
 		TerminalUI.launch_terminal("System back to full operational capacity.")
 		station_repair_succeeded.emit(system_id)
 	else:
-		TerminalUI.launch_terminal("System degraded further, in need of repair.")
+		TerminalUI.launch_terminal("System degraded further, no repair action available.")
 		station_repair_failed.emit(system_id)

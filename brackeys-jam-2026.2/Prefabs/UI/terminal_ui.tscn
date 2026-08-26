@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://m06rh5uwq514"]
 
 [ext_resource type="Script" uid="uid://sork7ar11xek" path="res://Scripts/Common/terminal_ui_manager.gd" id="1_iqysy"]
-[ext_resource type="Texture2D" uid="uid://ckgg778w3hm0b" path="res://JonathanJunk/D.png" id="2_gjlas"]
 [ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/pause_menu.gdshader" id="2_n2ccl"]
+[ext_resource type="Texture2D" uid="uid://b7wgu2451a1wo" path="res://Art/2D/Placeholder/whitebox.png" id="3_n2ccl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4jte"]
 shader = ExtResource("2_n2ccl")
@@ -49,7 +49,7 @@ offset_right = 876.0
 offset_bottom = 516.0
 focus_mode = 3
 mouse_filter = 0
-texture = ExtResource("2_gjlas")
+texture = ExtResource("3_n2ccl")
 expand_mode = 2
 stretch_mode = 1
 

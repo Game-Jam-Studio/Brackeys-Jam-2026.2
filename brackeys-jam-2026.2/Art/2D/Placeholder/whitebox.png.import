@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0mt5lqb66nd"
-path="res://.godot/imported/S.png-11a4d5f2abcf316a34e8ea55c6ab4a9c.ctex"
+uid="uid://b7wgu2451a1wo"
+path="res://.godot/imported/whitebox.png-03072dc7bae8df218221ab1f13a93fea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://JonathanJunk/S.png"
-dest_files=["res://.godot/imported/S.png-11a4d5f2abcf316a34e8ea55c6ab4a9c.ctex"]
+source_file="res://Art/2D/Placeholder/whitebox.png"
+dest_files=["res://.godot/imported/whitebox.png-03072dc7bae8df218221ab1f13a93fea.ctex"]
 
 [params]
 
