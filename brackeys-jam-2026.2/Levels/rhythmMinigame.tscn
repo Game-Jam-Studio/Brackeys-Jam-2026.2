@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://boquoxdoxkkjd" path="res://Art/2D/Placeholder/D.png" id="7_h250t"]
 [ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
 [ext_resource type="Texture2D" uid="uid://cd8dj1lrnkyqh" path="res://Art/2D/Placeholder/F.png" id="8_6p81i"]
+[ext_resource type="Texture2D" uid="uid://bg8gg2m3u81aw" path="res://Art/2D/Rhythm/base_sane.png" id="10_h250t"]
+[ext_resource type="Script" uid="uid://mexn1nrl2qja" path="res://Scripts/pivot.gd" id="11_htvd5"]
+[ext_resource type="Texture2D" uid="uid://c4e57v6pw50fb" path="res://Art/2D/Rhythm/image.png" id="12_htvd5"]
 
 [node name="Control" type="Control" unique_id=917470935]
 layout_mode = 3
@@ -34,41 +37,41 @@ autostart = true
 [node name="NoteSpawns" type="Node" parent="." unique_id=2071971942]
 
 [node name="spawn4" type="Node2D" parent="NoteSpawns" unique_id=1676008687]
-position = Vector2(650, 40)
+position = Vector2(596, 264)
 
 [node name="spawn3" type="Node2D" parent="NoteSpawns" unique_id=2063829193]
-position = Vector2(550, 40)
+position = Vector2(596, 264)
 
 [node name="spawn2" type="Node2D" parent="NoteSpawns" unique_id=937573812]
-position = Vector2(450, 40)
+position = Vector2(596, 264)
 
 [node name="spawn" type="Node2D" parent="NoteSpawns" unique_id=1890805705]
-position = Vector2(350, 40)
+position = Vector2(596, 264)
 
 [node name="NoteDestinations" type="Node" parent="." unique_id=418239248]
 
 [node name="destination" parent="NoteDestinations" unique_id=1104253604 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
-position = Vector2(200, 550)
+position = Vector2(413, 573)
 noteTexture = ExtResource("5_irvol")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination2" parent="NoteDestinations" unique_id=611207214 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
-position = Vector2(400, 550)
+position = Vector2(533, 573)
 key = 83
 noteTexture = ExtResource("6_irvol")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination3" parent="NoteDestinations" unique_id=2023369719 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
-position = Vector2(600, 550)
+position = Vector2(653, 573)
 key = 68
 noteTexture = ExtResource("7_h250t")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
 
 [node name="destination4" parent="NoteDestinations" unique_id=171437335 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
-position = Vector2(800, 550)
+position = Vector2(773, 573)
 key = 70
 noteTexture = ExtResource("8_6p81i")
 normalColor = Color(1, 1, 1, 0.5058824)
@@ -90,5 +93,21 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Placeholder Open Terminal"
 script = ExtResource("8_4wcyy")
+
+[node name="CircleSane" type="Sprite2D" parent="." unique_id=1390548275]
+position = Vector2(596, 264)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("10_h250t")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=698136463]
+position = Vector2(596.045, 263.85)
+scale = Vector2(0.273, 0.357)
+script = ExtResource("11_htvd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=1709599203]
+modulate = Color(0.5294118, 1, 0.33333334, 0.6862745)
+position = Vector2(-394.02734, 186.80508)
+scale = Vector2(1.423809, 1.0704257)
+texture = ExtResource("12_htvd5")
 
 [connection signal="pressed" from="Example/Button" to="Example/Button" method="_on_pressed"]
