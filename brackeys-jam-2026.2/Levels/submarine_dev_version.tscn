@@ -952,7 +952,6 @@ is_broken = true
 
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("6_pyxwl")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 11.541532, 1.0792546, -4.821005)
-is_locked = false
 
 [node name="Door7" parent="." unique_id=2139162812 instance=ExtResource("6_pyxwl")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 18.21489, 1.0792556, -10.381451)
