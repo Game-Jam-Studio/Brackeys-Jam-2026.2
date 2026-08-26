@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
 [ext_resource type="Texture2D" uid="uid://cd8dj1lrnkyqh" path="res://Art/2D/Placeholder/F.png" id="8_6p81i"]
 [ext_resource type="Texture2D" uid="uid://bg8gg2m3u81aw" path="res://Art/2D/Rhythm/base_sane.png" id="10_h250t"]
+[ext_resource type="Script" uid="uid://mexn1nrl2qja" path="res://Scripts/pivot.gd" id="11_htvd5"]
+[ext_resource type="Texture2D" uid="uid://c4e57v6pw50fb" path="res://Art/2D/Rhythm/image.png" id="12_htvd5"]
 
 [node name="Control" type="Control" unique_id=917470935]
 layout_mode = 3
@@ -96,5 +98,16 @@ script = ExtResource("8_4wcyy")
 position = Vector2(596, 264)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("10_h250t")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=698136463]
+position = Vector2(596.045, 263.85)
+scale = Vector2(0.273, 0.357)
+script = ExtResource("11_htvd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=1709599203]
+modulate = Color(0.5294118, 1, 0.33333334, 0.6862745)
+position = Vector2(-394.02734, 186.80508)
+scale = Vector2(1.423809, 1.0704257)
+texture = ExtResource("12_htvd5")
 
 [connection signal="pressed" from="Example/Button" to="Example/Button" method="_on_pressed"]
