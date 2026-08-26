@@ -8,11 +8,11 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Taylor/tmerrill_test_scene.tscn")
+	get_tree().change_scene_to_file("res://Levels/submarine_dev_version.tscn")
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://Prefabs/UI/options_menu.tscn")
+	get_tree().change_scene_to_file("res://Levels/options_menu.tscn")
 
 
 func _on_quit_pressed() -> void:
@@ -20,4 +20,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://Prefabs/UI/credits_menu.tscn")
+	get_tree().change_scene_to_file("res://Levels/credits_menu.tscn")
