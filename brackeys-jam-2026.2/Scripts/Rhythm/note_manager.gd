@@ -13,6 +13,8 @@ signal minigame_completed(success: bool)
 var currNoteSpawned = 0
 var errorCount = 0
 
+var lastNoteSpawned: int = -1
+
 # Error limit to pass the repair
 @export var max_allowed_errors: int = 2
 
@@ -24,6 +26,9 @@ func _ready() -> void:
 
 func _on_next_note_time() -> void:
 	var noteNumToSpawn = randi_range(0, 3)
+	if noteNumToSpawn == lastNoteSpawned:
+		noteNumToSpawn = (noteNumToSpawn + 2) % 4
+	lastNoteSpawned = noteNumToSpawn
 	var spawnedNote = noteObjectToSpawn.instantiate()
 	spawnedNote.global_position = spawnTargets[noteNumToSpawn].global_position
 	spawnedNote.destination = noteDestinations[noteNumToSpawn].global_position

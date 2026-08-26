@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmdn8fxobenak"
+path="res://.godot/imported/Door Locked door_lock_handle_locked_01.wav-bc972b15c0a12b4c5461d0dd839cdc8c.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav"
+dest_files=["res://.godot/imported/Door Locked door_lock_handle_locked_01.wav-bc972b15c0a12b4c5461d0dd839cdc8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
