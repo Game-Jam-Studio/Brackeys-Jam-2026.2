@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Note
 
 @export var noteTextures: Array[Texture2D]
 @export var speed: float
@@ -23,12 +23,13 @@ func initialize(note: int) -> void:
 func _ready() -> void:
 	start_position = position
 	total_distance = start_position.distance_to(destination)
+	direction = global_position.direction_to(destination)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if destination != null:
-		position = position.move_toward(destination, speed * delta)
+		position += direction * speed * delta
 		if total_distance > 0.0:
 			var progress: float = clampf(1.0 - (position.distance_to(destination) / total_distance), 0.0, 1.0)
 			scale = Vector2.ONE * progress 
