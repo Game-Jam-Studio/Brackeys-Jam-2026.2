@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bdmven52qnhhq"]
+
+[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_bponl"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_v27uc"]
+[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_w6vry"]
+[ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_bccbx"]
+[ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_45ust"]
+[ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_x8o5k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vlngc"]
+sky_material = SubResource("ProceduralSkyMaterial_0tpda")
+
+[sub_resource type="Environment" id="Environment_v111v"]
+background_mode = 2
+sky = SubResource("Sky_vlngc")
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_i0uuj"]
+vertices = PackedVector3Array(-24.5, 0.23099205, -24.5, -24.5, 0.23099205, 24.5, 24.5, 0.23099205, 24.5, 24.5, 0.23099205, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gl5qx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
+size = Vector3(50, 0.2, 50)
+
+[node name="World" type="Node3D" unique_id=1609880321]
+script = ExtResource("1_bponl")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
+environment = SubResource("Environment_v111v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1025473701]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_v27uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7121282)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=836225841 node_paths=PackedStringArray("player_character")]
+unique_name_in_owner = true
+transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
+cull_mask = 1048573
+script = ExtResource("3_w6vry")
+player_character = NodePath("../Player")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01343441, -0.01240921, -0.04453659)
+navigation_mesh = SubResource("NavigationMesh_i0uuj")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=63868684]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.169, 0)
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1176603071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16900796, 0)
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=81569447]
+
+[node name="PauseMenu" parent="UI" unique_id=1764100914 instance=ExtResource("4_bccbx")]
+unique_name_in_owner = true
+
+[node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("5_45ust")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.2427278, 0.91858387, 5.695434)
+is_broken = true
+
+[node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("5_45ust")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13335466, 0.91858387, 5.6954336)
+system_id = "Steam"
+is_broken = true
+
+[node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("5_45ust")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.629835, 0.91858387, 5.695433)
+system_id = "Rhythm"
+is_broken = true
+
+[node name="Door" parent="." unique_id=490510366 instance=ExtResource("6_x8o5k")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6211911, 1.168581, 12.169495)
+is_locked = false
