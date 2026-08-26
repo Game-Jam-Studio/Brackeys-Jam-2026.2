@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3jhnwf0x5xs0"
-path="res://.godot/imported/Terminal.glb-f1a7d5f6863584957af1455ad2055051.scn"
+uid="uid://slxeo3jjapnw"
+path="res://.godot/imported/Wall_recessed_2.fbx-a252c83f49ea5486240857b8330c07bb.scn"
 
 [deps]
 
-source_file="res://Art/3D/Terminal.glb"
-dest_files=["res://.godot/imported/Terminal.glb-f1a7d5f6863584957af1455ad2055051.scn"]
+source_file="res://Art/3D/Toshi/Wall_recessed_2.fbx"
+dest_files=["res://.godot/imported/Wall_recessed_2.fbx-a252c83f49ea5486240857b8330c07bb.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -40,6 +40,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
-gltf/texture_map_mode=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
