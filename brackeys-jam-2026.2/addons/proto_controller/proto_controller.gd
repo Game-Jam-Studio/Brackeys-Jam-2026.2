@@ -6,16 +6,21 @@ extends CharacterBody3D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 var has_active_target : bool = false
+var start_position : Vector3
+var new_velocity : Vector3
 
 
 func set_movement_target(target_position: Vector3) -> void:
 	nav_agent.target_position = target_position
 	has_active_target = true
+	start_position = global_position
 
 
 func _physics_process(delta: float) -> void:
+	animation_tree["parameters/MovementBlend/blend_position"] = velocity.length() / 4
 	if not can_move or not has_active_target:
 		return
 
@@ -23,19 +28,23 @@ func _physics_process(delta: float) -> void:
 		has_active_target = false
 		velocity = Vector3.ZERO
 		move_and_slide()
-		update_animations(Vector2.ZERO)
+		#update_animations(Vector2.ZERO)
 		return
 		
 	var current_position := global_position
 	var next_path_position := nav_agent.get_next_path_position()
-	var new_velocity := (next_path_position - current_position)
+	new_velocity = (next_path_position - current_position)
 	new_velocity.y = 0.0
 
 
-	if new_velocity.length() > 0.05:
+	if new_velocity.length() > 0:
 		var movement_direction := new_velocity.normalized()
-		velocity.x = movement_direction.x * base_speed
-		velocity.z = movement_direction.z * base_speed
+		if (nav_agent.target_position - start_position).length() / 1.01 < (nav_agent.target_position - current_position).length():
+			velocity.x = movement_direction.x * base_speed * clamp((nav_agent.target_position - current_position).length() / 3, 0, 1)
+			velocity.z = movement_direction.z * base_speed * clamp((nav_agent.target_position - current_position).length() / 3, 0, 1)
+		else:
+			velocity.x = movement_direction.x * base_speed
+			velocity.z = movement_direction.z * base_speed
 		
 		var target_angle := atan2(movement_direction.x, movement_direction.z)
 		rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
@@ -46,16 +55,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	var animation_vector := Vector2(velocity.x, velocity.z)
-	update_animations(animation_vector)
+	#update_animations(animation_vector)
 
 
-func update_animations(animation_vector: Vector2) -> void:
-	if not anim_player:
-		return
-	
-	if animation_vector.length() > 0.1:
-		if anim_player.has_animation("Player/Walking_A") and anim_player.current_animation != "Player/Walking_A":
-			anim_player.play("Player/Walking_A", 0.2)
-	else:
-		if anim_player.has_animation("Player/Idle_A") and anim_player.current_animation != "Player/Idle_A":
-			anim_player.play("Player/Idle_A", 0.2)
+#func update_animations(animation_vector: Vector2) -> void:
+	#if not anim_player:
+		#return
+	#
+	#if animation_vector.length() > 0.1:
+		#if anim_player.has_animation("Player/Walking_A") and anim_player.current_animation != "Player/Walking_A":
+			#anim_player.play("Player/Walking_A", 1)
+	#else:
+		#if anim_player.has_animation("Player/Idle_A") and anim_player.current_animation != "Player/Idle_A":
+			#anim_player.play("Player/Idle_A", 0.2)
