@@ -42,6 +42,7 @@ text = "Accept"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2019624829]
 unique_name_in_owner = true
 stream = ExtResource("7_vwb1y")
+bus = &"UI"
 
 [node name="UIRoot" type="Control" parent="." unique_id=702778854]
 unique_name_in_owner = true

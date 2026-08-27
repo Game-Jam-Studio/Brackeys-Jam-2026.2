@@ -3,6 +3,10 @@ extends TextureRect
 var dragging: bool
 var slotted: bool
 var line_2d: Line2D
+var wire_ID: int
+var start_position: Vector2
+var tick: float
+const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
 func _ready() -> void:
 	await get_tree().current_scene.ready
@@ -17,7 +21,10 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and !slotted:
+		%AudioStreamPlayer.stream = UI_DIAL_SHORT
+		%AudioStreamPlayer.pitch_scale = 1.5
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			start_position = event.position
 			if event.pressed:
 			#Mouse held
 				dragging = true
@@ -27,3 +34,8 @@ func _on_gui_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and dragging and !slotted:
 		position += event.position - size / 2
 		line_2d.set_point_position(1, position + size / 2)
+		tick += clamp(event.screen_relative.length(), 0, 50)
+		print(tick)
+		if tick > 200:
+			%AudioStreamPlayer.play()
+			tick = 0
