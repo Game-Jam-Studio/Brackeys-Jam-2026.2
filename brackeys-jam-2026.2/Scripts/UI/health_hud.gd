@@ -41,11 +41,11 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# Press [ - ] (Minus) to deal 10 damage to the ship
 	if event.is_action_pressed("ui_text_backspace") or (event is InputEventKey and event.pressed and event.keycode == KEY_MINUS):
-		GameState.ship_health -= 10.0
+		GameState.ship_health -= 1
 		
 	# Press [ = ] (Equal / Plus) to heal 10 damage
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_EQUAL:
-		GameState.ship_health += 10.0
+		GameState.ship_health += 1
 
 
 # Signal callback for health updates
