@@ -1,0 +1,47 @@
+Chat ID,Line ID,Speaker,Line,Purpose,Next ID
+Tut_Intro,Intro-001,AI,Good morning captain.,Introduce Player,Intro-002
+,Intro-002,AI,The ship is in need of repairs.,Objectives,Intro-003
+,Intro-003,AI,Areas that need your attention are highlighted. Kindly navigate to the stations.,Movement explained,Intro-004
+,Intro-004,AI,Use the mouse to navigate,,Intro-005
+,Intro-005,AI,Ship's defence is currently activated. Damage will be slowed.,Ship Damage explained,Intro-006
+,Intro-006,AI,Please fix the faulty systems to prevent further harm.,,
+Tut_MG1,MG1-001,AI,The pressure needle is out of control.,Needle Pressure Minigame Tutorial,MG1-002
+,MG1-002,AI,Click to stop the needle within the correct range,,
+Tut_MG2,MG2-001,AI,The steam gauge needs to be adjusted,Steam Gauge Minigame Tutorial,MG2-002
+,MG2-002,AI,Turn each of the dials until all three pins are in the green range,,
+Tut_MG3,MG3-001,AI,Check the sonar's accuracy,Sonar Minigame Tutorial,MG3-002
+,MG3-002,AI,Press the buttons as the highlights reach them,,
+Tut_MG4,MG4-001,AI,,Game 4 Minigame Tutorial,MG4-002
+,MG4-002,AI,,,
+Logs_A1L1,A1L1-001,Captain,Pressure needle reset done. It comes loose often.,Minigame Comments,
+Logs_A1L2,A1L2-001,Captain,Adjusting one steam gauge affects the others.,,
+Logs_A1L3,A1L2-001,Captain,Sonar tested. It needs regular checks for safety.,,
+Logs_A1L4,A1L4-001,Captain,,,
+Tut_A2AI,A2A1-001,AI,"Captain, hurry and repair the ship.",,A2A1-002
+,A2A1-002,AI,You must prevent the damage from festering.,,A2A1-003
+,A2A1-003,AI,"Captain, fix the pain.",,
+Logs_A2L1,A2L1-001,Captain,I heard that.,Identify Captain as a character,A2L1-002
+,A2L1-002,Captain,Pain?... I'm in pain. I feel it in my body.,,A2L1-003
+,A2L1-003,Captain,My soft flesh and blood...,,A2L1-004
+,A2L1-004,Captain,All it has is metal. And yet-,,
+Logs_A2L2,A2L2-001,Captain,The walls are soft under here. Like a shell.,Captain observes organic ship,A2L2-002
+,A2L2-002,Captain,I don't remember if I've seen anything with a shell before...,,A2L2-003
+,A2L2-003,Captain,But I know this is one. Protected. But what?,,
+Logs_A2L3,A2L3-001,Captain,I feel her groaning in my soul.,Informs Player that repair never stops,A2L3-002
+,A2L3-002,Captain,She's in pain. We're in pain. It never stops.,,A2L3-003
+,A2L3-003,Captain,How many times have I fixed this patch?,,A2L3-004
+,A2L3-004,Player Action,[There is a long tally in the log. You add one notch],,A2L3-005
+,A2L3-005,Captain,My arms ache from her apetite. But the beast must be fed for our journey.,,
+Logs_A2L4,A2L4-001,Captain,"I'm quite tired now, and hungry.",Initiation into next area,A2L4-002
+,A2L4-002,Captain,"I'm ready to go further now, to her heart.",,A2L4-003
+,A2L4-003,Captain,"She has let me in, perhaps sensing my hunger. I want to eat.",,
+Logs_A3L1,A3L1-001,Captain,She's devoured everything.,,A3L1-002
+,A3L1-002,Captain,There's nothing else left,,A3L1-003
+,A3L1-003,Captain,She's going to eat me,,A3L1-004
+,A3L1-004,Captain,I need to escape,,A3L1-005
+,A3L1-005,Captain,The suits the code,,A3L1-006
+,A3L1-006,Captain,I'm sorry,,
+End_Sc,End-001,Vessel,"It's alright, rest now.",,End-002
+,End-002,Vessel,"We shall be one again, until you next awaken.",,End-003
+,End-003,Vessel,A shame to have departed so soon.,,End-004
+,End-004,Vessel,"Perhaps in your next life, you will want to stay with me.",,
