@@ -55,7 +55,6 @@ transform = Transform3D(-1, -5.325061e-08, 6.933335e-08, 2.0474689e-08, 0.628366
 cull_mask = 1048573
 script = ExtResource("3_ss16e")
 player_character = NodePath("../Player")
-follow_speed = 1.5
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0047736, -0.01240921, 1.414844)
