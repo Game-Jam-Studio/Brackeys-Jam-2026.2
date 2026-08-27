@@ -75,5 +75,6 @@ text = "Accept"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
 stream = ExtResource("2_akc8o")
+bus = &"UI"
 
 [connection signal="button_down" from="VBoxContainer/MarginContainer/Accept" to="." method="_on_button_button_down"]
