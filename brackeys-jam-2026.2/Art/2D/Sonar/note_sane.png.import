@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dre0urnp777bt"
-path="res://.godot/imported/needle.png-7771d7c82e19f5e1b27509e158683a85.ctex"
+uid="uid://ldafxp1nvghn"
+path="res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Placeholder/needle.png"
-dest_files=["res://.godot/imported/needle.png-7771d7c82e19f5e1b27509e158683a85.ctex"]
+source_file="res://Art/2D/Sonar/note_sane.png"
+dest_files=["res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"]
 
 [params]
 

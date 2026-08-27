@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
 
-[ext_resource type="Texture2D" uid="uid://cmst6c1hfuso" path="res://Art/2D/Placeholder/Screenshot 2026-08-26 210830.png" id="1_4gg61"]
+[ext_resource type="Texture2D" uid="uid://cmst6c1hfuso" path="res://Art/Placeholder/Screenshot 2026-08-26 210830.png" id="1_4gg61"]
 [ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
-[ext_resource type="Texture2D" uid="uid://2lapwdb28sqv" path="res://Art/2D/Placeholder/sub_health.png" id="1_i7vq3"]
-[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/2D/Placeholder/mask.png" id="2_dgwwc"]
+[ext_resource type="Texture2D" uid="uid://2lapwdb28sqv" path="res://Art/Placeholder/sub_health.png" id="1_i7vq3"]
+[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/Placeholder/mask.png" id="2_dgwwc"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy48u"]
@@ -38,6 +38,7 @@ mouse_filter = 2
 texture = ExtResource("2_dgwwc")
 
 [node name="ChamberBackground" type="Sprite2D" parent="LiquidMask" unique_id=2024882195]
+visible = false
 modulate = Color(0.5931336, 0.59313357, 0.59313357, 1)
 position = Vector2(357.49997, 206.24995)
 scale = Vector2(1.030844, 1.3249997)

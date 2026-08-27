@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl7e1k4y3870t"]
 
-[ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/pressure_hacking_game.gd" id="1_ncqte"]
+[ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/ballast_mingame.gd" id="1_ncqte"]
 [ext_resource type="AudioStream" uid="uid://ci0u00xywksjx" path="res://Audio/SFX/UI_accept.wav" id="2_akc8o"]
 [ext_resource type="Texture2D" uid="uid://knxdqxxf14dt" path="res://Art/2D/ClickIcon.png" id="2_bqt6w"]
 

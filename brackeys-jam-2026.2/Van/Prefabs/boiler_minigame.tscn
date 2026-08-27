@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dfhu1j7aiq656"]
 
-[ext_resource type="Script" uid="uid://dp8t8kmbphnf5" path="res://Van/Scripts/steam_hacking_game.gd" id="1_vwb1y"]
-[ext_resource type="Texture2D" uid="uid://dp5pvgb2tng5k" path="res://Art/2D/Placeholder/dial.png" id="2_vwb1y"]
-[ext_resource type="Texture2D" uid="uid://bf0d7sofra06a" path="res://Art/2D/Placeholder/Gauge.png" id="5_sybhk"]
-[ext_resource type="Texture2D" uid="uid://dre0urnp777bt" path="res://Art/2D/Placeholder/needle.png" id="6_uyix2"]
-[ext_resource type="Texture2D" uid="uid://c3alr5petkbli" path="res://Art/2D/Placeholder/valid.png" id="7_gk8mc"]
+[ext_resource type="Script" uid="uid://dp8t8kmbphnf5" path="res://Van/Scripts/boiler_minigame.gd" id="1_vwb1y"]
+[ext_resource type="Texture2D" uid="uid://dp5pvgb2tng5k" path="res://Art/Placeholder/dial.png" id="2_vwb1y"]
+[ext_resource type="Texture2D" uid="uid://bf0d7sofra06a" path="res://Art/Placeholder/Gauge.png" id="5_sybhk"]
+[ext_resource type="Texture2D" uid="uid://dre0urnp777bt" path="res://Art/Placeholder/needle.png" id="6_uyix2"]
+[ext_resource type="Texture2D" uid="uid://c3alr5petkbli" path="res://Art/Placeholder/valid.png" id="7_gk8mc"]
 [ext_resource type="Script" uid="uid://8xturdjotrx2" path="res://Van/Scripts/UI_dial.gd" id="7_sybhk"]
 [ext_resource type="AudioStream" uid="uid://bgkircabxx6ma" path="res://Audio/SFX/UI_dial.wav" id="7_vwb1y"]
 

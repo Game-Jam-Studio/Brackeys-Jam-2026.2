@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqpjyo58b6cvd"
-path="res://.godot/imported/cone_sane.png-9a81a82b0a8f68d88d18588ad44ef629.ctex"
+uid="uid://cd8dj1lrnkyqh"
+path="res://.godot/imported/F.png-8fe641955adeb38fcb608df75dc175e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Rhythm/cone_sane.png"
-dest_files=["res://.godot/imported/cone_sane.png-9a81a82b0a8f68d88d18588ad44ef629.ctex"]
+source_file="res://Art/Placeholder/F.png"
+dest_files=["res://.godot/imported/F.png-8fe641955adeb38fcb608df75dc175e0.ctex"]
 
 [params]
 

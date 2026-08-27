@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qovs8y23jq2"
-path="res://.godot/imported/note_corrupted.png-c45cd3b1941cbfa3a9685a48fcae0b43.ctex"
+uid="uid://bf0d7sofra06a"
+path="res://.godot/imported/Gauge.png-4154a3501c3ffb936c858b7fc31bb4ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Rhythm/note_corrupted.png"
-dest_files=["res://.godot/imported/note_corrupted.png-c45cd3b1941cbfa3a9685a48fcae0b43.ctex"]
+source_file="res://Art/Placeholder/Gauge.png"
+dest_files=["res://.godot/imported/Gauge.png-4154a3501c3ffb936c858b7fc31bb4ff.ctex"]
 
 [params]
 
