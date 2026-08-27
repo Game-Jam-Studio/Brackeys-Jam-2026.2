@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4qj2mtcct5nx"
-path="res://.godot/imported/temp_healthbar.png-72eab76ca79b52e073214a9df172bd4d.ctex"
+uid="uid://bkdba82p548we"
+path="res://.godot/imported/mask.png-e24bf70475055ba474d132ba542bc359.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Placeholder/temp_healthbar.png"
-dest_files=["res://.godot/imported/temp_healthbar.png-72eab76ca79b52e073214a9df172bd4d.ctex"]
+source_file="res://Art/2D/Placeholder/mask.png"
+dest_files=["res://.godot/imported/mask.png-e24bf70475055ba474d132ba542bc359.ctex"]
 
 [params]
 
