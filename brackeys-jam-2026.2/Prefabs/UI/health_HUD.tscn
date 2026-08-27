@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
 
 [ext_resource type="Texture2D" uid="uid://cmst6c1hfuso" path="res://Art/2D/Placeholder/Screenshot 2026-08-26 210830.png" id="1_4gg61"]
+[ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
 [ext_resource type="Texture2D" uid="uid://2lapwdb28sqv" path="res://Art/2D/Placeholder/sub_health.png" id="1_i7vq3"]
 [ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/2D/Placeholder/mask.png" id="2_dgwwc"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy48u"]
 shader = ExtResource("4_glv1w")
-shader_parameter/fill_amount = 0.75
+shader_parameter/fill_amount = 1.0
 shader_parameter/wave_amplitude = 0.038
 shader_parameter/wave_frequency = 7.000000285
 shader_parameter/wave_speed = 1.00000004424012
 shader_parameter/liquid_opacity = 0.85
 shader_parameter/crest_glow_color = Color(0.92, 0.98, 0.65, 1)
 shader_parameter/body_color = Color(0.655, 0.812, 0.165, 1)
-shader_parameter/deep_color = Color(0.192, 0.275, 0.035, 1)
+shader_parameter/deep_color = Color(0.32, 0.45, 0.08, 1)
 shader_parameter/back_wave_color = Color(0.48, 0.65, 0.15, 0.75)
 
 [node name="HealthHUD" type="Control" unique_id=1131370108]
@@ -24,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_crwwa")
 
 [node name="LiquidMask" type="TextureRect" parent="." unique_id=1038621429]
 clip_children = 1

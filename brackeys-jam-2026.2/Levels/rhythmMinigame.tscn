@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
 [ext_resource type="Texture2D" uid="uid://cd8dj1lrnkyqh" path="res://Art/2D/Placeholder/F.png" id="8_6p81i"]
 [ext_resource type="Texture2D" uid="uid://bg8gg2m3u81aw" path="res://Art/2D/Rhythm/base_sane.png" id="10_h250t"]
-[ext_resource type="Script" uid="uid://mexn1nrl2qja" path="res://Scripts/pivot.gd" id="11_htvd5"]
+[ext_resource type="Script" uid="uid://mexn1nrl2qja" path="res://Scripts/Rhythm/pivot.gd" id="11_htvd5"]
 [ext_resource type="Texture2D" uid="uid://c4e57v6pw50fb" path="res://Art/2D/Rhythm/image.png" id="12_htvd5"]
 
 [node name="Control" type="Control" unique_id=917470935]

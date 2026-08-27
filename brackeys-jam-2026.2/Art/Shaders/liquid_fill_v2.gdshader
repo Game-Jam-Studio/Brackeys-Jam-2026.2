@@ -5,8 +5,8 @@ uniform float fill_amount : hint_range(0.0, 1.0) = 1;
 
 // Wave dynamics
 uniform float wave_amplitude : hint_range(0.0, 0.1) = 0.038;
-uniform float wave_frequency : hint_range(1.0, 20.0) = 5.2;
-uniform float wave_speed : hint_range(0.1, 5.0) = 0.85;
+uniform float wave_frequency : hint_range(1.0, 20.0) = 7.0;
+uniform float wave_speed : hint_range(0.1, 5.0) = 1.0;
 
 // Translucency control (1.0 = solid, 0.0 = invisible)
 uniform float liquid_opacity : hint_range(0.0, 1.0) = 0.85;
@@ -14,7 +14,7 @@ uniform float liquid_opacity : hint_range(0.0, 1.0) = 0.85;
 // Colors
 uniform vec4 crest_glow_color : source_color = vec4(0.92, 0.98, 0.65, 1.0); // Surface glow/rim
 uniform vec4 body_color : source_color = vec4(0.655, 0.812, 0.165, 1.0);       // Mid liquid
-uniform vec4 deep_color : source_color = vec4(0.192, 0.275, 0.035, 1.0);       // Bottom shadow
+uniform vec4 deep_color : source_color = vec4(0.32, 0.45, 0.08, 1.0);       // Bottom shadow
 uniform vec4 back_wave_color : source_color = vec4(0.48, 0.65, 0.15, 0.75); // Deeper back layer
 
 void fragment() {

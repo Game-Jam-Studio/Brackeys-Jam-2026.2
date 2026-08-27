@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_tl3pp"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_tl3pp"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_v63jj"]
+[ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_rat20"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_ux0hy"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_68oas"]
 
@@ -66,6 +67,8 @@ shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="PauseMenu" parent="UI" unique_id=1764100914 instance=ExtResource("4_v63jj")]
 unique_name_in_owner = true
+
+[node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_rat20")]
 
 [node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("5_ux0hy")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.2427278, 0.91858387, 5.695434)
