@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
+
+[ext_resource type="Shader" uid="uid://bh8lvp24n35jg" path="res://Art/Shaders/liquid_fill.gdshader" id="1_wdo32"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7vq3"]
+shader = ExtResource("1_wdo32")
+shader_parameter/fill_amount = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/wave_frequency = 10.0
+shader_parameter/wave_speed = 4.0
+shader_parameter/crest_glow_color = Color(0.92, 0.98, 0.65, 1)
+shader_parameter/body_color = Color(0.62, 0.78, 0.22, 1)
+shader_parameter/deep_color = Color(0.4, 0.58, 0.12, 1)
+shader_parameter/back_wave_color = Color(0.48, 0.65, 0.15, 0.7)
+
+[node name="HealthHUD" type="Node2D" unique_id=588689540]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1019077509]
+material = SubResource("ShaderMaterial_i7vq3")
+offset_right = 209.0
+offset_bottom = 145.0

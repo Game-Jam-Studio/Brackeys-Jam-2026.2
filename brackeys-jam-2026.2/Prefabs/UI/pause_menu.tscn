@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyf0si2728nr"]
 
 [ext_resource type="Script" uid="uid://0sadnoulrvwg" path="res://Scripts/UI/pause_menu.gd" id="1_7jw28"]
-[ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/pause_menu.gdshader" id="1_240u2"]
+[ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/background_blur.gdshader" id="1_240u2"]
 [ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_6tovx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0uuj"]
