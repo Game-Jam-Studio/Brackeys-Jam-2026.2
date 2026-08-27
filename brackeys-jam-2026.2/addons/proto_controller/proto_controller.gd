@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 		has_active_target = false
 		velocity = Vector3.ZERO
 		move_and_slide()
-		#update_animations(Vector2.ZERO)
 		return
 		
 	var current_position := global_position
@@ -55,16 +54,3 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	var animation_vector := Vector2(velocity.x, velocity.z)
-	#update_animations(animation_vector)
-
-
-#func update_animations(animation_vector: Vector2) -> void:
-	#if not anim_player:
-		#return
-	#
-	#if animation_vector.length() > 0.1:
-		#if anim_player.has_animation("Player/Walking_A") and anim_player.current_animation != "Player/Walking_A":
-			#anim_player.play("Player/Walking_A", 1)
-	#else:
-		#if anim_player.has_animation("Player/Idle_A") and anim_player.current_animation != "Player/Idle_A":
-			#anim_player.play("Player/Idle_A", 0.2)

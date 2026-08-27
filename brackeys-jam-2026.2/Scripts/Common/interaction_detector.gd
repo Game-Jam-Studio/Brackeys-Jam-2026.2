@@ -26,6 +26,10 @@ func try_interact() -> void:
 	if target and target.can_interact():
 		target.interact(player)
 		get_viewport().set_input_as_handled()
+		get_parent().velocity = Vector3.ZERO
+		get_parent().nav_agent.target_position = get_parent().global_position
+		get_parent().animation_tree["parameters/MovementBlend/blend_position"] = 0
+
 
 
 ## Returns the nearest Interactable from the current overlapping list

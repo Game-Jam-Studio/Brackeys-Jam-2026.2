@@ -103,7 +103,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_mouse_held:
+	if is_mouse_held and !is_repair_active:
 		var current_mouse_position := get_viewport().get_mouse_position()
 		var hit_position: Vector3 = raycast_to_floor(current_mouse_position)
 		if hit_position != Vector3.INF:

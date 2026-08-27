@@ -35,7 +35,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		position += event.position - size / 2
 		line_2d.set_point_position(1, position + size / 2)
 		tick += clamp(event.screen_relative.length(), 0, 50)
-		print(tick)
+		#print(tick)
 		if tick > 200:
 			%AudioStreamPlayer.play()
 			tick = 0

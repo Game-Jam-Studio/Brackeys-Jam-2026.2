@@ -56,3 +56,5 @@ debug_color = Color(0, 0.6, 0.7019608, 0.5882353)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=164148222]
 stream = ExtResource("3_sqdgx")
+panning_strength = 0.0
+bus = &"SFX"

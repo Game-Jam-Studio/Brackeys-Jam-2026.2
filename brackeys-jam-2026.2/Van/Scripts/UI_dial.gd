@@ -43,7 +43,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				warp_mouse(start_pos)
 				#print(value)
 	elif event is InputEventMouseMotion and dragging and !freeze:
-		print(event.screen_relative.x)
+		#print(event.screen_relative.x)
 	#Handle Dial Rotation
 		if value > 0.5:
 			rotation += deg_to_rad(15)
