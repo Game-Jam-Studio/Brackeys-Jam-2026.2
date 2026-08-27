@@ -937,16 +937,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("5_sfg4o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.13272, 0.9185829, -9.875235)
+system_id = "Sonar"
 is_broken = true
 
 [node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("5_sfg4o")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.6142, 0.91858387, 13.087654)
-system_id = "Steam"
+system_id = "Boiler"
 is_broken = true
 
 [node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("5_sfg4o")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 29.849909, 0.91858387, 1.6579566)
-system_id = "Rhythm"
 is_broken = true
 
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("6_pyxwl")]

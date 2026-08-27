@@ -39,6 +39,16 @@ func _ready() -> void:
 	_update_liquid_display(GameState.ship_health)
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Press [ - ] (Minus) to deal 10 damage to the ship
+	if event.is_action_pressed("ui_text_backspace") or (event is InputEventKey and event.pressed and event.keycode == KEY_MINUS):
+		GameState.ship_health -= 10
+		
+	# Press [ = ] (Equal / Plus) to heal 10 damage
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_EQUAL:
+		GameState.ship_health += 10
+
+
 func _on_ship_health_changed(new_health: float) -> void:
 	_update_liquid_display(new_health)
 
@@ -92,3 +102,9 @@ func _apply_liquid_frame(normalized: float) -> void:
 		current_body = color_palette["red"]["body"]
 		current_deep = color_palette["red"]["deep"]
 		current_back = color_palette["red"]["back"]
+	
+	# Push the calculated colors to the liquid shader
+	fill_material.set_shader_parameter("crest_glow_color", current_crest)
+	fill_material.set_shader_parameter("body_color", current_body)
+	fill_material.set_shader_parameter("deep_color", current_deep)
+	fill_material.set_shader_parameter("back_wave_color", current_back)

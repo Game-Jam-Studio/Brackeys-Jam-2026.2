@@ -5,16 +5,26 @@ signal launch_minigame_requested(minigame_type: String, trigger: RepairTrigger)
 signal station_repair_failed(system_id: String)
 signal station_repair_succeeded(system_id: String)
 
-@export_enum("Ballast", "Boiler", "Sonar", "Circuit") var system_id: String = "Ballast"
-@export var is_broken: bool = false
-@export var popup_ui: Node
-
 # Defines where the camera interpolates to
 @export var camera_focus_point: Node3D
-
+@onready var station: Node = get_parent()
+@onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
 func _ready() -> void:
 	add_to_group("repair_triggers")
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+	
+	if prompt_sprite:
+		prompt_sprite.visible = false
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = true
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = false
 
 
 # minigames can always be interacted with but if they are already repaired
@@ -24,20 +34,24 @@ func can_interact() -> bool:
 
 
 func interact(_player: CharacterBody3D) -> void:
-	if is_broken:
-		# popup_ui.launch_terminal("System in need of repair.")
-		launch_minigame_requested.emit(system_id, self)
+	if station.is_broken:
+		station.is_broken = false
+		GameState.set_system_broken(station.system_id, false)
+		launch_minigame_requested.emit(station.system_id, self)
 	else:
-		popup_ui.launch_terminal("System operational.")
+		PopupUI.launch_terminal("System operational.")
 
 
 func end_repair(success: bool) -> void:
 	# we are leaving the state as repaired even if the player
 	# fails the minigame to not allow retries
-	is_broken = false
+	station.is_broken = false
 	if success:
-		popup_ui.launch_terminal("System back to full operational capacity.")
-		station_repair_succeeded.emit(system_id)
+		# System secured, no penalty taken
+		PopupUI.launch_terminal("System stabilized.")
+		station_repair_succeeded.emit(station.system_id)
 	else:
-		popup_ui.launch_terminal("System degraded further, no repair action available.")
-		station_repair_failed.emit(system_id)
+		# Deduct flat penalty from subsystem's health
+		GameState.apply_failure_penalty(station.system_id)
+		PopupUI.launch_terminal("System damaged during repair attempt.")
+		station_repair_failed.emit(station.system_id)

@@ -23,6 +23,16 @@ func _process(delta: float) -> void:
 		deltaTime += delta
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Press [ - ] (Minus) to deal 10 damage to the ship
+	if event.is_action_pressed("ui_text_backspace") or (event is InputEventKey and event.pressed and event.keycode == KEY_MINUS):
+		GameState.ship_health -= 10.0
+	
+	# Press [ = ] (Equal / Plus) to heal 10 damage
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_EQUAL:
+		GameState.ship_health += 10.0
+
+
 func _on_button_button_down() -> void:
 	submitted = true
 	if is_equal_custom(abs(color_rect.rotation), deg_to_rad(0), deg_to_rad(tolerance / 1.5)):

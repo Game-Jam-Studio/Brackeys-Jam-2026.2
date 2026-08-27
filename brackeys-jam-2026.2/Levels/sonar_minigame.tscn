@@ -54,6 +54,7 @@ position = Vector2(596, 264)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NoteDestinations" unique_id=369380879]
 stream = ExtResource("4_hqqwc")
+volume_db = -11.0
 bus = &"UI"
 
 [node name="destination" parent="NoteDestinations" unique_id=1104253604 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
@@ -70,7 +71,7 @@ key = 83
 noteTexture = ExtResource("6_irvol")
 normalColor = Color(1, 1, 1, 0.5058824)
 noteManager = NodePath("../../NoteManager")
-pitch_scale = 1.1219999999999999
+pitch_scale = 1.122
 sonarSound = ExtResource("4_hqqwc")
 errorSound = ExtResource("7_fwbnk")
 

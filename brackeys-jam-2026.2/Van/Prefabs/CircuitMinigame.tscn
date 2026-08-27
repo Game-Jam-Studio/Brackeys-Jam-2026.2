@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
 [ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
+[ext_resource type="AudioStream" uid="uid://f5we04nn8mkj" path="res://Audio/SFX/UI_dial_short.wav" id="2_1vx7c"]
 [ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
 [ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
 
@@ -17,70 +18,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vofu2")
 
-[node name="Slots" type="Control" parent="." unique_id=1212298090]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Slot" type="TextureRect" parent="Slots" unique_id=1171711860]
-layout_mode = 0
-offset_left = 1016.0
-offset_right = 1144.0
-offset_bottom = 128.0
-texture = ExtResource("1_0bh60")
-script = ExtResource("3_hbgru")
-
-[node name="SlotArea" type="Area2D" parent="Slots/Slot" unique_id=417715862]
-position = Vector2(64, 64)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot/SlotArea" unique_id=493425396]
-shape = SubResource("CircleShape2D_i72gw")
-
-[node name="Slot2" type="TextureRect" parent="Slots" unique_id=1714237618]
-layout_mode = 0
-offset_left = 1016.0
-offset_right = 1144.0
-offset_bottom = 128.0
-texture = ExtResource("1_0bh60")
-script = ExtResource("3_hbgru")
-
-[node name="SlotArea" type="Area2D" parent="Slots/Slot2" unique_id=1075880275]
-position = Vector2(64, 64)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot2/SlotArea" unique_id=993822414]
-shape = SubResource("CircleShape2D_i72gw")
-
-[node name="Slot3" type="TextureRect" parent="Slots" unique_id=622208828]
-layout_mode = 0
-offset_left = 1016.0
-offset_right = 1144.0
-offset_bottom = 128.0
-texture = ExtResource("1_0bh60")
-script = ExtResource("3_hbgru")
-
-[node name="SlotArea" type="Area2D" parent="Slots/Slot3" unique_id=1717896384]
-position = Vector2(64, 64)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot3/SlotArea" unique_id=346824747]
-shape = SubResource("CircleShape2D_i72gw")
-
-[node name="Slot4" type="TextureRect" parent="Slots" unique_id=1795428930]
-layout_mode = 0
-offset_left = 1016.0
-offset_right = 1144.0
-offset_bottom = 128.0
-texture = ExtResource("1_0bh60")
-script = ExtResource("3_hbgru")
-
-[node name="SlotArea" type="Area2D" parent="Slots/Slot4" unique_id=876842989]
-position = Vector2(64, 64)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot4/SlotArea" unique_id=945660078]
-shape = SubResource("CircleShape2D_i72gw")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=251684858]
+unique_name_in_owner = true
+stream = ExtResource("2_1vx7c")
+volume_db = -8.0
+bus = &"UI"
 
 [node name="Wires" type="Control" parent="." unique_id=2038049846]
 anchors_preset = 0
@@ -151,6 +93,71 @@ position = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire4/WireArea" unique_id=2098582938]
 shape = SubResource("CircleShape2D_i72gw")
 
+[node name="Slots" type="Control" parent="." unique_id=1212298090]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" type="TextureRect" parent="Slots" unique_id=1171711860]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot" unique_id=417715862]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot/SlotArea" unique_id=493425396]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot2" type="TextureRect" parent="Slots" unique_id=1714237618]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot2" unique_id=1075880275]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot2/SlotArea" unique_id=993822414]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot3" type="TextureRect" parent="Slots" unique_id=622208828]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot3" unique_id=1717896384]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot3/SlotArea" unique_id=346824747]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot4" type="TextureRect" parent="Slots" unique_id=1795428930]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot4" unique_id=876842989]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot4/SlotArea" unique_id=945660078]
+shape = SubResource("CircleShape2D_i72gw")
+
 [node name="SlotLocations" type="Node2D" parent="." unique_id=2064158959]
 
 [node name="SlotLocation" type="Node2D" parent="SlotLocations" unique_id=473915759]
@@ -179,11 +186,15 @@ position = Vector2(80, 370)
 [node name="WireLocation4" type="Node2D" parent="WireLocations" unique_id=496690030]
 position = Vector2(82, 532)
 
-[connection signal="area_entered" from="Slots/Slot/SlotArea" to="Slots/Slot" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Slots/Slot2/SlotArea" to="Slots/Slot2" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Slots/Slot3/SlotArea" to="Slots/Slot3" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Slots/Slot4/SlotArea" to="Slots/Slot4" method="_on_area_2d_area_entered"]
 [connection signal="gui_input" from="Wires/Wire" to="Wires/Wire" method="_on_gui_input"]
 [connection signal="gui_input" from="Wires/Wire2" to="Wires/Wire2" method="_on_gui_input"]
 [connection signal="gui_input" from="Wires/Wire3" to="Wires/Wire3" method="_on_gui_input"]
 [connection signal="gui_input" from="Wires/Wire4" to="Wires/Wire4" method="_on_gui_input"]
+[connection signal="wire_connected" from="Slots/Slot" to="." method="_on_slot_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot/SlotArea" to="Slots/Slot" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot2" to="." method="_on_slot_2_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot2/SlotArea" to="Slots/Slot2" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot3" to="." method="_on_slot_3_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot3/SlotArea" to="Slots/Slot3" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot4" to="." method="_on_slot_4_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot4/SlotArea" to="Slots/Slot4" method="_on_area_2d_area_entered"]

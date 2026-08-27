@@ -3,7 +3,7 @@ extends Node3D
 const BALLAST_GAME_SCENE = preload("res://Van/Prefabs/ballast_minigame.tscn")
 const BOILER_GAME_SCENE = preload("res://Van/Prefabs/boiler_minigame.tscn")
 const SONAR_GAME_SCENE = preload("res://Levels/sonar_minigame.tscn")
-# const CIRCUIT_GAME_SCENE = preload()
+const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/CircuitMinigame.tscn")
 
 @export var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
 
@@ -54,8 +54,8 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 			game_instance = BOILER_GAME_SCENE.instantiate()
 		"Sonar":
 			game_instance = SONAR_GAME_SCENE.instantiate()
-		#"Circuit":
-			#game_instance = CIRCUIT_GAME_SCENE.instantiate()
+		"Circuit":
+			game_instance = CIRCUIT_GAME_SCENE.instantiate()
 	if not game_instance:
 		_restore_control(trigger)
 		is_repair_active = false
