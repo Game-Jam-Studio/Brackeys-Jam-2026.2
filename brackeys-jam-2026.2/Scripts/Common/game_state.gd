@@ -1,13 +1,13 @@
 extends Node
 
-# BEWARE if we use these types of signals, we need to be careful since we might have a 
-# minigame set the value while the object listening for the value in the submarine
-# scene isn't currently loaded
-signal example_ship_deterioration_changed(new_deterioration: float)
+# Emitted whenever the submarine's health value changes
+signal ship_health_changed(new_health: float)
 
-const example_max_ship_health: float = 100
+# Maximum hit points for the submarine
+const MAX_SHIP_HEALTH: float = 100.0
 
-var example_ship_deterioration: float = 100:
+# Current ship health; updates clamp the value and emit the signal
+var ship_health: float = 100.0:
 	set(value):
-		example_ship_deterioration = clamp(value, 0, example_max_ship_health)
-		example_ship_deterioration_changed.emit(example_ship_deterioration)
+		ship_health = clamp(value, 0.0, MAX_SHIP_HEALTH)
+		ship_health_changed.emit(ship_health)
