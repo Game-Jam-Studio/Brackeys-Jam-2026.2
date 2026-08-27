@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bmcu7rw8276xn" path="res://Art/Placeholder/S.png" id="6_irvol"]
 [ext_resource type="AudioStream" uid="uid://62u0ljsy0f8r" path="res://Audio/SFX/sonar_error.wav" id="7_fwbnk"]
 [ext_resource type="Texture2D" uid="uid://boquoxdoxkkjd" path="res://Art/Placeholder/D.png" id="7_h250t"]
-[ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="8_4wcyy"]
 [ext_resource type="Texture2D" uid="uid://cd8dj1lrnkyqh" path="res://Art/Placeholder/F.png" id="8_6p81i"]
 [ext_resource type="Texture2D" uid="uid://bg8gg2m3u81aw" path="res://Art/2D/Sonar/base_sane.png" id="10_h250t"]
 [ext_resource type="Script" uid="uid://mexn1nrl2qja" path="res://Scripts/Rhythm/pivot.gd" id="11_htvd5"]
@@ -103,15 +102,6 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 
-[node name="Example" type="CanvasLayer" parent="." unique_id=975054927]
-process_mode = 1
-
-[node name="Button" type="Button" parent="Example" unique_id=218730659]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Placeholder Open Terminal"
-script = ExtResource("8_4wcyy")
-
 [node name="CircleSane" type="Sprite2D" parent="." unique_id=1390548275]
 position = Vector2(596, 264)
 scale = Vector2(0.28, 0.28)
@@ -127,5 +117,3 @@ modulate = Color(0.5294118, 1, 0.33333334, 0.6862745)
 position = Vector2(-394.02734, 186.80508)
 scale = Vector2(1.423809, 1.0704257)
 texture = ExtResource("12_htvd5")
-
-[connection signal="pressed" from="Example/Button" to="Example/Button" method="_on_pressed"]

@@ -9,7 +9,8 @@ var pause_counter: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Hide the pause menu by default on startup.
-	hide()
+	$CanvasLayer.visible = false
+	pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -17,7 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		# whether we should have escape be a pause or resume to the player
 		# is just based on whether they currently see the pause menu or not
-		if visible:
+		if $CanvasLayer.visible:
 			try_resume()
 		else:
 			pause()
@@ -36,10 +37,10 @@ func try_resume() -> void:
 
 func _on_resume_button_pressed() -> void:
 	try_resume()
-	visible = false
+	$CanvasLayer.visible = false
 
 func _toggle_menu_visibility() -> void:
-	visible = !visible
+	$CanvasLayer.visible = !$CanvasLayer.visible
 
 func _on_main_menu_button_pressed() -> void:
 	# Must unpause the tree before loading scenes, or the new scene starts paused

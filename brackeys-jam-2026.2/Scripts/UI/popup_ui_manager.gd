@@ -4,13 +4,14 @@ extends Node
 # (Minigame/Log/Terminal), and restores control on close.
 
 @export var narrativeText: Dictionary = {}
+@export var shipHealthControl: Control
 
 var storyTrackerDictionary: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CanvasLayer.visible = false
-
+	pass
+	
 # CurrKeys SubmarineLevel, RhythmLevel, PressureLevel, SteamLevel
 func show_next_text(levelKey: String) -> void:
 	if not storyTrackerDictionary.has(levelKey):
@@ -28,15 +29,27 @@ func show_next_text(levelKey: String) -> void:
 		launch_terminal("This subsystem doesn't exist.")
 	
 	
-# Example usage of launchTerminal - popup_ui.launch_terminal("show some text\nsomemoretext")
+# Example usage of launchTerminal - TerminalUI.launch_terminal("show some text\nsomemoretext")
 # BBCode example: log_label.text = "You take [color=crimson][font_size=24]50[/font_size] damage[/color]!"
 func launch_terminal(text: String) -> void:
 	get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
 	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
 	$CanvasLayer.visible = true
 	
+func show_ship_status() -> void:
+	shipHealthControl.get_node("BallastIcon").modulate = Color.RED
+	shipHealthControl.get_node("BallastText").text = "[color=green][font_size=30]"+str(GameState.ballast_health)+"[/font_size][/color]"
+	shipHealthControl.get_node("BoilerIcon").modulate = Color.YELLOW
+	shipHealthControl.get_node("BoilerText").text = "[color=green][font_size=30]"+str(GameState.boiler_health)+"[/font_size][/color]"
+	shipHealthControl.get_node("SonarIcon").modulate = Color.CYAN
+	shipHealthControl.get_node("SonarText").text = "[color=green][font_size=30]"+str(GameState.sonar_health)+"[/font_size][/color]"
+	shipHealthControl.get_node("CircuitIcon").modulate = Color.BLUE
+	shipHealthControl.get_node("CircuitText").text = "[color=green][font_size=30]"+str(GameState.circuit_health)+"[/font_size][/color]"
+	shipHealthControl.visible = true
+	launch_terminal("")
 
 func close_terminal() -> void:
+	shipHealthControl.visible = false
 	get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()
 	$CanvasLayer.visible = false
 
