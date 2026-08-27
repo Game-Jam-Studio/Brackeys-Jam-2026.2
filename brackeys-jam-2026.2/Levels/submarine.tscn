@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://du876lyklyltv"]
 
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_2a835"]
+[ext_resource type="PackedScene" uid="uid://qqke76mcvs0u" path="res://Art/3D/Toshi/Wall_plain.fbx" id="2_avjot"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_op4vt"]
+[ext_resource type="PackedScene" uid="uid://ywo2ttkmenk8" path="res://Art/3D/Toshi/Wall_recessed_1.fbx" id="3_ce3kk"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_u361w"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_br6ap"]
+[ext_resource type="PackedScene" uid="uid://slxeo3jjapnw" path="res://Art/3D/Toshi/Wall_recessed_2.fbx" id="4_gmhmx"]
+[ext_resource type="PackedScene" uid="uid://cpr2lvijkkja0" path="res://Art/3D/Toshi/Outer_corner_plain.fbx" id="5_4ddeu"]
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_op4vt"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_r2qih"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_ipbck"]
+[ext_resource type="PackedScene" uid="uid://gar3tvpgcprx" path="res://Art/3D/Toshi/Inner_corner_plain.fbx" id="6_x47f5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +36,21 @@ size = Vector3(50, 0.2, 50)
 
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_2a835")
+
+[node name="Wall_plain" parent="." unique_id=859379744 instance=ExtResource("2_avjot")]
+transform = Transform3D(2.2506661, 0, 0, 0, 0.44839117, 0, 0, 0, 0.43658698, 17.753153, 1.2088965, -4.9416323)
+
+[node name="Wall_recessed_1" parent="." unique_id=1525647970 instance=ExtResource("3_ce3kk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.901648, 2.5875912, -5.3124423)
+
+[node name="Wall_recessed_2" parent="." unique_id=1516817363 instance=ExtResource("4_gmhmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.124814, 2.7009673, -5.4840817)
+
+[node name="Outer_corner_plain" parent="." unique_id=995739846 instance=ExtResource("5_4ddeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1192, 2.5875912, -1.6998796)
+
+[node name="Inner_corner_plain" parent="." unique_id=1998348688 instance=ExtResource("6_x47f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.600666, 2.587591, -8.225124)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -142,7 +162,7 @@ mesh = SubResource("BoxMesh_gl5qx")
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor4" type="StaticBody3D" parent="NavigationRegion3D" unique_id=785692282]
-transform = Transform3D(0.8146921, 0, 0, 0, 1, 0, 0, 0, 0.11260303, 19.387165, 0, -9.250427)
+transform = Transform3D(0.8146921, 0, 0, 0, 1, 0, 0, 0, 0.11260303, 18.791727, 0, -9.250427)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor4" unique_id=66068634]
