@@ -1,5 +1,6 @@
 extends Button
 
+@export var popup_ui: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,4 +9,4 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	TerminalUI.show_next_text("SubmarineLevel")
+	popup_ui.show_next_text("SubmarineLevel")

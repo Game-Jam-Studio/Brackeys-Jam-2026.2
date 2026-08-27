@@ -22,7 +22,7 @@ buses/default_bus_layout=""
 [autoload]
 
 GameState="*uid://b1e2ahys80t3j"
-TerminalUI="*uid://m06rh5uwq514"
+PopupUI="*uid://m06rh5uwq514"
 
 [display]
 
