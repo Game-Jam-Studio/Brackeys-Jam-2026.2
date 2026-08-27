@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_onejj"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_1tt2n"]
-[ext_resource type="Script" uid="uid://bmxdoq3laxmku" path="res://Scripts/Common/camera_3d_TESTING.gd" id="3_sfg4o"]
+[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_ss16e"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_qwo1n"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_sfg4o"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_pyxwl"]
@@ -36,7 +36,7 @@ size = Vector3(50, 0.2, 50)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4wwnm"]
 
-[node name="World2" type="Node3D" unique_id=1609880321]
+[node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_onejj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
@@ -53,9 +53,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6
 unique_name_in_owner = true
 transform = Transform3D(-1, -5.325061e-08, 6.933335e-08, 2.0474689e-08, 0.6283669, 0.7779172, -8.4991335e-08, 0.7779172, -0.6283669, -2.7182426, 7.4445477, -3.4378548)
 cull_mask = 1048573
-script = ExtResource("3_sfg4o")
+script = ExtResource("3_ss16e")
 player_character = NodePath("../Player")
-follow_speed = 2.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0047736, -0.01240921, 1.414844)
