@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnqd3xh5j3e8n"
+path="res://.godot/imported/Door Open metal_gate_automatic_door_squeak_01.wav-4aa119f90c94ba26d74398e03d32ea35.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav"
+dest_files=["res://.godot/imported/Door Open metal_gate_automatic_door_squeak_01.wav-4aa119f90c94ba26d74398e03d32ea35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

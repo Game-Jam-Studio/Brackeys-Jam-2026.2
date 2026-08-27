@@ -13,8 +13,14 @@ var is_locked: bool = true
 @onready var hinge: Node3D = $"../Hinge"
 @onready var trigger_shape: CollisionShape3D = $TriggerShape
 
+@export var door_open_sound: AudioStream
+@export var door_locked_sound: AudioStream
+
+var sfx_player: AudioStreamPlayer3D
+
 
 func _ready() -> void:
+	sfx_player = get_parent().get_node("AudioStreamPlayer3D")
 	# If marked open at game start, snap rotation immediately
 	if is_open:
 		hinge.rotation_degrees.y = open_angle_degrees
@@ -23,13 +29,18 @@ func _ready() -> void:
 
 ## Overrides base Interactable can_interact()
 func can_interact() -> bool:
-	return not is_locked and not is_open
+	return not is_open
 
 
 ## Overrides base Interactable interact()
 func interact(_player: CharacterBody3D) -> void:
-	if not is_open:
+	if not is_locked and not is_open:
+		sfx_player.stream = door_open_sound
+		sfx_player.play()
 		open_door()
+	else:
+		sfx_player.stream = door_locked_sound
+		sfx_player.play()
 
 
 ## Smoothly rotates the hinge and disables future interactions

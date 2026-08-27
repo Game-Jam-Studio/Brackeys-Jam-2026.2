@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://hbyifi4sowx0" path="res://Scripts/Common/door.gd" id="1_65tkf"]
 [ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="1_dn2we"]
+[ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="3_sqdgx"]
+[ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="4_lwysg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65tkf"]
 albedo_color = Color(0.9064933, 0.9064934, 0.9064934, 1)
@@ -45,7 +47,12 @@ shape = SubResource("BoxShape3D_i0uuj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
 visible = false
 script = ExtResource("1_dn2we")
+door_open_sound = ExtResource("3_sqdgx")
+door_locked_sound = ExtResource("4_lwysg")
 
 [node name="TriggerShape" type="CollisionShape3D" parent="DoorTrigger" unique_id=897058467]
 shape = SubResource("BoxShape3D_dn2we")
 debug_color = Color(0, 0.6, 0.7019608, 0.5882353)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=164148222]
+stream = ExtResource("3_sqdgx")
