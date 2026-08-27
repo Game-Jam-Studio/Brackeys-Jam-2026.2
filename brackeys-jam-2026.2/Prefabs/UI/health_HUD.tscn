@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
 [ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/Placeholder/mask.png" id="2_dgwwc"]
 [ext_resource type="Texture2D" uid="uid://dm3ghxswrgxgk" path="res://Art/2D/ShipHealth/health_bg.png" id="3_crwwa"]
+[ext_resource type="Texture2D" uid="uid://bpnun0mckwpcu" path="res://Art/2D/ShipHealth/health_frame_mid.png" id="3_neyg1"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
+[ext_resource type="Texture2D" uid="uid://cs57pt56uwula" path="res://Art/2D/ShipHealth/health_frame_corrupted.png" id="4_x71u6"]
 [ext_resource type="Texture2D" uid="uid://qppe6lmagfkf" path="res://Art/2D/ShipHealth/health_frame_base.png" id="5_crwwa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy48u"]
@@ -27,6 +29,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_crwwa")
+frame_base = ExtResource("5_crwwa")
+frame_mid = ExtResource("3_neyg1")
+frame_corrupted = ExtResource("4_x71u6")
 
 [node name="LiquidMask" type="TextureRect" parent="." unique_id=1038621429]
 clip_children = 1
@@ -54,7 +59,7 @@ offset_bottom = 195.0
 scale = Vector2(8, 5)
 mouse_filter = 2
 
-[node name="SubmarineFrame" type="TextureRect" parent="." unique_id=2084125768]
+[node name="FrameBase" type="TextureRect" parent="." unique_id=2084125768]
 clip_children = 2
 layout_mode = 1
 offset_left = -54.185
@@ -64,3 +69,15 @@ offset_bottom = 1928.34
 scale = Vector2(0.2, 0.2)
 mouse_filter = 2
 texture = ExtResource("5_crwwa")
+
+[node name="FrameOverlay" type="TextureRect" parent="." unique_id=1438985971]
+modulate = Color(1, 1, 1, 0)
+clip_children = 2
+layout_mode = 1
+offset_left = -54.185
+offset_top = -119.66
+offset_right = 1993.815
+offset_bottom = 1928.34
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+texture = ExtResource("3_neyg1")

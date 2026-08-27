@@ -1,5 +1,7 @@
 extends Node
 
+signal area_unlocked(new_level: int)
+
 # Emitted whenever the submarine's health value changes
 signal ship_health_changed(new_health: float)
 
@@ -11,13 +13,13 @@ signal circuit_health_changed(new_health: float)
 signal ship_destroyed
 
 # Damage to ship health per second when broken
-@export var damage_per_second: float = 10 # set to 10 for testing
+@export var damage_per_second: float = 2 # set to 10 for testing
 @export var repair_fail_penalty: float = 15.0
 
-# Maximum hit points for the submarine
 const MAX_SHIP_HEALTH: float = 100.0
 const MAX_SYSTEM_HEALTH: float = 100.0
 
+var current_area_level: int = 1
 var is_ballast_broken: bool = false
 var is_boiler_broken: bool = false
 var is_sonar_broken: bool = false
@@ -98,3 +100,8 @@ func apply_failure_penalty(system_id: String) -> void:
 			circuit_health -= repair_fail_penalty
 		_:
 			push_error("Unknown system_id: " + system_id)
+
+
+func unlock_next_area(level: int) -> void:
+	current_area_level = level
+	area_unlocked.emit(current_area_level)
