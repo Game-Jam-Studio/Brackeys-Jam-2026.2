@@ -2,7 +2,6 @@ extends Control
 
 @onready var liquid_fill: ColorRect = $LiquidMask/LiquidFill
 @onready var health_frame: TextureRect = $FrameBase
-@onready var frame_overlay: TextureRect = $FrameOverlay
 
 @export var frame_base: Texture2D
 @export var frame_mid: Texture2D
@@ -10,7 +9,6 @@ extends Control
 
 var fill_material: ShaderMaterial
 var fill_tween: Tween
-var frame_tween: Tween
 
 var highest_unlocked_tier: int = 1
 
@@ -38,7 +36,6 @@ var color_palette: Dictionary = {
 
 
 func _ready() -> void:
-	# Cast and store the shader material
 	fill_material = liquid_fill.material as ShaderMaterial
 	
 	GameState.ship_health_changed.connect(_on_ship_health_changed)
@@ -49,11 +46,10 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Press [ - ] (Minus) to deal 10 damage to the ship
-	if event.is_action_pressed("ui_text_backspace") or (event is InputEventKey and event.pressed and event.keycode == KEY_MINUS):
+	# Press [ - ] to deal 10 damage to the ship
+	if event is InputEventKey and event.pressed and event.keycode == KEY_MINUS:
 		GameState.ship_health -= 10
-		
-	# Press [ = ] (Equal / Plus) to heal 10 damage
+	# Press [ = ] to heal 10 damage
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_EQUAL:
 		GameState.ship_health += 10
 
@@ -72,32 +68,18 @@ func _update_display(health: float) -> void:
 
 	var normalized: float = clampf(health / GameState.MAX_SHIP_HEALTH, 0.0, 1.0)
 	
-	if health <= 25.0 or GameState.current_area_level >= 3:
+	if health <= 30.0 or GameState.current_area_level >= 3:
 		highest_unlocked_tier = maxi(highest_unlocked_tier, 3)
-	elif health <= 50.0 or GameState.current_area_level >= 2:
+	elif health <= 65.0 or GameState.current_area_level >= 2:
 		highest_unlocked_tier = maxi(highest_unlocked_tier, 2)
-		
+	
 	var target_texture: Texture2D = frame_base
 	if highest_unlocked_tier == 3 and frame_corrupted:
 		target_texture = frame_corrupted
 	elif highest_unlocked_tier == 2 and frame_mid:
 		target_texture = frame_mid
 	
-	if health_frame.texture != target_texture:
-		if frame_overlay:
-			if frame_tween and frame_tween.is_valid():
-				frame_tween.kill()
-			
-			# Put the current (old) texture on the overlay and make it fully visible on top
-			frame_overlay.texture = health_frame.texture
-			frame_overlay.modulate.a = 1.0
-			
-			# Instantly update the base frame underneath to the new target texture
-			health_frame.texture = target_texture
-			
-			# Smoothly fade out the overlay to reveal the new base texture beneath it
-			frame_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-			frame_tween.tween_property(frame_overlay, "modulate:a", 0.0, 0.5)
+	health_frame.texture = target_texture
 	
 	var current_fill: float = fill_material.get_shader_parameter("fill_amount")
 	
@@ -111,14 +93,15 @@ func _update_display(health: float) -> void:
 func _apply_liquid_color(normalized: float) -> void:
 	# Update vertical fill
 	fill_material.set_shader_parameter("fill_amount", normalized)
+	
 	# Calculate blended colors across 3 health tiers
 	var current_crest: Color
 	var current_body: Color
 	var current_deep: Color
 	var current_back: Color
 	
-	var yellow_threshold: float = 0.60 # Hits pure yellow at 60% health
-	var red_threshold: float = 0.25    # Reaches pure red at 25% health
+	var yellow_threshold: float = 0.60 # Pure yellow at 65% health
+	var red_threshold: float = 0.25    # Pure red at 30% health
 	
 	if normalized >= yellow_threshold:
 		var weight: float = (normalized - yellow_threshold) / (1.0 - yellow_threshold)
