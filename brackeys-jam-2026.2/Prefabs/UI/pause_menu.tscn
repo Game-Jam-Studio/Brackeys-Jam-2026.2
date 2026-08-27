@@ -14,6 +14,7 @@ Label/font_sizes/font_size = 36
 
 [node name="PauseMenu" type="Control" unique_id=1764100914]
 process_mode = 3
+top_level = true
 z_index = 100
 layout_mode = 3
 anchors_preset = 15
@@ -21,10 +22,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_7jw28")
 
-[node name="BlurBackground" type="ColorRect" parent="." unique_id=178430877]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1954907447]
+layer = 100
+
+[node name="BlurBackground" type="ColorRect" parent="CanvasLayer" unique_id=178430877]
 material = SubResource("ShaderMaterial_i0uuj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/BlurBackground" unique_id=1614932347]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,20 +44,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="BlurBackground" unique_id=1614932347]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MenuBackground" type="ColorRect" parent="BlurBackground/CenterContainer" unique_id=1394690020]
+[node name="MenuBackground" type="ColorRect" parent="CanvasLayer/BlurBackground/CenterContainer" unique_id=1394690020]
 custom_minimum_size = Vector2(275, 250.005)
 layout_mode = 2
 color = Color(0.16924527, 0.1692453, 0.16924521, 0.5137255)
 
-[node name="Title" type="Label" parent="BlurBackground/CenterContainer/MenuBackground" unique_id=1726138732]
+[node name="Title" type="Label" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground" unique_id=1726138732]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -59,7 +63,7 @@ theme = ExtResource("2_6tovx")
 text = "Game Paused"
 horizontal_alignment = 1
 
-[node name="ButtonContainer" type="VBoxContainer" parent="BlurBackground/CenterContainer/MenuBackground" unique_id=706555478]
+[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground" unique_id=706555478]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -74,21 +78,21 @@ offset_bottom = 94.69049
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=176723452]
+[node name="ResumeButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=176723452]
 layout_mode = 2
 theme = SubResource("Theme_6tovx")
 text = "Resume"
 
-[node name="MainMenuButton" type="Button" parent="BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=687640247]
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=687640247]
 layout_mode = 2
 theme = ExtResource("2_6tovx")
 text = "Main Menu"
 
-[node name="QuitButton" type="Button" parent="BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=1071369502]
+[node name="QuitButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=1071369502]
 layout_mode = 2
 theme = ExtResource("2_6tovx")
 text = "Quit"
 
-[connection signal="pressed" from="BlurBackground/CenterContainer/MenuBackground/ButtonContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="BlurBackground/CenterContainer/MenuBackground/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="BlurBackground/CenterContainer/MenuBackground/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

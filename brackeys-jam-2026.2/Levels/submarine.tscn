@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_r2qih"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_ipbck"]
 [ext_resource type="PackedScene" uid="uid://gar3tvpgcprx" path="res://Art/3D/Toshi/Inner_corner_plain.fbx" id="6_x47f5"]
+[ext_resource type="Material" uid="uid://d04uqu72hn0ch" path="res://Art/3D/M_Area1Floor.tres" id="9_ce3kk"]
+[ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/M_PlainWall.tres" id="14_gmhmx"]
+[ext_resource type="Material" uid="uid://bjqq84k2cil2x" path="res://Art/3D/M_FleshWalls.tres" id="15_4ddeu"]
+[ext_resource type="Material" uid="uid://nwfjx3jn1bgk" path="res://Art/3D/M_Lungs.tres" id="16_x47f5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -104,10 +108,10 @@ transform = Transform3D(-0.38271275, 0, -0.35352877, 0, 0.44839117, 0, 1.3133518
 transform = Transform3D(0.084828235, 0, -0.36795467, 0, 0.44839117, 0, 2.1809103, 0, 0.014311889, -25.751894, 1.2088975, 7.313494)
 
 [node name="Wall_plain67" parent="." unique_id=180790570 instance=ExtResource("2_avjot")]
-transform = Transform3D(0.024282064, 0, -0.36795467, 0, 0.44839117, 0, 0.62428516, 0, 0.014311889, -25.4736, 1.2088975, 14.468389)
+transform = Transform3D(0.024282064, 0, -0.36795467, 0, 0.45542407, 0, 0.62428516, 0, 0.014311889, -25.4736, 1.2088975, 14.468389)
 
 [node name="Wall_plain68" parent="." unique_id=973576690 instance=ExtResource("2_avjot")]
-transform = Transform3D(0.7793417, 0, -0.34839794, 0, 0.44839117, 0, 2.2774107, 0, 0.119223565, -23.897566, 1.2088975, 20.137545)
+transform = Transform3D(0.7793417, 0, -0.34839794, 0, 0.45373657, 0, 2.2774107, 0, 0.119223565, -23.897566, 1.2088975, 20.137545)
 
 [node name="Wall_plain69" parent="." unique_id=623347207 instance=ExtResource("2_avjot")]
 transform = Transform3D(1.2450784, 0, -0.08023491, 0, 0.44839117, 0, 0.2779712, 0, 0.35938525, -20.12533, 1.208898, 25.053787)
@@ -171,6 +175,12 @@ transform = Transform3D(-0.69906217, 0, 0.058591895, 0, 0.44839117, 0, -0.153299
 
 [node name="Wall_plain74" parent="." unique_id=469759227 instance=ExtResource("2_avjot")]
 transform = Transform3D(-0.35645702, 0, -0.24741931, 0, 0.44839117, 0, 0.75614417, 0, -0.116637, -5.178327, 1.2074264, 20.97542)
+
+[node name="Wall_plain80" parent="." unique_id=1205002850 instance=ExtResource("2_avjot")]
+transform = Transform3D(-1.0238966, 0, -0.13178596, 0, 0.44839117, 0, 0.56294906, 0, -0.23969351, -2.5248218, 1.2074264, 18.451752)
+
+[node name="Wall_plain81" parent="." unique_id=193987452 instance=ExtResource("2_avjot")]
+transform = Transform3D(-3.5627375, 0, 0.0013495358, 0, 0.44839117, 0, -0.017577287, 0, -0.27353004, 6.5065145, 1.2074269, 17.403252)
 
 [node name="Wall_plain56" parent="." unique_id=738168106 instance=ExtResource("2_avjot")]
 transform = Transform3D(-0.40424436, 0, 0.20662518, 0, 0.44839117, 0, -0.32896113, 0, -0.25391158, -12.741825, 1.2074264, 10.478982)
@@ -490,6 +500,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=63868684]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1176603071]
@@ -501,6 +512,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor5" unique_id=1914474252]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor5" unique_id=503615295]
@@ -512,6 +524,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor6" unique_id=560970298]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor6" unique_id=252781779]
@@ -523,6 +536,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor7" unique_id=661103531]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor7" unique_id=1942672033]
@@ -534,6 +548,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor8" unique_id=853005957]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor8" unique_id=1416296095]
@@ -545,6 +560,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor9" unique_id=649300513]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor9" unique_id=1340149357]
@@ -556,6 +572,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor2" unique_id=231993559]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor2" unique_id=505658512]
@@ -567,6 +584,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor3" unique_id=949033696]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor3" unique_id=1089498699]
@@ -578,6 +596,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor4" unique_id=66068634]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor4" unique_id=2020648262]
@@ -589,6 +608,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor10" unique_id=1144030461]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor10" unique_id=411371586]
@@ -600,6 +620,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor19" unique_id=1089699519]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor19" unique_id=921670491]
@@ -611,6 +632,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor42" unique_id=1776993071]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor42" unique_id=181754363]
@@ -622,6 +644,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor59" unique_id=1341441371]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor59" unique_id=1706220314]
@@ -633,6 +656,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor11" unique_id=1774598422]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor11" unique_id=984998941]
@@ -644,6 +668,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor12" unique_id=778267691]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor12" unique_id=2085706251]
@@ -655,6 +680,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor13" unique_id=603409803]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor13" unique_id=764286270]
@@ -666,6 +692,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor14" unique_id=518087504]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor14" unique_id=153204646]
@@ -677,6 +704,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor17" unique_id=940229633]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor17" unique_id=194882341]
@@ -688,6 +716,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor23" unique_id=347591559]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor23" unique_id=303837758]
@@ -699,6 +728,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor24" unique_id=1914036455]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor24" unique_id=937069206]
@@ -710,6 +740,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor25" unique_id=402620773]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor25" unique_id=376082792]
@@ -721,6 +752,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor26" unique_id=1528182853]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor26" unique_id=576179993]
@@ -732,6 +764,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor28" unique_id=1189491026]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor28" unique_id=2131688745]
@@ -743,6 +776,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor29" unique_id=712410775]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor29" unique_id=411801570]
@@ -754,6 +788,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor30" unique_id=11130159]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor30" unique_id=841908352]
@@ -765,17 +800,19 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor27" unique_id=975639521]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor27" unique_id=1439596537]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor31" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1059196380]
-transform = Transform3D(-0.0048850323, 0, -0.26753408, 0, 0.99999994, 0, -0.24544792, 0, 0.005324624, 7.38259, -4.7683716e-07, 21.83549)
+transform = Transform3D(-0.004619681, 0, -0.26753408, 0, 0.99999994, 0, -0.23211536, 0, 0.005324624, 7.384644, -4.7683716e-07, 21.93871)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor31" unique_id=199673310]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor31" unique_id=639722947]
@@ -787,6 +824,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor32" unique_id=132763547]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor32" unique_id=1799844001]
@@ -798,6 +836,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor33" unique_id=372572645]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor33" unique_id=1892484777]
@@ -809,6 +848,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor34" unique_id=2004854322]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor34" unique_id=2121961140]
@@ -820,6 +860,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor35" unique_id=578181739]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor35" unique_id=917146694]
@@ -831,6 +872,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor36" unique_id=1614720949]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor36" unique_id=1190830317]
@@ -842,17 +884,19 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor37" unique_id=211963075]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor37" unique_id=302175804]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor38" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1878877139]
-transform = Transform3D(0.057392795, 0, 0.08136706, 0, 0.99999994, 0, -0.06214261, 0, 0.075147845, 14.45186, -4.7683716e-07, 18.965586)
+transform = Transform3D(0.057392795, 0, 0.08136706, 0, 0.99999994, 0, -0.06214261, 0, 0.075147845, 14.685831, -4.7683716e-07, 19.270916)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor38" unique_id=2094333429]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor38" unique_id=1217397560]
@@ -864,6 +908,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor40" unique_id=1629887391]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor40" unique_id=1093461399]
@@ -875,6 +920,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor41" unique_id=477711539]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor41" unique_id=48929151]
@@ -886,6 +932,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor57" unique_id=726236649]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor57" unique_id=981960580]
@@ -897,6 +944,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor58" unique_id=2128373361]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor58" unique_id=2105778112]
@@ -908,6 +956,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor39" unique_id=1668974407]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor39" unique_id=1035631010]
@@ -919,6 +968,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor67" unique_id=718975760]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor67" unique_id=2003318860]
@@ -930,6 +980,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor81" unique_id=935399538]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor81" unique_id=2135738013]
@@ -941,6 +992,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor68" unique_id=125722077]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor68" unique_id=945522530]
@@ -952,6 +1004,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor69" unique_id=784066646]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor69" unique_id=1142985673]
@@ -963,6 +1016,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor70" unique_id=1563523303]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor70" unique_id=586177740]
@@ -974,6 +1028,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor71" unique_id=1592311873]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor71" unique_id=1387166128]
@@ -985,6 +1040,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor72" unique_id=129711536]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor72" unique_id=1853664373]
@@ -996,6 +1052,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor77" unique_id=715215671]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor77" unique_id=690465545]
@@ -1007,6 +1064,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor73" unique_id=1354960363]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor73" unique_id=1203350947]
@@ -1018,6 +1076,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor78" unique_id=1551343202]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor78" unique_id=278429281]
@@ -1029,6 +1088,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor79" unique_id=1848916601]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor79" unique_id=1683255708]
@@ -1040,6 +1100,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor74" unique_id=429935643]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor74" unique_id=380304015]
@@ -1051,6 +1112,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor76" unique_id=701429844]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor76" unique_id=1758316521]
@@ -1062,6 +1124,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor75" unique_id=1102838441]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor75" unique_id=1916230458]
@@ -1073,6 +1136,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor43" unique_id=1124659853]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor43" unique_id=1332713021]
@@ -1084,6 +1148,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor44" unique_id=719960614]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor44" unique_id=1517714258]
@@ -1095,6 +1160,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor45" unique_id=592353123]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor45" unique_id=647842818]
@@ -1106,6 +1172,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor46" unique_id=1235271297]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor46" unique_id=1975637420]
@@ -1117,6 +1184,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor47" unique_id=1626854156]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor47" unique_id=1542142946]
@@ -1128,6 +1196,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor48" unique_id=1865947402]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor48" unique_id=557462164]
@@ -1139,6 +1208,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor56" unique_id=1914308809]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor56" unique_id=1919483673]
@@ -1150,6 +1220,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor49" unique_id=1912441701]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor49" unique_id=577180743]
@@ -1161,6 +1232,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor50" unique_id=750151271]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor50" unique_id=1911056157]
@@ -1172,6 +1244,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor51" unique_id=607228452]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor51" unique_id=823075630]
@@ -1183,6 +1256,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor53" unique_id=336273852]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor53" unique_id=932721346]
@@ -1194,6 +1268,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor54" unique_id=1123023425]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor54" unique_id=2043700415]
@@ -1205,6 +1280,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor55" unique_id=645212592]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor55" unique_id=1261794740]
@@ -1216,6 +1292,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor52" unique_id=976186834]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor52" unique_id=732249548]
@@ -1227,6 +1304,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor18" unique_id=698514297]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor18" unique_id=1279669792]
@@ -1238,6 +1316,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor20" unique_id=1553073917]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor20" unique_id=1386738021]
@@ -1249,6 +1328,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor21" unique_id=1370996198]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor21" unique_id=1504281112]
@@ -1260,20 +1340,58 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor22" unique_id=352140939]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor22" unique_id=1837570312]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor60" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1060133593]
-transform = Transform3D(0.04690479, 0, 0.0954032, 0, 0.9999999, 0, -0.06407199, 0, 0.069841266, -24.652308, -3.4570694e-06, 11.313593)
+transform = Transform3D(-0.0058773253, 0, 0.0131068155, 0, 0.9999999, 0, -0.12404566, 0, -0.00062100275, -24.837921, -3.4570694e-06, 11.296736)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor60" unique_id=715157425]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor60" unique_id=1954947033]
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="Floor85" type="StaticBody3D" parent="NavigationRegion3D" unique_id=888759152]
+transform = Transform3D(-0.03706123, 0, 0.0049674036, 0, 0.9999999, 0, -0.0026334794, 0, -0.069906585, -25.676924, -3.4570694e-06, 11.034576)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor85" unique_id=632290681]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor85" unique_id=6590535]
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="Floor86" type="StaticBody3D" parent="NavigationRegion3D" unique_id=449722065]
+transform = Transform3D(-0.011897104, 0, -0.0583118, 0, 0.9999999, 0, 0.017845016, 0, -0.03887595, -26.25951, -3.4570694e-06, 12.233081)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor86" unique_id=2045348070]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor86" unique_id=2037530]
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="Floor87" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1632546113]
+transform = Transform3D(-0.034508448, 0, 0.018530903, 0, 0.9999999, 0, -0.0074306508, 0, -0.08605869, -26.105036, -3.4570694e-06, 9.942497)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor87" unique_id=2015206907]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor87" unique_id=732411222]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor61" type="StaticBody3D" parent="NavigationRegion3D" unique_id=130423403]
@@ -1282,6 +1400,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor61" unique_id=2039033027]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor61" unique_id=1472114504]
@@ -1293,6 +1412,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor62" unique_id=1108182336]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor62" unique_id=2117719342]
@@ -1304,6 +1424,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor63" unique_id=572442627]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor63" unique_id=182428947]
@@ -1315,6 +1436,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor66" unique_id=1248000701]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor66" unique_id=34165778]
@@ -1325,7 +1447,8 @@ transform = Transform3D(0.00033881213, 0, -0.11823366, 0, 0.99999976, 0, 0.06566
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor80" unique_id=1131530744]
-transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, -11.200084)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor80" unique_id=1288081091]
@@ -1370,6 +1493,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor64" unique_id=1918689604]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor64" unique_id=1189215512]
@@ -1381,6 +1505,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor65" unique_id=1231049518]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor65" unique_id=1653306277]
@@ -1404,22 +1529,22 @@ is_broken = true
 
 [node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.6142, 0.91858387, 13.087654)
-system_id = "Steam"
+system_id = "Boiler"
 is_broken = true
 
 [node name="StaticBody3D4" parent="." unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1640763, 0.9185848, 28.629618)
-system_id = "Steam"
+system_id = "Boiler"
 is_broken = true
 
 [node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.04596391, 0, 0.9989431, 0, 1, 0, -0.9989431, 0, 0.04596391, 29.849909, 0.91858387, 1.6579566)
-system_id = "Rhythm"
+system_id = "Sonar"
 is_broken = true
 
 [node name="StaticBody3D6" parent="." unique_id=148449380 instance=ExtResource("5_r2qih")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 2.2931385, 0.91858387, -18.213808)
-system_id = "Rhythm"
+system_id = "Sonar"
 is_broken = true
 
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("6_ipbck")]
@@ -1458,6 +1583,10 @@ is_locked = false
 transform = Transform3D(0.029729694, 0, 0.999558, 0, 1, 0, -0.999558, 0, 0.029729694, -25.410553, 1.0792546, 11.743784)
 is_locked = false
 
+[node name="Door15" parent="." unique_id=601837599 instance=ExtResource("6_ipbck")]
+transform = Transform3D(0.029729694, 0, 0.999558, 0, 1, 0, -0.999558, 0, 0.029729694, -77.468155, 1.0792546, 18.212389)
+is_locked = false
+
 [node name="Door9" parent="." unique_id=142235720 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-0.19528179, 0, -0.9807471, 0, 1, 0, 0.9807471, 0, -0.19528179, -6.1486363, 1.0792546, 23.983198)
 is_locked = false
@@ -1484,6 +1613,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall22" unique_id=1417769999]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall22" unique_id=1122262638]
@@ -1495,6 +1625,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall31" unique_id=1422042659]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall31" unique_id=698358218]
@@ -1506,6 +1637,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall34" unique_id=1973667712]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall34" unique_id=1122017644]
@@ -1517,6 +1649,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall35" unique_id=1803359354]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall35" unique_id=742336931]
@@ -1528,6 +1661,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall29" unique_id=1632002420]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall29" unique_id=1159352945]
@@ -1539,6 +1673,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall30" unique_id=596467382]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall30" unique_id=231544480]
@@ -1550,6 +1685,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall142" unique_id=1668981918]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall142" unique_id=2067861047]
@@ -1561,6 +1697,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall143" unique_id=857278125]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall143" unique_id=2028762447]
@@ -1572,6 +1709,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall18" unique_id=565203581]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall18" unique_id=941775]
@@ -1583,6 +1721,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall19" unique_id=1943884004]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall19" unique_id=884319181]
@@ -1594,17 +1733,19 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall20" unique_id=499141699]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall20" unique_id=261947264]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall110" type="StaticBody3D" parent="." unique_id=35233947]
-transform = Transform3D(-0.069642015, 0, 0.006597265, 0, 12.219027, 0, -0.050038747, 0, -0.009181835, -27.145645, 1.1157172, 14.384402)
+transform = Transform3D(-0.06468328, 0, 0.006597265, 0, 12.219027, 0, -0.046475828, 0, -0.009181835, -27.22855, 1.1157172, 14.324835)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall110" unique_id=684070278]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall110" unique_id=1372046884]
@@ -1616,6 +1757,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall111" unique_id=34388634]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall111" unique_id=890865823]
@@ -1627,6 +1769,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall112" unique_id=2005474408]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall112" unique_id=1788550870]
@@ -1638,6 +1781,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall113" unique_id=602037284]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall113" unique_id=1470110197]
@@ -1649,6 +1793,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall114" unique_id=1639704641]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall114" unique_id=555572672]
@@ -1660,6 +1805,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall115" unique_id=1330651896]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall115" unique_id=2078439958]
@@ -1671,6 +1817,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall116" unique_id=1669472020]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall116" unique_id=1576822930]
@@ -1681,7 +1828,8 @@ transform = Transform3D(-0.022481993, 0, 0.0065972684, 0, 12.219027, 0, -0.01615
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall130" unique_id=1738958234]
-transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(50, 0, -9.536743e-07, 0, 0.20000002, 0, 7.6293945e-06, 0, 50.000004, 0, -0.0008216351, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall130" unique_id=1115768318]
@@ -1693,6 +1841,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall131" unique_id=1639191311]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall131" unique_id=371410133]
@@ -1704,6 +1853,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall132" unique_id=1033566893]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall132" unique_id=1703006624]
@@ -1715,6 +1865,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall133" unique_id=1471303734]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall133" unique_id=1536428168]
@@ -1726,6 +1877,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall134" unique_id=896259239]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall134" unique_id=1953538273]
@@ -1737,6 +1889,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall135" unique_id=1662333152]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall135" unique_id=1310265158]
@@ -1748,6 +1901,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall136" unique_id=1680762109]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall136" unique_id=1553173652]
@@ -1759,6 +1913,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall117" unique_id=1369004490]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall117" unique_id=1017565044]
@@ -1770,6 +1925,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall118" unique_id=1126829254]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall118" unique_id=1590603051]
@@ -1781,6 +1937,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall119" unique_id=866506699]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall119" unique_id=1126500821]
@@ -1792,6 +1949,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall122" unique_id=915346237]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall122" unique_id=742746444]
@@ -1803,6 +1961,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall128" unique_id=269930921]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall128" unique_id=1944966452]
@@ -1814,6 +1973,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall129" unique_id=2113751295]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall129" unique_id=94218115]
@@ -1825,6 +1985,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall120" unique_id=371472149]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall120" unique_id=1352928126]
@@ -1836,6 +1997,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall123" unique_id=1215292775]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall123" unique_id=770764337]
@@ -1847,6 +2009,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall124" unique_id=1558527307]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall124" unique_id=40764173]
@@ -1858,6 +2021,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall121" unique_id=126804644]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall121" unique_id=1144465643]
@@ -1869,17 +2033,19 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall125" unique_id=157668000]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall125" unique_id=86206957]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall126" type="StaticBody3D" parent="." unique_id=1829174479]
-transform = Transform3D(0.063321784, 0, 0.0005572428, 0, 12.219026, 0, -0.002960815, 0, 0.01191732, -75.99779, 1.1157165, 20.627607)
+transform = Transform3D(0.058029853, 0, 0.0005572428, 0, 12.219026, 0, -0.0027133739, 0, 0.01191732, -75.67913, 1.1157165, 20.612709)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall126" unique_id=168254533]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall126" unique_id=582946186]
@@ -1891,6 +2057,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall137" unique_id=1641369368]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall137" unique_id=140606297]
@@ -1902,6 +2069,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall138" unique_id=1052251804]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall138" unique_id=1456815124]
@@ -1913,64 +2081,46 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall141" unique_id=1993240262]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall141" unique_id=1805123533]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall127" type="StaticBody3D" parent="." unique_id=1992179317]
-transform = Transform3D(0.063321784, 0, 0.0005572428, 0, 12.219026, 0, -0.002960815, 0, 0.01191732, -75.95934, 1.1157165, 17.177168)
+transform = Transform3D(0.053812373, 0, 0.0005579933, 0, 12.219026, 0, -0.0025161717, 0, 0.0119333705, -75.72589, 1.1157165, 17.165684)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall127" unique_id=654869411]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("15_4ddeu")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall127" unique_id=984366972]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall139" type="StaticBody3D" parent="." unique_id=259719333]
-transform = Transform3D(0.0024475988, 0, -0.011980715, 0, 12.219026, 0, 0.07123979, 0, 0.00041163363, -77.4314, 1.1157165, 15.774034)
+transform = Transform3D(0.0028983469, 0, -0.012055159, 0, 12.219026, 0, 0.08435926, 0, 0.0004141914, -77.4314, 1.1157165, 16.091475)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall139" unique_id=2023952958]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall139" unique_id=214506803]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall140" type="StaticBody3D" parent="." unique_id=455006414]
-transform = Transform3D(0.00092271017, 0, -0.011953631, 0, 12.2190275, 0, 0.06496194, 0, 0.00016979763, -77.4314, 1.1157165, 22.01956)
+transform = Transform3D(0.0011165073, 0, -0.0119881015, 0, 12.2190275, 0, 0.07860593, 0, 0.00017028727, -77.4314, 1.1157165, 21.688595)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall140" unique_id=1829476674]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall140" unique_id=397955576]
-shape = SubResource("BoxShape3D_i0uuj")
-
-[node name="Wall91" type="StaticBody3D" parent="." unique_id=794280687]
-transform = Transform3D(0.07963011, 0, 0.0055578575, 0, 12.219032, 0, -0.048632603, 0, 0.009100321, -2.5952253, 1.1157167, 18.458488)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall91" unique_id=339428033]
-transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("BoxMesh_gl5qx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall91" unique_id=527307390]
-shape = SubResource("BoxShape3D_i0uuj")
-
-[node name="Wall92" type="StaticBody3D" parent="." unique_id=1220785086]
-transform = Transform3D(0.27420974, 0, 3.532371e-05, 0, 12.219036, 0, -0.0009027818, 0, 0.010727637, 6.0546103, 1.1157167, 17.271519)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall92" unique_id=782559318]
-transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("BoxMesh_gl5qx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall92" unique_id=1774272496]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall21" type="StaticBody3D" parent="." unique_id=1930652809]
@@ -1979,6 +2129,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall21" unique_id=2039104033]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall21" unique_id=2133422584]
@@ -1990,6 +2141,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall23" unique_id=1303109753]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall23" unique_id=1092530105]
@@ -2001,6 +2153,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall33" unique_id=962118792]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall33" unique_id=600032985]
@@ -2012,6 +2165,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall24" unique_id=1833741366]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall24" unique_id=1555205094]
@@ -2023,6 +2177,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall32" unique_id=1459163661]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall32" unique_id=339801776]
@@ -2030,51 +2185,67 @@ shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="." unique_id=1144581423]
 transform = Transform3D(20.330856, 0, 0, 0, 3.1363559, 0, 0, 0, 6.4831233, -60.037792, 0.48994923, 12.363247)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGSphere3D3" type="CSGSphere3D" parent="." unique_id=258605448]
 transform = Transform3D(20.330856, 0, 0, 0, 3.1363559, 0, 0, 0, 6.4831233, -60.562687, 0.48994923, 24.8068)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGSphere3D4" type="CSGSphere3D" parent="." unique_id=564867922]
 transform = Transform3D(3.249124, 0, 0, 0, 3.6337118, 0, 0, 0, 2.48625, -60.562687, 5.5654006, 18.339834)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGSphere3D5" type="CSGSphere3D" parent="." unique_id=2118495714]
 transform = Transform3D(2.4849875, 2.3410072, 0, -2.0932376, 2.7791264, 0, 0, 0, 2.4862497, -60.115356, 5.8218875, 18.339834)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1219449818]
 transform = Transform3D(0.97738236, -0.39160925, 0, 0.21147971, 1.8098756, 0, 0, 0, 1, -61.52508, 7.6746597, 18.438583)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=926508738]
 transform = Transform3D(0.76298904, -1.1969974, 0, 0.64641136, 1.4128711, 0, 0, 0, 0.99999994, -63.00522, 10.642078, 18.438583)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1800382605]
 transform = Transform3D(0.6014335, -1.4794116, 0, 0.7989228, 1.1137093, 0, 0, 0, 0.99999994, -65.53407, 13.031637, 18.438583)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=148795398]
 transform = Transform3D(0.15488523, -1.8294117, 0, 0.9879323, 0.28681004, 0, 0, 0, 0.99999994, -68.59392, 14.309828, 18.438583)
+material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D5" type="CSGCylinder3D" parent="." unique_id=551116680]
 transform = Transform3D(-0.5788496, 0.23192854, 0.8057581, 0.21147971, 1.8098756, 0, -0.7875337, 0.3155423, -0.59224474, -59.697086, 7.6746607, 18.722359)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="." unique_id=2111535320]
 transform = Transform3D(-0.4518763, 0.7089154, 0.80575806, 0.6464113, 1.412871, 0, -0.6147846, 0.96449035, -0.59224474, -58.820484, 10.642079, 19.914991)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="." unique_id=1135308155]
 transform = Transform3D(-0.35619593, 0.8761738, 0.80575806, 0.7989227, 1.1137094, 0, -0.48460996, 1.192048, -0.59224474, -57.32279, 13.031638, 21.952635)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D8" type="CSGCylinder3D" parent="." unique_id=99116461]
 transform = Transform3D(-0.09172996, 1.0834595, 0.805758, 0.98793226, 0.28681, 0, -0.12480003, 1.4740633, -0.5922447, -55.51061, 14.309829, 24.41813)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D9" type="CSGCylinder3D" parent="." unique_id=747476210]
 transform = Transform3D(-0.6413605, 0.25697488, -0.7545849, 0.2114797, 1.8098756, -2.8217686e-09, 0.7375181, -0.2955024, -0.6562023, -59.099316, 7.6746607, 18.150702)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="." unique_id=244800617]
 transform = Transform3D(-0.5006752, 0.78547245, -0.7545849, 0.64641136, 1.4128711, -1.7650269e-08, 0.57574016, -0.90323603, -0.65620226, -58.128044, 10.642079, 17.033813)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D11" type="CSGCylinder3D" parent="." unique_id=1174681017]
 transform = Transform3D(-0.39466208, 0.97079355, -0.75458485, 0.79892266, 1.1137093, 1.7650267e-08, 0.45383272, -1.1163418, -0.65620226, -56.468605, 13.031638, 15.125582)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D12" type="CSGCylinder3D" parent="." unique_id=717049012]
 transform = Transform3D(-0.10163605, 1.2004641, -0.7545849, 0.9879324, 0.28681004, -1.0415933e-08, 0.116874054, -1.3804466, -0.6562022, -54.460728, 14.309829, 12.816668)
+material_override = ExtResource("15_4ddeu")
 
 [node name="CSGCylinder3D13" type="CSGCylinder3D" parent="." unique_id=1445064990]
 transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 29.85392, 3.9619431, 1.6570315)
@@ -2093,3 +2264,6 @@ transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 5.15
 
 [node name="CSGCylinder3D18" type="CSGCylinder3D" parent="." unique_id=1327018568]
 transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, -25.008064, 3.961946, 7.506525)
+
+[node name="WallPlain" type="MeshInstance3D" parent="." unique_id=2067238667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.815899, 0.08759117, 4.1809464)
