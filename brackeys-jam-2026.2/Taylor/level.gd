@@ -1,8 +1,9 @@
 extends Node3D
 
-const PRESSURE_GAME_SCENE = preload("res://Van/Prefabs/PressureHackingGame.tscn")
-const STEAM_GAME_SCENE = preload("res://Van/Prefabs/SteamHackingGame.tscn")
-const RHYTHM_GAME_SCENE = preload("res://Levels/rhythmMinigame.tscn")
+const BALLAST_GAME_SCENE = preload("res://Van/Prefabs/ballast_minigame.tscn")
+const BOILER_GAME_SCENE = preload("res://Van/Prefabs/boiler_minigame.tscn")
+const SONAR_GAME_SCENE = preload("res://Levels/sonar_minigame.tscn")
+const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/CircuitMinigame.tscn")
 
 @export var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
 
@@ -47,13 +48,14 @@ func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
 	# 3. Instantiate the requested minigame overlay
 	var game_instance: Control = null
 	match system_id:
-		"Pressure":
-			game_instance = PRESSURE_GAME_SCENE.instantiate()
-		"Steam":
-			game_instance = STEAM_GAME_SCENE.instantiate()
-		"Rhythm":
-			game_instance = RHYTHM_GAME_SCENE.instantiate()
-		
+		"Ballast":
+			game_instance = BALLAST_GAME_SCENE.instantiate()
+		"Boiler":
+			game_instance = BOILER_GAME_SCENE.instantiate()
+		"Sonar":
+			game_instance = SONAR_GAME_SCENE.instantiate()
+		"Circuit":
+			game_instance = CIRCUIT_GAME_SCENE.instantiate()
 	if not game_instance:
 		_restore_control(trigger)
 		is_repair_active = false

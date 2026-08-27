@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
 
-[ext_resource type="Texture2D" uid="uid://cmst6c1hfuso" path="res://Art/2D/Placeholder/Screenshot 2026-08-26 210830.png" id="1_4gg61"]
 [ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
-[ext_resource type="Texture2D" uid="uid://2lapwdb28sqv" path="res://Art/2D/Placeholder/sub_health.png" id="1_i7vq3"]
-[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/2D/Placeholder/mask.png" id="2_dgwwc"]
+[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/Placeholder/mask.png" id="2_dgwwc"]
+[ext_resource type="Texture2D" uid="uid://dm3ghxswrgxgk" path="res://Art/2D/ShipHealth/health_bg.png" id="3_crwwa"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
+[ext_resource type="Texture2D" uid="uid://qppe6lmagfkf" path="res://Art/2D/ShipHealth/health_frame_base.png" id="5_crwwa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy48u"]
 shader = ExtResource("4_glv1w")
@@ -31,16 +31,18 @@ script = ExtResource("1_crwwa")
 [node name="LiquidMask" type="TextureRect" parent="." unique_id=1038621429]
 clip_children = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -11.42
+offset_right = 668.58
+offset_bottom = 423.0
 scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 texture = ExtResource("2_dgwwc")
 
 [node name="ChamberBackground" type="Sprite2D" parent="LiquidMask" unique_id=2024882195]
 modulate = Color(0.5931336, 0.59313357, 0.59313357, 1)
-position = Vector2(357.49997, 206.24995)
+position = Vector2(356.19, 206.25)
 scale = Vector2(1.030844, 1.3249997)
-texture = ExtResource("1_4gg61")
+texture = ExtResource("3_crwwa")
 
 [node name="LiquidFill" type="ColorRect" parent="LiquidMask" unique_id=1945976005]
 material = SubResource("ShaderMaterial_dy48u")
@@ -50,11 +52,15 @@ offset_top = 157.5
 offset_right = 194.6875
 offset_bottom = 195.0
 scale = Vector2(8, 5)
+mouse_filter = 2
 
 [node name="SubmarineFrame" type="TextureRect" parent="." unique_id=2084125768]
 clip_children = 2
 layout_mode = 1
-offset_right = 680.0
-offset_bottom = 423.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_i7vq3")
+offset_left = -54.185
+offset_top = -119.66
+offset_right = 1993.815
+offset_bottom = 1928.34
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+texture = ExtResource("5_crwwa")

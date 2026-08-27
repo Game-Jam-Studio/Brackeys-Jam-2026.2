@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dsfbyq633v5x6"]
 
-[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_pa3bi"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_tl3pp"]
-[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_tl3pp"]
-[ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_v63jj"]
-[ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_rat20"]
-[ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_ux0hy"]
-[ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_68oas"]
+[ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_6yilr"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_8qsiv"]
+[ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_quwsm"]
+[ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_tf3ko"]
+[ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_8essj"]
+[ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="6_4ywd5"]
+[ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="7_fy0eo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,7 +30,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 size = Vector3(50, 0.2, 50)
 
 [node name="World" type="Node3D" unique_id=1609880321]
-script = ExtResource("1_pa3bi")
+script = ExtResource("1_6yilr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -39,14 +39,14 @@ environment = SubResource("Environment_v111v")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_tl3pp")]
+[node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_8qsiv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7121282)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=836225841 node_paths=PackedStringArray("player_character")]
 unique_name_in_owner = true
 transform = Transform3D(-1, -5.3250616e-08, 6.933335e-08, 0, 0.7930811, 0.6091161, -8.742278e-08, 0.6091161, -0.7930811, -1.08226324e-07, 8.51763, -4.329035)
 cull_mask = 1048573
-script = ExtResource("3_tl3pp")
+script = ExtResource("3_quwsm")
 player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
@@ -65,25 +65,30 @@ shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=81569447]
 
-[node name="PauseMenu" parent="UI" unique_id=1764100914 instance=ExtResource("4_v63jj")]
+[node name="PauseMenu" parent="UI" unique_id=1764100914 instance=ExtResource("4_tf3ko")]
 unique_name_in_owner = true
 
-[node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_rat20")]
+[node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_8essj")]
 
-[node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("5_ux0hy")]
+[node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.2427278, 0.91858387, 5.695434)
 is_broken = true
 
-[node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("5_ux0hy")]
+[node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13335466, 0.91858387, 5.6954336)
-system_id = "Steam"
+system_id = "Boiler"
 is_broken = true
 
-[node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("5_ux0hy")]
+[node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.629835, 0.91858387, 5.695433)
-system_id = "Rhythm"
+system_id = "Sonar"
 is_broken = true
 
-[node name="Door" parent="." unique_id=490510366 instance=ExtResource("6_68oas")]
+[node name="StaticBody3D4" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9.003275, 0.91858387, 5.6954327)
+system_id = "Circuit"
+is_broken = true
+
+[node name="Door" parent="." unique_id=490510366 instance=ExtResource("7_fy0eo")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6211911, 1.168581, 12.169495)
 is_locked = false
