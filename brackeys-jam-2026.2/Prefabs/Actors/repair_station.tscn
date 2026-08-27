@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wlmfiuoene0k" path="res://Scripts/Common/repair_station.gd" id="1_6h4oh"]
 [ext_resource type="Script" uid="uid://c6hwlcmnhifru" path="res://Scripts/Common/repair_trigger.gd" id="1_xq2io"]
+[ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="3_j654s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
 
@@ -35,7 +36,10 @@ shape = SubResource("BoxShape3D_owww7")
 script = ExtResource("1_xq2io")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RepairTrigger" unique_id=202934905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5053085)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 1.2468612)
 shape = SubResource("SphereShape3D_nlb7l")
 
-[node name="InteractionPrompt" type="Label3D" parent="." unique_id=1103280025]
+[node name="Key Prompt" type="Sprite3D" parent="RepairTrigger" unique_id=2043661568]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.5706127, 0)
+billboard = 1
+texture = ExtResource("3_j654s")

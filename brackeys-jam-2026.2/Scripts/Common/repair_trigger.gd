@@ -8,10 +8,23 @@ signal station_repair_succeeded(system_id: String)
 # Defines where the camera interpolates to
 @export var camera_focus_point: Node3D
 @onready var station: Node = get_parent()
-
+@onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
 func _ready() -> void:
 	add_to_group("repair_triggers")
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+	
+	if prompt_sprite:
+		prompt_sprite.visible = false
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = true
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = false
 
 
 # minigames can always be interacted with but if they are already repaired
