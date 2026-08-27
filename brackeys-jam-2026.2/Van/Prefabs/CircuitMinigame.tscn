@@ -21,7 +21,7 @@ script = ExtResource("1_vofu2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=251684858]
 unique_name_in_owner = true
 stream = ExtResource("2_1vx7c")
-volume_db = -15.475
+volume_db = -8.0
 bus = &"UI"
 
 [node name="Wires" type="Control" parent="." unique_id=2038049846]

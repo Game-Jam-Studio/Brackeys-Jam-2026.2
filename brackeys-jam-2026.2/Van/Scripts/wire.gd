@@ -9,7 +9,7 @@ var tick: float
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
 func _ready() -> void:
-	await get_tree().current_scene.ready
+	await $"../..".ready
 	line_2d = Line2D.new()
 	add_child(line_2d)
 	line_2d.add_point(Vector2(position.x, position.y + (size.y / 2)), 0)

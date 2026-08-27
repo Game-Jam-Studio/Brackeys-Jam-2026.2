@@ -6,7 +6,7 @@ signal wire_connected(wire_ID: int, slot_ID: int)
 const UI_DIAL = preload("uid://bgkircabxx6ma")
 
 func _ready() -> void:
-	await get_tree().current_scene.ready
+	await $"../..".ready
 
 func _on_area_2d_area_entered(wire: Area2D) -> void:
 	if wire.get_parent().is_in_group("wires") and !slotted:
