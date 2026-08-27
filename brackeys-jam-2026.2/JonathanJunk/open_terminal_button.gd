@@ -7,4 +7,5 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	PopupUI.show_ship_status()
+	PopupUI.show_next_text("Intro-001")
+	#PopupUI.show_ship_status()

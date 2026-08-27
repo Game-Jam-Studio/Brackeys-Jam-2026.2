@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_onejj"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_1tt2n"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_ss16e"]
+[ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="4_cmg2m"]
+[ext_resource type="Script" uid="uid://cwh5x8inuut8g" path="res://JonathanJunk/open_terminal_button.gd" id="4_pyxwl"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_qwo1n"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_sfg4o"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_pyxwl"]
@@ -930,6 +932,12 @@ mesh = SubResource("BoxMesh_gl5qx")
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=81569447]
+
+[node name="Button" type="Button" parent="UI" unique_id=163720448]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("4_cmg2m")
+script = ExtResource("4_pyxwl")
 
 [node name="PauseMenu" parent="UI" unique_id=1764100914 instance=ExtResource("4_qwo1n")]
 unique_name_in_owner = true
@@ -2591,3 +2599,5 @@ stream = ExtResource("10_pyxwl")
 volume_db = 25.0
 autoplay = true
 max_distance = 25.0
+
+[connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
