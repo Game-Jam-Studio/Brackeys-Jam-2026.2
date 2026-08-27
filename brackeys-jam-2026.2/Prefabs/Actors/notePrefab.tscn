@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kgm86s8gbmrx"]
 
 [ext_resource type="Script" uid="uid://dxv86c0pnj0fb" path="res://Scripts/Rhythm/note.gd" id="1_rd4ew"]
-[ext_resource type="Texture2D" uid="uid://ldafxp1nvghn" path="res://Art/2D/Rhythm/note_sane.png" id="2_sx81s"]
+[ext_resource type="Texture2D" uid="uid://ldafxp1nvghn" path="res://Art/2D/Sonar/note_sane.png" id="2_sx81s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
 

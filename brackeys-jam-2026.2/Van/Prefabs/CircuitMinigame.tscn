@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bw7m3wve2gnn2"]
+
+[ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
+[ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
+[ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
+[ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i72gw"]
+radius = 64.0
+
+[node name="WireMinigame" type="Control" unique_id=380570598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vofu2")
+
+[node name="Slots" type="Control" parent="." unique_id=1212298090]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" type="TextureRect" parent="Slots" unique_id=1171711860]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot" unique_id=417715862]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot/SlotArea" unique_id=493425396]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot2" type="TextureRect" parent="Slots" unique_id=1714237618]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot2" unique_id=1075880275]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot2/SlotArea" unique_id=993822414]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot3" type="TextureRect" parent="Slots" unique_id=622208828]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot3" unique_id=1717896384]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot3/SlotArea" unique_id=346824747]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Slot4" type="TextureRect" parent="Slots" unique_id=1795428930]
+layout_mode = 0
+offset_left = 1016.0
+offset_right = 1144.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot4" unique_id=876842989]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot4/SlotArea" unique_id=945660078]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wires" type="Control" parent="." unique_id=2038049846]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wire" type="TextureRect" parent="Wires" unique_id=1187910785 groups=["wires"]]
+modulate = Color(0.85463405, 0.8546339, 0.8546339, 1)
+z_index = 1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire" unique_id=1269574364]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire/WireArea" unique_id=1631742701]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire2" type="TextureRect" parent="Wires" unique_id=1236325583 groups=["wires"]]
+modulate = Color(0.6392066, 0.63920623, 0.6392063, 1)
+z_index = 1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire2" unique_id=1765150146]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire2/WireArea" unique_id=942656853]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire3" type="TextureRect" parent="Wires" unique_id=1430657041 groups=["wires"]]
+modulate = Color(0.37918013, 0.37917963, 0.37917978, 1)
+z_index = 1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire3" unique_id=279691108]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire3/WireArea" unique_id=1955178265]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire4" type="TextureRect" parent="Wires" unique_id=1187806681 groups=["wires"]]
+modulate = Color(0.1161268, 0.116126515, 0.116126575, 1)
+z_index = 1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire4" unique_id=2134566926]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire4/WireArea" unique_id=2098582938]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="SlotLocations" type="Node2D" parent="." unique_id=2064158959]
+
+[node name="SlotLocation" type="Node2D" parent="SlotLocations" unique_id=473915759]
+position = Vector2(920, 79)
+
+[node name="SlotLocation2" type="Node2D" parent="SlotLocations" unique_id=124963979]
+position = Vector2(948, 269)
+
+[node name="SlotLocation3" type="Node2D" parent="SlotLocations" unique_id=16671437]
+position = Vector2(891, 449)
+
+[node name="SlotLocation4" type="Node2D" parent="SlotLocations" unique_id=1148227134]
+position = Vector2(722, 575)
+
+[node name="WireLocations" type="Node2D" parent="." unique_id=1189879961]
+
+[node name="WireLocation" type="Node2D" parent="WireLocations" unique_id=710380303]
+position = Vector2(77, 65)
+
+[node name="WireLocation2" type="Node2D" parent="WireLocations" unique_id=617373659]
+position = Vector2(80, 215)
+
+[node name="WireLocation3" type="Node2D" parent="WireLocations" unique_id=581840271]
+position = Vector2(80, 370)
+
+[node name="WireLocation4" type="Node2D" parent="WireLocations" unique_id=496690030]
+position = Vector2(82, 532)
+
+[connection signal="area_entered" from="Slots/Slot/SlotArea" to="Slots/Slot" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Slots/Slot2/SlotArea" to="Slots/Slot2" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Slots/Slot3/SlotArea" to="Slots/Slot3" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Slots/Slot4/SlotArea" to="Slots/Slot4" method="_on_area_2d_area_entered"]
+[connection signal="gui_input" from="Wires/Wire" to="Wires/Wire" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire2" to="Wires/Wire2" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire3" to="Wires/Wire3" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire4" to="Wires/Wire4" method="_on_gui_input"]

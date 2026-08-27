@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df3i42rcoq6of"]
 
 [ext_resource type="Texture2D" uid="uid://cwnunjx1aeqj2" path="res://Van/Shaders/Gore/albedo.tres" id="1_pkvy3"]
-[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Art/2D/Placeholder/Tentical Test.png" id="2_81orc"]
+[ext_resource type="Texture2D" uid="uid://0arx7wn30pbd" path="res://Art/Placeholder/Tentical Test.png" id="2_81orc"]
 [ext_resource type="Texture2D" uid="uid://d2g5c3ue15tas" path="res://Van/Shaders/Gore/displacement.tres" id="2_vpjbg"]
 [ext_resource type="Texture2D" uid="uid://bd8cfenbexnhq" path="res://Van/Shaders/Gore/normal.tres" id="3_ag00n"]
 [ext_resource type="Texture2D" uid="uid://colllkq54hrli" path="res://Van/Shaders/Gore/roughness.tres" id="3_vpjbg"]

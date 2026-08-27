@@ -1,7 +1,8 @@
 class_name RepairStation
 extends Node3D
 
-@export_enum("Pressure", "Steam", "Rhythm") var system_id: String = "Pressure":
+
+@export_enum("Ballast", "Boiler", "Sonar", "Circuit") var system_id: String = "Ballast":
 	set(value):
 		system_id = value
 		if is_node_ready() and repair_trigger:
