@@ -34,6 +34,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 texture = ExtResource("2_dgwwc")
 
 [node name="ChamberBackground" type="Sprite2D" parent="LiquidMask" unique_id=2024882195]
@@ -50,6 +51,7 @@ offset_top = 157.5
 offset_right = 194.6875
 offset_bottom = 195.0
 scale = Vector2(8, 5)
+mouse_filter = 2
 
 [node name="SubmarineFrame" type="TextureRect" parent="." unique_id=2084125768]
 clip_children = 2
@@ -57,4 +59,5 @@ layout_mode = 1
 offset_right = 680.0
 offset_bottom = 423.0
 scale = Vector2(0.4, 0.4)
+mouse_filter = 2
 texture = ExtResource("1_i7vq3")
