@@ -17,8 +17,13 @@ func _ready() -> void:
 		circle_node.texture = ProgressionManager.get_asset_texture("sonar", "circle")
 	if cone_node:
 		var current_texture = ProgressionManager.get_asset_texture("sonar", "cone")
-		print("Loaded cone texture path: ", current_texture.resource_path if current_texture else "null")
 		cone_node.texture = current_texture
+		
+		# Apply green transparency only for base texture
+		if current_texture == base_cone_texture:
+			cone_node.modulate = Color("87ff55af")
+		else:
+			cone_node.modulate = Color.WHITE
 
 
 func _on_note_manager_completed(success: bool) -> void:

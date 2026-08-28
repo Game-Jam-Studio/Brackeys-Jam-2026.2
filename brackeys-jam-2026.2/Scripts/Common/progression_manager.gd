@@ -62,7 +62,7 @@ func get_ship_tier(health: float, max_health: float) -> int:
 
 func get_minigame_tier(health: float, max_health: float) -> int:
 	# TEMPORARY OVERRIDE FOR TESTING CORRUPTED ART
-	return 3
+	return 1
 	
 	#var normalized: float = clampf(health / max_health, 0.0, 1.0)
 	#if normalized <= 0.50 or GameState.current_area_level >= 3:
