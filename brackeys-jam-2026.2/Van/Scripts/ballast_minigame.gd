@@ -33,6 +33,7 @@ func _ready() -> void:
 	var area_texture = ProgressionManager.get_asset_texture("ballast", "valid_area")
 	var needle_texture = ProgressionManager.get_asset_texture("ballast", "needle")
 	var dial_texture = ProgressionManager.get_asset_texture("ballast", "dial")
+	var button_texture = ProgressionManager.get_asset_texture("boiler", "button")
 
 	# Apply Gauge textures
 	%Gauge1.texture = gauge_texture
@@ -53,6 +54,9 @@ func _ready() -> void:
 	%Dial1.texture = dial_texture
 	%Dial2.texture = dial_texture
 	%Dial3.texture = dial_texture
+
+	# Apply Button textures
+	$Menu/Accept.texture_normal = button_texture
 
 #Set random values
 	gauge1_value = snapped(randf_range(0, 1), 0.1)
