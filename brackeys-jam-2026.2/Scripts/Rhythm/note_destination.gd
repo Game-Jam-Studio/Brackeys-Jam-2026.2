@@ -11,12 +11,24 @@ extends Node2D
 @export var sonarSound: AudioStream
 @export var errorSound: AudioStream
 
+@onready var label_node: Label = $Letter
+@onready var texture_node = $Sprite2D
+
+@export var label_text: String = "":
+	set(value):
+		label_text = value
+		if is_node_ready() and label_node:
+			label_node.text = value
+
 var sfx_player: AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sfx_player = get_parent().get_node("AudioStreamPlayer")
 	$Sprite2D.texture = noteTexture
+	if label_node and not label_text.is_empty():
+		label_node.text = label_text
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -31,6 +43,22 @@ func _unhandled_input(event: InputEvent) -> void:
 				_flash_color(successColor)
 			else:
 				_on_error()
+
+@onready var sprite_node: TextureRect = $TextureRect # Replace with your actual texture node path
+
+func update_tier_presentation(tier: int, corrupted_texture: Texture2D, base_texture: Texture2D) -> void:
+	if label_node:
+		label_node.theme = ProgressionManager.get_ai_theme(tier)
+	
+	if texture_node:
+		if tier == 3:
+			texture_node.texture = corrupted_texture
+			texture_node.position = Vector2(-1.11, 63.465)
+			texture_node.scale = Vector2(0.272, 0.407)
+		else:
+			texture_node.texture = base_texture
+			texture_node.position = Vector2(0.0, 40.685)
+			texture_node.scale = Vector2(0.25, 0.523)
 
 func _flash_color(color: Color) -> void:
 	$Sprite2D.modulate = color

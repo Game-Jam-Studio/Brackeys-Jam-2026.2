@@ -39,14 +39,14 @@ func apply_test_color() -> void:
 	var mat := StandardMaterial3D.new()
 	match system_id:
 		"Ballast":
-			mat.albedo_color = Color.RED
+			mat.albedo_color = Color(0.494, 0.894, 0.329, 1.0)
 		"Boiler":
-			mat.albedo_color = Color.YELLOW
+			mat.albedo_color = Color(0.988, 0.42, 0.008, 1.0)
 		"Sonar":
-			mat.albedo_color = Color.CYAN
+			mat.albedo_color = Color(0.184, 0.651, 1.0, 1.0)
 		"Circuit":
-			mat.albedo_color = Color.BLUE
+			mat.albedo_color = Color(1.0, 0.973, 0.035, 1.0)
 		_:
-			mat.albedo_color = Color.WHITE
+			mat.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
 			
 	mesh_node.material_override = mat

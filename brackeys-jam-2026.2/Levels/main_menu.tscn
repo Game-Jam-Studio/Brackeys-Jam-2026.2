@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp65i8pg1ea8i"]
 
 [ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
-[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_jy27m"]
+[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_jy27m"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_3es34"]
 
 [node name="MainMenu" type="Control" unique_id=1948344224]

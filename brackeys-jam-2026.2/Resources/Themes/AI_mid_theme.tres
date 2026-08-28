@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bguvkxxpo6dft"]
+
+[ext_resource type="FontFile" uid="uid://dtogy48yyb2g6" path="res://Resources/Fonts/AI_mid.ttf" id="2_3xhcm"]
+
+[resource]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("2_3xhcm")

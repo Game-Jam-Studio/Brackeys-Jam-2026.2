@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch7qelwkk1d7x"
-path="res://.godot/imported/goal.png-d40b8324824a5442ac6770a61a270175.ctex"
+uid="uid://shqlp5m8vmiv"
+path="res://.godot/imported/circle_corrupted.png-c4913f29905fe2d451f84b1d594b4a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Steam/goal.png"
-dest_files=["res://.godot/imported/goal.png-d40b8324824a5442ac6770a61a270175.ctex"]
+source_file="res://Art/2D/Sonar/circle_corrupted.png"
+dest_files=["res://.godot/imported/circle_corrupted.png-c4913f29905fe2d451f84b1d594b4a97.ctex"]
 
 [params]
 

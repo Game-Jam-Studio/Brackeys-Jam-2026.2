@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ldafxp1nvghn"
-path="res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"
+uid="uid://1ora02wnh3t8"
+path="res://.godot/imported/dial_base.png-b91edc70e689475d553ec5823f2cc090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Sonar/note_sane.png"
-dest_files=["res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"]
+source_file="res://Art/2D/Ballast/dial_base.png"
+dest_files=["res://.godot/imported/dial_base.png-b91edc70e689475d553ec5823f2cc090.ctex"]
 
 [params]
 

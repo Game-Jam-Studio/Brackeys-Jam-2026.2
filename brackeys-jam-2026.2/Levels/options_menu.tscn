@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpcxbanh6ewu3"]
 
 [ext_resource type="Script" uid="uid://bwk5652wpo720" path="res://Scripts/UI/options_menu.gd" id="1_i02bq"]
-[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Prefabs/UI/UI_theme.tres" id="2_035ro"]
+[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_035ro"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_035ro"]
 
 [node name="Options" type="Control" unique_id=1889111760]

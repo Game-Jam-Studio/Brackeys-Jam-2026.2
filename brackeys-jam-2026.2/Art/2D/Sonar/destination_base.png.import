@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ora02wnh3t8"
-path="res://.godot/imported/dial.png-b7908d3ec4a11c70cdd17f8a7f25837f.ctex"
+uid="uid://f1hkw3sgwqqu"
+path="res://.godot/imported/destination_base.png-2d1a4cc03dc468367ebae5423ad42fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Steam/dial.png"
-dest_files=["res://.godot/imported/dial.png-b7908d3ec4a11c70cdd17f8a7f25837f.ctex"]
+source_file="res://Art/2D/Sonar/destination_base.png"
+dest_files=["res://.godot/imported/destination_base.png-2d1a4cc03dc468367ebae5423ad42fe9.ctex"]
 
 [params]
 
