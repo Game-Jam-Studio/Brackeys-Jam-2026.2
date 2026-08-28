@@ -6,6 +6,7 @@ var line_2d: Line2D
 var wire_ID: int
 var tick: float
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
+const LINE_2D_TEST = preload("uid://bub3wo4b1fbab")
 
 func _ready() -> void:
 	await $"../..".ready
@@ -17,6 +18,9 @@ func _ready() -> void:
 	line_2d.reparent(get_parent())
 	line_2d.global_position = Vector2.ZERO
 	line_2d.set_point_position(1, Vector2(position.x + size.x / 2, position.y + size.y / 2))
+	line_2d.texture = LINE_2D_TEST
+	line_2d.texture_mode = Line2D.LINE_TEXTURE_TILE
+	line_2d.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 
 
 func _on_gui_input(event: InputEvent) -> void:
