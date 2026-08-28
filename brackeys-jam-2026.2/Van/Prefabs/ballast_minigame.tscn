@@ -13,10 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ncqte")
-tolerance = 15.0
-speed_multiplier_per_round = 1.5
-goal_min_range = 30.0
-goal_max_range = 90.0
+number_of_rounds = 10
+speed_multiplier_per_round = 1.1
+goal_min_range = 0.0
+goal_max_range = 60.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1520033933]
 layout_mode = 1
