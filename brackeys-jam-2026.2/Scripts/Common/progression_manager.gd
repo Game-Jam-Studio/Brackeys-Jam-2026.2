@@ -5,6 +5,17 @@ const AI_THEME_BASE = preload("res://Resources/Themes/AI_base_theme.tres")
 const AI_THEME_MID = preload("res://Resources/Themes/AI_mid_theme.tres")
 const AI_THEME_CORRUPTED = preload("res://Resources/Themes/AI_corrupted_theme.tres")
 
+# Ship Health Frames
+const FRAME_BASE = preload("res://Art/2D/ShipHealth/health_frame_base.png") 
+const FRAME_MID = preload("res://Art/2D/ShipHealth/health_frame_mid.png")
+const FRAME_CORRUPTED = preload("res://Art/2D/ShipHealth/health_frame_corrupted.png")
+
+func get_frame_texture(tier: int) -> Texture2D:
+	match tier:
+		3: return FRAME_CORRUPTED
+		2: return FRAME_MID
+		_: return FRAME_BASE
+
 # [Sonar Minigame] Destination Transforms
 const TRANSFORM_BASE = {
 	"position": Vector2(0.0, 40.685),
@@ -42,7 +53,7 @@ const ASSET_PATHS = {
 
 func get_current_tier(health: float, max_health: float) -> int:
 	var normalized: float = clampf(health / max_health, 0.0, 1.0)
-	if normalized <= 0.33 or GameState.current_area_level >= 3:
+	if normalized <= 0.30 or GameState.current_area_level >= 3:
 		return 3
 	elif normalized <= 0.66 or GameState.current_area_level >= 2:
 		return 2

@@ -3,9 +3,7 @@ extends Control
 @onready var liquid_fill: ColorRect = $LiquidMask/LiquidFill
 @onready var health_frame: TextureRect = $FrameBase
 
-@export var frame_base: Texture2D
-@export var frame_mid: Texture2D
-@export var frame_corrupted: Texture2D
+
 
 var fill_material: ShaderMaterial
 var fill_tween: Tween
@@ -71,13 +69,7 @@ func _update_display(health: float) -> void:
 	var current_tier: int = ProgressionManager.get_current_tier(health, GameState.MAX_SHIP_HEALTH)
 	highest_unlocked_tier = maxi(highest_unlocked_tier, current_tier)
 	
-	var target_texture: Texture2D = frame_base
-	if highest_unlocked_tier == 3 and frame_corrupted:
-		target_texture = frame_corrupted
-	elif highest_unlocked_tier == 2 and frame_mid:
-		target_texture = frame_mid
-	
-	health_frame.texture = target_texture
+	health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
 	
 	var current_fill: float = fill_material.get_shader_parameter("fill_amount")
 	
