@@ -44,7 +44,7 @@ func _ready() -> void:
 	# Apply the current health on load to prevent desync
 	_update_display(GameState.ship_health)
 
-
+# Debug health manipulation for testing
 func _unhandled_input(event: InputEvent) -> void:
 	# Press [ - ] to deal 10 damage to the ship
 	if event is InputEventKey and event.pressed and event.keycode == KEY_MINUS:
@@ -65,13 +65,11 @@ func _on_area_unlocked(_new_level: int) -> void:
 func _update_display(health: float) -> void:	
 	if not fill_material:
 		return
-
+	
 	var normalized: float = clampf(health / GameState.MAX_SHIP_HEALTH, 0.0, 1.0)
 	
-	if health <= 30.0 or GameState.current_area_level >= 3:
-		highest_unlocked_tier = maxi(highest_unlocked_tier, 3)
-	elif health <= 65.0 or GameState.current_area_level >= 2:
-		highest_unlocked_tier = maxi(highest_unlocked_tier, 2)
+	var current_tier: int = ProgressionManager.get_current_tier(health, GameState.MAX_SHIP_HEALTH)
+	highest_unlocked_tier = maxi(highest_unlocked_tier, current_tier)
 	
 	var target_texture: Texture2D = frame_base
 	if highest_unlocked_tier == 3 and frame_corrupted:

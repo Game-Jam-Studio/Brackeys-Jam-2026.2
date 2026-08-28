@@ -42,9 +42,9 @@ const ASSET_PATHS = {
 
 func get_current_tier(health: float, max_health: float) -> int:
 	var normalized: float = clampf(health / max_health, 0.0, 1.0)
-	if normalized <= 0.25 or GameState.current_area_level >= 3:
+	if normalized <= 0.33 or GameState.current_area_level >= 3:
 		return 3
-	elif normalized <= 0.50 or GameState.current_area_level >= 2:
+	elif normalized <= 0.66 or GameState.current_area_level >= 2:
 		return 2
 	return 1
 
