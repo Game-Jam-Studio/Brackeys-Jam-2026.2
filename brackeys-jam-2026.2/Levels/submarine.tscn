@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/M_PlainWall.tres" id="14_gmhmx"]
 [ext_resource type="Material" uid="uid://bjqq84k2cil2x" path="res://Art/3D/M_FleshWalls.tres" id="15_4ddeu"]
 [ext_resource type="Material" uid="uid://nwfjx3jn1bgk" path="res://Art/3D/M_Lungs.tres" id="16_x47f5"]
+[ext_resource type="PackedScene" uid="uid://3jhnwf0x5xs0" path="res://Art/3D/Van/Terminal.glb" id="17_k8fph"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1668,7 +1669,7 @@ mesh = SubResource("BoxMesh_gl5qx")
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall30" type="StaticBody3D" parent="." unique_id=1849435931]
-transform = Transform3D(-0.4225634, 0, -2.0215076e-09, 0, 5.171614, 0, 3.6941664e-08, 0, -0.023123354, 18.836533, 1.1130898, 1.6964569)
+transform = Transform3D(-0.4288876, 0, -2.435086e-09, 0, 5.171614, 0, 3.749454e-08, 0, -0.027854137, 18.59636, 1.1130898, 1.6964569)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall30" unique_id=596467382]
@@ -1677,6 +1678,18 @@ material_override = ExtResource("14_gmhmx")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall30" unique_id=231544480]
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="Wall36" type="StaticBody3D" parent="." unique_id=1346810528]
+transform = Transform3D(-0.028391702, 0, -1.9330018e-09, 0, 5.171614, 0, 2.4820812e-09, 0, -0.022110963, 8.543997, 1.6394119, 1.6964569)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall36" unique_id=141267262]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("14_gmhmx")
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall36" unique_id=2050095882]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall142" type="StaticBody3D" parent="." unique_id=1808744895]
@@ -1740,7 +1753,7 @@ mesh = SubResource("BoxMesh_gl5qx")
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall110" type="StaticBody3D" parent="." unique_id=35233947]
-transform = Transform3D(-0.06468328, 0, 0.006597265, 0, 12.219027, 0, -0.046475828, 0, -0.009181835, -27.22855, 1.1157172, 14.324835)
+transform = Transform3D(-0.06468328, 0, 0.006597265, 0, 12.219027, 0, -0.046475828, 0, -0.009181835, -27.270689, 1.1157172, 14.294811)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall110" unique_id=684070278]
@@ -1824,7 +1837,7 @@ mesh = SubResource("BoxMesh_gl5qx")
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Wall130" type="StaticBody3D" parent="." unique_id=1705356088]
-transform = Transform3D(-0.022481993, 0, 0.0065972684, 0, 12.219027, 0, -0.016153622, 0, -0.009181839, -26.079536, 1.1157172, 9.526536)
+transform = Transform3D(-0.014958922, 0, 0.004206626, 0, 12.219026, 0, -0.0062726443, 0, -0.010031929, -26.188572, 1.1157172, 9.302742)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall130" unique_id=1738958234]
@@ -2267,3 +2280,6 @@ transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, -25.
 
 [node name="WallPlain" type="MeshInstance3D" parent="." unique_id=2067238667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.815899, 0.08759117, 4.1809464)
+
+[node name="Terminal2" parent="." unique_id=211921819 instance=ExtResource("17_k8fph")]
+transform = Transform3D(-4.6000096e-07, 0, 1.0000001, 0, 1.2020144, 0, -1.5885078, 0, -2.8958058e-07, 7.598535, 0.087592125, 1.6944573)
