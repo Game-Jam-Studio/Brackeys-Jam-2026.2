@@ -5,6 +5,8 @@ extends Area3D
 @export var prompt_message: String = "Interact"
 @export var area_progression_key: String = ""
 
+@export var on_interact_dialogue_key: String = ""
+
 
 ## Evaluates whether the player is currently allowed to interact with this object
 ## Override in child scripts (check locked/broken state)
@@ -21,7 +23,8 @@ func interact(_player: CharacterBody3D) -> void:
 			area_progression_system.complete_unlock_key(area_progression_key)
 		else:
 			print("no named AreaProgressionSystem exists in main scene tree")
-	pass
+	if on_interact_dialogue_key != "":
+		PopupUI.show_next_text(on_interact_dialogue_key)
 
 
 ## Helper to fetch the active prompt (e.g., returns "Locked" if can_interact is false).

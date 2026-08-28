@@ -2579,6 +2579,9 @@ is_locked = false
 [node name="Door" parent="Doors/Area1Doors" unique_id=490510366 instance=ExtResource("16_5qcsr")]
 transform = Transform3D(6.5964103, 0, -0.02215952, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 613.1023, -0.002984099, -1569.315)
 
+[node name="DoorTrigger" parent="Doors/Area1Doors/Door" index="1" unique_id=1813961388]
+on_door_open_dialogue_key = "End-001"
+
 [node name="Door4" parent="Doors/Area1Doors" unique_id=856032266 instance=ExtResource("16_5qcsr")]
 transform = Transform3D(-6.596411, 0, 0.022158943, 0, 0.081839584, 0, -0.2801888, 0, -83.42953, 709.72034, -0.002984099, -486.5061)
 is_locked = false
@@ -2704,7 +2707,12 @@ transform = Transform3D(-4.6000096e-07, 0, 1.0000001, 0, 1.2020144, 0, -1.588507
 [node name="RepairStation1" parent="RepairStations/Area1" unique_id=252793024 instance=ExtResource("19_klv23")]
 transform = Transform3D(-0.9989431, 0, 0.045963865, 0, 1, 0, -0.045963865, 0, -0.9989431, 30.27519, 0.91858387, 1.6579566)
 system_id = "Sonar"
+is_broken = true
 area_progression_key = "testUnlock"
+
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="2" unique_id=1598274358]
+on_repair_end_dialogue_key = "A1L2-001"
+on_interact_dialogue_key = "MG3-001"
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1560707899 instance=ExtResource("19_klv23")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.6142, 0.91858387, 13.087654)
@@ -2725,3 +2733,6 @@ system_id = "Boiler"
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("19_klv23")]
 transform = Transform3D(-0.69710886, 0, 0.7169652, 0, 1, 0, -0.7169652, 0, -0.69710886, -24.943102, 0.9185829, 7.473637)
+
+[editable path="Doors/Area1Doors/Door"]
+[editable path="RepairStations/Area1/RepairStation1"]
