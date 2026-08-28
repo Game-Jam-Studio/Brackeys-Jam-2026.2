@@ -3,7 +3,7 @@ extends Node3D
 const BALLAST_GAME_SCENE = preload("res://Van/Prefabs/ballast_minigame.tscn")
 const BOILER_GAME_SCENE = preload("res://Van/Prefabs/boiler_minigame.tscn")
 const SONAR_GAME_SCENE = preload("res://Levels/sonar_minigame.tscn")
-const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/CircuitMinigame.tscn")
+const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/circuit_minigame.tscn")
 
 @export var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
 

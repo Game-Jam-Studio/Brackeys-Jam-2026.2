@@ -16,8 +16,8 @@ var gauge1_correct: bool
 var gauge2_correct: bool
 var gauge3_correct: bool
 
-#Adjust how much mouse movement is needed to move the dials.
-#Values in the 30s-50s are reasonable, 100-200+ gets ridiculous.
+# Adjust how much mouse movement is needed to move the dials.
+# Values in the 30s-50s are reasonable, 100-200+ gets ridiculous.
 @export var mouse_movement_threshold: float = 0.0
 
 # Called when the node enters the scene tree for the first time.

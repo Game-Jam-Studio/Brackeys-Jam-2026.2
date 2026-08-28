@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2lapwdb28sqv"
-path="res://.godot/imported/sub_health.png-942cdc2a2c3da06c69124b2c7c9e20f3.ctex"
+uid="uid://ce54lbpjht63p"
+path="res://.godot/imported/needle_corrupted_v2.png-995bc6c97fb366dc32823a3e71da71f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/sub_health.png"
-dest_files=["res://.godot/imported/sub_health.png-942cdc2a2c3da06c69124b2c7c9e20f3.ctex"]
+source_file="res://Art/Placeholder/needle_corrupted_v2.png"
+dest_files=["res://.godot/imported/needle_corrupted_v2.png-995bc6c97fb366dc32823a3e71da71f8.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
 
 [ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
-[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/Placeholder/mask.png" id="2_dgwwc"]
+[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/2D/ShipHealth/mask.png" id="2_dgwwc"]
 [ext_resource type="Texture2D" uid="uid://dm3ghxswrgxgk" path="res://Art/2D/ShipHealth/health_bg.png" id="3_crwwa"]
 [ext_resource type="Texture2D" uid="uid://bpnun0mckwpcu" path="res://Art/2D/ShipHealth/health_frame_mid.png" id="3_neyg1"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
