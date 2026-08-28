@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bfnqoc2u2w0hi"]
 
-[ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://Scripts/Rhythm/note_destination.gd" id="1_8od7r"]
-[ext_resource type="Texture2D" uid="uid://f1hkw3sgwqqu" path="res://Art/2D/Sonar/destination_base.png" id="3_mtlwo"]
-[ext_resource type="Theme" uid="uid://dugoseq388gc8" path="res://Resources/Themes/AI_base_theme.tres" id="3_tgsds"]
+[ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://Scripts/Rhythm/note_destination.gd" id="1_q76ao"]
+[ext_resource type="Texture2D" uid="uid://f1hkw3sgwqqu" path="res://Art/2D/Sonar/destination_base.png" id="2_d5f7d"]
+[ext_resource type="Theme" uid="uid://dugoseq388gc8" path="res://Resources/Themes/AI_base_theme.tres" id="3_ld3cp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
 
 [node name="destination" type="Node2D" unique_id=1104253604]
-script = ExtResource("1_8od7r")
+script = ExtResource("1_q76ao")
 
 [node name="ErrorArea2D" type="Area2D" parent="." unique_id=857884499]
 position = Vector2(0.20000076, 92.2)
@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_03pib")
 modulate = Color(1, 1, 1, 0.42745098)
 position = Vector2(0, 40.685)
 scale = Vector2(0.24963768, 0.5228635)
-texture = ExtResource("3_mtlwo")
+texture = ExtResource("2_d5f7d")
 
 [node name="Letter" type="Label" parent="." unique_id=815405994]
 anchors_preset = 8
@@ -43,7 +43,7 @@ offset_bottom = 14.75
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme = ExtResource("3_tgsds")
+theme = ExtResource("3_ld3cp")
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cs3nure02ep45" path="res://Scripts/Rhythm/sonar_minigame.gd" id="1_irvol"]
 [ext_resource type="Script" uid="uid://d0hxdc2d14lat" path="res://Scripts/Rhythm/note_manager.gd" id="1_wdrkg"]
 [ext_resource type="PackedScene" uid="uid://kgm86s8gbmrx" path="res://Prefabs/Actors/notePrefab.tscn" id="2_4wcyy"]
-[ext_resource type="PackedScene" uid="uid://bfnqoc2u2w0hi" path="res://Prefabs/Actors/noteDestination.tscn" id="3_irvol"]
+[ext_resource type="PackedScene" uid="uid://bfnqoc2u2w0hi" path="res://Prefabs/Actors/note_destination.tscn" id="3_irvol"]
 [ext_resource type="AudioStream" uid="uid://bcg4v1haf78ck" path="res://Audio/SFX/sonar_ping.wav" id="4_hqqwc"]
 [ext_resource type="Texture2D" uid="uid://f1hkw3sgwqqu" path="res://Art/2D/Sonar/destination_base.png" id="6_5m46w"]
 [ext_resource type="AudioStream" uid="uid://62u0ljsy0f8r" path="res://Audio/SFX/sonar_error.wav" id="7_fwbnk"]
@@ -14,7 +14,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_58pev"]
 load_path = "res://.godot/imported/destination_base.png-2d1a4cc03dc468367ebae5423ad42fe9.ctex"
 
-[node name="Control" type="Control" unique_id=917470935]
+[node name="SonarMinigame" type="Control" unique_id=917470935]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,12 +23,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_irvol")
+debug_force_tier = 3
 
-[node name="NoteManager" type="Node" parent="." unique_id=645761098 node_paths=PackedStringArray("spawnTargets", "noteDestinations", "timer")]
+[node name="NoteManager" type="Node" parent="." unique_id=645761098 node_paths=PackedStringArray("spawnTargets", "timer")]
 script = ExtResource("1_wdrkg")
 noteObjectToSpawn = ExtResource("2_4wcyy")
 spawnTargets = [NodePath("../NoteSpawns/spawn"), NodePath("../NoteSpawns/spawn2"), NodePath("../NoteSpawns/spawn3"), NodePath("../NoteSpawns/spawn4")]
-noteDestinations = [NodePath("../NoteDestinations/destination"), NodePath("../NoteDestinations/destination2"), NodePath("../NoteDestinations/destination3"), NodePath("../NoteDestinations/destination4")]
 spawnTimes = Array[float]([1.0, 1.0, 1.0, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 0.25, 0.25, 0.5, 1.0, 0.25])
 timer = NodePath("Timer")
 
@@ -60,43 +60,43 @@ bus = &"UI"
 position = Vector2(413, 573)
 noteTexture = ExtResource("6_5m46w")
 normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
 sonarSound = ExtResource("4_hqqwc")
 errorSound = ExtResource("7_fwbnk")
 label_text = "A"
-noteManager = NodePath("../../NoteManager")
 
 [node name="destination2" parent="NoteDestinations" unique_id=611207214 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(533, 573)
 key = 83
 noteTexture = SubResource("CompressedTexture2D_58pev")
 normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
 pitch_scale = 1.122
 sonarSound = ExtResource("4_hqqwc")
 errorSound = ExtResource("7_fwbnk")
 label_text = "S"
-noteManager = NodePath("../../NoteManager")
 
 [node name="destination3" parent="NoteDestinations" unique_id=2023369719 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(653, 573)
 key = 68
 noteTexture = SubResource("CompressedTexture2D_58pev")
 normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
 pitch_scale = 1.259
 sonarSound = ExtResource("4_hqqwc")
 errorSound = ExtResource("7_fwbnk")
 label_text = "D"
-noteManager = NodePath("../../NoteManager")
 
 [node name="destination4" parent="NoteDestinations" unique_id=171437335 node_paths=PackedStringArray("noteManager") instance=ExtResource("3_irvol")]
 position = Vector2(773, 573)
 key = 70
 noteTexture = SubResource("CompressedTexture2D_58pev")
 normalColor = Color(1, 1, 1, 0.5058824)
+noteManager = NodePath("../../NoteManager")
 pitch_scale = 1.335
 sonarSound = ExtResource("4_hqqwc")
 errorSound = ExtResource("7_fwbnk")
 label_text = "F"
-noteManager = NodePath("../../NoteManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1558556078]
 position = Vector2(576, 326)
@@ -106,7 +106,7 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 
-[node name="CircleSane" type="Sprite2D" parent="." unique_id=1390548275]
+[node name="Circle" type="Sprite2D" parent="." unique_id=1390548275]
 position = Vector2(596, 264)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("10_h250t")

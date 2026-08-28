@@ -20,7 +20,7 @@ extends Node3D
 			repair_trigger.camera_focus_point = value
 
 @onready var repair_trigger: RepairTrigger = $RepairTrigger
-@onready var mesh_node: MeshInstance3D = $StationMesh/MeshInstance3D
+@onready var mesh_node: MeshInstance3D = $Column
 
 func _ready() -> void:
 	# Register initial broken state with GameState on level load

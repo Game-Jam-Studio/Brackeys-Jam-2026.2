@@ -14,7 +14,7 @@ signal ship_destroyed
 
 # Damage to ship health per second when broken
 @export var damage_per_second: float = 2 # set to 10 for testing
-@export var repair_fail_penalty: float = 15.0
+@export var repair_fail_penalty: float = 25.0
 
 const MAX_SHIP_HEALTH: float = 100.0
 const MAX_SYSTEM_HEALTH: float = 100.0
@@ -87,7 +87,6 @@ func take_damage(amount: float) -> void:
 
 
 func apply_failure_penalty(system_id: String) -> void:
-	print("[GameState] apply_failure_penalty called for: ", system_id)
 	# Inflict flat damage penalty to the specific subsystem
 	match system_id:
 		"Ballast":

@@ -10,10 +10,12 @@ scale = Vector2(1e-05, 0.6)
 script = ExtResource("1_rd4ew")
 noteTextures = Array[Texture2D]([ExtResource("2_sx81s"), ExtResource("2_sx81s"), ExtResource("2_sx81s"), ExtResource("2_sx81s")])
 speed = 150.0
+destination = null
+initial_scale = null
+target_scale = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=751132802]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_sx81s")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=359388060]
 
