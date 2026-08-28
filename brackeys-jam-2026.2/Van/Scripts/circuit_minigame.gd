@@ -4,8 +4,24 @@ const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
+@export_category("Textures")
+## Texture for Wires
+@export var wire_texture: Texture
+## Texture for Slots
+@export var slot_texture: Texture
 
-#@export var align_horizontally: bool
+@export_category("Visual")
+## Align wires and slots horizontally to top wire and slot.
+@export var align_horizontally: bool
+## Align slots vertically to wires.
+@export var align_vertically: bool
+## Set the widths of the drawn lines for the wires.
+@export var wire_width: float = 10
+
+@export_category("Gameplay")
+## The distance that the slots will accept the wires from
+@export var slot_radius: float = 16
+
 signal minigame_completed(success: bool)
 
 var amount_correct: int
@@ -28,6 +44,12 @@ func _ready() -> void:
 	for location in $WireLocations.get_children():
 		wire_locations.append(location)
 
+	for wire in wire_locations:
+		if align_horizontally:
+			wire.position.x = wire_locations[0].position.x
+
+
+
 #Set slot array to all slots
 	for slot in $Slots.get_children():
 		slot_array.append(slot)
@@ -38,6 +60,12 @@ func _ready() -> void:
 #Set slot location array to all slot locations
 	for location in $SlotLocations.get_children():
 		slot_locations.append(location)
+
+	for slot in range(slot_locations.size()):
+		if align_horizontally:
+			slot_locations[slot].position.x = slot_locations[0].position.x
+		if align_vertically:
+			slot_locations[slot].position.y = wire_locations[slot].position.y
 
 #Set the ID of all wires
 	for wire in range(wire_array.size()):
@@ -73,48 +101,41 @@ func _ready() -> void:
 
 
 func _on_slot_wire_connected(wire_ID: int, slot_ID: int) -> void:
-	if wire_ID == slot_ID:
-		amount_correct += 1
 	connections += 1
 	%AudioStreamPlayer.play()
-	_check_answers()
+	_check_answers(wire_ID, slot_ID)
 
 func _on_slot_2_wire_connected(wire_ID: int, slot_ID: int) -> void:
-	if wire_ID == slot_ID:
-		amount_correct += 1
 	connections += 1
 	%AudioStreamPlayer.play()
-	_check_answers()
+	_check_answers(wire_ID, slot_ID)
 
 func _on_slot_3_wire_connected(wire_ID: int, slot_ID: int) -> void:
-	if wire_ID == slot_ID:
-		amount_correct += 1
 	connections += 1
 	%AudioStreamPlayer.play()
-	_check_answers()
+	_check_answers(wire_ID, slot_ID)
 
 func _on_slot_4_wire_connected(wire_ID: int, slot_ID: int) -> void:
-	if wire_ID == slot_ID:
-		amount_correct += 1
 	connections += 1
 	%AudioStreamPlayer.play()
-	_check_answers()
+	_check_answers(wire_ID, slot_ID)
 
-func _check_answers():
+func _check_answers(wire_ID, slot_ID):
 	await get_tree().create_timer(0.1).timeout
+	if wire_ID == slot_ID:
+		amount_correct += 1
+	else:
+		%AudioStreamPlayer.pitch_scale = 1
+		%AudioStreamPlayer.stream = UI_ERROR
+		%AudioStreamPlayer.play()
+		minigame_completed.emit(false)
+		await get_tree().create_timer(1).timeout
+		queue_free()
+
 	if connections == required_correct:
-		if amount_correct == required_correct:
-			%AudioStreamPlayer.pitch_scale = 1
-			minigame_completed.emit(true)
-			%AudioStreamPlayer.stream = UI_ACCEPT
-			%AudioStreamPlayer.play()
-			await get_tree().create_timer(1).timeout
-			queue_free()
-		else:
-			%AudioStreamPlayer.pitch_scale = 1
-			minigame_completed.emit(false)
-			%AudioStreamPlayer.stream = UI_ERROR
-			%AudioStreamPlayer.play()
-			await get_tree().create_timer(1).timeout
-			queue_free()
-	
+		%AudioStreamPlayer.pitch_scale = 1
+		minigame_completed.emit(true)
+		%AudioStreamPlayer.stream = UI_ACCEPT
+		%AudioStreamPlayer.play()
+		await get_tree().create_timer(1).timeout
+		queue_free()

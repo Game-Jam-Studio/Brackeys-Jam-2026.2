@@ -4,14 +4,15 @@ var dragging: bool
 var slotted: bool
 var line_2d: Line2D
 var wire_ID: int
-var start_position: Vector2
 var tick: float
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
 func _ready() -> void:
 	await $"../..".ready
+	texture = $"../..".wire_texture
 	line_2d = Line2D.new()
 	add_child(line_2d)
+	line_2d.width = $"../..".wire_width
 	line_2d.add_point(Vector2(position.x, position.y + (size.y / 2)), 0)
 	line_2d.add_point(size / 2, 1)
 	line_2d.reparent(get_parent())
@@ -24,14 +25,16 @@ func _on_gui_input(event: InputEvent) -> void:
 		%AudioStreamPlayer.stream = UI_DIAL_SHORT
 		%AudioStreamPlayer.pitch_scale = 1.5
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			start_position = event.position
 			if event.pressed:
 			#Mouse held
 				dragging = true
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 			else:
 			#Mouse released
 				dragging = false
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseMotion and dragging and !slotted:
+		print(event.global_position)
 		position += event.position - size / 2
 		line_2d.set_point_position(1, position + size / 2)
 		tick += clamp(event.screen_relative.length(), 0, 50)
