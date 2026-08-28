@@ -14,7 +14,9 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ncqte")
 tolerance = 15.0
-speed = 4.0
+speed_multiplier_per_round = 1.5
+goal_min_range = 30.0
+goal_max_range = 90.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1520033933]
 layout_mode = 1
@@ -74,6 +76,7 @@ layout_mode = 2
 text = "Accept"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
+unique_name_in_owner = true
 stream = ExtResource("2_akc8o")
 bus = &"UI"
 
