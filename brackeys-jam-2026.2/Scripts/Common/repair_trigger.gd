@@ -10,6 +10,8 @@ signal station_repair_succeeded(system_id: String)
 @onready var station: Node = get_parent()
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
+@export var on_repair_end_dialogue_key: String = ""
+
 
 func _ready() -> void:
 	add_to_group("repair_triggers")
@@ -46,18 +48,22 @@ func interact(_player: CharacterBody3D) -> void:
 		launch_minigame_requested.emit(station.system_id, self)
 	else:
 		PopupUI.launch_terminal("System operational.")
+	super(_player)
+	
 
 
 func end_repair(success: bool) -> void:
 	# we are leaving the state as repaired even if the player
 	# fails the minigame to not allow retries
 	station.is_broken = false
+	if on_repair_end_dialogue_key != "":
+		PopupUI.show_next_text(on_repair_end_dialogue_key)
 	if success:
 		# System secured, no penalty taken
-		PopupUI.launch_terminal("System stabilized.")
+		#PopupUI.launch_terminal("System stabilized.")
 		station_repair_succeeded.emit(station.system_id)
 	else:
 		# Deduct flat penalty from subsystem's health
 		GameState.apply_failure_penalty(station.system_id)
-		PopupUI.launch_terminal("System damaged during repair attempt.")
+		#PopupUI.launch_terminal("System damaged during repair attempt.")
 		station_repair_failed.emit(station.system_id)
