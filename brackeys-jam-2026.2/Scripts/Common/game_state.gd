@@ -13,7 +13,7 @@ signal circuit_health_changed(new_health: float)
 signal ship_destroyed
 
 # Damage to ship health per second when broken
-@export var damage_per_second: float = 2 # set to 10 for testing
+@export var damage_per_second: float = 1 # set to 10 for testing
 @export var repair_fail_penalty: float = 25.0
 
 const MAX_SHIP_HEALTH: float = 100.0
