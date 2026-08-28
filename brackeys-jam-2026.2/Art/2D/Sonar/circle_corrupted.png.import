@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ldafxp1nvghn"
-path="res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"
+uid="uid://shqlp5m8vmiv"
+path="res://.godot/imported/circle_corrupted.png-c4913f29905fe2d451f84b1d594b4a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Sonar/note_sane.png"
-dest_files=["res://.godot/imported/note_sane.png-be30bb06fd9013a45fe71cc136707d43.ctex"]
+source_file="res://Art/2D/Sonar/circle_corrupted.png"
+dest_files=["res://.godot/imported/circle_corrupted.png-c4913f29905fe2d451f84b1d594b4a97.ctex"]
 
 [params]
 

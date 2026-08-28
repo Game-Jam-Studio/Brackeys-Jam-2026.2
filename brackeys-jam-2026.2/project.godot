@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://bg7tkttat6wdm"
 
 GameState="*uid://b1e2ahys80t3j"
 PopupUI="*uid://m06rh5uwq514"
+ProgressionManager="*uid://cmvpymk7ed77e"
 
 [display]
 

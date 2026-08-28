@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b58hxr52vlcyd"]
+
+[ext_resource type="FontFile" uid="uid://cnsvw76kftitr" path="res://Resources/Fonts/AI_corrupted.ttf" id="1_y4wi0"]
+
+[resource]
+default_font = ExtResource("1_y4wi0")
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_y4wi0")
