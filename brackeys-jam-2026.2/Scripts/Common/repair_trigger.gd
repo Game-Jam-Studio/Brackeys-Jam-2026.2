@@ -10,6 +10,7 @@ signal station_repair_succeeded(system_id: String)
 @onready var station: Node = get_parent()
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
+
 func _ready() -> void:
 	add_to_group("repair_triggers")
 	body_entered.connect(_on_body_entered)
@@ -18,9 +19,11 @@ func _ready() -> void:
 	if prompt_sprite:
 		prompt_sprite.visible = false
 
+
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and prompt_sprite:
 		prompt_sprite.visible = true
+
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is CharacterBody3D and prompt_sprite:
@@ -34,6 +37,9 @@ func can_interact() -> bool:
 
 
 func interact(_player: CharacterBody3D) -> void:
+	if prompt_sprite:
+			prompt_sprite.visible = false
+		
 	if station.is_broken:
 		station.is_broken = false
 		GameState.set_system_broken(station.system_id, false)
