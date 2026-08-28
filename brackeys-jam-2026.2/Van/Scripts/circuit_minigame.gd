@@ -28,11 +28,13 @@ signal minigame_completed(success: bool)
 var amount_correct: int
 var required_correct: int
 var connections: int
+var is_finished: bool = false
 
 var wire_array: Array[TextureRect]
 var slot_array: Array[TextureRect]
 var slot_locations: Array[Node2D]
 var wire_locations: Array[Node2D]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%AudioStreamPlayer.pitch_scale = 2
@@ -131,17 +133,23 @@ func _on_slot_4_wire_connected(wire_ID: int, slot_ID: int) -> void:
 
 func _check_answers(wire_ID, slot_ID):
 	await get_tree().create_timer(0.1).timeout
+	if is_finished:
+		return
+		
 	if wire_ID == slot_ID:
 		amount_correct += 1
 	else:
+		is_finished = true
 		%AudioStreamPlayer.pitch_scale = 1
 		%AudioStreamPlayer.stream = UI_ERROR
 		%AudioStreamPlayer.play()
 		minigame_completed.emit(false)
 		await get_tree().create_timer(1).timeout
 		queue_free()
+		return
 
-	if connections == required_correct:
+	if connections == required_correct and not is_finished:
+		is_finished = true
 		%AudioStreamPlayer.pitch_scale = 1
 		minigame_completed.emit(true)
 		%AudioStreamPlayer.stream = UI_ACCEPT

@@ -10,14 +10,14 @@
 script = ExtResource("1_q76ao")
 
 [node name="ErrorArea2D" type="Area2D" parent="." unique_id=857884499]
-position = Vector2(0.20000076, 92.2)
+position = Vector2(0, 92.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ErrorArea2D" unique_id=267687191]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_03pib")
 
 [node name="ValidArea2D" type="Area2D" parent="." unique_id=824186424]
-position = Vector2(0.20000076, 30.199997)
+position = Vector2(0, 30.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValidArea2D" unique_id=1030608906]
 position = Vector2(0, -30)
