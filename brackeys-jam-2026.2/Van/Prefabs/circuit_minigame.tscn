@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://bw7m3wve2gnn2"]
+
+[ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
+[ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
+[ext_resource type="AudioStream" uid="uid://f5we04nn8mkj" path="res://Audio/SFX/UI_dial_short.wav" id="2_1vx7c"]
+[ext_resource type="Texture2D" path="res://Art/2D/Sonar/cone_sane.png" id="2_dxkrb"]
+[ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
+[ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
+[ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/slot_placement.gd" id="6_wjvfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhhwq"]
+size = Vector2(8, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i72gw"]
+radius = 64.0
+
+[node name="WireMinigame" type="Control" unique_id=380570598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vofu2")
+single_sprite = true
+wire_textures = Array[Texture]([ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60")])
+slot_textures = Array[Texture]([ExtResource("2_dxkrb"), ExtResource("2_dxkrb"), ExtResource("2_dxkrb"), ExtResource("2_dxkrb")])
+align_horizontally = true
+align_vertically = true
+slot_radius = 24.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=251684858]
+unique_name_in_owner = true
+stream = ExtResource("2_1vx7c")
+volume_db = -8.0
+bus = &"UI"
+
+[node name="Slots" type="Control" parent="." unique_id=1212298090]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" type="TextureRect" parent="Slots" unique_id=1171711860 groups=["slots"]]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+stretch_mode = 4
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot" unique_id=417715862]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot/SlotArea" unique_id=493425396]
+z_index = 1
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_nhhwq")
+
+[node name="Slot2" type="TextureRect" parent="Slots" unique_id=1714237618 groups=["slots"]]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+stretch_mode = 4
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot2" unique_id=1075880275]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot2/SlotArea" unique_id=993822414]
+z_index = 1
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_nhhwq")
+
+[node name="Slot3" type="TextureRect" parent="Slots" unique_id=622208828 groups=["slots"]]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+stretch_mode = 4
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot3" unique_id=1717896384]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot3/SlotArea" unique_id=536009666]
+z_index = 1
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_nhhwq")
+
+[node name="Slot4" type="TextureRect" parent="Slots" unique_id=1795428930 groups=["slots"]]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 128.0
+texture = ExtResource("1_0bh60")
+stretch_mode = 4
+script = ExtResource("3_hbgru")
+
+[node name="SlotArea" type="Area2D" parent="Slots/Slot4" unique_id=876842989]
+position = Vector2(64, 64)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot4/SlotArea" unique_id=628885596]
+z_index = 1
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_nhhwq")
+
+[node name="Wires" type="Control" parent="." unique_id=2038049846]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wire" type="TextureRect" parent="Wires" unique_id=1187910785 groups=["wires"]]
+z_index = 1
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire" unique_id=1269574364]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire/WireArea" unique_id=1631742701]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire2" type="TextureRect" parent="Wires" unique_id=1236325583 groups=["wires"]]
+z_index = 1
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire2" unique_id=1765150146]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire2/WireArea" unique_id=942656853]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire3" type="TextureRect" parent="Wires" unique_id=1430657041 groups=["wires"]]
+z_index = 1
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire3" unique_id=279691108]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire3/WireArea" unique_id=1955178265]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="Wire4" type="TextureRect" parent="Wires" unique_id=1187806681 groups=["wires"]]
+z_index = 1
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+offset_transform_enabled = true
+texture = ExtResource("1_0bh60")
+script = ExtResource("2_hbgru")
+
+[node name="WireArea" type="Area2D" parent="Wires/Wire4" unique_id=2134566926]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire4/WireArea" unique_id=2098582938]
+shape = SubResource("CircleShape2D_i72gw")
+
+[node name="SlotLocations" type="Node2D" parent="." unique_id=2064158959]
+
+[node name="SlotLocation" type="Node2D" parent="SlotLocations" unique_id=473915759 groups=["slots"]]
+position = Vector2(1088, 64)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="SlotLocations/SlotLocation" unique_id=1237090434]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="SlotLocation2" type="Node2D" parent="SlotLocations" unique_id=124963979 groups=["slots"]]
+position = Vector2(832, 224)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="SlotLocations/SlotLocation2" unique_id=1898006138]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="SlotLocation3" type="Node2D" parent="SlotLocations" unique_id=16671437 groups=["slots"]]
+position = Vector2(568, 408)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="SlotLocations/SlotLocation3" unique_id=1911714254]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="SlotLocation4" type="Node2D" parent="SlotLocations" unique_id=1148227134 groups=["slots"]]
+position = Vector2(344, 584)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="SlotLocations/SlotLocation4" unique_id=1030661646]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="WireLocations" type="Node2D" parent="." unique_id=1189879961]
+
+[node name="WireLocation" type="Node2D" parent="WireLocations" unique_id=710380303 groups=["wires"]]
+position = Vector2(64, 64)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="WireLocations/WireLocation" unique_id=970296774]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="WireLocation2" type="Node2D" parent="WireLocations" unique_id=617373659 groups=["wires"]]
+position = Vector2(64, 237.33)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="WireLocations/WireLocation2" unique_id=2089328539]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="WireLocation3" type="Node2D" parent="WireLocations" unique_id=581840271 groups=["wires"]]
+position = Vector2(64, 410.66)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="WireLocations/WireLocation3" unique_id=882838984]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[node name="WireLocation4" type="Node2D" parent="WireLocations" unique_id=496690030 groups=["wires"]]
+position = Vector2(64, 584)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="WireLocations/WireLocation4" unique_id=1392242505]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_0bh60")
+script = ExtResource("6_wjvfx")
+
+[connection signal="wire_connected" from="Slots/Slot" to="." method="_on_slot_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot/SlotArea" to="Slots/Slot" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot2" to="." method="_on_slot_2_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot2/SlotArea" to="Slots/Slot2" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot3" to="." method="_on_slot_3_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot3/SlotArea" to="Slots/Slot3" method="_on_area_2d_area_entered"]
+[connection signal="wire_connected" from="Slots/Slot4" to="." method="_on_slot_4_wire_connected"]
+[connection signal="area_entered" from="Slots/Slot4/SlotArea" to="Slots/Slot4" method="_on_area_2d_area_entered"]
+[connection signal="gui_input" from="Wires/Wire" to="Wires/Wire" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire2" to="Wires/Wire2" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire3" to="Wires/Wire3" method="_on_gui_input"]
+[connection signal="gui_input" from="Wires/Wire4" to="Wires/Wire4" method="_on_gui_input"]
