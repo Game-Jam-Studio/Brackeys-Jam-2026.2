@@ -40,10 +40,11 @@ const ASSET_PATHS = {
 		"valid_area": {"base": "res://Art/2D/Ballast/valid_area_base.png", "corrupted": "res://Art/2D/Ballast/valid_area_base.png"}, # TODO: replace corrupted value
 		"dial": {"base": "res://Art/2D/Ballast/dial_base.png", "corrupted": "res://Art/2D/Ballast/dial_base.png"} # TODO: replace corrupted value
 	},
-	#"boiler": {
-	#	"needle": {"base": , "corrupted": },
-	#	"valid_area": {"base": , "corrupted": }
-	#},
+	"boiler": {
+		"needle": {"base": "res://Art/2D/Boiler/pointer_base.png", "corrupted": "res://Art/2D/Boiler/pointer_corrupted.png"},
+		"meter": {"base": "res://Art/2D/Boiler/meter_base.png", "corrupted": "res://Art/2D/Boiler/meter_corrupted.png"},
+		"button": {"base": "res://Art/2D/Boiler/button_base.png", "corrupted": "res://Art/2D/Boiler/button_corrupted.png"}
+	},
 	#"circuit": {
 	#	"slot": {"base": "res://assets/circuit/slot_base.png", "corrupted": "res://assets/circuit/slot_corrupted.png"},
 	#	"wire": {"base": "res://assets/circuit/wire_base.png", "corrupted": "res://assets/circuit/wire_corrupted.png"}

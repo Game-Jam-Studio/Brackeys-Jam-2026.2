@@ -72,11 +72,11 @@ unique_name_in_owner = true
 
 [node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.2427278, 0.91858387, 5.695434)
+is_broken = true
 
 [node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13335466, 0.91858387, 5.6954336)
 system_id = "Boiler"
-is_broken = true
 
 [node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.629835, 0.91858387, 5.695433)
