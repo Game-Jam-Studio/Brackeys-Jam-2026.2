@@ -116,6 +116,7 @@ area_progression_dictionary = {
 script = ExtResource("3_v0pta")
 area_progression_key = "testUnlock"
 doors_to_unlock = [NodePath("../../Doors/Area1Doors/Door")]
+area_to_unlock = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
