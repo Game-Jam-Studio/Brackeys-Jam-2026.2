@@ -19,8 +19,6 @@ extends Node3D
 		if is_node_ready() and repair_trigger:
 			repair_trigger.camera_focus_point = value
 
-@export var area_progression_key: String = ""
-
 @onready var repair_trigger: RepairTrigger = $RepairTrigger
 @onready var mesh_node: MeshInstance3D = $Column
 
@@ -31,7 +29,6 @@ func _ready() -> void:
 	if repair_trigger and "camera_focus_point" in repair_trigger:
 		repair_trigger.camera_focus_point = camera_focus_point
 	
-	$RepairTrigger.area_progression_key = area_progression_key
 	apply_test_color()
 
 

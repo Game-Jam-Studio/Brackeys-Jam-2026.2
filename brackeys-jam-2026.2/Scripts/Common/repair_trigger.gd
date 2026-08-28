@@ -46,7 +46,6 @@ func interact(_player: CharacterBody3D) -> void:
 		launch_minigame_requested.emit(station.system_id, self)
 	else:
 		PopupUI.launch_terminal("System operational.")
-	super(_player)
 
 
 func end_repair(success: bool) -> void:

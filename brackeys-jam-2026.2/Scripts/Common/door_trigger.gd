@@ -41,7 +41,6 @@ func interact(_player: CharacterBody3D) -> void:
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
-	super(_player)
 
 
 ## Smoothly rotates the hinge and disables future interactions
