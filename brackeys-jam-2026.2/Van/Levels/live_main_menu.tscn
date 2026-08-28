@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bkqwb4p2d8osm" path="res://Van/Scripts/live_main_menu_flicker.gd" id="1_0m0b3"]
 [ext_resource type="LightmapGIData" uid="uid://b3xssuxlqkvne" path="res://Van/Lightmaps/LiveMainMenu.lmbake" id="2_ddyxe"]
 [ext_resource type="LightmapGIData" uid="uid://3clvm3ab12s0" path="res://Van/Lightmaps/LiveMainMenu2.lmbake" id="3_ip0nw"]
-[ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/goreswirl.gdshader" id="4_ddyxe"]
+[ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/gore_swirl.gdshader" id="4_ddyxe"]
 [ext_resource type="Script" uid="uid://d3ba834ve3f6p" path="res://Van/Scripts/main_menu_camera_wobble.gd" id="4_ip0nw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1hd16"]
