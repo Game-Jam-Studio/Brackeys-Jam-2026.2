@@ -1,7 +1,7 @@
 extends Control
-@onready var color_rect: ColorRect = $ColorRect
+@onready var color_rect: ColorRect = $Needle
 @onready var accept_button: Button = %Accept
-@onready var progress_bar: TextureProgressBar = $TextureProgressBar
+@onready var progress_bar: TextureProgressBar = $ValidArea
 @onready var audio: AudioStreamPlayer = %AudioStreamPlayer
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")
@@ -12,18 +12,18 @@ signal minigame_completed(success: bool)
 var submitted: bool
 var completed_rounds: float
 
-@export var tolerance: float = 10
-@export var number_of_rounds: int = 3
+@export var tolerance: float = 15
+@export var number_of_rounds: int = 5
 @export var speed: float = 1.5
 @export var speed_multiplier_per_round: float = 1.25
 ##Minimum value for the random degree rotation of the goal (zero is the bottom middle of the screen)
-@export var goal_min_range: float = 0
+@export var goal_min_range: float = 30
 ##Maximum value for the random degree rotation of the goal (zero is the bottom middle of the screen)
-@export var goal_max_range: float = 45
+@export var goal_max_range: float = 90
 
 func _ready() -> void:
 	progress_bar.value = tolerance
-	progress_bar.rotation_degrees = randi_range(-goal_min_range + 180, -goal_max_range + 180)
+	progress_bar.rotation_degrees = randf_range(-goal_min_range, -goal_max_range) + 180
 	color_rect.rotation = PI / 2
 
 
@@ -63,7 +63,7 @@ func _on_button_button_down() -> void:
 			minigame_completed.emit(false)
 			queue_free()
 			return
-		progress_bar.rotation_degrees = randi_range(180, 90)
+		progress_bar.rotation_degrees = randi_range(-goal_min_range, -goal_max_range) + 180
 		color_rect.rotation = PI / 2
 		speed = speed * speed_multiplier_per_round
 		audio.stream = UI_ACCEPT
