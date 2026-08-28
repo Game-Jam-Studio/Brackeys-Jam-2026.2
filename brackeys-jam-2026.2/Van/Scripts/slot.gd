@@ -20,3 +20,7 @@ func _on_area_2d_area_entered(wire: Area2D) -> void:
 		%AudioStreamPlayer.stream = UI_DIAL
 		%AudioStreamPlayer.pitch_scale = 1.0
 		%AudioStreamPlayer.play()
+
+
+func _on_wire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
