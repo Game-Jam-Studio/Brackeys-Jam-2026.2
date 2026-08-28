@@ -44,21 +44,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				_on_error()
 
-@onready var sprite_node: TextureRect = $TextureRect # Replace with your actual texture node path
+@onready var sprite_node: Sprite2D = $Sprite2D
 
-func update_tier_presentation(tier: int, corrupted_texture: Texture2D, base_texture: Texture2D) -> void:
+
+func update_tier_presentation(tier: int) -> void:
 	if label_node:
 		label_node.theme = ProgressionManager.get_ai_theme(tier)
 	
 	if texture_node:
-		if tier == 3:
-			texture_node.texture = corrupted_texture
-			texture_node.position = Vector2(-1.11, 63.465)
-			texture_node.scale = Vector2(0.272, 0.407)
-		else:
-			texture_node.texture = base_texture
-			texture_node.position = Vector2(0.0, 40.685)
-			texture_node.scale = Vector2(0.25, 0.523)
+		texture_node.texture = ProgressionManager.get_asset_texture("sonar", "destination")
+		var trans = ProgressionManager.get_destination_transform(tier)
+		texture_node.position = trans["position"]
+		texture_node.scale = trans["scale"]
+
 
 func _flash_color(color: Color) -> void:
 	$Sprite2D.modulate = color

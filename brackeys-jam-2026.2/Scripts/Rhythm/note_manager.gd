@@ -6,7 +6,7 @@ signal minigame_completed(success: bool)
 
 @export var noteObjectToSpawn: PackedScene
 @export var spawnTargets: Array[Node2D]
-@export var noteDestinations: Array[Node2D]
+@export var note_destinations: Array[Node2D]
 @export var spawnTimes: Array[float]
 @export var timer: Timer
 
@@ -31,8 +31,8 @@ func _on_next_note_time() -> void:
 	lastNoteSpawned = noteNumToSpawn
 	var spawnedNote = noteObjectToSpawn.instantiate()
 	spawnedNote.global_position = spawnTargets[noteNumToSpawn].global_position
-	spawnedNote.destination = noteDestinations[noteNumToSpawn].global_position
-	spawnedNote.initialize(noteNumToSpawn)
+	spawnedNote.destination = note_destinations[noteNumToSpawn].global_position
+	spawnedNote.initialize()
 	add_child(spawnedNote)
 	
 	currNoteSpawned += 1

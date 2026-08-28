@@ -51,7 +51,7 @@ const ASSET_PATHS = {
 }
 
 
-func get_current_tier(health: float, max_health: float) -> int:
+func get_ship_tier(health: float, max_health: float) -> int:
 	var normalized: float = clampf(health / max_health, 0.0, 1.0)
 	if normalized <= 0.30 or GameState.current_area_level >= 3:
 		return 3
@@ -59,18 +59,27 @@ func get_current_tier(health: float, max_health: float) -> int:
 		return 2
 	return 1
 
-func get_ai_theme(tier: int) -> Theme:
-	match tier:
-		3: return AI_THEME_CORRUPTED
-		2: return AI_THEME_MID
-		_: return AI_THEME_BASE
 
-func get_asset_texture(minigame: String, asset_name: String, tier: int) -> Texture2D:
+func get_minigame_tier(health: float, max_health: float) -> int:
+	var normalized: float = clampf(health / max_health, 0.0, 1.0)
+	if normalized <= 0.50 or GameState.current_area_level >= 3:
+		return 3
+	return 1
+
+func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
+	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
 	if ASSET_PATHS.has(minigame) and ASSET_PATHS[minigame].has(asset_name):
 		var key = "corrupted" if tier == 3 else "base"
 		var path = ASSET_PATHS[minigame][asset_name][key]
-		if ResourceLoader.exists(path):
-			return load(path)
+		
+		if not ResourceLoader.exists(path):
+			return null
+		
+		var texture = load(path)
+		if not texture:
+			return null
+		
+		return texture
 	return null
 
 func get_destination_transform(tier: int) -> Dictionary:

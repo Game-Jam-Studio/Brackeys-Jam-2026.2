@@ -63,10 +63,10 @@ func _on_area_unlocked(_new_level: int) -> void:
 func _update_display(health: float) -> void:	
 	if not fill_material:
 		return
-	
+
 	var normalized: float = clampf(health / GameState.MAX_SHIP_HEALTH, 0.0, 1.0)
 	
-	var current_tier: int = ProgressionManager.get_current_tier(health, GameState.MAX_SHIP_HEALTH)
+	var current_tier: int = ProgressionManager.get_ship_tier(health, GameState.MAX_SHIP_HEALTH)
 	highest_unlocked_tier = maxi(highest_unlocked_tier, current_tier)
 	
 	health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)

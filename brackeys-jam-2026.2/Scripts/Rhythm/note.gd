@@ -1,22 +1,23 @@
 extends Node2D
 class_name Note
 
-@export var noteTextures: Array[Texture2D]
 @export var speed: float
 @export var destination: Vector2
 @export var initial_scale: Vector2 = Vector2(0, 0) # Starting size when spawned
 @export var target_scale: Vector2 = Vector2(0.6, 0.6) # Full size at destination
-
+@onready var sprite_node: Sprite2D = $Sprite2D
 
 var direction: Vector2
 var start_position: Vector2
 var total_distance: float = 0.0
 
 
-func initialize(note: int) -> void:
-	$Sprite2D.texture = noteTextures[note]
-	# Start completely transparent when spawned #
-	modulate.a = 0.0 #
+func initialize() -> void:
+	if sprite_node:
+		sprite_node.texture = ProgressionManager.get_asset_texture("sonar", "note")
+	
+	# Start completely transparent when spawned
+	modulate.a = 0.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,13 @@ func _ready() -> void:
 	start_position = position
 	total_distance = start_position.distance_to(destination)
 	direction = global_position.direction_to(destination)
+	
+	var current_health = GameState.ship_health
+	var max_health = GameState.MAX_SHIP_HEALTH
+	var tier = ProgressionManager.get_minigame_tier(current_health, max_health)
+	
+	if sprite_node:
+		sprite_node.texture = ProgressionManager.get_asset_texture("sonar", "note")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
