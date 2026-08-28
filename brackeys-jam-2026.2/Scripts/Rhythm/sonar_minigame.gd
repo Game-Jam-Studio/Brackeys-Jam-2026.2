@@ -7,20 +7,24 @@ signal minigame_completed(success: bool)
 @onready var note_manager: NoteManager = $NoteManager
 @onready var circle_node: Sprite2D = $Circle
 @onready var cone_node: Sprite2D = $Pivot/Cone
+@export var base_cone_texture: Texture2D
 
-# debug for testing
-@export_range(0, 3) var debug_force_tier: int = 0 # Set to 3 to test corrupted art, 0 for normal gameplay
 
 func _ready() -> void:
 	if note_manager:
 		note_manager.minigame_completed.connect(_on_note_manager_completed)
-	
-	var tier = debug_force_tier if debug_force_tier > 0 else ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
-	
 	if circle_node:
 		circle_node.texture = ProgressionManager.get_asset_texture("sonar", "circle")
 	if cone_node:
-		cone_node.texture = ProgressionManager.get_asset_texture("sonar", "cone")
+		var current_texture = ProgressionManager.get_asset_texture("sonar", "cone")
+		cone_node.texture = current_texture
+		
+		# Apply green transparency only for base texture
+		if current_texture == base_cone_texture:
+			cone_node.modulate = Color("87ff55af")
+		else:
+			cone_node.modulate = Color.WHITE
+
 
 func _on_note_manager_completed(success: bool) -> void:
 	minigame_completed.emit(success)

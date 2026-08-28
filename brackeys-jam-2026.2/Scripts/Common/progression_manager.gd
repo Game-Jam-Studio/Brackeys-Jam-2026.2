@@ -61,13 +61,18 @@ func get_ship_tier(health: float, max_health: float) -> int:
 
 
 func get_minigame_tier(health: float, max_health: float) -> int:
-	var normalized: float = clampf(health / max_health, 0.0, 1.0)
-	if normalized <= 0.50 or GameState.current_area_level >= 3:
-		return 3
+	# TEMPORARY OVERRIDE FOR TESTING CORRUPTED ART
 	return 1
+	
+	#var normalized: float = clampf(health / max_health, 0.0, 1.0)
+	#if normalized <= 0.50 or GameState.current_area_level >= 3:
+		#return 3
+	#return 1
+
 
 func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
+#	print("Asset requested: ", asset_name, " | Current tier evaluated: ", tier)
 	if ASSET_PATHS.has(minigame) and ASSET_PATHS[minigame].has(asset_name):
 		var key = "corrupted" if tier == 3 else "base"
 		var path = ASSET_PATHS[minigame][asset_name][key]
@@ -81,6 +86,16 @@ func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 		
 		return texture
 	return null
+
+func get_ai_theme(tier: int) -> Theme:
+	# Return your appropriate Theme resource based on the tier
+	match tier:
+		1:
+			return preload("res://Resources/Themes/AI_base_theme.tres")
+		2:
+			return preload("res://Resources/Themes/AI_mid_theme.tres")
+		_:
+			return preload("res://Resources/Themes/AI_corrupted_theme.tres")
 
 func get_destination_transform(tier: int) -> Dictionary:
 	if tier == 3:

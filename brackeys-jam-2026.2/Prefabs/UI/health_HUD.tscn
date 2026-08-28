@@ -32,10 +32,11 @@ script = ExtResource("1_crwwa")
 [node name="LiquidMask" type="TextureRect" parent="." unique_id=1038621429]
 clip_children = 1
 layout_mode = 0
-offset_left = -11.42
-offset_right = 668.58
-offset_bottom = 423.0
-scale = Vector2(0.4, 0.4)
+offset_left = 36.145
+offset_top = 17.98
+offset_right = 716.145
+offset_bottom = 440.98
+scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("2_dgwwc")
 
@@ -48,32 +49,33 @@ texture = ExtResource("3_crwwa")
 [node name="LiquidFill" type="ColorRect" parent="LiquidMask" unique_id=1945976005]
 material = SubResource("ShaderMaterial_dy48u")
 layout_mode = 0
-offset_left = 135.0
+offset_left = 129.51668
 offset_top = 157.5
-offset_right = 194.6875
-offset_bottom = 195.0
+offset_right = 190.31647
+offset_bottom = 200.17
 scale = Vector2(8, 5)
 mouse_filter = 2
 
 [node name="FrameBase" type="TextureRect" parent="." unique_id=2084125768]
 clip_children = 2
 layout_mode = 1
-offset_left = -54.185
-offset_top = -119.66
-offset_right = 1993.815
-offset_bottom = 1928.34
-scale = Vector2(0.2, 0.2)
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
 mouse_filter = 2
 texture = ExtResource("5_crwwa")
 
 [node name="FrameOverlay" type="TextureRect" parent="." unique_id=1438985971]
+visible = false
 modulate = Color(1, 1, 1, 0)
 clip_children = 2
 layout_mode = 1
-offset_left = -54.185
-offset_top = -119.66
-offset_right = 1993.815
-offset_bottom = 1928.34
-scale = Vector2(0.2, 0.2)
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
 mouse_filter = 2
 texture = ExtResource("3_neyg1")

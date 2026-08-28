@@ -12,17 +12,18 @@ signal minigame_completed(success: bool)
 
 var currNoteSpawned = 0
 var errorCount = 0
-
 var lastNoteSpawned: int = -1
 
 # Error limit to pass the repair
 @export var max_allowed_errors: int = 2
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.start(spawnTimes[0])
 	timer.timeout.connect(_on_next_note_time)
 	pass # Replace with function body.
+
 
 func _on_next_note_time() -> void:
 	var noteNumToSpawn = randi_range(0, 3)
@@ -40,6 +41,7 @@ func _on_next_note_time() -> void:
 		timer.stop()
 	else:
 		timer.start(spawnTimes[currNoteSpawned])
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
