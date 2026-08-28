@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_pivot_ratio = Vector2(0, 0)
 mouse_filter = 2
 script = ExtResource("1_6hrqk")
 goal_min_range = -20.0
@@ -33,25 +34,20 @@ offset_bottom = 781.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_pivot_ratio = Vector2(0, 0)
 texture = ExtResource("2_0j0l5")
 
 [node name="ValidArea" type="TextureProgressBar" parent="." unique_id=1520033933]
 modulate = Color(1, 1, 1, 0.6)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -578.00006
-offset_top = -341.00003
-offset_right = 574.0
-offset_bottom = 811.0
-grow_horizontal = 2
-rotation = 3.1415927
-scale = Vector2(0.32, 0.34)
+layout_mode = 0
+offset_left = -2.9999695
+offset_top = -337.0
+offset_right = 1149.0
+offset_bottom = 815.0
+scale = Vector2(0.325, 0.325)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-offset_transform_pivot = Vector2(0.5, 0.5)
+offset_transform_pivot_ratio = Vector2(0, 0)
 mouse_filter = 2
 max_value = 360.0
 step = 0.1
@@ -74,6 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.27, 0.27)
 pivot_offset_ratio = Vector2(0.51, 0.26)
+offset_transform_pivot_ratio = Vector2(0, 0)
 mouse_filter = 2
 texture = ExtResource("4_0j0l5")
 
@@ -85,14 +82,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -743.0
-offset_top = -286.27
+offset_top = -288.0
 offset_right = 743.0
-offset_bottom = 99.73096
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.35, 0.35)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-offset_transform_pivot = Vector2(0.5, 0.5)
+offset_transform_pivot_ratio = Vector2(0, 0)
 mouse_filter = 2
 alignment = 2
 
@@ -105,6 +102,8 @@ theme_override_constants/margin_right = 440
 [node name="Accept" type="TextureButton" parent="VBoxContainer/MarginContainer" unique_id=16411835]
 unique_name_in_owner = true
 layout_mode = 2
+offset_transform_pivot_ratio = Vector2(0, 0)
+action_mode = 0
 texture_normal = ExtResource("5_73883")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1448562402]
