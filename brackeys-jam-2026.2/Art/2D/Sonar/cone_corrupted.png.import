@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://shqlp5m8vmiv"
-path="res://.godot/imported/base_corrupted.png-8029cc8cd83b6d1c5aa23f3b59fccd93.ctex"
+uid="uid://dhp3pxkjnd8k7"
+path="res://.godot/imported/cone_corrupted.png-a888d2e3371d011de775e7703b72c666.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Sonar/base_corrupted.png"
-dest_files=["res://.godot/imported/base_corrupted.png-8029cc8cd83b6d1c5aa23f3b59fccd93.ctex"]
+source_file="res://Art/2D/Sonar/cone_corrupted.png"
+dest_files=["res://.godot/imported/cone_corrupted.png-a888d2e3371d011de775e7703b72c666.ctex"]
 
 [params]
 

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bfnqoc2u2w0hi"]
 
 [ext_resource type="Script" uid="uid://dpce3no4c1l5s" path="res://Scripts/Rhythm/note_destination.gd" id="1_8od7r"]
-[ext_resource type="Texture2D" uid="uid://bes1nmdmcooi4" path="res://Art/Placeholder/A.png" id="2_8od7r"]
+[ext_resource type="Texture2D" uid="uid://f1hkw3sgwqqu" path="res://Art/2D/Sonar/destination_base.png" id="3_mtlwo"]
+[ext_resource type="Theme" uid="uid://dugoseq388gc8" path="res://Resources/Themes/AI_base_theme.tres" id="3_tgsds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pib"]
 
@@ -25,8 +26,26 @@ shape = SubResource("RectangleShape2D_03pib")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245203376]
 modulate = Color(1, 1, 1, 0.42745098)
-position = Vector2(0.20000075, 0.19998932)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_8od7r")
+position = Vector2(0, 40.685)
+scale = Vector2(0.24963768, 0.5228635)
+texture = ExtResource("3_mtlwo")
+
+[node name="Letter" type="Label" parent="." unique_id=815405994]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -49.25
+offset_right = 14.5
+offset_bottom = 14.75
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("3_tgsds")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="ErrorArea2D" to="." method="_on_error_area_2d_area_entered"]
