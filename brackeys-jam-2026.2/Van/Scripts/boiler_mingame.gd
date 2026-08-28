@@ -1,7 +1,7 @@
 extends Control
-@onready var color_rect: ColorRect = $ColorRect
+@onready var color_rect: ColorRect = $Needle
 @onready var accept_button: Button = %Accept
-@onready var progress_bar: TextureProgressBar = $TextureProgressBar
+@onready var progress_bar: TextureProgressBar = $ValidArea
 @onready var audio: AudioStreamPlayer = %AudioStreamPlayer
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")

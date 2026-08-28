@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl7e1k4y3870t"]
 
-[ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/ballast_mingame.gd" id="1_6hrqk"]
+[ext_resource type="Script" uid="uid://d4gvgxfwjbs7t" path="res://Van/Scripts/boiler_mingame.gd" id="1_6hrqk"]
 [ext_resource type="Texture2D" uid="uid://knxdqxxf14dt" path="res://Art/2D/ClickIcon.png" id="2_gdj2q"]
 [ext_resource type="AudioStream" uid="uid://ci0u00xywksjx" path="res://Audio/SFX/UI_accept.wav" id="3_0j0l5"]
 
@@ -13,10 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_6hrqk")
-tolerance = 15.0
-speed_multiplier_per_round = 1.5
-goal_min_range = 30.0
-goal_max_range = 90.0
+goal_min_range = -20.0
+goal_max_range = 80.0
 
 [node name="ValidArea" type="TextureProgressBar" parent="." unique_id=1520033933]
 layout_mode = 1
