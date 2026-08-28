@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
 [ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
 [ext_resource type="AudioStream" uid="uid://f5we04nn8mkj" path="res://Audio/SFX/UI_dial_short.wav" id="2_1vx7c"]
-[ext_resource type="Texture2D" uid="uid://dqpjyo58b6cvd" path="res://Art/2D/Sonar/cone_sane.png" id="2_dxkrb"]
+[ext_resource type="Texture2D" uid="uid://c4e57v6pw50fb" path="res://Art/2D/Sonar/cone_base.png" id="2_dxkrb"]
 [ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
 [ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
-[ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Prefabs/slot_placement.gd" id="6_wjvfx"]
+[ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/slot_placement.gd" id="6_wjvfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhhwq"]
 size = Vector2(8, 128)

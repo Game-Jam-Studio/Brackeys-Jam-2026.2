@@ -6,8 +6,6 @@ extends Control
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
 const UI_ERROR = preload("uid://44cjuy6hy1ge")
 
-
-
 # Emitted on outcome so the caller can return the camera and call end_repair() on the trigger.
 signal minigame_completed(success: bool)
 
