@@ -2630,29 +2630,23 @@ transform = Transform3D(-4.6000096e-07, 0, 1.0000001, 0, 1.2020144, 0, -1.588507
 [node name="RepairStation1" parent="RepairStations/Area1" unique_id=252793024 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-0.9989431, 0, 0.045963865, 0, 1, 0, -0.045963865, 0, -0.9989431, 30.27519, 0.91858387, 1.6579566)
 system_id = "Sonar"
-is_broken = true
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1560707899 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.6142, 0.91858387, 13.087654)
 system_id = "Boiler"
-is_broken = true
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 36.13272, 0.9185829, -5.5097814)
-is_broken = true
 
 [node name="Area2" type="Node3D" parent="RepairStations" unique_id=795444989]
 
 [node name="RepairStation5" parent="RepairStations/Area2" unique_id=148449380 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-0.8717511, 0, 0.48994893, 0, 1, 0, -0.48994893, 0, -0.8717511, 2.6734064, 0.91858387, -18.213808)
 system_id = "Sonar"
-is_broken = true
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1640763, 0.9185848, 28.629618)
 system_id = "Boiler"
-is_broken = true
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-0.69710886, 0, 0.7169652, 0, 1, 0, -0.7169652, 0, -0.69710886, -24.943102, 0.9185829, 7.473637)
-is_broken = true
