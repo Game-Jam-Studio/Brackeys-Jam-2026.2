@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dfhu1j7aiq656"]
 
 [ext_resource type="Script" uid="uid://dp8t8kmbphnf5" path="res://Van/Scripts/boiler_minigame.gd" id="1_vwb1y"]
-[ext_resource type="Texture2D" uid="uid://dp5pvgb2tng5k" path="res://Art/Placeholder/dial.png" id="2_vwb1y"]
-[ext_resource type="Texture2D" uid="uid://bf0d7sofra06a" path="res://Art/Placeholder/Gauge.png" id="5_sybhk"]
-[ext_resource type="Texture2D" uid="uid://dre0urnp777bt" path="res://Art/Placeholder/needle.png" id="6_uyix2"]
-[ext_resource type="Texture2D" uid="uid://c3alr5petkbli" path="res://Art/Placeholder/valid.png" id="7_gk8mc"]
+[ext_resource type="Texture2D" uid="uid://cas7lynst58my" path="res://Art/2D/Steam/gauge.png" id="3_t34rr"]
+[ext_resource type="Texture2D" uid="uid://boe08tyqh6704" path="res://Art/2D/Steam/needle.png" id="4_xar1l"]
+[ext_resource type="Texture2D" uid="uid://ch7qelwkk1d7x" path="res://Art/2D/Steam/goal.png" id="5_myi3w"]
+[ext_resource type="Texture2D" uid="uid://1ora02wnh3t8" path="res://Art/2D/Steam/dial.png" id="6_1ytgr"]
 [ext_resource type="Script" uid="uid://8xturdjotrx2" path="res://Van/Scripts/UI_dial.gd" id="7_sybhk"]
 [ext_resource type="AudioStream" uid="uid://bgkircabxx6ma" path="res://Audio/SFX/UI_dial.wav" id="7_vwb1y"]
 
@@ -80,29 +80,61 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("5_sybhk")
+texture = ExtResource("3_t34rr")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1" unique_id=793209690]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1" unique_id=548136845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-mouse_filter = 2
-texture = ExtResource("6_uyix2")
-expand_mode = 1
-stretch_mode = 4
 
-[node name="ValidArea" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1" unique_id=211610817]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1/Needle" unique_id=312932538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -323.43
+offset_right = 40.0
+offset_bottom = 264.57
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
-texture = ExtResource("7_gk8mc")
-expand_mode = 1
-stretch_mode = 4
+texture = ExtResource("4_xar1l")
+
+[node name="ValidArea" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1" unique_id=1446272491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Area" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer/Gauge1/ValidArea" unique_id=2031344879]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 94.0
+offset_bottom = 24.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5_myi3w")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer" unique_id=2092187847]
 custom_minimum_size = Vector2(80, 80)
@@ -119,7 +151,7 @@ offset_bottom = 80.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_vwb1y")
+texture = ExtResource("6_1ytgr")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("7_sybhk")
@@ -143,29 +175,61 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("5_sybhk")
+texture = ExtResource("3_t34rr")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2" unique_id=226546163]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2" unique_id=351123926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-mouse_filter = 2
-texture = ExtResource("6_uyix2")
-expand_mode = 1
-stretch_mode = 4
 
-[node name="ValidArea" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2" unique_id=284504056]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2/Needle" unique_id=1249112081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -323.43
+offset_right = 40.0
+offset_bottom = 264.57
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
-texture = ExtResource("7_gk8mc")
-expand_mode = 1
-stretch_mode = 4
+texture = ExtResource("4_xar1l")
+
+[node name="ValidArea" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2" unique_id=1209792899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Area" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer2/Gauge2/ValidArea" unique_id=2011130201]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 24.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5_myi3w")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer2" unique_id=1050034287]
 custom_minimum_size = Vector2(80, 80)
@@ -182,7 +246,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("2_vwb1y")
+texture = ExtResource("6_1ytgr")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("7_sybhk")
@@ -206,29 +270,61 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("5_sybhk")
+texture = ExtResource("3_t34rr")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3" unique_id=267279265]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3" unique_id=179975447]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-mouse_filter = 2
-texture = ExtResource("6_uyix2")
-expand_mode = 1
-stretch_mode = 4
 
-[node name="ValidArea" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3" unique_id=407458565]
-layout_mode = 0
-offset_right = 188.0
-offset_bottom = 188.0
+[node name="Needle" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3/Needle" unique_id=2124105487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -323.43
+offset_right = 40.0
+offset_bottom = 264.57
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
-texture = ExtResource("7_gk8mc")
-expand_mode = 1
-stretch_mode = 4
+texture = ExtResource("4_xar1l")
+
+[node name="ValidArea" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3" unique_id=1235786099]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Area" type="TextureRect" parent="UIRoot/HBoxContainer/VBoxContainer3/Gauge3/ValidArea" unique_id=118184935]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 24.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5_myi3w")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="UIRoot/HBoxContainer/VBoxContainer3" unique_id=633978156]
 custom_minimum_size = Vector2(80, 80)
@@ -243,7 +339,7 @@ layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("2_vwb1y")
+texture = ExtResource("6_1ytgr")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("7_sybhk")
