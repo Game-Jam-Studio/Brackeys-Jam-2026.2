@@ -2262,24 +2262,6 @@ material_override = ExtResource("15_4ddeu")
 transform = Transform3D(-0.10163605, 1.2004641, -0.7545849, 0.9879324, 0.28681004, -1.0415933e-08, 0.116874054, -1.3804466, -0.6562022, -54.460728, 14.309829, 12.816668)
 material_override = ExtResource("15_4ddeu")
 
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="." unique_id=1445064990]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 30.084652, 3.9619431, 1.6570315)
-
-[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="." unique_id=1456655334]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 36.230286, 3.961944, -5.64999)
-
-[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="." unique_id=300159871]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 24.584911, 3.961944, 13.05752)
-
-[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="." unique_id=1441982713]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 2.4967127, 3.961944, -18.195946)
-
-[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="." unique_id=1297484175]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, 5.15753, 3.961946, 28.485073)
-
-[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="." unique_id=1327018568]
-transform = Transform3D(0.2999539, 0, 0, 0, 2.3431191, 0, 0, 0, 0.22967955, -25.008064, 3.961946, 7.506525)
-
 [node name="WallPlain" type="MeshInstance3D" parent="." unique_id=2067238667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.815899, 0.08759117, 4.1809464)
 
