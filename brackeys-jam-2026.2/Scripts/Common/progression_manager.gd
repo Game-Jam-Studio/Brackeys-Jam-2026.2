@@ -35,10 +35,10 @@ const ASSET_PATHS = {
 		"cone": {"base": "res://Art/2D/Sonar/cone_base.png", "corrupted": "res://Art/2D/Sonar/cone_corrupted.png"}
 	},
 	"ballast": {
-		"gauge": {"base": "res://Art/2D/Ballast/gauge_base.png", "corrupted": "res://Art/2D/Ballast/gauge_base.png"}, # TODO: replace corrupted value
-		"needle": {"base": "res://Art/2D/Ballast/needle_base.png", "corrupted": "res://Art/2D/Ballast/needle_base.png"}, # TODO: replace corrupted value
-		"valid_area": {"base": "res://Art/2D/Ballast/valid_area_base.png", "corrupted": "res://Art/2D/Ballast/valid_area_base.png"}, # TODO: replace corrupted value
-		"dial": {"base": "res://Art/2D/Ballast/dial_base.png", "corrupted": "res://Art/2D/Ballast/dial_base.png"} # TODO: replace corrupted value
+		"gauge": {"base": "res://Art/Placeholder/gauge_base_v2.png", "corrupted": "res://Art/Placeholder/gauge_corrupted_v2.png"},
+		"needle": {"base": "res://Art/Placeholder/needle_base_v2.png", "corrupted": "res://Art/Placeholder/needle_corrupted_v2.png"},
+		"valid_area": {"base": "res://Art/Placeholder/valid_area_base_v2.png", "corrupted": "res://Art/Placeholder/valid_area_corrupted_v2.png"},
+		"dial": {"base": "res://Art/Placeholder/dial_base_v2.png", "corrupted": "res://Art/Placeholder/dial_corrupted_v2.png"}
 	},
 	"boiler": {
 		"needle": {"base": "res://Art/2D/Boiler/pointer_base.png", "corrupted": "res://Art/2D/Boiler/pointer_corrupted.png"},
@@ -63,7 +63,7 @@ func get_ship_tier(health: float, max_health: float) -> int:
 
 func get_minigame_tier(health: float, max_health: float) -> int:
 	# TEMPORARY OVERRIDE FOR TESTING CORRUPTED ART
-	return 1
+	return 3
 	
 	#var normalized: float = clampf(health / max_health, 0.0, 1.0)
 	#if normalized <= 0.50 or GameState.current_area_level >= 3:

@@ -27,6 +27,33 @@ func _ready() -> void:
 	%Dial3.mouse_movement_threshold = mouse_movement_threshold
 
 	$AudioStreamPlayer.volume_linear = 0.4
+
+# Get tier assets from ProgressionManager
+	var gauge_texture = ProgressionManager.get_asset_texture("ballast", "gauge")
+	var area_texture = ProgressionManager.get_asset_texture("ballast", "valid_area")
+	var needle_texture = ProgressionManager.get_asset_texture("ballast", "needle")
+	var dial_texture = ProgressionManager.get_asset_texture("ballast", "dial")
+
+	# Apply Gauge textures
+	%Gauge1.texture = gauge_texture
+	%Gauge2.texture = gauge_texture
+	%Gauge3.texture = gauge_texture
+
+	# Apply ValidArea textures
+	$UIRoot/HBoxContainer/VBoxContainer1/Gauge1/ValidArea/Area1.texture = area_texture
+	$UIRoot/HBoxContainer/VBoxContainer2/Gauge2/ValidArea/Area1.texture = area_texture
+	$UIRoot/HBoxContainer/VBoxContainer3/Gauge3/ValidArea/Area1.texture = area_texture
+
+	# Apply Needle textures
+	$UIRoot/HBoxContainer/VBoxContainer1/Gauge1/Needle/Needle1.texture = needle_texture
+	$UIRoot/HBoxContainer/VBoxContainer2/Gauge2/Needle/Needle1.texture = needle_texture
+	$UIRoot/HBoxContainer/VBoxContainer3/Gauge3/Needle/Needle1.texture = needle_texture
+
+	# Apply Dial textures
+	%Dial1.texture = dial_texture
+	%Dial2.texture = dial_texture
+	%Dial3.texture = dial_texture
+
 #Set random values
 	gauge1_value = snapped(randf_range(0, 1), 0.1)
 	gauge2_value = snapped(randf_range(0, 1), 0.1)
