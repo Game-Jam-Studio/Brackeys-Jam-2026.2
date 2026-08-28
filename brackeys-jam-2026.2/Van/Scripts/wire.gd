@@ -9,7 +9,6 @@ const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
 func _ready() -> void:
 	await $"../..".ready
-	texture = $"../..".wire_texture
 	line_2d = Line2D.new()
 	add_child(line_2d)
 	line_2d.width = $"../..".wire_width
@@ -34,11 +33,9 @@ func _on_gui_input(event: InputEvent) -> void:
 				dragging = false
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseMotion and dragging and !slotted:
-		print(event.global_position)
 		position += event.position - size / 2
 		line_2d.set_point_position(1, position + size / 2)
 		tick += clamp(event.screen_relative.length(), 0, 50)
-		#print(tick)
 		if tick > 200:
 			%AudioStreamPlayer.play()
 			tick = 0

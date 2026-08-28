@@ -7,8 +7,7 @@ const UI_DIAL = preload("uid://bgkircabxx6ma")
 
 func _ready() -> void:
 	await $"../..".ready
-	texture = $"../..".slot_texture
-	$SlotArea/CollisionShape2D.shape.radius = $"../..".slot_radius
+
 
 func _on_area_2d_area_entered(wire: Area2D) -> void:
 	if wire.get_parent().is_in_group("wires") and !slotted and !wire.get_parent().slotted:

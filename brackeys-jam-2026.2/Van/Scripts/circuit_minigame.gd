@@ -5,10 +5,11 @@ const UI_ERROR = preload("uid://44cjuy6hy1ge")
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 
 @export_category("Textures")
+@export var single_sprite: bool
 ## Texture for Wires
-@export var wire_texture: Texture
+@export var wire_textures: Array[Texture]
 ## Texture for Slots
-@export var slot_texture: Texture
+@export var slot_textures: Array[Texture]
 
 @export_category("Visual")
 ## Align wires and slots horizontally to top wire and slot.
@@ -76,12 +77,20 @@ func _ready() -> void:
 		slot_array[slot].slot_ID = slot
 
 #Set the color of all wires
-	for wire in range(wire_array.size()):
-		wire_array[wire].modulate = Color(wire * .75 + 0.25, wire * .75 + 0.25, wire * .75 + 0.25, 1)
+	if single_sprite:
+		for wire in range(wire_array.size()):
+			wire_array[wire].modulate = Color(wire * .75 + 0.25, wire * .75 + 0.25, wire * .75 + 0.25, 1)
+	else:
+		for wire in range(wire_array.size()):
+			wire_array[wire].texture = wire_textures[wire]
 
 #Set the color of all slots
-	for slot in range(slot_array.size()):
-		slot_array[slot].modulate = Color(slot * .75 + 0.25, slot * .75 + 0.25, slot * .75 + 0.25, 1)
+	if single_sprite:
+		for slot in range(slot_array.size()):
+			slot_array[slot].modulate = Color(slot * .75 + 0.25, slot * .75 + 0.25, slot * .75 + 0.25, 1)
+	else:
+		for slot in range(wire_array.size()):
+			slot_array[slot].texture = slot_textures[slot]
 
 #Shuffle arrays
 	wire_array.shuffle()
