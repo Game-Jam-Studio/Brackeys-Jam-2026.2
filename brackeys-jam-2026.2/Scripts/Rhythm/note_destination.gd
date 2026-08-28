@@ -73,12 +73,14 @@ func _flash_color(color: Color) -> void:
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "modulate", normalColor, 0.25)
 
+
 func _on_error() -> void:
 	sfx_player.stream = errorSound
 	sfx_player.pitch_scale = 1
 	sfx_player.play()
 	_flash_color(errorColor)
 	noteManager.errorCount += 1
+
 
 func _on_error_area_2d_area_entered(note: Area2D) -> void:
 	note.get_parent().queue_free()

@@ -15,10 +15,6 @@ var total_distance: float = 0.0
 func initialize() -> void:
 	var note_texture = ProgressionManager.get_asset_texture("sonar", "note")
 	$Sprite2D.texture = note_texture
-	
-	#if note_texture and note_texture.resource_path.contains("corrupted"):
-		#target_scale = Vector2(0.2, 0.2)
-		#
 	modulate.a = 0.0
 
 
