@@ -15,8 +15,6 @@ func _ready() -> void:
 	if note_manager:
 		note_manager.minigame_completed.connect(_on_note_manager_completed)
 	
-	var tier = debug_force_tier if debug_force_tier > 0 else ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
-	
 	if circle_node:
 		circle_node.texture = ProgressionManager.get_asset_texture("sonar", "circle")
 	if cone_node:
