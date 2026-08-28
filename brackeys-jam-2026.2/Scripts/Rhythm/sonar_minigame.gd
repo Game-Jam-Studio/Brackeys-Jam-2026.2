@@ -28,9 +28,6 @@ func _ready() -> void:
 		cone_node.texture = ProgressionManager.get_asset_texture("sonar", "cone")
 
 
-
-
-
 func _on_note_manager_completed(success: bool) -> void:
 	minigame_completed.emit(success)
 	queue_free()

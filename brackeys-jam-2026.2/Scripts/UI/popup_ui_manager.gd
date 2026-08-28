@@ -1,8 +1,5 @@
 extends Node
 
-# Framework that pauses player movement/input, mounts an overlay 
-# (Minigame/Log/Terminal), and restores control on close.
-
 var test_narrative_text := {}
 @export var shipHealthControl: Control
 
