@@ -4,6 +4,10 @@
 [ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/background_blur.gdshader" id="2_b6xvc"]
 [ext_resource type="Texture2D" uid="uid://b7wgu2451a1wo" path="res://Art/Placeholder/whitebox.png" id="3_ikf33"]
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="4_b6xvc"]
+[ext_resource type="Texture2D" uid="uid://bwleniukldab6" path="res://Art/2D/SystemIcons/ballast.png" id="4_ikf33"]
+[ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/SystemIcons/sonar.png" id="5_l24tj"]
+[ext_resource type="FontFile" uid="uid://cnybxyn8iq5at" path="res://Resources/Fonts/AI_base.ttf" id="5_n58oy"]
+[ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/SystemIcons/circuit.png" id="7_kvdop"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4jte"]
 shader = ExtResource("2_b6xvc")
@@ -12,15 +16,6 @@ shader_parameter/blur_amount = 2.5
 [node name="PopupUI" type="Node" unique_id=1913051525 node_paths=PackedStringArray("shipHealthControl")]
 process_mode = 3
 script = ExtResource("1_qry5v")
-narrativeText = {
-"PressureLevel": ["PRESSURE 1", "PRESSURE 2"],
-"ReusableText": {
-"MinigameActive": "System in need of repair."
-},
-"RhythmLevel": ["PLACEHOLDER RHYTHM text 1", "PLACEHOLDER RHYTHM text 2"],
-"SteamLevel": ["Steam1", "Steam2"],
-"SubmarineLevel": ["PLACEHOLDERSUBMARINETEXT 1", "PLACEHOLDERSUBMARINETEXT 2", "PLACEHOLDERSUBMARINETEXT 3", "PLACEHOLDERSUBMARINETEXT 4"]
-}
 shipHealthControl = NodePath("CanvasLayer/TerminalText/ShipHealthControl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
@@ -28,6 +23,7 @@ layer = 20
 visible = false
 
 [node name="BlurBackground" type="ColorRect" parent="CanvasLayer" unique_id=1958414001]
+visible = false
 material = SubResource("ShaderMaterial_d4jte")
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]
+visible = false
 offset_left = 502.0
 offset_top = 546.0
 offset_right = 572.0
@@ -43,6 +40,7 @@ offset_bottom = 577.0
 text = "Resume"
 
 [node name="TerminalArt" type="TextureRect" parent="CanvasLayer" unique_id=2028318683]
+visible = false
 modulate = Color(0, 0, 0, 1)
 clip_contents = true
 offset_left = 236.0
@@ -56,6 +54,7 @@ expand_mode = 2
 stretch_mode = 1
 
 [node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
+visible = false
 offset_left = 236.0
 offset_top = 36.0
 offset_right = 876.0
@@ -64,84 +63,143 @@ bbcode_enabled = true
 
 [node name="ShipHealthControl" type="Control" parent="CanvasLayer/TerminalText" unique_id=214551088]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BallastIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=219988113]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=245813004]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 100.0
-offset_right = 130.0
-offset_bottom = 180.0
-texture = ExtResource("4_b6xvc")
+offset_right = 134.0
+offset_bottom = 185.0
+
+[node name="BallastIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect" unique_id=219988113]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ikf33")
 expand_mode = 1
 
-[node name="BallastText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=171091505]
+[node name="BallastText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect" unique_id=171091505]
 top_level = true
 layout_mode = 0
 offset_left = 380.0
 offset_top = 155.0
 offset_right = 520.0
 offset_bottom = 215.0
+theme_override_fonts/normal_font = ExtResource("5_n58oy")
 bbcode_enabled = true
 text = "[color=green][font_size=30]100[/font_size][/color]"
+vertical_alignment = 1
 
-[node name="BoilerIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=1595570782]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=350196463]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 100.0
-offset_right = 399.0
-offset_bottom = 180.0
-texture = ExtResource("4_b6xvc")
-expand_mode = 1
-
-[node name="BoilerText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=1742368098]
-top_level = true
-layout_mode = 0
-offset_left = 650.0
-offset_top = 153.0
-offset_right = 800.0
-offset_bottom = 213.0
-bbcode_enabled = true
-text = "[color=green][font_size=30]100[/font_size][/color]"
-
-[node name="SonarIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=880740826]
-layout_mode = 0
-offset_left = 50.0
+offset_left = 51.0
 offset_top = 281.0
 offset_right = 130.0
 offset_bottom = 361.0
-texture = ExtResource("4_b6xvc")
+
+[node name="SonarIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect2" unique_id=880740826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_l24tj")
 expand_mode = 1
 
-[node name="SonarText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=326092655]
+[node name="SonarText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect2" unique_id=326092655]
 top_level = true
 layout_mode = 0
 offset_left = 380.0
 offset_top = 335.0
 offset_right = 520.0
 offset_bottom = 395.0
+theme_override_fonts/normal_font = ExtResource("5_n58oy")
 bbcode_enabled = true
 text = "[color=green][font_size=30]100[/font_size][/color]"
+vertical_alignment = 1
 
-[node name="CircuitIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=1029936490]
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=1217283921]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 280.0
+offset_left = 319.0
+offset_top = 100.0
+offset_right = 398.0
+offset_bottom = 181.0
+
+[node name="BoilerIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect4" unique_id=2068181871]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b6xvc")
+
+[node name="BoilerText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect4" unique_id=1742368098]
+top_level = true
+layout_mode = 0
+offset_left = 650.0
+offset_top = 153.0
+offset_right = 800.0
+offset_bottom = 213.0
+theme_override_fonts/normal_font = ExtResource("5_n58oy")
+bbcode_enabled = true
+text = "[color=green][font_size=30]100[/font_size][/color]"
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=1223275090]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 281.0
 offset_right = 400.0
 offset_bottom = 360.0
-texture = ExtResource("4_b6xvc")
+
+[node name="CircuitIcon" type="TextureRect" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect3" unique_id=1029936490]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 79.0
+offset_bottom = 79.0
+texture = ExtResource("7_kvdop")
 expand_mode = 1
 
-[node name="CircuitText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=919849584]
+[node name="CircuitText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl/ColorRect3" unique_id=919849584]
 top_level = true
 layout_mode = 0
 offset_left = 645.0
 offset_top = 335.0
 offset_right = 795.0
 offset_bottom = 395.0
+theme_override_fonts/normal_font = ExtResource("5_n58oy")
 bbcode_enabled = true
 text = "[color=green][font_size=30]100[/font_size][/color]"
+vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

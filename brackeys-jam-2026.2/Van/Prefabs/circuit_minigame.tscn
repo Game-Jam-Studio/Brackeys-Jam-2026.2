@@ -6,13 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://c8hynmaqimcs3" path="res://Art/2D/Circuit/Wires/wire_end_base.png" id="2_4dl43"]
 [ext_resource type="Texture2D" uid="uid://bmkc5jlykxl0b" path="res://Art/2D/Circuit/Slots/slot_base_blue.png" id="2_8iqbv"]
 [ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
+[ext_resource type="Texture2D" uid="uid://dydmvaw7syi5y" path="res://Art/2D/Circuit/Wires/wire_end_corrupted.png" id="2_ppcvw"]
 [ext_resource type="Texture2D" uid="uid://7xfbwvi13t2h" path="res://Art/2D/Circuit/Slots/slot_base_gray.png" id="3_4dl43"]
 [ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
+[ext_resource type="Texture2D" uid="uid://cawum31f5fhvv" path="res://Art/2D/Circuit/Wires/wire_middle_corrupted.png" id="3_ppcvw"]
+[ext_resource type="Texture2D" uid="uid://fp67nfmlgfv5" path="res://Art/2D/Circuit/Slots/slot_corrupted_blue.png" id="4_jcdj3"]
 [ext_resource type="Texture2D" uid="uid://bkygmtmnk6iir" path="res://Art/2D/Circuit/Slots/slot_base_orange.png" id="4_ppcvw"]
-[ext_resource type="Texture2D" uid="uid://b3816sdsltkcb" path="res://Art/2D/Circuit/Slots/slot_base_red.png" id="5_3mufh"]
-[ext_resource type="Texture2D" uid="uid://c67ay7qypdxur" path="res://Art/2D/Circuit/Slots/slot_base_yellow.png" id="6_6q5mg"]
+[ext_resource type="Texture2D" uid="uid://cawij4dxevshd" path="res://Art/2D/Circuit/Slots/slot_corrupted_olive.png" id="5_np15x"]
+[ext_resource type="Texture2D" uid="uid://cl44j7et8yex0" path="res://Art/2D/Circuit/Slots/slot_corrupted_green.png" id="6_0el0v"]
 [ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/slot_placement.gd" id="6_wjvfx"]
 [ext_resource type="Texture2D" uid="uid://kxdnvio0p8c5" path="res://Art/2D/Circuit/Slots/slot_base_green.png" id="7_23i6a"]
+[ext_resource type="Texture2D" uid="uid://b5o5va3u5hnu3" path="res://Art/2D/Circuit/Slots/slot_corrupted_orange.png" id="7_xf8k3"]
+[ext_resource type="Texture2D" uid="uid://bq4govfq2cc4v" path="res://Art/2D/Circuit/Slots/slot_corrupted_pink.png" id="8_pvfh2"]
+[ext_resource type="Texture2D" uid="uid://djimw5fl6h460" path="res://Art/2D/Circuit/Slots/slot_corrupted_purple.png" id="9_x017c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhhwq"]
 size = Vector2(8, 128)
@@ -28,8 +34,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vofu2")
-wire_textures = Array[Texture]([ExtResource("2_4dl43"), ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60")])
-slot_textures = Array[Texture]([ExtResource("2_8iqbv"), ExtResource("3_4dl43"), ExtResource("7_23i6a"), ExtResource("4_ppcvw"), ExtResource("5_3mufh"), ExtResource("6_6q5mg")])
+wire_end_texture = ExtResource("2_ppcvw")
+wire_middle_texture = ExtResource("3_ppcvw")
+slot_textures = Array[Texture]([ExtResource("4_jcdj3"), ExtResource("5_np15x"), ExtResource("6_0el0v"), ExtResource("7_xf8k3"), ExtResource("8_pvfh2"), ExtResource("9_x017c")])
 align_horizontally = true
 align_vertically = true
 wire_width = 60.0
@@ -53,7 +60,7 @@ offset_left = 1024.0
 offset_right = 1152.0
 offset_bottom = 128.0
 texture = ExtResource("1_0bh60")
-stretch_mode = 4
+stretch_mode = 5
 script = ExtResource("3_hbgru")
 
 [node name="SlotArea" type="Area2D" parent="Slots/Slot" unique_id=417715862]
@@ -72,7 +79,7 @@ offset_left = 1024.0
 offset_right = 1152.0
 offset_bottom = 128.0
 texture = ExtResource("1_0bh60")
-stretch_mode = 4
+stretch_mode = 5
 script = ExtResource("3_hbgru")
 
 [node name="SlotArea" type="Area2D" parent="Slots/Slot2" unique_id=1075880275]
@@ -91,7 +98,7 @@ offset_left = 1024.0
 offset_right = 1152.0
 offset_bottom = 128.0
 texture = ExtResource("1_0bh60")
-stretch_mode = 4
+stretch_mode = 5
 script = ExtResource("3_hbgru")
 
 [node name="SlotArea" type="Area2D" parent="Slots/Slot3" unique_id=1717896384]
@@ -110,7 +117,7 @@ offset_left = 1024.0
 offset_right = 1152.0
 offset_bottom = 128.0
 texture = ExtResource("1_0bh60")
-stretch_mode = 4
+stretch_mode = 5
 script = ExtResource("3_hbgru")
 
 [node name="SlotArea" type="Area2D" parent="Slots/Slot4" unique_id=876842989]
@@ -128,7 +135,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Wire" type="TextureRect" parent="Wires" unique_id=1187910785 groups=["wires"]]
-z_index = 1
+self_modulate = Color(1, 1, 1, 0)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -143,8 +150,18 @@ position = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire/WireArea" unique_id=1631742701]
 shape = SubResource("CircleShape2D_i72gw")
 
+[node name="WireVisual" type="TextureRect" parent="Wires/Wire" unique_id=293844999]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -45.0
+offset_right = 83.0
+offset_bottom = 128.0
+texture = ExtResource("2_4dl43")
+expand_mode = 5
+stretch_mode = 5
+
 [node name="Wire2" type="TextureRect" parent="Wires" unique_id=1236325583 groups=["wires"]]
-z_index = 1
+self_modulate = Color(1, 1, 1, 0)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -159,8 +176,18 @@ position = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire2/WireArea" unique_id=942656853]
 shape = SubResource("CircleShape2D_i72gw")
 
+[node name="WireVisual" type="TextureRect" parent="Wires/Wire2" unique_id=761798081]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -45.0
+offset_right = 83.0
+offset_bottom = 128.0
+texture = ExtResource("2_4dl43")
+expand_mode = 5
+stretch_mode = 5
+
 [node name="Wire3" type="TextureRect" parent="Wires" unique_id=1430657041 groups=["wires"]]
-z_index = 1
+self_modulate = Color(1, 1, 1, 0)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -175,8 +202,18 @@ position = Vector2(64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire3/WireArea" unique_id=1955178265]
 shape = SubResource("CircleShape2D_i72gw")
 
+[node name="WireVisual" type="TextureRect" parent="Wires/Wire3" unique_id=878915587]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -45.0
+offset_right = 83.0
+offset_bottom = 128.0
+texture = ExtResource("2_4dl43")
+expand_mode = 5
+stretch_mode = 5
+
 [node name="Wire4" type="TextureRect" parent="Wires" unique_id=1187806681 groups=["wires"]]
-z_index = 1
+self_modulate = Color(1, 1, 1, 0)
 custom_maximum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 128.0
@@ -190,6 +227,77 @@ position = Vector2(64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wires/Wire4/WireArea" unique_id=2098582938]
 shape = SubResource("CircleShape2D_i72gw")
+
+[node name="WireVisual" type="TextureRect" parent="Wires/Wire4" unique_id=1807914977]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -45.0
+offset_right = 83.0
+offset_bottom = 128.0
+texture = ExtResource("2_4dl43")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="WireStarts" type="Control" parent="." unique_id=1775151142]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WireStart" type="TextureRect" parent="WireStarts" unique_id=548022703]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-24.93, 0)
+offset_transform_scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("2_8iqbv")
+
+[node name="WireStart2" type="TextureRect" parent="WireStarts" unique_id=565994254]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-24.93, 0)
+offset_transform_scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("3_4dl43")
+
+[node name="WireStart3" type="TextureRect" parent="WireStarts" unique_id=392105105]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-24.93, 0)
+offset_transform_scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("7_23i6a")
+
+[node name="WireStart4" type="TextureRect" parent="WireStarts" unique_id=1062962828]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-24.93, 0)
+offset_transform_scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("4_ppcvw")
 
 [node name="SlotLocations" type="Node2D" parent="." unique_id=2064158959]
 
@@ -250,9 +358,10 @@ texture = ExtResource("1_0bh60")
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocations" type="Node2D" parent="." unique_id=1189879961]
+z_index = -1
 
 [node name="WireLocation" type="Node2D" parent="WireLocations" unique_id=710380303 groups=["wires"]]
-position = Vector2(64, 64)
+position = Vector2(64, 59.155)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="WireLocations/WireLocation" unique_id=970296774]
@@ -262,7 +371,9 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_0bh60")
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("2_8iqbv")
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation2" type="Node2D" parent="WireLocations" unique_id=617373659 groups=["wires"]]
@@ -276,7 +387,9 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_0bh60")
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("3_4dl43")
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation3" type="Node2D" parent="WireLocations" unique_id=581840271 groups=["wires"]]
@@ -290,7 +403,9 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_0bh60")
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("7_23i6a")
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation4" type="Node2D" parent="WireLocations" unique_id=496690030 groups=["wires"]]
@@ -304,7 +419,9 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_0bh60")
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("4_ppcvw")
 script = ExtResource("6_wjvfx")
 
 [connection signal="wire_connected" from="Slots/Slot" to="." method="_on_slot_wire_connected"]

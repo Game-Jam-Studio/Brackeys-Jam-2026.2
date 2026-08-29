@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c0gv1vhjsqf8u"]
+
+[ext_resource type="Texture2D" uid="uid://cjxdphcb404c6" path="res://Taylor/Screenshot 2026-08-28 195948.png" id="2_a5c0u"]
+
+[node name="Node2D" type="Control" unique_id=1940239157]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screenshot20260828195948" type="Sprite2D" parent="." unique_id=1612528878]
+position = Vector2(573.00006, 358)
+scale = Vector2(0.4509375, 0.4509375)
+texture = ExtResource("2_a5c0u")
+
+[node name="Label" type="Label" parent="." unique_id=2111611528]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "System Alert"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=156718626]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.07495
+offset_top = 6.24
+offset_right = -10.074951
+offset_bottom = 33.905014
+grow_horizontal = 0
+color = Color(0.6117647, 0.35686275, 0.22352941, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1087288653]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -12.0
+offset_right = 56.5
+offset_bottom = 12.000001
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6105319, 0.6105466, 0.59740907, 1)

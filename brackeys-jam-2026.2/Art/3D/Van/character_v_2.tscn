@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b4f8gmulsctik"]
+
+[ext_resource type="PackedScene" uid="uid://dd6qcpvjnpvir" path="res://Art/3D/Van/character_v2.glb" id="1_b6opj"]
+
+[node name="character_v2" unique_id=407339830 instance=ExtResource("1_b6opj")]
