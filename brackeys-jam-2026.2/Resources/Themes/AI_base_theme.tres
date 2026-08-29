@@ -1,8 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://dugoseq388gc8"]
 
-[ext_resource type="FontFile" uid="uid://bo45fx7dx681" path="res://Resources/Fonts/AI_base.ttf" id="1_v5wn3"]
+[ext_resource type="FontFile" uid="uid://cnybxyn8iq5at" path="res://Resources/Fonts/AI_base.ttf" id="1_7d28v"]
+[ext_resource type="FontFile" uid="uid://cnybxyn8iq5at" path="res://Resources/Fonts/AI_base.ttf" id="1_v5wn3"]
 
 [resource]
 default_font = ExtResource("1_v5wn3")
 Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_v5wn3")
+Label/fonts/font = ExtResource("1_7d28v")
