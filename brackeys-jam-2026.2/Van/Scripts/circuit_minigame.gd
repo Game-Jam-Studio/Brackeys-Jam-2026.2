@@ -7,7 +7,8 @@ const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 @export_category("Textures")
 @export var single_sprite: bool
 ## Texture for Wires
-@export var wire_textures: Array[Texture]
+@export var wire_end_texture: Texture
+@export var wire_middle_texture: Texture
 ## Texture for Slots
 @export var slot_textures: Array[Texture]
 
@@ -30,7 +31,10 @@ var required_correct: int
 var connections: int
 var is_finished: bool = false
 
+var position_ints: Array[int]
+var slot_ints: Array[int]
 var wire_array: Array[TextureRect]
+var wire_starts: Array[TextureRect]
 var slot_array: Array[TextureRect]
 var slot_locations: Array[Node2D]
 var wire_locations: Array[Node2D]
@@ -39,6 +43,7 @@ var wire_locations: Array[Node2D]
 func _ready() -> void:
 	%AudioStreamPlayer.pitch_scale = 2
 	%AudioStreamPlayer.stream = UI_DIAL_SHORT
+
 #Set wire array to all wires
 	for wire in $Wires.get_children():
 		wire_array.append(wire)
@@ -51,11 +56,16 @@ func _ready() -> void:
 		if align_horizontally:
 			wire.position.x = wire_locations[0].position.x
 
-
+#Set wire start array
+	for wire in $WireStarts.get_children():
+		wire_starts.append(wire)
 
 #Set slot array to all slots
 	for slot in $Slots.get_children():
 		slot_array.append(slot)
+		position_ints.append(slot_array.size() - 1)
+		slot_ints.append(slot_array.size() - 1)
+
 
 #Set amount of required correct connections
 	required_correct = slot_array.size()
@@ -84,7 +94,7 @@ func _ready() -> void:
 			wire_array[wire].modulate = Color(wire * .75 + 0.25, wire * .75 + 0.25, wire * .75 + 0.25, 1)
 	else:
 		for wire in range(wire_array.size()):
-			wire_array[wire].texture = wire_textures[wire]
+			wire_array[wire].get_child(1).texture = wire_end_texture
 
 #Set the color of all slots
 	if single_sprite:
@@ -93,18 +103,22 @@ func _ready() -> void:
 	else:
 		for slot in range(wire_array.size()):
 			slot_array[slot].texture = slot_textures[slot]
+			wire_starts[slot].texture = slot_textures[slot]
 
 #Shuffle arrays
-	wire_array.shuffle()
-	slot_array.shuffle()
+	position_ints.shuffle()
+	slot_ints.shuffle()
+	print(position_ints)
+	print(slot_ints)
 
 #Set positions of all wires
 	for wire in range(wire_array.size()):
-		wire_array[wire].position = wire_locations[wire].position - wire_array[wire].size / 2
+		wire_array[position_ints[wire]].position = wire_locations[position_ints[wire]].position - wire_array[position_ints[wire]].size / 2
+		wire_starts[position_ints[wire]].position.y = wire_locations[position_ints[wire]].position.y - wire_array[position_ints[wire]].size.y / 2
 
 #Set positions of all slots
 	for slot in range(slot_array.size()):
-		slot_array[slot].position = slot_locations[slot].position - slot_array[slot].size / 2
+		slot_array[slot_ints[slot]].position = slot_locations[slot].position - slot_array[slot].size / 2
 
 #Enable colision detection on all slots
 	for slot in slot_array:

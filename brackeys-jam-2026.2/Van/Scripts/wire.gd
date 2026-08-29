@@ -6,22 +6,25 @@ var line_2d: Line2D
 var wire_ID: int
 var tick: float
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
-const LINE_2D_TEST = preload("uid://bub3wo4b1fbab")
+@onready var wire_minigame: Control = $"../.."
+@onready var wire_visual: TextureRect = $WireVisual
+@export var wire_visual_offset: float = -43
 
 func _ready() -> void:
 	await $"../..".ready
 	line_2d = Line2D.new()
 	add_child(line_2d)
-	line_2d.width = $"../..".wire_width
-	line_2d.add_point(Vector2(position.x, position.y + (size.y / 2)), 0)
-	line_2d.add_point(size / 2, 1)
+	wire_visual.position.x = wire_visual_offset
+	line_2d.width = 45
+	line_2d.add_point(Vector2(position.x - line_2d.width / 2, position.y + (size.y / 2)), 1)
+	line_2d.add_point(size / 2, 0)
 	line_2d.reparent(get_parent())
 	line_2d.global_position = Vector2.ZERO
-	line_2d.set_point_position(1, Vector2(position.x + size.x / 2, position.y + size.y / 2))
-	line_2d.texture = LINE_2D_TEST
+	line_2d.set_point_position(0, Vector2(position.x + size.x / 2, position.y + size.y / 2))
+	line_2d.texture = wire_minigame.wire_middle_texture
 	line_2d.texture_mode = Line2D.LINE_TEXTURE_TILE
 	line_2d.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
-
+	line_2d.z_index = -1
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and !slotted:
@@ -37,9 +40,11 @@ func _on_gui_input(event: InputEvent) -> void:
 				dragging = false
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseMotion and dragging and !slotted:
+		offset_transform_rotation = position.angle_to_point(line_2d.get_point_position(1) - size / 2) + PI
 		position += event.position - size / 2
-		line_2d.set_point_position(1, position + size / 2)
+		line_2d.set_point_position(0, Vector2(position.x + size.x / 2, position.y + size.y / 2))
 		tick += clamp(event.screen_relative.length(), 0, 50)
 		if tick > 200:
 			%AudioStreamPlayer.play()
 			tick = 0
+	offset_transform_rotation = position.angle_to_point(line_2d.get_point_position(1) - size / 2) + PI

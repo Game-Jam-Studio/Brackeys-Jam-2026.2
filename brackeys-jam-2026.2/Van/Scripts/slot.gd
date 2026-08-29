@@ -13,7 +13,7 @@ func _on_area_2d_area_entered(wire: Area2D) -> void:
 	if wire.get_parent().is_in_group("wires") and !slotted and !wire.get_parent().slotted:
 		wire.get_parent().slotted = true
 		wire.get_parent().position = position
-		wire.get_parent().line_2d.set_point_position(1, position + size / 2)
+		wire.get_parent().line_2d.set_point_position(0, position + size / 2)
 		slotted = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		wire_connected.emit(wire.get_parent().wire_ID, slot_ID)
