@@ -13,22 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6ucrw")
 
-[node name="Title" type="Label" parent="." unique_id=886373517]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -344.5
-offset_top = 143.58
-offset_right = 344.5
-offset_bottom = 258.58032
-grow_horizontal = 2
-offset_transform_enabled = true
-theme_override_font_sizes/font_size = 84
-text = "TBD Game Name"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="button_manager" type="Control" parent="." unique_id=1002316191]
 anchors_preset = 0
 offset_right = 40.0
@@ -41,9 +25,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -112.5
+offset_left = 102.640015
 offset_top = -1.0499878
-offset_right = 112.5
+offset_right = 327.64044
 offset_bottom = 242.95001
 grow_horizontal = 2
 grow_vertical = 2

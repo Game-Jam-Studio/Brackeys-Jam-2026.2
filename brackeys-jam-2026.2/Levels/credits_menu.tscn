@@ -62,4 +62,100 @@ script = SubResource("GDScript_y0d7i")
 
 [node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_whv12")]
 
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1059962976]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -134.0
+offset_right = 221.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Names" type="VSplitContainer" parent="HSplitContainer" unique_id=1178891613]
+layout_mode = 2
+split_offsets = PackedInt32Array(23, 58, 93, 128, 163, 198, 233)
+split_offset = 23
+
+[node name="Arielle Fantasia" type="Label" parent="HSplitContainer/Names" unique_id=2109733040]
+layout_mode = 2
+text = "Arielle Fantasia"
+horizontal_alignment = 2
+
+[node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Names" unique_id=1106884151]
+layout_mode = 2
+text = "Jonathan Clinton "
+horizontal_alignment = 2
+
+[node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Names" unique_id=44537663]
+layout_mode = 2
+text = "Kaylee Kelly"
+horizontal_alignment = 2
+
+[node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Names" unique_id=1078144323]
+layout_mode = 2
+text = "Maultaschenprinz"
+horizontal_alignment = 2
+
+[node name="Niv Khurana" type="Label" parent="HSplitContainer/Names" unique_id=392358033]
+layout_mode = 2
+text = "Niv Khurana"
+horizontal_alignment = 2
+
+[node name="Taylor Merrill" type="Label" parent="HSplitContainer/Names" unique_id=1397066307]
+layout_mode = 2
+text = "Taylor Merrill"
+horizontal_alignment = 2
+
+[node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Names" unique_id=1461932177]
+layout_mode = 2
+text = "Toshi Mitsunaga"
+horizontal_alignment = 2
+
+[node name="Van Patton" type="Label" parent="HSplitContainer/Names" unique_id=114421501]
+layout_mode = 2
+text = "Van \"Vanvanderson\" Patton"
+horizontal_alignment = 2
+
+[node name="Roles" type="VSplitContainer" parent="HSplitContainer" unique_id=526584035]
+layout_mode = 2
+split_offsets = PackedInt32Array(23, 58, 93, 128, 163, 198, 233)
+split_offset = 23
+
+[node name="Arielle" type="Label" parent="HSplitContainer/Roles" unique_id=650698387]
+layout_mode = 2
+text = "Composer, 2D Artist"
+
+[node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Roles" unique_id=1350841466]
+layout_mode = 2
+text = "Developer"
+
+[node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Roles" unique_id=1768950718]
+layout_mode = 2
+text = "Level Designer"
+
+[node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Roles" unique_id=919984992]
+layout_mode = 2
+text = "2D Artist"
+
+[node name="Niv Khurana" type="Label" parent="HSplitContainer/Roles" unique_id=1029843255]
+layout_mode = 2
+text = "Narrative Designer"
+
+[node name="Taylor Merrill" type="Label" parent="HSplitContainer/Roles" unique_id=1214507831]
+layout_mode = 2
+text = "Gameplay Programmer"
+
+[node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Roles" unique_id=461092406]
+layout_mode = 2
+text = "3D Artist"
+
+[node name="Van Patton" type="Label" parent="HSplitContainer/Roles" unique_id=1762153119]
+layout_mode = 2
+text = "Tech Artist"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
