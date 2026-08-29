@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://b6bgno4ecqu4g"]
 
 [ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
+[ext_resource type="Texture2D" uid="uid://c4fpndvxjed7a" path="res://Taylor/water-bg.png" id="2_ms1ik"]
 [ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_n3fdw"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_whv12"]
+[ext_resource type="FontFile" uid="uid://cnsvw76kftitr" path="res://Resources/Fonts/AI_corrupted.ttf" id="4_ivq1f"]
+[ext_resource type="FontFile" uid="uid://wo0e24rat8xs" path="res://Resources/Fonts/ChaosTimes_lig.TTF" id="6_6vee4"]
+
+[sub_resource type="Theme" id="Theme_05e02"]
 
 [sub_resource type="GDScript" id="GDScript_y0d7i"]
 script/source = "extends Button
@@ -18,6 +23,12 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Theme" id="Theme_eewj2"]
+default_font = ExtResource("6_6vee4")
+default_font_size = 56
+RowA/colors/font_outline_color = Color(0.34509805, 0.69411767, 0.14509805, 1)
+RowA/constants/outline_size = 1
+
 [node name="Credits" type="Control" unique_id=2135353185]
 layout_mode = 3
 anchors_preset = 15
@@ -27,17 +38,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6vvtk")
 
-[node name="Title" type="Label" parent="." unique_id=825116045]
+[node name="Background" type="TextureRect" parent="." unique_id=907826114]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -190.64499
-offset_top = 50.0
-offset_right = 203.3551
-offset_bottom = 117.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1478.5
+offset_bottom = 823.5
 grow_horizontal = 2
-theme = ExtResource("2_n3fdw")
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ms1ik")
+
+[node name="Title" type="Label" parent="." unique_id=825116045]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 45.26
+offset_right = 708.0
+offset_bottom = 114.259995
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_05e02")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
+theme_override_colors/font_outline_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_ivq1f")
+theme_override_font_sizes/font_size = 82
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -50,14 +76,23 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -37.5
-offset_top = -98.0
-offset_right = 37.5
-offset_bottom = -56.0
+offset_left = -49.0
+offset_top = -104.0
+offset_right = 59.0
+offset_bottom = -42.044983
 grow_horizontal = 2
 grow_vertical = 0
+focus_mode = 0
 theme = ExtResource("2_n3fdw")
+theme_override_colors/font_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
+theme_override_colors/font_pressed_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
+theme_override_colors/font_hover_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
+theme_override_colors/font_outline_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_ivq1f")
+theme_override_font_sizes/font_size = 52
 text = "Back"
+icon_alignment = 1
 script = SubResource("GDScript_y0d7i")
 
 [node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_whv12")]
@@ -83,41 +118,80 @@ split_offset = 23
 
 [node name="Arielle Fantasia" type="Label" parent="HSplitContainer/Names" unique_id=2109733040]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Arielle Fantasia"
 horizontal_alignment = 2
 
 [node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Names" unique_id=1106884151]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Jonathan Clinton "
 horizontal_alignment = 2
 
 [node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Names" unique_id=44537663]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Kaylee Kelly"
 horizontal_alignment = 2
 
 [node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Names" unique_id=1078144323]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Maultaschenprinz"
 horizontal_alignment = 2
 
 [node name="Niv Khurana" type="Label" parent="HSplitContainer/Names" unique_id=392358033]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Niv Khurana"
 horizontal_alignment = 2
 
 [node name="Taylor Merrill" type="Label" parent="HSplitContainer/Names" unique_id=1397066307]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Taylor Merrill"
 horizontal_alignment = 2
 
 [node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Names" unique_id=1461932177]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Toshi Mitsunaga"
 horizontal_alignment = 2
 
 [node name="Van Patton" type="Label" parent="HSplitContainer/Names" unique_id=114421501]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Van \"Vanvanderson\" Patton"
 horizontal_alignment = 2
 
@@ -128,34 +202,74 @@ split_offset = 23
 
 [node name="Arielle" type="Label" parent="HSplitContainer/Roles" unique_id=650698387]
 layout_mode = 2
+theme = SubResource("Theme_eewj2")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Composer, 2D Artist"
 
 [node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Roles" unique_id=1350841466]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Developer"
 
 [node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Roles" unique_id=1768950718]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Level Designer"
 
 [node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Roles" unique_id=919984992]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "2D Artist"
 
 [node name="Niv Khurana" type="Label" parent="HSplitContainer/Roles" unique_id=1029843255]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Narrative Designer"
 
 [node name="Taylor Merrill" type="Label" parent="HSplitContainer/Roles" unique_id=1214507831]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Gameplay Programmer"
 
 [node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Roles" unique_id=461092406]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "3D Artist"
 
 [node name="Van Patton" type="Label" parent="HSplitContainer/Roles" unique_id=1762153119]
 layout_mode = 2
+theme = SubResource("Theme_05e02")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_6vee4")
+theme_override_font_sizes/font_size = 28
 text = "Tech Artist"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

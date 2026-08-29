@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cnybxyn8iq5at"
-path="res://.godot/imported/AI_base.ttf-d189f4852c6437ad3dfaada7a4c92916.fontdata"
+uid="uid://wo0e24rat8xs"
+path="res://.godot/imported/ChaosTimes_lig.TTF-eb9c6de820af3a90a4172ef15c65bbb0.fontdata"
 
 [deps]
 
-source_file="res://Resources/Fonts/AI_base.ttf"
-dest_files=["res://.godot/imported/AI_base.ttf-d189f4852c6437ad3dfaada7a4c92916.fontdata"]
+source_file="res://Resources/Fonts/ChaosTimes_lig.TTF"
+dest_files=["res://.godot/imported/ChaosTimes_lig.TTF-eb9c6de820af3a90a4172ef15c65bbb0.fontdata"]
 
 [params]
 

@@ -12,20 +12,10 @@ shader_parameter/blur_amount = 2.5
 [node name="PopupUI" type="Node" unique_id=1913051525 node_paths=PackedStringArray("shipHealthControl")]
 process_mode = 3
 script = ExtResource("1_qry5v")
-narrativeText = {
-"PressureLevel": ["PRESSURE 1", "PRESSURE 2"],
-"ReusableText": {
-"MinigameActive": "System in need of repair."
-},
-"RhythmLevel": ["PLACEHOLDER RHYTHM text 1", "PLACEHOLDER RHYTHM text 2"],
-"SteamLevel": ["Steam1", "Steam2"],
-"SubmarineLevel": ["PLACEHOLDERSUBMARINETEXT 1", "PLACEHOLDERSUBMARINETEXT 2", "PLACEHOLDERSUBMARINETEXT 3", "PLACEHOLDERSUBMARINETEXT 4"]
-}
 shipHealthControl = NodePath("CanvasLayer/TerminalText/ShipHealthControl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 layer = 20
-visible = false
 
 [node name="BlurBackground" type="ColorRect" parent="CanvasLayer" unique_id=1958414001]
 material = SubResource("ShaderMaterial_d4jte")
@@ -63,7 +53,6 @@ offset_bottom = 516.0
 bbcode_enabled = true
 
 [node name="ShipHealthControl" type="Control" parent="CanvasLayer/TerminalText" unique_id=214551088]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -76,6 +65,13 @@ offset_right = 130.0
 offset_bottom = 180.0
 texture = ExtResource("4_b6xvc")
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=245813004]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 90.0
+offset_bottom = 140.0
 
 [node name="BallastText" type="RichTextLabel" parent="CanvasLayer/TerminalText/ShipHealthControl" unique_id=171091505]
 top_level = true
