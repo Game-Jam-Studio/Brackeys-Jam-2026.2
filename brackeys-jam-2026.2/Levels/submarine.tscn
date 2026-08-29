@@ -1159,7 +1159,7 @@ shadow_enabled = true
 omni_range = 31.535
 
 [node name="OmniLight3D23" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=99468948]
-transform = Transform3D(-0.70161754, 0, -0.71255374, 0, 1, 0, 0.71255374, 0, -0.70161754, -51.181087, 2.3219266, -14.425075)
+transform = Transform3D(-0.70161754, 0, -0.71255374, 0, 1, 0, 0.71255374, 0, -0.70161754, -39.00289, 2.3219266, -5.540064)
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_energy = 4.219
 light_indirect_energy = 10.539
@@ -1173,13 +1173,6 @@ light_energy = 2.0
 light_indirect_energy = 10.539
 shadow_enabled = true
 omni_range = 2.565
-
-[node name="OmniLight3D14" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=1962908113]
-transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, -30.485695, 1.0411307, -30.97707)
-light_color = Color(1, 0.4, 0.039215688, 1)
-light_indirect_energy = 10.539
-shadow_enabled = true
-omni_range = 31.535
 
 [node name="OmniLight3D18" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=1161062898]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, -24.647858, 1.4177216, -2.263031)
@@ -2561,7 +2554,7 @@ transform = Transform3D(-1.2823062, 2.9030557, 1.1283416, 0.91986614, 1.1801955,
 material_override = ExtResource("15_4ddeu")
 
 [node name="CSGSphere3D5" type="CSGSphere3D" parent="Heart" unique_id=2118495714]
-transform = Transform3D(-2.6530662, 1.296401, 1.1283414, 0.023665965, 1.5654016, -0.80941904, -1.8751346, -1.766489, -1.6314831, -2.8620644, -4.4205265, 0.64258575)
+transform = Transform3D(-2.6530662, 1.2964013, 1.1283412, 0.023665965, 1.5654016, -0.8094189, -1.8751346, -1.7664891, -1.6314831, -2.8876495, -4.402174, 0.5936699)
 material_override = ExtResource("16_x47f5")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Heart" unique_id=1219449818]
