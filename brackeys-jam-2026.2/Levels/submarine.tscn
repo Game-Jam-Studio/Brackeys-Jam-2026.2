@@ -4098,8 +4098,9 @@ transform = Transform3D(-0.9989431, 0, 0.045963928, 0, 1, 0, -0.045963928, 0, -0
 on_interact_dialogue_key = "MG2-001"
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.9989431, 0, 0.045963928, 0, 1, 0, -0.045963928, 0, -0.9989431, 48.76066, 0.9185834, 7.9855466)
+transform = Transform3D(-0.9989431, 0, 0.045963928, 0, 1, 0, -0.045963928, 0, -0.9989431, 35.65908, 0.9185834, -5.702127)
 system_id = "Circuit"
+metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1598274358]
 on_interact_dialogue_key = "MG4-001"
@@ -4113,8 +4114,9 @@ is_broken = true
 on_interact_dialogue_key = "MG1-001"
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 36.13272, 0.9185829, -5.5097814)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 49.011887, 0.91858387, 7.89689)
 system_id = "Sonar"
+metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="2" unique_id=1598274358]
 on_interact_dialogue_key = "MG3-001"
