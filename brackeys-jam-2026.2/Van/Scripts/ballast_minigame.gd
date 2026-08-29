@@ -56,20 +56,23 @@ func _ready() -> void:
 	%Dial3.texture = dial_texture
 
 	# Apply Button textures
-	#$Menu/Accept.texture_normal = button_texture
+	$Menu/Accept.texture_normal = button_texture
 
 #Set random values
 	gauge1_value = snapped(randf_range(0, 1), 0.1)
 	gauge2_value = snapped(randf_range(0, 1), 0.1)
 	gauge3_value = snapped(randf_range(0, 1), 0.1)
+
 #Set goal gauge rotation
 	%Gauge1/ValidArea.rotation = remap(gauge1_value, 0, 1, -deg_to_rad(dial_1.max_rotation), deg_to_rad(dial_1.max_rotation))
 	%Gauge2/ValidArea.rotation = remap(gauge2_value, 0, 1, -deg_to_rad(dial_2.max_rotation), deg_to_rad(dial_2.max_rotation))
 	%Gauge3/ValidArea.rotation = remap(gauge3_value, 0, 1, -deg_to_rad(dial_3.max_rotation), deg_to_rad(dial_3.max_rotation))
+
 #Set initial needle rotation
 	%Gauge1/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
 	%Gauge2/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
 	%Gauge3/Needle.rotation = deg_to_rad(15) * randi_range(-5, 5)
+
 #Check if any needles are correct
 	check_dial_1()
 	check_dial_2()
