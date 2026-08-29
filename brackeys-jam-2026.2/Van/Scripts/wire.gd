@@ -6,19 +6,22 @@ var line_2d: Line2D
 var wire_ID: int
 var tick: float
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
-const LINE_2D_TEST = preload("uid://bub3wo4b1fbab")
+const WIRE_MIDDLE_BASE = preload("uid://c5axrlm4eablm")
+@onready var wire: TextureRect = $Wire
+
 
 func _ready() -> void:
 	await $"../..".ready
+	wire.texture = texture
 	line_2d = Line2D.new()
 	add_child(line_2d)
-	line_2d.width = $"../..".wire_width
+	line_2d.width = 40
 	line_2d.add_point(Vector2(position.x, position.y + (size.y / 2)), 0)
 	line_2d.add_point(size / 2, 1)
 	line_2d.reparent(get_parent())
 	line_2d.global_position = Vector2.ZERO
 	line_2d.set_point_position(1, Vector2(position.x + size.x / 2, position.y + size.y / 2))
-	line_2d.texture = LINE_2D_TEST
+	line_2d.texture = WIRE_MIDDLE_BASE
 	line_2d.texture_mode = Line2D.LINE_TEXTURE_TILE
 	line_2d.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 
@@ -37,8 +40,9 @@ func _on_gui_input(event: InputEvent) -> void:
 				dragging = false
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseMotion and dragging and !slotted:
+		offset_transform_rotation = position.direction_to(line_2d.get_point_position(0) - size / 2).angle() + PI
 		position += event.position - size / 2
-		line_2d.set_point_position(1, position + size / 2)
+		line_2d.set_point_position(1, Vector2(position.x + size.x / 2, position.y + size.y / 2))
 		tick += clamp(event.screen_relative.length(), 0, 50)
 		if tick > 200:
 			%AudioStreamPlayer.play()

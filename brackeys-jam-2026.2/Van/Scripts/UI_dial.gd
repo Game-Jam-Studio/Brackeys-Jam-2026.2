@@ -42,24 +42,24 @@ func _on_gui_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and dragging and !freeze:
 	
 	#Handle Dial Rotation
-		if value > 0.5:
+		if event.screen_relative.x > 0:
+			value += 0.1
+		elif event.screen_relative.x < 0:
+			value -= 0.1
+		if value > 2:
 			rotation += deg_to_rad(15)
 			new_value = deg_to_rad(15)
 			value_changed.emit(new_value)
 			value = 0
 			#print(new_value)
 			play_dial_sound()
-		elif value < -0.5:
+		elif value < -2:
 			rotation -= deg_to_rad(15)
 			new_value = deg_to_rad(-15)
 			value_changed.emit(new_value)
 			value = 0
 			#print(new_value)
 			play_dial_sound()
-		if event.screen_relative.x > mouse_movement_threshold:
-			value += 0.025
-		elif event.screen_relative.x < -mouse_movement_threshold:
-			value -= 0.025
 
 func play_dial_sound():
 	%AudioStreamPlayer.pitch_scale = randf_range(0.975, 1.025)
