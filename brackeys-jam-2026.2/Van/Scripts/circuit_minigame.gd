@@ -134,9 +134,8 @@ func _ready() -> void:
 	#Shuffle arrays
 	position_ints.shuffle()
 	slot_ints.shuffle()
-	print(position_ints)
-	print(slot_ints)
-	
+
+
 	#Set positions of all wires
 	for wire in range(wire_array.size()):
 		wire_array[position_ints[wire]].position = wire_locations[position_ints[wire]].position - wire_array[position_ints[wire]].size / 2
