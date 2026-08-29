@@ -4136,7 +4136,7 @@ transform = Transform3D(-0.89153224, 0, -0.4529572, 0, 1, 0, 0.4529572, 0, -0.89
 system_id = "Circuit"
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1598274358]
-on_repair_end_dialogue_key = "A2A1-001"
+on_interact_dialogue_key = "A2A1-001"
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1640763, 0.9185848, 28.629618)
