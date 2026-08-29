@@ -3,7 +3,7 @@ extends Area3D
 
 ## Prompt text shown to player when in range (e.g., "Open", "Repair")
 @export var prompt_message: String = "Interact"
-@export var area_progression_key: String = ""
+@export var progression_key: String = ""
 
 @export var on_interact_dialogue_key: String = ""
 
@@ -17,10 +17,10 @@ func can_interact() -> bool:
 ## Executes the interaction logic.
 ## Override in child scripts to define custom behavior
 func interact(_player: CharacterBody3D) -> void:
-	if area_progression_key != "":
+	if progression_key != "":
 		var area_progression_system = get_tree().current_scene.get_node_or_null("%AreaProgressionSystem")
 		if area_progression_system:
-			area_progression_system.complete_unlock_key(area_progression_key)
+			area_progression_system.complete_unlock_key(progression_key)
 		else:
 			print("no named AreaProgressionSystem exists in main scene tree")
 	if on_interact_dialogue_key != "":
