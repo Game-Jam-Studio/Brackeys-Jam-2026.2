@@ -8,6 +8,7 @@ const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
 @export var single_sprite: bool
 ## Texture for Wires
 @export var wire_end_texture: Texture
+
 @export var wire_middle_texture: Texture
 ## Texture for Slots
 @export var slot_textures: Array[Texture]
