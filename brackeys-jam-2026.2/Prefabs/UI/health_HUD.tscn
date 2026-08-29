@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlsb31k4v5ubl"]
 
 [ext_resource type="Script" uid="uid://kxjimafxcl4h" path="res://Scripts/UI/health_hud.gd" id="1_crwwa"]
-[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/Placeholder/mask.png" id="2_dgwwc"]
+[ext_resource type="Texture2D" uid="uid://bkdba82p548we" path="res://Art/2D/ShipHealth/mask.png" id="2_dgwwc"]
 [ext_resource type="Texture2D" uid="uid://dm3ghxswrgxgk" path="res://Art/2D/ShipHealth/health_bg.png" id="3_crwwa"]
 [ext_resource type="Texture2D" uid="uid://bpnun0mckwpcu" path="res://Art/2D/ShipHealth/health_frame_mid.png" id="3_neyg1"]
 [ext_resource type="Shader" uid="uid://ddqmj8te4mblf" path="res://Art/Shaders/liquid_fill_v2.gdshader" id="4_glv1w"]
@@ -32,10 +32,11 @@ script = ExtResource("1_crwwa")
 [node name="LiquidMask" type="TextureRect" parent="." unique_id=1038621429]
 clip_children = 1
 layout_mode = 0
-offset_left = -11.42
-offset_right = 668.58
-offset_bottom = 423.0
-scale = Vector2(0.4, 0.4)
+offset_left = 36.145
+offset_top = 17.98
+offset_right = 716.145
+offset_bottom = 440.98
+scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 texture = ExtResource("2_dgwwc")
 
@@ -48,32 +49,44 @@ texture = ExtResource("3_crwwa")
 [node name="LiquidFill" type="ColorRect" parent="LiquidMask" unique_id=1945976005]
 material = SubResource("ShaderMaterial_dy48u")
 layout_mode = 0
-offset_left = 135.0
+offset_left = 129.51668
 offset_top = 157.5
-offset_right = 194.6875
-offset_bottom = 195.0
+offset_right = 190.31647
+offset_bottom = 200.17
 scale = Vector2(8, 5)
 mouse_filter = 2
 
 [node name="FrameBase" type="TextureRect" parent="." unique_id=2084125768]
 clip_children = 2
 layout_mode = 1
-offset_left = -54.185
-offset_top = -119.66
-offset_right = 1993.815
-offset_bottom = 1928.34
-scale = Vector2(0.2, 0.2)
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
+mouse_filter = 2
+texture = ExtResource("5_crwwa")
+
+[node name="FrameBaseAnimation" type="TextureRect" parent="." unique_id=336167710]
+clip_children = 2
+layout_mode = 1
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
 mouse_filter = 2
 texture = ExtResource("5_crwwa")
 
 [node name="FrameOverlay" type="TextureRect" parent="." unique_id=1438985971]
+visible = false
 modulate = Color(1, 1, 1, 0)
 clip_children = 2
 layout_mode = 1
-offset_left = -54.185
-offset_top = -119.66
-offset_right = 1993.815
-offset_bottom = 1928.34
-scale = Vector2(0.2, 0.2)
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
 mouse_filter = 2
 texture = ExtResource("3_neyg1")

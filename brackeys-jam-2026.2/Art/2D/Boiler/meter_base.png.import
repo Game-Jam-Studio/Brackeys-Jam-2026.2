@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3alr5petkbli"
-path="res://.godot/imported/valid.png-36325654ce97fbe90c77700b825a9612.ctex"
+uid="uid://u33j6y5fm7xo"
+path="res://.godot/imported/meter_base.png-74f8cfe485a363960c06cd4eacfc55ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/valid.png"
-dest_files=["res://.godot/imported/valid.png-36325654ce97fbe90c77700b825a9612.ctex"]
+source_file="res://Art/2D/Boiler/meter_base.png"
+dest_files=["res://.godot/imported/meter_base.png-74f8cfe485a363960c06cd4eacfc55ed.ctex"]
 
 [params]
 

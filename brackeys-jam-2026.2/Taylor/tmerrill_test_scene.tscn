@@ -85,6 +85,7 @@ system_id = "Sonar"
 [node name="StaticBody3D4" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9.003275, 0.91858387, 5.6954327)
 system_id = "Circuit"
+is_broken = true
 
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("7_fy0eo")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6211911, 1.168581, 12.169495)

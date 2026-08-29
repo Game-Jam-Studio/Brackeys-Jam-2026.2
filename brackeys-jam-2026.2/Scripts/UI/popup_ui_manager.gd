@@ -1,8 +1,5 @@
 extends Node
 
-# Framework that pauses player movement/input, mounts an overlay 
-# (Minigame/Log/Terminal), and restores control on close.
-
 var test_narrative_text := {}
 @export var shipHealthControl: Control
 
@@ -48,7 +45,8 @@ func load_csv_to_dictionary(file_path: String, key_column: String = "Line ID", d
 func _ready() -> void:
 	test_narrative_text = load_csv_to_dictionary("res://Narrative/Dialogue.csv")
 	for row in test_narrative_text:
-		print(test_narrative_text[row]["Line ID"] + " " + test_narrative_text[row]["Next ID"])
+		#print(test_narrative_text[row]["Line ID"] + " " + test_narrative_text[row]["Next ID"])
+		pass
 	#show_next_text("Intro-001")
 	
 # CurrKeys SubmarineLevel, RhythmLevel, PressureLevel, SteamLevel
@@ -65,7 +63,9 @@ func show_next_text(LineID: String) -> void:
 # Example usage of launchTerminal - TerminalUI.launch_terminal("show some text\nsomemoretext")
 # BBCode example: log_label.text = "You take [color=crimson][font_size=24]50[/font_size] damage[/color]!"
 func launch_terminal(text: String) -> void:
-	get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
+	# only send pause signal if opening for the first time
+	if $CanvasLayer.visible == false:
+		get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
 	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
 	$CanvasLayer.visible = true
 	

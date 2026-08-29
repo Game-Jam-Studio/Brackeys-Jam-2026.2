@@ -1,7 +1,7 @@
 extends TextureRect
 
 signal value_changed(value)
-@onready var steam_hacking_game: Control = $"../../../../.."
+@onready var ballast_minigame: Control = $"../../../../.."
 
 
 var value: float
@@ -19,9 +19,7 @@ var mouse_movement_threshold: float
 
 func _ready() -> void:
 #Make sure root node's random values are ready
-	await steam_hacking_game.ready
-#Tell root default dial values
-	
+	await ballast_minigame.ready
 
 
 func _on_gui_input(event: InputEvent) -> void:
@@ -34,7 +32,6 @@ func _on_gui_input(event: InputEvent) -> void:
 				start_pos = get_local_mouse_position()
 			#Capture mouse
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				#print(start_pos)
 			else:
 			#Mouse released
 				dragging = false
@@ -43,7 +40,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				warp_mouse(start_pos)
 				#print(value)
 	elif event is InputEventMouseMotion and dragging and !freeze:
-		#print(event.screen_relative.x)
+	
 	#Handle Dial Rotation
 		if value > 0.5:
 			rotation += deg_to_rad(15)

@@ -35,15 +35,16 @@ const ASSET_PATHS = {
 		"cone": {"base": "res://Art/2D/Sonar/cone_base.png", "corrupted": "res://Art/2D/Sonar/cone_corrupted.png"}
 	},
 	"ballast": {
-		"gauge": {"base": "res://Art/2D/Ballast/gauge_base.png", "corrupted": "res://Art/2D/Ballast/gauge_base.png"}, # TODO: replace corrupted value
-		"needle": {"base": "res://Art/2D/Ballast/needle_base.png", "corrupted": "res://Art/2D/Ballast/needle_base.png"}, # TODO: replace corrupted value
-		"valid_area": {"base": "res://Art/2D/Ballast/valid_area_base.png", "corrupted": "res://Art/2D/Ballast/valid_area_base.png"}, # TODO: replace corrupted value
-		"dial": {"base": "res://Art/2D/Ballast/dial_base.png", "corrupted": "res://Art/2D/Ballast/dial_base.png"} # TODO: replace corrupted value
+		"gauge": {"base": "res://Art/2D/Ballast/gauge_base.png", "corrupted": "res://Art/2D/Ballast/gauge_corrupted.png"},
+		"needle": {"base": "res://Art/2D/Ballast/needle_base.png", "corrupted": "res://Art/2D/Ballast/needle_corrupted.png"},
+		"valid_area": {"base": "res://Art/2D/Ballast/valid_area_base.png", "corrupted": "res://Art/2D/Ballast/valid_area_corrupted.png"},
+		"dial": {"base": "res://Art/2D/Ballast/dial_base.png", "corrupted":"res://Art/2D/Ballast/dial_corrupted.png" }
 	},
-	#"boiler": {
-	#	"needle": {"base": , "corrupted": },
-	#	"valid_area": {"base": , "corrupted": }
-	#},
+	"boiler": {
+		"needle": {"base": "res://Art/2D/Boiler/pointer_base.png", "corrupted": "res://Art/2D/Boiler/pointer_corrupted.png"},
+		"meter": {"base": "res://Art/2D/Boiler/meter_base.png", "corrupted": "res://Art/2D/Boiler/meter_corrupted.png"},
+		"button": {"base": "res://Art/2D/Boiler/button_base.png", "corrupted": "res://Art/2D/Boiler/button_corrupted.png"}
+	},
 	#"circuit": {
 	#	"slot": {"base": "res://assets/circuit/slot_base.png", "corrupted": "res://assets/circuit/slot_corrupted.png"},
 	#	"wire": {"base": "res://assets/circuit/wire_base.png", "corrupted": "res://assets/circuit/wire_corrupted.png"}
@@ -61,13 +62,18 @@ func get_ship_tier(health: float, max_health: float) -> int:
 
 
 func get_minigame_tier(health: float, max_health: float) -> int:
-	var normalized: float = clampf(health / max_health, 0.0, 1.0)
-	if normalized <= 0.50 or GameState.current_area_level >= 3:
-		return 3
-	return 1
+	# TEMPORARY OVERRIDE FOR TESTING CORRUPTED ART
+	return 3
+	
+	#var normalized: float = clampf(health / max_health, 0.0, 1.0)
+	#if normalized <= 0.50 or GameState.current_area_level >= 3:
+		#return 3
+	#return 1
+
 
 func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
+#	print("Asset requested: ", asset_name, " | Current tier evaluated: ", tier)
 	if ASSET_PATHS.has(minigame) and ASSET_PATHS[minigame].has(asset_name):
 		var key = "corrupted" if tier == 3 else "base"
 		var path = ASSET_PATHS[minigame][asset_name][key]
@@ -81,6 +87,16 @@ func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 		
 		return texture
 	return null
+
+func get_ai_theme(tier: int) -> Theme:
+	# Return your appropriate Theme resource based on the tier
+	match tier:
+		1:
+			return preload("res://Resources/Themes/AI_base_theme.tres")
+		2:
+			return preload("res://Resources/Themes/AI_mid_theme.tres")
+		_:
+			return preload("res://Resources/Themes/AI_corrupted_theme.tres")
 
 func get_destination_transform(tier: int) -> Dictionary:
 	if tier == 3:

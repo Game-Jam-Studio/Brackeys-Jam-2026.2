@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/submarine_dev_version.tscn")
+	get_tree().change_scene_to_file("res://Levels/submarine.tscn")
 
 
 func _on_options_pressed() -> void:

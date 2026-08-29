@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dre0urnp777bt"
-path="res://.godot/imported/needle.png-edb871aa76ed6cc87ca625352d094510.ctex"
+uid="uid://c67ay7qypdxur"
+path="res://.godot/imported/slot_base_yellow.png-a1d85b8fda3748a143b80ce793031b48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/needle.png"
-dest_files=["res://.godot/imported/needle.png-edb871aa76ed6cc87ca625352d094510.ctex"]
+source_file="res://Art/2D/Circuit/Slots/slot_base_yellow.png"
+dest_files=["res://.godot/imported/slot_base_yellow.png-a1d85b8fda3748a143b80ce793031b48.ctex"]
 
 [params]
 

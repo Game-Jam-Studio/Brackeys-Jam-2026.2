@@ -2,7 +2,7 @@ extends Control
 
 @onready var liquid_fill: ColorRect = $LiquidMask/LiquidFill
 @onready var health_frame: TextureRect = $FrameBase
-
+@onready var health_frame_temp: TextureRect = $FrameBaseAnimation
 
 
 var fill_material: ShaderMaterial
@@ -14,19 +14,19 @@ var highest_unlocked_tier: int = 1
 var color_palette: Dictionary = {
 	"green": {
 		"crest": Color(0.92, 0.98, 0.65, 1.0),
-		"body": Color(0.655, 0.812, 0.165, 1.0),
+		"body": Color(0.494, 0.894, 0.329, 1.0),
 		"deep": Color(0.32, 0.45, 0.08, 1.0),
 		"back": Color(0.48, 0.65, 0.15, 0.75)
 	},
 	"yellow": {
 		"crest": Color(0.98, 0.95, 0.65, 1.0),
-		"body": Color(0.941, 0.867, 0.290, 1.0),
+		"body": Color(1.0, 0.973, 0.035, 1.0),
 		"deep": Color(0.580, 0.40, 0.016, 1.0),
 		"back": Color(0.702, 0.565, 0.012, 0.75)
 	},
 	"red": {
 		"crest": Color(0.773, 0.208, 0.275, 1.0),
-		"body": Color(0.820, 0.220, 0.220, 1.0),
+		"body": Color(0.741, 0.18, 0.024, 1.0),
 		"deep": Color(0.290, 0.035, 0.035, 1.0),
 		"back": Color(0.369, 0.067, 0.067, .75)
 	}
@@ -69,7 +69,18 @@ func _update_display(health: float) -> void:
 	var current_tier: int = ProgressionManager.get_ship_tier(health, GameState.MAX_SHIP_HEALTH)
 	highest_unlocked_tier = maxi(highest_unlocked_tier, current_tier)
 	
-	health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
+	# small .5s animation to tween the old image out and the new image in
+	if health_frame.texture != ProgressionManager.get_frame_texture(highest_unlocked_tier):
+		health_frame_temp.texture = health_frame.texture
+		health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
+		var tween_opaque = create_tween()
+		tween_opaque.tween_property(health_frame, "modulate:a", 1.0, .5)
+		health_frame.modulate.a = 0
+		var tween_transparent = create_tween()
+		health_frame_temp.modulate.a = 1
+		tween_transparent.tween_property(health_frame_temp, "modulate:a", 0.0, .5)
+	else:
+		health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
 	
 	var current_fill: float = fill_material.get_shader_parameter("fill_amount")
 	

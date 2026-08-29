@@ -1,6 +1,6 @@
 extends Control
-@onready var color_rect: ColorRect = $Needle
-@onready var accept_button: Button = %Accept
+@onready var color_rect: TextureRect = $Needle
+@onready var accept_button: TextureButton = %Accept
 @onready var progress_bar: TextureProgressBar = $ValidArea
 @onready var audio: AudioStreamPlayer = %AudioStreamPlayer
 const UI_ACCEPT = preload("uid://ci0u00xywksjx")
@@ -13,7 +13,7 @@ var submitted: bool
 var completed_rounds: float
 
 @export var tolerance: float = 15
-@export var number_of_rounds: int = 5
+@export var number_of_rounds: int = 3
 @export var speed: float = 1.5
 @export var speed_multiplier_per_round: float = 1.25
 ##Minimum value for the random degree rotation of the goal (zero is the bottom middle of the screen)

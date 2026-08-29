@@ -3,10 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
 [ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
 [ext_resource type="AudioStream" uid="uid://f5we04nn8mkj" path="res://Audio/SFX/UI_dial_short.wav" id="2_1vx7c"]
-[ext_resource type="Texture2D" path="res://Art/2D/Sonar/cone_sane.png" id="2_dxkrb"]
+[ext_resource type="Texture2D" uid="uid://c8hynmaqimcs3" path="res://Art/2D/Circuit/Wires/wire_end_base.png" id="2_4dl43"]
+[ext_resource type="Texture2D" uid="uid://bmkc5jlykxl0b" path="res://Art/2D/Circuit/Slots/slot_base_blue.png" id="2_8iqbv"]
 [ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
+[ext_resource type="Texture2D" uid="uid://7xfbwvi13t2h" path="res://Art/2D/Circuit/Slots/slot_base_gray.png" id="3_4dl43"]
 [ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
+[ext_resource type="Texture2D" uid="uid://bkygmtmnk6iir" path="res://Art/2D/Circuit/Slots/slot_base_orange.png" id="4_ppcvw"]
+[ext_resource type="Texture2D" uid="uid://b3816sdsltkcb" path="res://Art/2D/Circuit/Slots/slot_base_red.png" id="5_3mufh"]
+[ext_resource type="Texture2D" uid="uid://c67ay7qypdxur" path="res://Art/2D/Circuit/Slots/slot_base_yellow.png" id="6_6q5mg"]
 [ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/slot_placement.gd" id="6_wjvfx"]
+[ext_resource type="Texture2D" uid="uid://kxdnvio0p8c5" path="res://Art/2D/Circuit/Slots/slot_base_green.png" id="7_23i6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhhwq"]
 size = Vector2(8, 128)
@@ -22,11 +28,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vofu2")
-single_sprite = true
-wire_textures = Array[Texture]([ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60")])
-slot_textures = Array[Texture]([ExtResource("2_dxkrb"), ExtResource("2_dxkrb"), ExtResource("2_dxkrb"), ExtResource("2_dxkrb")])
+wire_textures = Array[Texture]([ExtResource("2_4dl43"), ExtResource("1_0bh60"), ExtResource("1_0bh60"), ExtResource("1_0bh60")])
+slot_textures = Array[Texture]([ExtResource("2_8iqbv"), ExtResource("3_4dl43"), ExtResource("7_23i6a"), ExtResource("4_ppcvw"), ExtResource("5_3mufh"), ExtResource("6_6q5mg")])
 align_horizontally = true
 align_vertically = true
+wire_width = 60.0
 slot_radius = 24.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=251684858]

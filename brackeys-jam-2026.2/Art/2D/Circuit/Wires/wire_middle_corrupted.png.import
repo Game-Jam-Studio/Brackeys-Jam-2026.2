@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2lapwdb28sqv"
-path="res://.godot/imported/sub_health.png-942cdc2a2c3da06c69124b2c7c9e20f3.ctex"
+uid="uid://cawum31f5fhvv"
+path="res://.godot/imported/wire_middle_corrupted.png-51879a266f241ff96b44b1dca62ac135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/sub_health.png"
-dest_files=["res://.godot/imported/sub_health.png-942cdc2a2c3da06c69124b2c7c9e20f3.ctex"]
+source_file="res://Art/2D/Circuit/Wires/wire_middle_corrupted.png"
+dest_files=["res://.godot/imported/wire_middle_corrupted.png-51879a266f241ff96b44b1dca62ac135.ctex"]
 
 [params]
 
