@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://iwl53e2m8flj"]
+
+[ext_resource type="PackedScene" uid="uid://bx1e1shvjdkq4" path="res://Art/3D/Raw Files/Heart.glb" id="1_xsf1m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0uuj"]
+radius = 1.95
+
+[node name="Heart" unique_id=1854801038 instance=ExtResource("1_xsf1m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder_001" parent_id_path=PackedInt32Array(1405403928) index="0" unique_id=1285250915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.390823, -0.475394)
+shape = SubResource("SphereShape3D_i0uuj")

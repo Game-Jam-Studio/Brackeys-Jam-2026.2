@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_quwsm"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_tf3ko"]
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_8essj"]
+[ext_resource type="Material" uid="uid://d04uqu72hn0ch" path="res://Art/3D/Materials/M_Area1Floor.tres" id="5_57ps7"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="6_4ywd5"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="7_fy0eo"]
 
@@ -17,7 +18,7 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_0tpda")
 
 [sub_resource type="Environment" id="Environment_v111v"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_vlngc")
 glow_enabled = true
 
@@ -62,6 +63,7 @@ navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=63868684]
 transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, -0.169, 0)
+material_override = ExtResource("5_57ps7")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1176603071]
@@ -76,18 +78,17 @@ unique_name_in_owner = true
 [node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_8essj")]
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -0.13335466, 2.5121765, 5.6954336)
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 1.3999245, 2.5121765, 5.697686)
 
 [node name="Boiler" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 4.123856, 2.5121765, 5.701688)
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 7.484316, 2.5121765, 5.7066245)
 system_id = "Boiler"
 
 [node name="Circuit" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -4.629835, 2.5121765, 5.695433)
-system_id = "Circuit"
 
 [node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -9.003275, 2.5121765, 5.6954327)
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -10.29204, 2.5121765, 5.693539)
 system_id = "Sonar"
 
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("7_fy0eo")]
