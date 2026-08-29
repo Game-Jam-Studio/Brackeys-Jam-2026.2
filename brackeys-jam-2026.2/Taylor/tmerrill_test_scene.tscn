@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_6yilr"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_8qsiv"]
+[ext_resource type="Script" uid="uid://dcolcvx672xs5" path="res://Scripts/Common/breakdown_manager.gd" id="2_gd6t7"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_quwsm"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_tf3ko"]
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_8essj"]
@@ -31,6 +32,10 @@ size = Vector3(50, 0.2, 50)
 
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_6yilr")
+
+[node name="BreakdownManager" type="Node" parent="." unique_id=11435526]
+script = ExtResource("2_gd6t7")
+tick_rate = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -70,23 +75,19 @@ unique_name_in_owner = true
 
 [node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_8essj")]
 
-[node name="StaticBody3D" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.2427278, 0.91858387, 5.695434)
-is_broken = true
+[node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -0.13335466, 2.5121765, 5.6954336)
 
-[node name="StaticBody3D2" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13335466, 0.91858387, 5.6954336)
+[node name="Boiler" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 4.123856, 2.5121765, 5.701688)
 system_id = "Boiler"
 
-[node name="StaticBody3D3" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.629835, 0.91858387, 5.695433)
+[node name="Circuit" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -4.629835, 2.5121765, 5.695433)
+system_id = "Circuit"
+
+[node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
+transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -9.003275, 2.5121765, 5.6954327)
 system_id = "Sonar"
 
-[node name="StaticBody3D4" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9.003275, 0.91858387, 5.6954327)
-system_id = "Circuit"
-is_broken = true
-
 [node name="Door" parent="." unique_id=490510366 instance=ExtResource("7_fy0eo")]
-
-[editable path="StaticBody3D"]

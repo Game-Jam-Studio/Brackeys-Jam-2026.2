@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwvwg38roqyck"
-path="res://.godot/imported/Door_wall.fbx-9d10d78fa3a5f3e1221c2a7f55e0e72f.scn"
+uid="uid://slxeo3jjapnw"
+path="res://.godot/imported/Wall_recessed_2.fbx-d9d15ce88546fe3f89e41543acc8dc18.scn"
 
 [deps]
 
-source_file="res://Art/3D/Toshi/Door_wall.fbx"
-dest_files=["res://.godot/imported/Door_wall.fbx-9d10d78fa3a5f3e1221c2a7f55e0e72f.scn"]
+source_file="res://Art/3D/Walls&Doors/Wall_recessed_2.fbx"
+dest_files=["res://.godot/imported/Wall_recessed_2.fbx-d9d15ce88546fe3f89e41543acc8dc18.scn"]
 
 [params]
 
@@ -39,7 +39,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"openPBR_shader1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Art/3D/M_PlainWall.tres",
+"use_external/path": "uid://eaynjnsce11m"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dawyovlyymb5w"]
+
+[ext_resource type="PackedScene" uid="uid://cxc1pe7x1ig6c" path="res://Art/3D/Raw Files/Sonar_repair_station.glb" id="1_61gi5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jfcd7"]
+size = Vector3(4.035, 5, 2.07)
+
+[node name="Sonar_repair_station" unique_id=606471648 instance=ExtResource("1_61gi5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=99222236]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1237297183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048282444, 0.024603307, -0.04288149)
+shape = SubResource("BoxShape3D_jfcd7")

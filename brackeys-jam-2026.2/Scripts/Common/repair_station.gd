@@ -1,55 +1,67 @@
+@tool
 class_name RepairStation
 extends Node3D
 
 @export_enum("Ballast", "Boiler", "Sonar", "Circuit") var system_id: String = "Ballast":
 	set(value):
 		system_id = value
-		if is_node_ready() and repair_trigger:
-			repair_trigger.system_id = value
+		if Engine.is_editor_hint():
+			call_deferred("setup_visuals")
+		
+		# Fetch node dynamically instead of relying on @onready
+		var trigger = get_node_or_null("RepairTrigger")
+		if trigger:
+			trigger.system_id = value
 
 @export var is_broken: bool = false:
 	set(value):
 		is_broken = value
-		if is_inside_tree():
+		if is_inside_tree() and not Engine.is_editor_hint():
 			GameState.set_system_broken(system_id, is_broken)
 
 @export var camera_focus_point: Node3D:
 	set(value):
 		camera_focus_point = value
-		if is_node_ready() and repair_trigger:
-			repair_trigger.camera_focus_point = value
+		var trigger = get_node_or_null("RepairTrigger")
+		if trigger and "camera_focus_point" in trigger:
+			trigger.camera_focus_point = value
 
 @export var progression_key: String = ""
 
-@onready var repair_trigger: RepairTrigger = $RepairTrigger
-@onready var mesh_node: MeshInstance3D = $Column
-
 func _ready() -> void:
-	# Register initial broken state with GameState on level load
-	GameState.set_system_broken(system_id, is_broken)
-	# Push initial Inspector values down to the inner trigger
-	if repair_trigger and "camera_focus_point" in repair_trigger:
-		repair_trigger.camera_focus_point = camera_focus_point
+	if not Engine.is_editor_hint():
+		GameState.set_system_broken(system_id, is_broken)
 	
-	$RepairTrigger.progression_key = progression_key
-	apply_test_color()
+	var trigger = get_node_or_null("RepairTrigger")
+	if trigger:
+		if "camera_focus_point" in trigger:
+			trigger.camera_focus_point = camera_focus_point
+		trigger.progression_key = progression_key
+	
+	setup_visuals()
 
-
-func apply_test_color() -> void:
-	if not mesh_node:
-		return
-		
-	var mat := StandardMaterial3D.new()
+func setup_visuals() -> void:
+	# Fetch all nodes dynamically for tool script stability
+	var m_fallback = get_node_or_null("Column")
+	var m_ballast = get_node_or_null("BallastModel")
+	var m_boiler = get_node_or_null("BoilerModel")
+	var m_sonar = get_node_or_null("SonarModel")
+	var m_circuit = get_node_or_null("CircuitModel")
+	
+	if m_fallback: m_fallback.visible = false
+	if m_ballast: m_ballast.visible = false
+	if m_boiler: m_boiler.visible = false
+	if m_sonar: m_sonar.visible = false
+	if m_circuit: m_circuit.visible = false
+	
 	match system_id:
 		"Ballast":
-			mat.albedo_color = Color(0.494, 0.894, 0.329, 1.0)
+			if m_ballast: m_ballast.visible = true
 		"Boiler":
-			mat.albedo_color = Color(0.988, 0.42, 0.008, 1.0)
+			if m_boiler: m_boiler.visible = true
 		"Sonar":
-			mat.albedo_color = Color(0.184, 0.651, 1.0, 1.0)
+			if m_sonar: m_sonar.visible = true
 		"Circuit":
-			mat.albedo_color = Color(1.0, 0.973, 0.035, 1.0)
+			if m_circuit: m_circuit.visible = true
 		_:
-			mat.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
-			
-	mesh_node.material_override = mat
+			if m_fallback: m_fallback.visible = true

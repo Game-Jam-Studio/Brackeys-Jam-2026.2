@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://be22kb8cqnx72"]
+
+[ext_resource type="PackedScene" uid="uid://bxul8cgx7fi5m" path="res://Art/3D/Raw Files/Simple_table.glb" id="1_rk7ai"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwbxk"]
+size = Vector3(1.538, 1.155, 1.535)
+
+[node name="Simple_table" unique_id=1298706152 instance=ExtResource("1_rk7ai")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1489834756]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=909862402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001576215, 0.57102793, 0)
+shape = SubResource("BoxShape3D_fwbxk")

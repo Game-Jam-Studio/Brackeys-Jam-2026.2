@@ -37,7 +37,7 @@ func _ready() -> void:
 	fill_material = liquid_fill.material as ShaderMaterial
 	
 	GameState.ship_health_changed.connect(_on_ship_health_changed)
-	GameState.area_unlocked.connect(_on_area_unlocked)
+	ProgressionManager.area_unlocked.connect(_on_area_unlocked)
 	
 	# Apply the current health on load to prevent desync
 	_update_display(GameState.ship_health)

@@ -1,6 +1,5 @@
 extends Node
 
-signal area_unlocked(new_level: int)
 
 # Emitted whenever the submarine's health value changes
 signal ship_health_changed(new_health: float)
@@ -99,8 +98,3 @@ func apply_failure_penalty(system_id: String) -> void:
 			circuit_health -= repair_fail_penalty
 		_:
 			push_error("Unknown system_id: " + system_id)
-
-
-func unlock_next_area(level: int) -> void:
-	current_area_level = level
-	area_unlocked.emit(current_area_level)
