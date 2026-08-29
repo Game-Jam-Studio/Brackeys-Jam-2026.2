@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cnd2q2ia7rmwv"]
+
+[ext_resource type="Script" uid="uid://b1klxepxeo4kt" path="res://Scripts/Common/area_progression_system.gd" id="1_0wfyr"]
+[ext_resource type="Script" uid="uid://bm7h8ly6eknfw" path="res://Scripts/Common/area_progression_value.gd" id="2_1kvri"]
+
+[node name="AreaProgressionSystem" type="Node" unique_id=1264359212 node_paths=PackedStringArray("area_progression_dictionary")]
+script = ExtResource("1_0wfyr")
+area_progression_dictionary = {
+"testUnlock": NodePath("")
+}
+
+[node name="Node" type="Node" parent="." unique_id=748861400 node_paths=PackedStringArray("doors_to_unlock")]
+script = ExtResource("2_1kvri")
+doors_to_unlock = [NodePath("")]

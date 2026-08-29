@@ -45,11 +45,45 @@ const ASSET_PATHS = {
 		"meter": {"base": "res://Art/2D/Boiler/meter_base.png", "corrupted": "res://Art/2D/Boiler/meter_corrupted.png"},
 		"button": {"base": "res://Art/2D/Boiler/button_base.png", "corrupted": "res://Art/2D/Boiler/button_corrupted.png"}
 	},
-	#"circuit": {
-	#	"slot": {"base": "res://assets/circuit/slot_base.png", "corrupted": "res://assets/circuit/slot_corrupted.png"},
-	#	"wire": {"base": "res://assets/circuit/wire_base.png", "corrupted": "res://assets/circuit/wire_corrupted.png"}
-	#}
+	"circuit": {
+		"wire_middle": {"base": "res://Art/2D/Circuit/Wires/wire_middle_base.png", "corrupted": "res://Art/2D/Circuit/Wires/wire_middle_corrupted.png"},
+		"wire_end": {"base": "res://Art/2D/Circuit/Wires/wire_end_base.png", "corrupted": "res://Art/2D/Circuit/Wires/wire_end_corrupted.png"}
+	}
+	
 }
+
+# Paths for Circuit minigame
+const CIRCUIT_SLOTS = {
+	"base": [
+		"res://Art/2D/Circuit/Slots/slot_base_blue.png",
+		"res://Art/2D/Circuit/Slots/slot_base_gray.png",
+		"res://Art/2D/Circuit/Slots/slot_base_green.png",
+		"res://Art/2D/Circuit/Slots/slot_base_orange.png",
+		"res://Art/2D/Circuit/Slots/slot_base_red.png",
+		"res://Art/2D/Circuit/Slots/slot_base_yellow.png"
+			],
+	"corrupted": [
+		"res://Art/2D/Circuit/Slots/slot_corrupted_blue.png",
+		"res://Art/2D/Circuit/Slots/slot_corrupted_green.png",
+		"res://Art/2D/Circuit/Slots/slot_corrupted_olive.png",
+		"res://Art/2D/Circuit/Slots/slot_corrupted_orange.png",
+		"res://Art/2D/Circuit/Slots/slot_corrupted_pink.png",
+		"res://Art/2D/Circuit/Slots/slot_corrupted_purple.png"
+		]
+	}
+
+
+func get_circuit_slots() -> Array[Texture2D]:
+	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
+	var key = "corrupted" if tier == 3 else "base"
+	var textures: Array[Texture2D] = []
+	
+	for path in CIRCUIT_SLOTS[key]:
+		if ResourceLoader.exists(path):
+			var tex = load(path)
+			if tex:
+				textures.append(tex)
+	return textures
 
 
 func get_ship_tier(health: float, max_health: float) -> int:
