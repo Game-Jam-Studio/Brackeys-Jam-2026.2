@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pjtbwqiteie"
-path="res://.godot/imported/dial_corrupted_v2.png-8a330118cadd1729cbcf4467ca254966.ctex"
+uid="uid://kxdnvio0p8c5"
+path="res://.godot/imported/slot_base_green.png-b107778beda5a00cfeee22bc76e4535c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/dial_corrupted_v2.png"
-dest_files=["res://.godot/imported/dial_corrupted_v2.png-8a330118cadd1729cbcf4467ca254966.ctex"]
+source_file="res://Art/2D/Circuit/Slots/slot_base_green.png"
+dest_files=["res://.godot/imported/slot_base_green.png-b107778beda5a00cfeee22bc76e4535c.ctex"]
 
 [params]
 

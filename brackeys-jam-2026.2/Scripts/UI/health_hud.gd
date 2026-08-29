@@ -2,7 +2,7 @@ extends Control
 
 @onready var liquid_fill: ColorRect = $LiquidMask/LiquidFill
 @onready var health_frame: TextureRect = $FrameBase
-
+@onready var health_frame_temp: TextureRect = $FrameBaseAnimation
 
 
 var fill_material: ShaderMaterial
@@ -69,7 +69,18 @@ func _update_display(health: float) -> void:
 	var current_tier: int = ProgressionManager.get_ship_tier(health, GameState.MAX_SHIP_HEALTH)
 	highest_unlocked_tier = maxi(highest_unlocked_tier, current_tier)
 	
-	health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
+	# small .5s animation to tween the old image out and the new image in
+	if health_frame.texture != ProgressionManager.get_frame_texture(highest_unlocked_tier):
+		health_frame_temp.texture = health_frame.texture
+		health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
+		var tween_opaque = create_tween()
+		tween_opaque.tween_property(health_frame, "modulate:a", 1.0, .5)
+		health_frame.modulate.a = 0
+		var tween_transparent = create_tween()
+		health_frame_temp.modulate.a = 1
+		tween_transparent.tween_property(health_frame_temp, "modulate:a", 0.0, .5)
+	else:
+		health_frame.texture = ProgressionManager.get_frame_texture(highest_unlocked_tier)
 	
 	var current_fill: float = fill_material.get_shader_parameter("fill_amount")
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkdu4dmwylmg8"
-path="res://.godot/imported/valid_area_corrupted_v2.png-092ba15c206b76fa336513bcf453a60f.ctex"
+uid="uid://bq4govfq2cc4v"
+path="res://.godot/imported/slot_corrupted_pink.png-32282261c8549e4184652f29eb79d08e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/valid_area_corrupted_v2.png"
-dest_files=["res://.godot/imported/valid_area_corrupted_v2.png-092ba15c206b76fa336513bcf453a60f.ctex"]
+source_file="res://Art/2D/Circuit/Slots/slot_corrupted_pink.png"
+dest_files=["res://.godot/imported/slot_corrupted_pink.png-32282261c8549e4184652f29eb79d08e.ctex"]
 
 [params]
 

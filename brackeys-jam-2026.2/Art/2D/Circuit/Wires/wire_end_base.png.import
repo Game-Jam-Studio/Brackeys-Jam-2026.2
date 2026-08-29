@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce54lbpjht63p"
-path="res://.godot/imported/needle_corrupted.png-d7007bf55102712b7f683309c6c4f7ef.ctex"
+uid="uid://c8hynmaqimcs3"
+path="res://.godot/imported/wire_end_base.png-4f8f712ac1e613ba93ef2e6e48025944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Ballast/needle_corrupted.png"
-dest_files=["res://.godot/imported/needle_corrupted.png-d7007bf55102712b7f683309c6c4f7ef.ctex"]
+source_file="res://Art/2D/Circuit/Wires/wire_end_base.png"
+dest_files=["res://.godot/imported/wire_end_base.png-4f8f712ac1e613ba93ef2e6e48025944.ctex"]
 
 [params]
 

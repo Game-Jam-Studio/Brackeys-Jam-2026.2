@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce54lbpjht63p"
-path="res://.godot/imported/needle_corrupted.png-d7007bf55102712b7f683309c6c4f7ef.ctex"
+uid="uid://bmkc5jlykxl0b"
+path="res://.godot/imported/slot_base_blue.png-59f3632afc7d635b3ba0c3f185a89a94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/Ballast/needle_corrupted.png"
-dest_files=["res://.godot/imported/needle_corrupted.png-d7007bf55102712b7f683309c6c4f7ef.ctex"]
+source_file="res://Art/2D/Circuit/Slots/slot_base_blue.png"
+dest_files=["res://.godot/imported/slot_base_blue.png-59f3632afc7d635b3ba0c3f185a89a94.ctex"]
 
 [params]
 

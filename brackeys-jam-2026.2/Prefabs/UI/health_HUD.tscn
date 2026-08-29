@@ -67,6 +67,17 @@ scale = Vector2(0.15, 0.15)
 mouse_filter = 2
 texture = ExtResource("5_crwwa")
 
+[node name="FrameBaseAnimation" type="TextureRect" parent="." unique_id=336167710]
+clip_children = 2
+layout_mode = 1
+offset_left = 2.845
+offset_top = -72.0
+offset_right = 2050.845
+offset_bottom = 1976.0
+scale = Vector2(0.15, 0.15)
+mouse_filter = 2
+texture = ExtResource("5_crwwa")
+
 [node name="FrameOverlay" type="TextureRect" parent="." unique_id=1438985971]
 visible = false
 modulate = Color(1, 1, 1, 0)

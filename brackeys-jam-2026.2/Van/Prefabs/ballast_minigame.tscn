@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dfhu1j7aiq656"]
 
 [ext_resource type="Script" uid="uid://dp8t8kmbphnf5" path="res://Van/Scripts/ballast_minigame.gd" id="1_8d5g1"]
+[ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="2_3o85p"]
 [ext_resource type="AudioStream" uid="uid://bgkircabxx6ma" path="res://Audio/SFX/UI_dial.wav" id="2_d6wui"]
-[ext_resource type="Texture2D" uid="uid://br4ld2hdndeeq" path="res://Art/Placeholder/gauge_base_v2.png" id="3_d6wui"]
-[ext_resource type="Texture2D" uid="uid://cwpeib1r1cojt" path="res://Art/Placeholder/valid_area_base_v2.png" id="4_rwco2"]
-[ext_resource type="Texture2D" uid="uid://dse0jgqnyjioi" path="res://Art/Placeholder/needle_base_v2.png" id="5_fgjnt"]
-[ext_resource type="Texture2D" uid="uid://ccha7u5psqpeb" path="res://Art/Placeholder/dial_base_v2.png" id="6_3o85p"]
+[ext_resource type="Texture2D" uid="uid://br4ld2hdndeeq" path="res://Art/2D/Ballast/gauge_base.png" id="3_d6wui"]
+[ext_resource type="Texture2D" uid="uid://cwpeib1r1cojt" path="res://Art/2D/Ballast/valid_area_base.png" id="4_rwco2"]
+[ext_resource type="Texture2D" uid="uid://dse0jgqnyjioi" path="res://Art/2D/Ballast/needle_base.png" id="5_fgjnt"]
+[ext_resource type="Texture2D" uid="uid://ccha7u5psqpeb" path="res://Art/2D/Ballast/dial_base.png" id="6_3o85p"]
 [ext_resource type="Script" uid="uid://8xturdjotrx2" path="res://Van/Scripts/UI_dial.gd" id="7_ped27"]
 
 [node name="BallastMinigame" type="Control" unique_id=456800813]
@@ -25,19 +26,20 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -68.0
-offset_right = 40.0
-offset_bottom = -37.0
+offset_left = -76.0
+offset_top = -566.35
+offset_right = 530.0001
+offset_bottom = -180.35
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.25, 0.25)
 mouse_filter = 2
 alignment = 2
 
-[node name="Accept" type="Button" parent="Menu" unique_id=317052462]
+[node name="Accept" type="TextureButton" parent="Menu" unique_id=1436527345]
 layout_mode = 2
-text = "Accept"
+tooltip_text = "SUBMIT"
+texture_normal = ExtResource("2_3o85p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2019624829]
 unique_name_in_owner = true
@@ -50,6 +52,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 29.055
+offset_bottom = 29.054993
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

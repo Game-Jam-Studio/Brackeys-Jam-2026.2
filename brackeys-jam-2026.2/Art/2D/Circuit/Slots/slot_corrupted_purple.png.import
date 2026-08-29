@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br4ld2hdndeeq"
-path="res://.godot/imported/gauge_base_v2.png-f21d3dbae906e07dcf9e3187472fcded.ctex"
+uid="uid://djimw5fl6h460"
+path="res://.godot/imported/slot_corrupted_purple.png-70d79b82f9c250f29d670d9a18609a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/gauge_base_v2.png"
-dest_files=["res://.godot/imported/gauge_base_v2.png-f21d3dbae906e07dcf9e3187472fcded.ctex"]
+source_file="res://Art/2D/Circuit/Slots/slot_corrupted_purple.png"
+dest_files=["res://.godot/imported/slot_corrupted_purple.png-70d79b82f9c250f29d670d9a18609a69.ctex"]
 
 [params]
 
