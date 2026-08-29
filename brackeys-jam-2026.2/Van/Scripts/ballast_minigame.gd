@@ -56,7 +56,7 @@ func _ready() -> void:
 	%Dial3.texture = dial_texture
 
 	# Apply Button textures
-	$Menu/Accept.texture_normal = button_texture
+	#$Menu/Accept.texture_normal = button_texture
 
 #Set random values
 	gauge1_value = snapped(randf_range(0, 1), 0.1)
