@@ -123,25 +123,20 @@ func _update_warning_light() -> void:
 		mat.emission = light.light_color
 		
 	if is_broken:
-		light.visible = true
 		light.light_energy = 3.0
 		if mat:
 			mat.emission_energy_multiplier = 3.0
 		
-		# set_parallel(true) forces tween instructions to run at the same time
 		flash_tween = create_tween().set_loops().set_parallel(true)
 		
-		# Tween the alpha down
 		flash_tween.tween_property(light, "light_energy", 0.0, 0.5)
 		if mat:
 			flash_tween.tween_property(mat, "emission_energy_multiplier", 0.0, 0.5)
-		
-		# Chain waits for the previous parallel block to finish, then tweens the alpha back up
+			
 		flash_tween.chain().tween_property(light, "light_energy", 3.0, 0.5)
 		if mat:
 			flash_tween.tween_property(mat, "emission_energy_multiplier", 3.0, 0.5)
 	else:
-		light.visible = false
 		light.light_energy = 0.0
 		if mat:
 			mat.emission_energy_multiplier = 0.0

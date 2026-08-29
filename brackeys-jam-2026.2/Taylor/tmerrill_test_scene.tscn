@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_8essj"]
 [ext_resource type="Material" uid="uid://d04uqu72hn0ch" path="res://Art/3D/Materials/M_Area1Floor.tres" id="5_57ps7"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="6_4ywd5"]
-[ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="7_fy0eo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -56,7 +55,7 @@ script = ExtResource("3_quwsm")
 player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01343441, -0.01240921, -0.04453659)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029509306, -0.0124082565, -0.04464817)
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
@@ -79,16 +78,19 @@ unique_name_in_owner = true
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 1.3999245, 2.5121765, 5.697686)
+is_broken = true
 
 [node name="Boiler" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 7.484316, 2.5121765, 5.7066245)
 system_id = "Boiler"
+is_broken = true
 
 [node name="Circuit" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -4.629835, 2.5121765, 5.695433)
+system_id = "Circuit"
+is_broken = true
 
 [node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -10.29204, 2.5121765, 5.693539)
 system_id = "Sonar"
-
-[node name="Door" parent="." unique_id=490510366 instance=ExtResource("7_fy0eo")]
+is_broken = true
