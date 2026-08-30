@@ -51,29 +51,28 @@ scale = Vector2(0.4, 0.4)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("3_qry5v")
 
-[node name="TerminalText" type="RichTextLabel" parent="CanvasLayer/TextureRect" unique_id=1214466658]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -116.0
+offset_right = 324.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 fit_content = true
 
-[node name="Button" type="Button" parent="CanvasLayer/TextureRect" unique_id=989481004]
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]
 custom_maximum_size = Vector2(-1, 20.33)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -31.0
-offset_top = -20.33
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 866.16
+offset_top = 411.08
+offset_right = 897.16
+offset_bottom = 431.40997
 text = "OK"
 icon_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

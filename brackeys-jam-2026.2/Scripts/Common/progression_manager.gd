@@ -83,7 +83,6 @@ const CIRCUIT_SLOTS = {
 	}
 
 
-
 func get_circuit_slots() -> Array[Texture2D]:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
 	var key = "corrupted" if tier == 3 else "base"
