@@ -15,19 +15,15 @@ func _ready() -> void:
 	GameState.sonar_health_changed.connect(_sonar_health_changed)
 
 func _ballast_health_changed():
-	print("poop")
 	ballast_health.value = GameState.ballast_health
 
 func _boiler_health_changed():
-	print("poop")
 	boiler_health.value = GameState.boiler_health
 
 func _circuit_health_changed():
-	print("poop")
 	circuit_health.value = GameState.circuit_health
 
 func _sonar_health_changed():
-	print("poop")
 	sonar_health.value = GameState.sonar_health
 
 func _on_texture_button_pressed() -> void:
