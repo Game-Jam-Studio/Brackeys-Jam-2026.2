@@ -156,7 +156,6 @@ script = ExtResource("1_2a835")
 
 [node name="BreakdownManager" type="Node" parent="." unique_id=1374321493]
 script = ExtResource("2_7k0iy")
-min_breakdown_chance = 0.25
 
 [node name="AreaProgressionSystem" type="Node" parent="." unique_id=1264359212 node_paths=PackedStringArray("area_progression_dictionary")]
 unique_name_in_owner = true
@@ -8808,7 +8807,6 @@ transform = Transform3D(0.06648589, 0, 0.09058298, 0, 49.41132, 0, -0.10630058, 
 material_override = ExtResource("16_x47f5")
 
 [node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
-visible = false
 
 [node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
 transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)

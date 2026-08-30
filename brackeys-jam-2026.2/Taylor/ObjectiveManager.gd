@@ -13,10 +13,7 @@ const AREA_3_REQUIRED_LOOPS: int = 2
 
 
 func _ready() -> void:
-	ObjectiveManager.trigger_objective_dialogue.connect(_on_trigger_objective_dialogue)
-
-func _on_trigger_objective_dialogue(line_id: String) -> void:
-	start_dialogue(line_id)
+	pass
 
 
 func record_minigame_played() -> void:
