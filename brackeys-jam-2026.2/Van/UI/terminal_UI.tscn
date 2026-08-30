@@ -113,6 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Ballast/VBoxContainer" unique_id=925998675]
+modulate = Color(0.494, 0.894, 0.329, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -147,6 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Boiler/VBoxContainer" unique_id=1010006398]
+modulate = Color(0.988, 0.42, 0.008, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -185,6 +187,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Circuit/VBoxContainer" unique_id=292979021]
+modulate = Color(1, 0.973, 0.035, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -219,6 +222,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Sonar/VBoxContainer" unique_id=1090053207]
+modulate = Color(0.184, 0.651, 1, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3

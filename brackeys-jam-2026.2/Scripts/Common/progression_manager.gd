@@ -83,6 +83,7 @@ const CIRCUIT_SLOTS = {
 	}
 
 
+
 func get_circuit_slots() -> Array[Texture2D]:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
 	var key = "corrupted" if tier == 3 else "base"
@@ -117,7 +118,6 @@ func get_minigame_tier(health: float, max_health: float) -> int:
 
 func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
-#	print("Asset requested: ", asset_name, " | Current tier evaluated: ", tier)
 	if ASSET_PATHS.has(minigame) and ASSET_PATHS[minigame].has(asset_name):
 		var key = "corrupted" if tier == 3 else "base"
 		var path = ASSET_PATHS[minigame][asset_name][key]
