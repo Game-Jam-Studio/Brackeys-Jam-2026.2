@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bblr6uwaeevpn" path="res://Taylor/control_terminal.tscn" id="24_7k0iy"]
 [ext_resource type="PackedScene" uid="uid://iwl53e2m8flj" path="res://Art/3D/PlaceableObjects/heart.tscn" id="24_thtfx"]
 [ext_resource type="PackedScene" uid="uid://cj66t7ngttqc3" path="res://Art/3D/PlaceableObjects/right_lung.tscn" id="26_d5ggv"]
-[ext_resource type="PackedScene" uid="uid://cs4lousll202k" path="res://Art/3D/PlaceableObjects/simple_computer.tscn" id="27_d5ggv"]
+[ext_resource type="PackedScene" uid="uid://cs4lousll202k" path="res://Taylor/simple_computer.tscn" id="27_d5ggv"]
 [ext_resource type="PackedScene" uid="uid://cxbghidgvavjy" path="res://Art/3D/PlaceableObjects/simple_chair.tscn" id="28_5jq4l"]
 [ext_resource type="PackedScene" uid="uid://be22kb8cqnx72" path="res://Art/3D/PlaceableObjects/simple_table.tscn" id="29_a3jn7"]
 

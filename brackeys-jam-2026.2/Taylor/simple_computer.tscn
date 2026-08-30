@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://cs4lousll202k"]
 
 [ext_resource type="PackedScene" uid="uid://evhw31ohbijg" path="res://Art/3D/Raw Files/Simple_Computer.glb" id="1_wdknq"]
+[ext_resource type="Script" uid="uid://byrx5dgb6xg6c" path="res://Art/3D/PlaceableObjects/simple_computer.gd" id="2_im0m4"]
 [ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="2_m3i45"]
+[ext_resource type="Texture2D" uid="uid://y26d2i5ejoef" path="res://Art/Placeholder/Screen2.jpg" id="4_t838i"]
+[ext_resource type="Texture2D" uid="uid://b6waasqpyjyey" path="res://Art/Placeholder/Screen3.jpg" id="5_nv5of"]
+[ext_resource type="Texture2D" uid="uid://btxpibayta31m" path="res://Art/Placeholder/Screen4.jpg" id="6_c0gi0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m3i45"]
 size = Vector3(0.975, 1.06, 0.745)
 
 [node name="Simple_Computer" unique_id=572838965 instance=ExtResource("1_wdknq")]
+script = ExtResource("2_im0m4")
+screen_textures = Array[Texture2D]([ExtResource("2_m3i45"), ExtResource("4_t838i"), ExtResource("5_nv5of"), ExtResource("6_c0gi0")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1322847113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.094791055, -0.066769004)
@@ -14,4 +20,3 @@ shape = SubResource("BoxShape3D_m3i45")
 
 [node name="ScreenDecal" type="Sprite3D" parent="." index="2" unique_id=1961541762]
 transform = Transform3D(0.0655062, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0.025041886, -0.36283743)
-texture = ExtResource("2_m3i45")
