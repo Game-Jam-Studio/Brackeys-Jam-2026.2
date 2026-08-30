@@ -99,16 +99,16 @@ sonar_icon = ExtResource("12_0ydjy")
 circuit_icon = ExtResource("13_dgd6d")
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 1.3999245, 2.5121765, 5.697686)
+transform = Transform3D(0.6999992, 0, -0.0010283373, 0, 0.7, 0, 0.0010283373, 0, 0.6999992, 1.3999245, 1.6752441, 5.697686)
 
 [node name="Boiler" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 7.484316, 2.5121765, 5.7066245)
+transform = Transform3D(0.6999992, 0, -0.0010283372, 0, 0.7, 0, 0.0010283372, 0, 0.6999992, 7.484316, 1.6752441, 5.7066245)
 system_id = "Boiler"
 
 [node name="Circuit" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -4.629835, 2.5121765, 5.695433)
+transform = Transform3D(0.6999992, 0, -0.0010283373, 0, 0.7, 0, 0.0010283373, 0, 0.6999992, -4.629835, 1.6752441, 5.695433)
 system_id = "Circuit"
 
 [node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
-transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -10.29204, 2.5121765, 5.693539)
+transform = Transform3D(0.6999992, 0, -0.0010283373, 0, 0.7, 0, 0.0010283373, 0, 0.6999992, -10.29204, 1.6752441, 5.693539)
 system_id = "Sonar"

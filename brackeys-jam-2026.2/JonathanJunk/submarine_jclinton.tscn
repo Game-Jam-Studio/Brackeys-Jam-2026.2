@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_f02ap"]
 [ext_resource type="AudioStream" uid="uid://bqqofvtxh86rw" path="res://Audio/Ambience/background_hum_engine_motor_ambience_01.wav" id="2_57v7r"]
 [ext_resource type="Script" uid="uid://b1klxepxeo4kt" path="res://Scripts/Common/area_progression_system.gd" id="2_b5l2o"]
+[ext_resource type="Script" uid="uid://dcolcvx672xs5" path="res://Scripts/Common/breakdown_manager.gd" id="2_x4pmg"]
 [ext_resource type="Script" uid="uid://bm7h8ly6eknfw" path="res://Scripts/Common/area_progression_value.gd" id="3_v0pta"]
 [ext_resource type="AudioStream" uid="uid://cdco2xhn30xkq" path="res://Audio/Ambience/background_air_vent_fan_loop_01.wav" id="3_vskkf"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="4_kk2up"]
@@ -16,11 +17,17 @@
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="10_0vy0o"]
 [ext_resource type="PackedScene" uid="uid://qqke76mcvs0u" path="res://Art/3D/Walls&Doors/Wall_plain.fbx" id="11_rkkrh"]
 [ext_resource type="PackedScene" uid="uid://ywo2ttkmenk8" path="res://Art/3D/Walls&Doors/Wall_recessed_1.fbx" id="12_3edml"]
+[ext_resource type="Script" uid="uid://b4xvsicy40cdv" path="res://Taylor/alert_container.gd" id="12_fjv33"]
 [ext_resource type="PackedScene" uid="uid://slxeo3jjapnw" path="res://Art/3D/Walls&Doors/Wall_recessed_2.fbx" id="13_f22pu"]
+[ext_resource type="PackedScene" uid="uid://bmh775b3h7th6" path="res://Taylor/alert_icon.tscn" id="13_x4pmg"]
 [ext_resource type="PackedScene" uid="uid://cpr2lvijkkja0" path="res://Art/3D/Walls&Doors/Outer_corner_plain.fbx" id="14_8f6sn"]
+[ext_resource type="Texture2D" uid="uid://bwleniukldab6" path="res://Art/2D/UI/SystemIcons/ballast.png" id="14_tc3n1"]
 [ext_resource type="PackedScene" uid="uid://gar3tvpgcprx" path="res://Art/3D/Walls&Doors/Inner_corner_plain.fbx" id="15_6orbi"]
+[ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="15_pbj5y"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="16_5qcsr"]
+[ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="16_u7fl2"]
 [ext_resource type="Material" uid="uid://nwfjx3jn1bgk" path="res://Art/3D/Materials/M_Lungs.tres" id="17_0x36r"]
+[ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="17_l2si2"]
 [ext_resource type="PackedScene" uid="uid://3jhnwf0x5xs0" path="res://Art/3D/Van/Terminal.glb" id="18_4xlmi"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="19_klv23"]
 
@@ -50,8 +57,19 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kggmt"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.5178847
+
 [node name="World2" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_f02ap")
+
+[node name="BreakdownManager" type="Node" parent="." unique_id=1178577902]
+script = ExtResource("2_x4pmg")
+min_breakdown_chance = 0.25
 
 [node name="AmbientSoundObjects" type="Node" parent="." unique_id=1681977115]
 
@@ -141,6 +159,22 @@ unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("7_x0n2m")]
+
+[node name="AlertContainer" type="HBoxContainer" parent="UI" unique_id=2126853143]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+script = ExtResource("12_fjv33")
+alert_icon_scene = ExtResource("13_x4pmg")
+ballast_icon = ExtResource("14_tc3n1")
+boiler_icon = ExtResource("15_pbj5y")
+sonar_icon = ExtResource("16_u7fl2")
+circuit_icon = ExtResource("17_l2si2")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0047736, -0.01240921, 1.414844)
@@ -2709,9 +2743,24 @@ system_id = "Sonar"
 is_broken = true
 progression_key = "testUnlock"
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
 on_repair_end_dialogue_key = "A1L2-001"
+progression_key = "testUnlock"
 on_interact_dialogue_key = "MG3-001"
+
+[node name="SonarModel" parent="RepairStations/Area1/RepairStation1" index="3" unique_id=606471648]
+visible = true
+
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation1" index="4" unique_id=2082674037]
+visible = false
+
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation1" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
+light_color = Color(0.184, 0.651, 1, 1)
+light_energy = 0.5178847
+
+[node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(252793024, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_kggmt")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1560707899 instance=ExtResource("19_klv23")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.6142, 0.91858387, 13.087654)

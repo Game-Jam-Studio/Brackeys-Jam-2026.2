@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du876lyklyltv"]
 
 [ext_resource type="Script" uid="uid://bacj5kqesd8ml" path="res://Taylor/level.gd" id="1_2a835"]
+[ext_resource type="Script" uid="uid://dcolcvx672xs5" path="res://Scripts/Common/breakdown_manager.gd" id="2_7k0iy"]
 [ext_resource type="PackedScene" uid="uid://qqke76mcvs0u" path="res://Art/3D/Walls&Doors/Wall_plain.fbx" id="2_avjot"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_op4vt"]
 [ext_resource type="PackedScene" uid="uid://ywo2ttkmenk8" path="res://Art/3D/Walls&Doors/Wall_recessed_1.fbx" id="3_ce3kk"]
@@ -11,8 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_op4vt"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_r2qih"]
 [ext_resource type="PackedScene" uid="uid://fa5imaomcpyx" path="res://Prefabs/Actors/door.tscn" id="6_ipbck"]
+[ext_resource type="Script" uid="uid://b4xvsicy40cdv" path="res://Taylor/alert_container.gd" id="6_rbpqi"]
 [ext_resource type="PackedScene" uid="uid://gar3tvpgcprx" path="res://Art/3D/Walls&Doors/Inner_corner_plain.fbx" id="6_x47f5"]
+[ext_resource type="PackedScene" uid="uid://bmh775b3h7th6" path="res://Taylor/alert_icon.tscn" id="7_7k0iy"]
+[ext_resource type="Texture2D" uid="uid://bwleniukldab6" path="res://Art/2D/UI/SystemIcons/ballast.png" id="8_3soee"]
 [ext_resource type="Material" uid="uid://d04uqu72hn0ch" path="res://Art/3D/Materials/M_Area1Floor.tres" id="9_ce3kk"]
+[ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="9_thtfx"]
+[ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="10_d5ggv"]
+[ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="11_5jq4l"]
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="14_gmhmx"]
 [ext_resource type="Material" uid="uid://bjqq84k2cil2x" path="res://Art/3D/Materials/M_FleshWalls.tres" id="15_4ddeu"]
 [ext_resource type="Material" uid="uid://nwfjx3jn1bgk" path="res://Art/3D/Materials/M_Lungs.tres" id="16_x47f5"]
@@ -40,8 +47,68 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k0iy"]
+resource_local_to_scene = true
+albedo_color = Color(0.494, 0.894, 0.329, 1)
+emission_enabled = true
+emission = Color(0.494, 0.894, 0.329, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3soee"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thtfx"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5ggv"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jq4l"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3jn7"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o81ov"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmk5s"]
+resource_local_to_scene = true
+albedo_color = Color(0.494, 0.894, 0.329, 1)
+emission_enabled = true
+emission = Color(0.494, 0.894, 0.329, 1)
+emission_energy_multiplier = 0.0
+
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_2a835")
+
+[node name="BreakdownManager" type="Node" parent="." unique_id=1374321493]
+script = ExtResource("2_7k0iy")
+min_breakdown_chance = 0.25
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -70,8 +137,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_op4vt")]
 
+[node name="AlertContainer" type="HBoxContainer" parent="UI" unique_id=409659358]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+script = ExtResource("6_rbpqi")
+alert_icon_scene = ExtResource("7_7k0iy")
+ballast_icon = ExtResource("8_3soee")
+boiler_icon = ExtResource("9_thtfx")
+sonar_icon = ExtResource("10_d5ggv")
+circuit_icon = ExtResource("11_5jq4l")
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0047736, -0.01240921, 1.414844)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
@@ -4092,64 +4176,146 @@ transform = Transform3D(-4.6000096e-07, 0, 1.0000001, 0, 1.2020144, 0, -1.588507
 [node name="Area1" type="Node3D" parent="RepairStations" unique_id=1894658073]
 
 [node name="RepairStation1" parent="RepairStations/Area1" unique_id=845438724 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.9989431, 0, 0.045963928, 0, 1, 0, -0.045963928, 0, -0.9989431, 30.27519, 0.91858387, 1.6579566)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 30.357338, 0.91858387, 1.6579566)
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "MG2-001"
 
+[node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_7k0iy")
+
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.9989431, 0, 0.045963928, 0, 1, 0, -0.045963928, 0, -0.9989431, 35.65908, 0.9185834, -5.702127)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 35.65908, 0.9185834, -5.7384276)
 system_id = "Circuit"
 metadata/_edit_group_ = true
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "MG4-001"
 
-[node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 24.6142, 0.91858387, 13.087654)
-system_id = "Boiler"
-is_broken = true
+[node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
+visible = true
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="2" unique_id=1598274358]
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation4" index="4" unique_id=2082674037]
+visible = false
+
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation4" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323677)
+light_color = Color(1, 0.973, 0.035, 1)
+
+[node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_3soee")
+
+[node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
+system_id = "Boiler"
+
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "MG1-001"
 
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
+visible = false
+
+[node name="BoilerModel" parent="RepairStations/Area1/RepairStation2" index="5" unique_id=1502648631]
+visible = true
+
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation2" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629315)
+light_color = Color(0.988, 0.42, 0.008, 1)
+
+[node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_thtfx")
+
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 49.011887, 0.91858387, 7.89689)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 48.277985, 0.91858387, 8.195267)
 system_id = "Sonar"
 metadata/_edit_group_ = true
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "MG3-001"
+
+[node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
+visible = true
+
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation3" index="4" unique_id=2082674037]
+visible = false
+
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation3" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
+light_color = Color(0.184, 0.651, 1, 1)
+
+[node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_d5ggv")
 
 [node name="Area2" type="Node3D" parent="RepairStations" unique_id=795444989]
 
 [node name="RepairStation5" parent="RepairStations/Area2" unique_id=148449380 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.8717511, 0, 0.48994893, 0, 1, 0, -0.48994893, 0, -0.8717511, 2.6734064, 0.91858387, -18.213808)
+transform = Transform3D(-0.42520344, 0, -0.26306286, 0, 0.5, 0, 0.26306286, 0, -0.42520344, 1.61324, 0.91858387, -17.893759)
 system_id = "Sonar"
-is_broken = true
 
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "A2A1-001"
+
+[node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
+visible = true
+
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation5" index="4" unique_id=2082674037]
+visible = false
+
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation5" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
+light_color = Color(0.184, 0.651, 1, 1)
+
+[node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_5jq4l")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.89153224, 0, -0.4529572, 0, 1, 0, 0.4529572, 0, -0.89153224, -11.389596, 0.91858435, 17.51464)
+transform = Transform3D(0.059951175, 0, 0.49639285, 0, 0.5, 0, -0.49639285, 0, 0.059951175, -11.133291, 0.91858435, 17.51464)
 system_id = "Circuit"
 
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "A2A1-001"
+
+[node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
+visible = true
+
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation8" index="4" unique_id=2082674037]
+visible = false
+
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation8" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323677)
+light_color = Color(1, 0.973, 0.035, 1)
+
+[node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_a3jn7")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1640763, 0.9185848, 28.629618)
+transform = Transform3D(0.49961236, 0, 0.019684829, 0, 0.5, 0, -0.019684829, 0, 0.49961236, 5.269766, 1.3086255, 27.743906)
 system_id = "Boiler"
 
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "A2A1-001"
+
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
+visible = false
+
+[node name="BoilerModel" parent="RepairStations/Area2/RepairStation6" index="5" unique_id=1502648631]
+visible = true
+
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation6" index="6" unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629315)
+light_color = Color(0.988, 0.42, 0.008, 1)
+
+[node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_o81ov")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
-transform = Transform3D(-0.69710886, 0, 0.7169652, 0, 1, 0, -0.7169652, 0, -0.69710886, -24.943102, 0.9185829, 7.473637)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -25.086061, 0.9185829, 7.473637)
 
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="2" unique_id=1598274358]
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="0" unique_id=1598274358]
 on_interact_dialogue_key = "A2A1-001"
+
+[node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
+material_override = SubResource("StandardMaterial3D_rmk5s")
 
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]
