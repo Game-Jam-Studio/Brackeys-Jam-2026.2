@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3jhnwf0x5xs0"
-path="res://.godot/imported/Terminal.glb-482d62af2bf2caf5d55aa816053014b7.scn"
+path="res://.godot/imported/terminal.glb-162609e649c4731c565877bd24a92e0f.scn"
 
 [deps]
 
-source_file="res://Art/3D/Van/Terminal.glb"
-dest_files=["res://.godot/imported/Terminal.glb-482d62af2bf2caf5d55aa816053014b7.scn"]
+source_file="res://Art/3D/Van/terminal.glb"
+dest_files=["res://.godot/imported/terminal.glb-162609e649c4731c565877bd24a92e0f.scn"]
 
 [params]
 
