@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://dcolcvx672xs5" path="res://Scripts/Common/breakdown_manager.gd" id="2_7k0iy"]
 [ext_resource type="PackedScene" uid="uid://qqke76mcvs0u" path="res://Art/3D/Walls&Doors/Wall_plain.fbx" id="2_avjot"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_op4vt"]
+[ext_resource type="Script" uid="uid://b1klxepxeo4kt" path="res://Scripts/Common/area_progression_system.gd" id="3_a4ee0"]
 [ext_resource type="PackedScene" uid="uid://ywo2ttkmenk8" path="res://Art/3D/Walls&Doors/Wall_recessed_1.fbx" id="3_ce3kk"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_u361w"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_br6ap"]
 [ext_resource type="PackedScene" uid="uid://slxeo3jjapnw" path="res://Art/3D/Walls&Doors/Wall_recessed_2.fbx" id="4_gmhmx"]
+[ext_resource type="Script" uid="uid://bm7h8ly6eknfw" path="res://Scripts/Common/area_progression_value.gd" id="4_ux67b"]
 [ext_resource type="PackedScene" uid="uid://cpr2lvijkkja0" path="res://Art/3D/Walls&Doors/Outer_corner_plain.fbx" id="5_4ddeu"]
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_op4vt"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="5_r2qih"]
@@ -149,6 +151,33 @@ script = ExtResource("1_2a835")
 [node name="BreakdownManager" type="Node" parent="." unique_id=1374321493]
 script = ExtResource("2_7k0iy")
 min_breakdown_chance = 0.25
+
+[node name="AreaProgressionSystem" type="Node" parent="." unique_id=1264359212 node_paths=PackedStringArray("area_progression_dictionary")]
+unique_name_in_owner = true
+script = ExtResource("3_a4ee0")
+area_progression_dictionary = {
+"testUnlock": null
+}
+
+[node name="Area2Unlock" type="Node" parent="AreaProgressionSystem" unique_id=748861400 node_paths=PackedStringArray("doors_to_unlock")]
+script = ExtResource("4_ux67b")
+doors_to_unlock = [NodePath("../../Doors/Area2Doors/A2RightRoomDoorEnter"), NodePath("../../Doors/Area2Doors/A2RightRoomExit"), NodePath("../../Doors/Area2Doors/A2MainRoomEnter"), NodePath("../../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../../Doors/Area2Doors/A2LeftRoomExit")]
+area_to_unlock = 2
+
+[node name="Area3Unlock" type="Node" parent="AreaProgressionSystem" unique_id=73855927 node_paths=PackedStringArray("doors_to_unlock")]
+script = ExtResource("4_ux67b")
+doors_to_unlock = [NodePath("../../Doors/Area3Doors/A3DoorEnter")]
+area_to_unlock = 3
+
+[node name="CaptainsRoomUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1178640440 node_paths=PackedStringArray("doors_to_unlock")]
+script = ExtResource("4_ux67b")
+doors_to_unlock = [NodePath("../../Doors/ExitDoor")]
+area_to_unlock = 4
+
+[node name="ExitDoorUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1213014822 node_paths=PackedStringArray("doors_to_unlock")]
+script = ExtResource("4_ux67b")
+doors_to_unlock = [NodePath("../../Doors/Area3Doors/CaptainsQuarters")]
+area_to_unlock = 5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -4615,41 +4644,41 @@ fog_node = NodePath("../../../../FogOfWar/A1RightRoom")
 
 [node name="Area2Doors" type="Node3D" parent="Doors" unique_id=1986962466]
 
-[node name="Door8" parent="Doors/Area2Doors" unique_id=1504652964 instance=ExtResource("6_ipbck")]
+[node name="A2MainRoomEnter" parent="Doors/Area2Doors" unique_id=1504652964 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 525.2897, -0.002984099, -1866.1475)
 
-[node name="Door10" parent="Doors/Area2Doors" unique_id=2055258304 instance=ExtResource("6_ipbck")]
+[node name="A2LeftRoomExit" parent="Doors/Area2Doors" unique_id=2055258304 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-4.86709, 0, 4.4524765, 0, 0.081839584, 0, -56.313602, 0, -61.557625, 631.6405, -0.0029839203, 353.65186)
 is_locked = false
 
-[node name="Door9" parent="Doors/Area2Doors" unique_id=142235720 instance=ExtResource("6_ipbck")]
+[node name="A2LeftRoomEnter" parent="Doors/Area2Doors" unique_id=142235720 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-1.3098933, 0, -6.4650817, 0, 0.081839584, 0, 81.76854, 0, -16.567087, 495.77237, -0.002984099, 828.849)
 is_locked = false
 
-[node name="Door12" parent="Doors/Area2Doors" unique_id=990596616 instance=ExtResource("6_ipbck")]
+[node name="A2RightRoomExit" parent="Doors/Area2Doors" unique_id=990596616 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5917435, 0, 0.24906309, 0, 0.081839584, 0, -3.1500082, 0, -83.370514, 483.11334, -0.002984099, -2212.7769)
 is_locked = false
 
 [node name="Door6" parent="Doors/Area2Doors" unique_id=501905773 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 524.87823, -0.002984099, -317.14215)
 
-[node name="Door7" parent="Doors/Area2Doors" unique_id=2139162812 instance=ExtResource("6_ipbck")]
+[node name="A2RightRoomDoorEnter" parent="Doors/Area2Doors" unique_id=2139162812 instance=ExtResource("6_ipbck")]
 transform = Transform3D(6.596411, 0, -0.02215952, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 657.2457, -0.0029840171, -2031.3503)
 
 [node name="Door5" parent="Doors/Area2Doors" unique_id=1573186085 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964103, 0, 0.022158943, 0, 0.081839584, 0, -0.2801888, 0, -83.42953, 646.60583, -0.002984099, -20.965698)
 
-[node name="Door11" parent="Doors/Area2Doors" unique_id=2073483653 instance=ExtResource("6_ipbck")]
+[node name="A2MainRoomMiddleDoor" parent="Doors/Area2Doors" unique_id=2073483653 instance=ExtResource("6_ipbck")]
 transform = Transform3D(2.7694092, 0, -5.9869437, 0, 0.081839584, 0, 75.72114, 0, 35.026768, 472.1741, -0.002984099, -58.072266)
 is_locked = false
 
 [node name="Area3Doors" type="Node3D" parent="Doors" unique_id=1345819926]
 
-[node name="Door15" parent="Doors/Area3Doors" unique_id=601837599 instance=ExtResource("6_ipbck")]
+[node name="CaptainsQuarters" parent="Doors/Area3Doors" unique_id=601837599 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 25.44748, -0.002984099, 327.4088)
 is_locked = false
 
-[node name="Door13" parent="Doors/Area3Doors" unique_id=1833439369 instance=ExtResource("6_ipbck")]
+[node name="A3DoorEnter" parent="Doors/Area3Doors" unique_id=1833439369 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 368.9841, -0.002984099, -197.67682)
 is_locked = false
 
@@ -8908,7 +8937,7 @@ mesh = SubResource("PlaneMesh_rmk5s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.089355, 0, 18.592348)
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/CaptainsRoom" unique_id=350426044]
-transform = Transform3D(0.0048957933, 1.0452277e-09, -1.3009658, 2.7292957e-12, 1, 1.3599325e-09, 0.6277725, -1.24981085e-11, 0.010145806, -2.9780762, 2.343, 0.8114959)
+transform = Transform3D(0.0048957933, 1.0452277e-09, -1.3009658, 2.7292957e-12, 1, 1.3599325e-09, 0.6277725, -1.24981085e-11, 0.010145806, -3.0228436, 2.343, 0.811845)
 rotation_order = 0
 mesh = SubResource("PlaneMesh_rmk5s")
 
