@@ -17,7 +17,11 @@ var is_repair_active: bool = false
 
 
 func _ready() -> void:
-	# Connect to all terminal triggers currently registered in the group
+	# Connect to all repair triggers currently registered in the group
+	for trigger: RepairTrigger in get_tree().get_nodes_in_group("repair_triggers"):
+		if not trigger.launch_minigame_requested.is_connected(_on_repair_requested):
+			trigger.launch_minigame_requested.connect(_on_repair_requested)
+	
 	for trigger: ControlTerminalTrigger in get_tree().get_nodes_in_group("terminal_triggers"):
 		if not trigger.terminal_requested.is_connected(_on_terminal_requested):
 			trigger.terminal_requested.connect(_on_terminal_requested)
@@ -31,8 +35,11 @@ func _ready() -> void:
 
 # Orchestrates the repair interaction
 func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
+	print("level.gd received repair request for ", system_id)
+	
 	# Guard against duplicate emissions while a minigame/transition is in progress
 	if is_repair_active:
+		print("Request blocked because is_repair_active is TRUE.")
 		return
 	is_repair_active = true
 	
@@ -131,33 +138,38 @@ func raycast_to_floor(screen_position: Vector2) -> Vector3:
 
 
 func _on_terminal_requested(trigger: ControlTerminalTrigger) -> void:
-	# Guard against duplicate emissions
-	if is_repair_active:
-		return
-	is_repair_active = true
-	
-	# Lock player physics and interaction inputs
 	if player:
 		player.set_physics_process(false)
 		player.set_process_unhandled_input(false)
 	
-	# Transition camera
-	if camera:
-		await camera.transition_to_station().finished
+	var original_camera_transform := Transform3D()
 	
-	# Display terminal UI and pause execution until the closed signal is emitted
+	# Explicitly tween to the marker instead of using the generic station zoom
+	if camera and trigger.camera_focus_point:
+		# Disable the camera's follow logic to prevent transform conflicts
+		camera.set_process(false)
+		camera.set_physics_process(false)
+		
+		original_camera_transform = camera.global_transform
+		var tween: Tween = create_tween()
+		tween.tween_property(camera, "global_transform", trigger.camera_focus_point.global_transform, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+		await tween.finished
+	
 	if trigger.terminal_ui:
 		trigger.terminal_ui.visible = true
 		await trigger.terminal_ui.terminal_closed
 		trigger.terminal_ui.visible = false
 	
-	# Reset camera
-	if camera:
-		await camera.return_from_station().finished
+	# Restore the camera to its original overhead position
+	if camera and trigger.camera_focus_point:
+		var tween: Tween = create_tween()
+		tween.tween_property(camera, "global_transform", original_camera_transform, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+		await tween.finished
 		
-	# Restore player control
+		# Resume the camera's normal follow script
+		camera.set_process(true)
+		camera.set_physics_process(true)
+	
 	if player:
 		player.set_physics_process(true)
 		player.set_process_unhandled_input(true)
-		
-	is_repair_active = false

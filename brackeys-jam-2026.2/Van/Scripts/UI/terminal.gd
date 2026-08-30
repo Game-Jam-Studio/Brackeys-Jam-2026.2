@@ -2,33 +2,41 @@ extends Control
 
 signal terminal_closed
 
-@onready var ballast_health: ProgressBar = %BallastHealth
-@onready var boiler_health: ProgressBar = %BoilerHealth
-@onready var circuit_health: ProgressBar = %CircuitHealth
-@onready var sonar_health: ProgressBar = %"Sonar Health"
+@onready var ballast_label: ProgressBar = %BallastHealth
+@onready var boiler_label: ProgressBar = %BoilerHealth
+@onready var sonar_label: ProgressBar = %SonarHealth
+@onready var circuit_label: ProgressBar = %CircuitHealth
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	GameState.ballast_health_changed.connect(_ballast_health_changed)
-	GameState.boiler_health_changed.connect(_boiler_health_changed)
-	GameState.circuit_health_changed.connect(_circuit_health_changed)
-	GameState.sonar_health_changed.connect(_sonar_health_changed)
+	# Connect to the individual subsystem health signals in GameState
+	GameState.ballast_health_changed.connect(_on_ballast_changed)
+	GameState.boiler_health_changed.connect(_on_boiler_changed)
+	GameState.sonar_health_changed.connect(_on_sonar_changed)
+	GameState.circuit_health_changed.connect(_on_circuit_changed)
+	
+	# Initialize the UI using the current variable values in GameState
+	_on_ballast_changed(GameState.ballast_health)
+	_on_boiler_changed(GameState.boiler_health)
+	_on_sonar_changed(GameState.sonar_health)
+	_on_circuit_changed(GameState.circuit_health)
 
-func _ballast_health_changed():
-	print("poop")
-	ballast_health.value = GameState.ballast_health
 
-func _boiler_health_changed():
-	print("poop")
-	boiler_health.value = GameState.boiler_health
+func _on_ballast_changed(new_health: float) -> void:
+	%BallastHealth.value = new_health
 
-func _circuit_health_changed():
-	print("poop")
-	circuit_health.value = GameState.circuit_health
 
-func _sonar_health_changed():
-	print("poop")
-	sonar_health.value = GameState.sonar_health
+func _on_boiler_changed(new_health: float) -> void:
+	%BoilerHealth.value = new_health
+
+
+func _on_sonar_changed(new_health: float) -> void:
+	%SonarHealth.value = new_health
+
+
+func _on_circuit_changed(new_health: float) -> void:
+	%CircuitHealth.value = new_health
+
 
 func _on_texture_button_pressed() -> void:
 	terminal_closed.emit()

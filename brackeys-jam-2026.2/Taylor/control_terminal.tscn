@@ -16,7 +16,7 @@ size = Vector3(1, 0.7, 0.7502686)
 [node name="Terminal" parent="." unique_id=945361046 instance=ExtResource("1_w2cg0")]
 transform = Transform3D(1.5885078, 0, 0, 0, 1.2020144, 0, 0, 0, 1.0000001, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Terminal/Terminal" parent_id_path=PackedInt32Array(945361046, 654076359) index="0" unique_id=1795480147]
+[node name="StaticBody3D" type="StaticBody3D" parent="Terminal/Terminal" parent_id_path=PackedInt32Array(945361046, 1519156140) index="0" unique_id=1795480147]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/Terminal/StaticBody3D" unique_id=1757101895]
 shape = SubResource("ConcavePolygonShape3D_xcj76")
