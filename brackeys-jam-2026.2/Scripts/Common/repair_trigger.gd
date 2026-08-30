@@ -39,7 +39,6 @@ func can_interact() -> bool:
 
 
 func interact(_player: CharacterBody3D) -> void:
-	print("Repair interact() fired.")
 	if prompt_sprite:
 			prompt_sprite.visible = false
 	
