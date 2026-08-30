@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qqke76mcvs0u"
-path="res://.godot/imported/Wall_plain.fbx-7654a987544348e1e42e027ef9de2721.scn"
+uid="uid://ywo2ttkmenk8"
+path="res://.godot/imported/Wall_recessed_1.fbx-4f9651d62fafdbdc8b4b13ea34187f11.scn"
 
 [deps]
 
-source_file="res://Art/3D/Toshi/Wall_plain.fbx"
-dest_files=["res://.godot/imported/Wall_plain.fbx-7654a987544348e1e42e027ef9de2721.scn"]
+source_file="res://Art/3D/Walls&Doors/Wall_recessed_1.fbx"
+dest_files=["res://.godot/imported/Wall_recessed_1.fbx-4f9651d62fafdbdc8b4b13ea34187f11.scn"]
 
 [params]
 

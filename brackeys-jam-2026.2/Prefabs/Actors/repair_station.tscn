@@ -3,49 +3,97 @@
 [ext_resource type="Script" uid="uid://wlmfiuoene0k" path="res://Scripts/Common/repair_station.gd" id="1_6h4oh"]
 [ext_resource type="Script" uid="uid://c6hwlcmnhifru" path="res://Scripts/Common/repair_trigger.gd" id="1_xq2io"]
 [ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="3_j654s"]
+[ext_resource type="PackedScene" uid="uid://bhd83lpnmqvad" path="res://Art/3D/Raw Files/circuit_RepairStation.tscn" id="4_rjqtq"]
+[ext_resource type="PackedScene" uid="uid://dawyovlyymb5w" path="res://Art/3D/Raw Files/sonar_RepairStation.tscn" id="5_fhjqo"]
+[ext_resource type="PackedScene" uid="uid://cw2dphf4eh0ps" path="res://Art/3D/Raw Files/steam_RepairStation.tscn" id="6_dn3fc"]
+[ext_resource type="PackedScene" uid="uid://dril1neb3ygxh" path="res://Art/3D/Raw Files/boiler_RepairStation.tscn" id="7_ve86r"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_i0uuj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owww7"]
-albedo_color = Color(0.4506483, 0.4506483, 0.45064825, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_nlb7l"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_owww7"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_nlb7l"]
-radius = 0.7
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjqtq"]
+size = Vector3(1.775, 1.665, 1.1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1990939064]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjqtq"]
+albedo_color = Color(0.22352941, 0.22352941, 0.21568628, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fhjqo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn3fc"]
+albedo_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve86r"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ve86r"]
+
+[node name="RepairStation" type="StaticBody3D" unique_id=1990939064]
 script = ExtResource("1_6h4oh")
 
-[node name="StationMesh" type="MeshInstance3D" parent="." unique_id=268298529]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_i0uuj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StationMesh" unique_id=768835931]
-transform = Transform3D(0.7, 0, 0, 0, 0.35, 0, 0, 0, 0.7, 0, 0.23724622, 0.22201002)
-material_override = SubResource("StandardMaterial3D_owww7")
-mesh = SubResource("BoxMesh_nlb7l")
-
-[node name="StationCollider" type="CollisionShape3D" parent="." unique_id=1790945588]
-shape = SubResource("BoxShape3D_owww7")
-
 [node name="RepairTrigger" type="Area3D" parent="." unique_id=1598274358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.7200851)
 script = ExtResource("1_xq2io")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RepairTrigger" unique_id=202934905]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 1.2468612)
-shape = SubResource("SphereShape3D_nlb7l")
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.004636824, 0.37573123)
+shape = SubResource("BoxShape3D_rjqtq")
 
 [node name="Key Prompt" type="Sprite3D" parent="RepairTrigger" unique_id=2043661568]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.5706127, 0.5150924)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.21560718, 3.484087, 2.4240665)
 billboard = 1
 texture = ExtResource("3_j654s")
 
 [node name="Column" type="MeshInstance3D" parent="." unique_id=238773181]
 transform = Transform3D(0.3, 0, 0, 0, 2.256, 0, 0, 0, 0.3, 0, 3.155, -0.17050298)
+visible = false
 mesh = SubResource("CylinderMesh_i0uuj")
+
+[node name="CircuitModel" parent="." unique_id=1772422821 instance=ExtResource("4_rjqtq")]
+visible = false
+
+[node name="SonarModel" parent="." unique_id=606471648 instance=ExtResource("5_fhjqo")]
+visible = false
+
+[node name="BallastModel" parent="." unique_id=2082674037 instance=ExtResource("6_dn3fc")]
+
+[node name="BoilerModel" parent="." unique_id=1502648631 instance=ExtResource("7_ve86r")]
+visible = false
+
+[node name="StatusLight" type="OmniLight3D" parent="." unique_id=1656704472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2436247, 1.9393947, -0.7602327)
+light_color = Color(1, 0.973, 0.035, 1)
+light_energy = 0.0
+omni_range = 2.0
+
+[node name="BulbMesh" type="StaticBody3D" parent="StatusLight" unique_id=429221442]
+transform = Transform3D(-0.7, 0, -6.119594e-08, 0, 0.7, 0, 6.119594e-08, 0, -0.7, 0, 0, 0)
+
+[node name="Base" type="MeshInstance3D" parent="StatusLight/BulbMesh" unique_id=592033145]
+transform = Transform3D(9.553427e-16, -1.7047441e-09, 0.5, -0.5, -1.7047441e-09, 0, 2.1855694e-08, -0.039, -2.1855694e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_rjqtq")
+mesh = SubResource("CylinderMesh_fhjqo")
+
+[node name="Ring" type="MeshInstance3D" parent="StatusLight/BulbMesh" unique_id=1323301813]
+transform = Transform3D(8.0248786e-16, -1.4424758e-09, 0.42, -0.42, -1.4424758e-09, 0, 1.8358783e-08, -0.033, -1.8358783e-08, 0, 0, 0.018782616)
+material_override = SubResource("StandardMaterial3D_dn3fc")
+mesh = SubResource("CylinderMesh_fhjqo")
+
+[node name="Bulb" type="MeshInstance3D" parent="StatusLight/BulbMesh" unique_id=1125073236]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0021177232, 0, 0)
+material_override = SubResource("StandardMaterial3D_ve86r")
+mesh = SubResource("SphereMesh_ve86r")
+
+[node name="BallastLightPos" type="Marker3D" parent="." unique_id=1173563409]
+transform = Transform3D(0.9794216, 0, -0.20182493, 0, 1, 0, 0.20182493, 0, 0.9794216, -1.2551471, 1.787475, -0.8230937)
+
+[node name="BoilerLightPos" type="Marker3D" parent="." unique_id=1659694234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629315)
+
+[node name="SonarLightPos" type="Marker3D" parent="." unique_id=1870088744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
+
+[node name="CircuitLightPos" type="Marker3D" parent="." unique_id=802668420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.8323677)

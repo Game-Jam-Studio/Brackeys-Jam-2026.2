@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cs4lousll202k"]
+
+[ext_resource type="PackedScene" uid="uid://evhw31ohbijg" path="res://Art/3D/Raw Files/Simple_Computer.glb" id="1_wdknq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m3i45"]
+size = Vector3(0.975, 1.06, 0.745)
+
+[node name="Simple_Computer" unique_id=572838965 instance=ExtResource("1_wdknq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1322847113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.094791055, -0.066769004)
+shape = SubResource("BoxShape3D_m3i45")

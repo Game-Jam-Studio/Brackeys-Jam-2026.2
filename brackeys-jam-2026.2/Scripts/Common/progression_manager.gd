@@ -1,5 +1,9 @@
 extends Node
 
+signal area_unlocked(new_level: int)
+
+var current_area_level: int = 1
+
 # AI Font Progression
 const AI_THEME_BASE = preload("res://Resources/Themes/AI_base_theme.tres")
 const AI_THEME_MID = preload("res://Resources/Themes/AI_mid_theme.tres")
@@ -128,6 +132,7 @@ func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
 		return texture
 	return null
 
+
 func get_ai_theme(tier: int) -> Theme:
 	# Return your appropriate Theme resource based on the tier
 	match tier:
@@ -138,7 +143,15 @@ func get_ai_theme(tier: int) -> Theme:
 		_:
 			return preload("res://Resources/Themes/AI_corrupted_theme.tres")
 
+
+# where did this come from?
 func get_destination_transform(tier: int) -> Dictionary:
 	if tier == 3:
 		return TRANSFORM_CORRUPTED
 	return TRANSFORM_BASE
+
+
+func unlock_next_area(level: int) -> void:
+	current_area_level = level
+	area_unlocked.emit(current_area_level)
+	

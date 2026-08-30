@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dril1neb3ygxh"]
+
+[ext_resource type="PackedScene" uid="uid://dlnpb0nanoxly" path="res://Art/3D/Raw Files/Pressure_repair_station.glb" id="1_uin27"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdr4e"]
+size = Vector3(4.052, 4.97, 2.069)
+
+[node name="Pressure_repair_station" unique_id=1502648631 instance=ExtResource("1_uin27")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1287380172]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=402685037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023759097, 0.006603658, -0.028587699)
+shape = SubResource("BoxShape3D_qdr4e")
