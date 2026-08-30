@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tyl1neg7gsa6"]
+
+[ext_resource type="AudioStream" uid="uid://d14u8yvfbb4wl" path="res://Audio/SFX/alarm.wav" id="1_6mjp8"]
+[ext_resource type="Script" uid="uid://cb0gat1j4k8qn" path="res://Scripts/alarm_manager.gd" id="2_ejlyf"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1557267168]
+stream = ExtResource("1_6mjp8")
+script = ExtResource("2_ejlyf")

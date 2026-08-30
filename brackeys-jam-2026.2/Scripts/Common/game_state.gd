@@ -1,6 +1,5 @@
 extends Node
 
-
 # Emitted whenever the submarine's health value changes
 signal ship_health_changed(new_health: float)
 
@@ -11,6 +10,9 @@ signal sonar_health_changed(new_health: float)
 signal circuit_health_changed(new_health: float)
 signal ship_destroyed
 
+# Broadcasts when any system breaks or is repaired
+signal system_state_changed(system_id: String, is_broken: bool)
+
 # Damage to ship health per second when broken
 @export var damage_per_second: float = 1 # set to 10 for testing
 @export var repair_fail_penalty: float = 25.0
@@ -19,10 +21,30 @@ const MAX_SHIP_HEALTH: float = 100.0
 const MAX_SYSTEM_HEALTH: float = 100.0
 
 var current_area_level: int = 1
-var is_ballast_broken: bool = false
-var is_boiler_broken: bool = false
-var is_sonar_broken: bool = false
-var is_circuit_broken: bool = false
+var is_ballast_broken: bool = false:
+	set(value):
+		# Only emit if the state actually changes to prevent duplicate triggers
+		if is_ballast_broken != value:
+			is_ballast_broken = value
+			system_state_changed.emit("Ballast", value)
+
+var is_boiler_broken: bool = false:
+	set(value):
+		if is_boiler_broken != value:
+			is_boiler_broken = value
+			system_state_changed.emit("Boiler", value)
+
+var is_sonar_broken: bool = false:
+	set(value):
+		if is_sonar_broken != value:
+			is_sonar_broken = value
+			system_state_changed.emit("Sonar", value)
+
+var is_circuit_broken: bool = false:
+	set(value):
+		if is_circuit_broken != value:
+			is_circuit_broken = value
+			system_state_changed.emit("Circuit", value)
 
 var ship_health: float = 100.0:
 	set(value):
@@ -53,19 +75,28 @@ var circuit_health: float = 100.0:
 		circuit_health = clampf(value, 0.0, MAX_SYSTEM_HEALTH)
 		circuit_health_changed.emit(circuit_health)
 
+
 func _process(delta: float) -> void:
-	var broken_count: int = 0
-	if is_ballast_broken:
-		broken_count += 1
-	if is_boiler_broken:
-		broken_count += 1
-	if is_sonar_broken:
-		broken_count += 1
-	if is_circuit_broken:
-		broken_count += 1
+	# Retrieve the total broken count from the helper function
+	var broken_count = get_broken_count()
 	
 	if broken_count > 0 and ship_health > 0.0:
 		ship_health -= broken_count * damage_per_second * delta
+
+
+func get_broken_count() -> int:
+	# Calculate and return the total number of currently broken systems
+	var count: int = 0
+	if is_ballast_broken:
+		count += 1
+	if is_boiler_broken:
+		count += 1
+	if is_sonar_broken:
+		count += 1
+	if is_circuit_broken:
+		count += 1
+	return count
+
 
 func set_system_broken(system_id: String, broken: bool) -> void:
 	match system_id:

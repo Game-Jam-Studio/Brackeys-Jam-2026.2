@@ -36,6 +36,7 @@ script = ExtResource("1_6yilr")
 [node name="BreakdownManager" type="Node" parent="." unique_id=11435526]
 script = ExtResource("2_gd6t7")
 tick_rate = 1.0
+min_breakdown_chance = 0.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -78,19 +79,15 @@ unique_name_in_owner = true
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 1.3999245, 2.5121765, 5.697686)
-is_broken = true
 
 [node name="Boiler" parent="." unique_id=1990939064 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 7.484316, 2.5121765, 5.7066245)
 system_id = "Boiler"
-is_broken = true
 
 [node name="Circuit" parent="." unique_id=252793024 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -4.629835, 2.5121765, 5.695433)
 system_id = "Circuit"
-is_broken = true
 
 [node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, -10.29204, 2.5121765, 5.693539)
 system_id = "Sonar"
-is_broken = true
