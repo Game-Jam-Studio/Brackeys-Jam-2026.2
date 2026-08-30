@@ -65,7 +65,7 @@ func _on_button_button_down() -> void:
 			audio.stream = UI_ACCEPT
 			audio.play()
 			await get_tree().create_timer(.5).timeout
-			minigame_completed.emit(false)
+			minigame_completed.emit(true)
 			queue_free()
 			return
 		progress_bar.rotation_degrees = randi_range(-goal_min_range, -goal_max_range) + 180
