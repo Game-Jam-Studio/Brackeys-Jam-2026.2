@@ -18,6 +18,11 @@ var is_locked: bool = true
 
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
+# For deleting the Area1 Fog
+@export var other_door_trigger: Node3D
+@export var fog_node: Node3D
+var fog_removed: bool = false
+
 var sfx_player: AudioStreamPlayer3D
 
 
@@ -32,9 +37,6 @@ func _ready() -> void:
 		prompt_sprite.visible = false
 
 
-
-
-
 ## Overrides base Interactable can_interact()
 func can_interact() -> bool:
 	return not is_open
@@ -42,6 +44,7 @@ func can_interact() -> bool:
 
 ## Overrides base Interactable interact()
 func interact(_player: CharacterBody3D) -> void:
+	print("Interact was called on: ", name)
 	if not is_locked and not is_open:
 		sfx_player.stream = door_open_sound
 		sfx_player.play()
@@ -53,6 +56,9 @@ func interact(_player: CharacterBody3D) -> void:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
 	super(_player)
+	
+	if fog_node and is_instance_valid(fog_node):
+		fog_node.queue_free()
 
 
 ## Opens door & disables future interactions

@@ -9,15 +9,9 @@ func _ready() -> void:
 	update_screen()
 
 func update_screen() -> void:
-	if screen_textures.is_empty():
-		print("Screen textures array is empty!")
+	if screen_textures.is_empty() or not screen_sprite:
 		return
-	if not screen_sprite:
-		print("ScreenSprite node not found!")
-		return
-		
 	if Engine.is_editor_hint():
 		screen_sprite.texture = screen_textures[0]
 	else:
 		screen_sprite.texture = screen_textures.pick_random()
-	print("Assigned texture: ", screen_sprite.texture)

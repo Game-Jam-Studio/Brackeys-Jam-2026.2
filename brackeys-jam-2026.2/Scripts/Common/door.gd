@@ -1,7 +1,6 @@
 class_name Door
 extends Node3D
 
-## Toggle this in the Inspector to configure whether this specific door starts locked.
 @export var is_locked: bool = true:
 	set(value):
 		is_locked = value
