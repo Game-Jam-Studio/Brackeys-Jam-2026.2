@@ -22,10 +22,15 @@ var completed_rounds: float
 @export var goal_max_range: float = 90
 
 func _ready() -> void:
+	var needle_texture = ProgressionManager.get_asset_texture("boiler", "needle")
+	var meter_texture = ProgressionManager.get_asset_texture("boiler", "meter")
+	var button_texture = ProgressionManager.get_asset_texture("boiler", "button")
+	$Needle.texture = needle_texture
+	$Meter.texture = meter_texture
+	%Accept.texture_normal = button_texture
 	progress_bar.value = tolerance
 	progress_bar.rotation_degrees = randf_range(-goal_min_range, -goal_max_range) + 180
 	color_rect.rotation = PI / 2
-
 
 func _process(delta: float) -> void:
 	if !submitted:
