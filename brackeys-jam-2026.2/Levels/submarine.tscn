@@ -7255,6 +7255,7 @@ transform = Transform3D(0.6385554, 0, 0, 0, 0.6865892, 0, 0, 0, 0.5969692, -25.8
 
 [node name="FOW5" type="CSGBox3D" parent="Area3" unique_id=1990114355]
 transform = Transform3D(0.6599186, 0, -79.639244, 0, 0.029476553, 0, 50.77624, 0, 1.1842666, -39.1442, 3.1533732, 4.9879646)
+visible = false
 layers = 2
 cast_shadow = 0
 
@@ -8457,6 +8458,11 @@ material_override = ExtResource("16_x47f5")
 [node name="CSGSphere3D132" type="CSGSphere3D" parent="." unique_id=13937115]
 transform = Transform3D(0.53117204, 0, -0.3313325, 0, 0.6865895, 0, 0.354414, 0, 0.49657914, -49.902596, 1.8633113, 25.120628)
 material_override = ExtResource("16_x47f5")
+
+[node name="MonitorDecals" type="Node3D" parent="." unique_id=1766421775]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2089276492]
+transform = Transform3D(0.40723377, 0, 0, 0, 1.0379134, 0, 0, 0, 0.37602448, 14.110427, 1.7116451, 1.7124226)
 
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]

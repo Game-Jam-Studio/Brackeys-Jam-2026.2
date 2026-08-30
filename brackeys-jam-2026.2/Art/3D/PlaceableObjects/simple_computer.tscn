@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cs4lousll202k"]
 
 [ext_resource type="PackedScene" uid="uid://evhw31ohbijg" path="res://Art/3D/Raw Files/Simple_Computer.glb" id="1_wdknq"]
+[ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="2_m3i45"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m3i45"]
 size = Vector3(0.975, 1.06, 0.745)
@@ -10,3 +11,7 @@ size = Vector3(0.975, 1.06, 0.745)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1322847113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.094791055, -0.066769004)
 shape = SubResource("BoxShape3D_m3i45")
+
+[node name="ScreenDecal" type="Sprite3D" parent="." index="2" unique_id=1961541762]
+transform = Transform3D(0.0655062, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0.025041886, -0.36283743)
+texture = ExtResource("2_m3i45")

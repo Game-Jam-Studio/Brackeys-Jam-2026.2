@@ -4,8 +4,6 @@ extends Interactable
 ## Controlled by the root Door script (can also be read directly)
 var is_locked: bool = true
 
-@export var on_door_open_dialogue_key: String = ""
-
 @export var is_open: bool = false
 @export var open_translation_amount: float = 1.5
 
@@ -61,9 +59,6 @@ func interact(_player: CharacterBody3D) -> void:
 func open_door() -> void:
 	is_open = true
 	trigger_shape.set_deferred("disabled", true)
-	
-	if on_door_open_dialogue_key != "":
-		PopupUI.show_next_text(on_door_open_dialogue_key)
 	
 	# Animate the AnimatableBody3D rotation smoothly
 	var tween: Tween = create_tween()

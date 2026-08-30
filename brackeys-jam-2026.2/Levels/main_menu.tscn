@@ -52,6 +52,7 @@ custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
+offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -61,26 +62,7 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 6
 text = "New Game"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1163373330]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="Options" type="TextureButton" parent="VBoxContainer/HBoxContainer2" unique_id=1666065868]
-custom_maximum_size = Vector2(64, 64)
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_scale = Vector2(1.75, 1.75)
-texture_normal = ExtResource("3_8md67")
-texture_pressed = ExtResource("5_5qvx8")
-texture_hover = ExtResource("6_hllw6")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1948035385]
-layout_mode = 2
-size_flags_horizontal = 6
-text = "Options"
+vertical_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1411166417]
 layout_mode = 2
@@ -92,6 +74,7 @@ custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
+offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -112,6 +95,7 @@ custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
+offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -123,6 +107,5 @@ size_flags_horizontal = 6
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer3/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer4/Quit" to="." method="_on_quit_pressed"]
