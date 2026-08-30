@@ -39,6 +39,7 @@ func interact(_player: CharacterBody3D) -> void:
 	if not is_locked and not is_open:
 		sfx_player.stream = door_open_sound
 		sfx_player.play()
+		sfx_player.pitch_scale = randf_range(0.7, 0.8)
 		open_door()
 	else:
 		sfx_player.stream = door_locked_sound
