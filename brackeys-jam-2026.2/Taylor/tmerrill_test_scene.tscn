@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="11_eei1b"]
 [ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="12_0ydjy"]
 [ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="13_dgd6d"]
+[ext_resource type="PackedScene" uid="uid://bblr6uwaeevpn" path="res://Taylor/control_terminal.tscn" id="15_eei1b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -112,3 +113,6 @@ system_id = "Circuit"
 [node name="Sonar" parent="." unique_id=597405697 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.6999992, 0, -0.0010283373, 0, 0.7, 0, 0.0010283373, 0, 0.6999992, -10.29204, 1.6752441, 5.693539)
 system_id = "Sonar"
+
+[node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("15_eei1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.153717, -0.08148193, 6.1593018)
