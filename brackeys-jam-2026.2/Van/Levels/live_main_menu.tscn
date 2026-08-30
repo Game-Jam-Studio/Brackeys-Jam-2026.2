@@ -4,6 +4,7 @@
 [ext_resource type="LightmapGIData" uid="uid://83u0u4g641cj" path="res://Van/Lightmaps/LiveMainMenu.lmbake" id="2_ddyxe"]
 [ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/gore_swirl.gdshader" id="4_ddyxe"]
 [ext_resource type="Script" uid="uid://d3ba834ve3f6p" path="res://Van/Scripts/MainMenu/main_menu_camera_wobble.gd" id="4_ip0nw"]
+[ext_resource type="Texture2D" uid="uid://dxrenl60idgq" path="res://Art/2D/game_title.png" id="4_w5tlo"]
 [ext_resource type="Texture2D" uid="uid://cxf4ddv0m6h13" path="res://Art/3D/Van/character_color_palette.jpg" id="5_gnmlk"]
 
 [sub_resource type="Environment" id="Environment_8yvyb"]
@@ -17,6 +18,8 @@ sdfgi_read_sky_light = false
 sdfgi_bounce_feedback = 1.0
 sdfgi_min_cell_size = 0.25
 sdfgi_energy = 10.0
+glow_enabled = true
+glow_intensity = 1.0
 glow_strength = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1hd16"]
@@ -80,6 +83,24 @@ albedo_texture = ExtResource("5_gnmlk")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
+[sub_resource type="QuadMesh" id="QuadMesh_8yvyb"]
+lightmap_size_hint = Vector2i(7, 7)
+add_uv2 = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc616"]
+transparency = 1
+albedo_texture = ExtResource("4_w5tlo")
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = ExtResource("4_w5tlo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5tlo"]
+transparency = 1
+albedo_texture = ExtResource("4_w5tlo")
+emission_enabled = true
+emission_energy_multiplier = 4.0
+emission_texture = ExtResource("4_w5tlo")
+
 [node name="LiveMainMenu" type="Node3D" unique_id=1395601679]
 script = ExtResource("1_0m0b3")
 
@@ -93,7 +114,7 @@ light_energy = 0.025
 light_bake_mode = 0
 light_cull_mask = 4294967294
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=395634872]
+[node name="GoreSwirl" type="MeshInstance3D" parent="." unique_id=395634872]
 transform = Transform3D(-6.22837e-08, -1.424885, 6.22837e-08, 0, -6.22837e-08, -1.424885, 1.424885, -6.22837e-08, 2.722507e-15, 1.3957789, 1.3535287, 0.36700058)
 layers = 2
 gi_mode = 0
@@ -104,14 +125,14 @@ surface_material_override/0 = SubResource("ShaderMaterial_0m0b3")
 
 [node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1003129821]
 quality = 3
-bounces = 12
 texel_scale = 5.0
 light_data = ExtResource("2_ddyxe")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Light" unique_id=76550797]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5548841, 1.8848639, 1.1626194)
+transform = Transform3D(0.7745578, -2.764759e-08, 0.63250315, -0.63250315, -3.3857e-08, 0.7745578, 0, -1, -4.371139e-08, -0.5548841, 1.8848639, 1.1626194)
+visible = false
 layers = 2
-light_energy = 0.1
+light_energy = 0.05
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
@@ -119,8 +140,9 @@ spot_angle = 77.25
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Light" unique_id=2123537899]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43165538, 1.9152445, 0)
+visible = false
 layers = 2
-light_energy = 0.25
+light_energy = 0.1
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
@@ -128,8 +150,9 @@ spot_angle = 44.24
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Light" unique_id=93742]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.4244843, 1.9442995, -1.2035613)
+visible = false
 layers = 2
-light_energy = 0.1
+light_energy = 0.05
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
@@ -137,14 +160,27 @@ spot_angle = 49.6
 
 [node name="Camera3D" type="Camera3D" parent="Light" unique_id=431016351]
 transform = Transform3D(-0.5935429, 0.248682, -0.76541764, 0, 0.95106286, 0.3089976, 0.8048024, 0.1834033, -0.5644966, -1.4638098, 1.7625147, -1.8004483)
-fov = 40.0
+fov = 60.0
 script = ExtResource("4_ip0nw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Light" unique_id=1787498127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2246113e-05, -0.003469944, -4.374981e-05)
 cast_shadow = 2
 mesh = SubResource("ArrayMesh_n0gyd")
 surface_material_override/0 = SubResource("StandardMaterial3D_py5u6")
 surface_material_override/1 = SubResource("StandardMaterial3D_whpcl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light" unique_id=1980046012]
+transform = Transform3D(-5.5400665e-08, 0, -1.2674195, 0, 1.2674195, 0, 1.2674195, 0, -5.5400665e-08, 1.0709728, 1.5674913, 0)
+visible = false
+mesh = SubResource("QuadMesh_8yvyb")
+surface_material_override/0 = SubResource("StandardMaterial3D_kc616")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Light" unique_id=1064950664]
+transform = Transform3D(-5.5400665e-08, 0, -1.2674195, 0, 1.2674195, 0, 1.2674195, 0, -5.5400665e-08, 1.0709728, 1.5674913, 0)
+gi_mode = 0
+mesh = SubResource("QuadMesh_8yvyb")
+surface_material_override/0 = SubResource("StandardMaterial3D_w5tlo")
 
 [node name="Timer" type="Timer" parent="." unique_id=1156367396]
 autostart = true
