@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cw2dphf4eh0ps"]
+
+[ext_resource type="PackedScene" uid="uid://bun8h4eoys7rd" path="res://Art/3D/Raw Files/Steam_repair_station.glb" id="1_vdry5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlo24"]
+size = Vector3(4, 4.915, 1.89)
+
+[node name="Ballast_repair_station" unique_id=2082674037 instance=ExtResource("1_vdry5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=225494790]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1458880408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030906409, 0.031583607, 0.050028324)
+shape = SubResource("BoxShape3D_hlo24")

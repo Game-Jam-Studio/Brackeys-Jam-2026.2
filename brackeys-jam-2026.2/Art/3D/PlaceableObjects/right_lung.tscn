@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cj66t7ngttqc3"]
+
+[ext_resource type="PackedScene" uid="uid://embo6ods0uyv" path="res://Art/3D/Raw Files/Right_lung.glb" id="1_r6gks"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ro2cn"]
+radius = 2.595
+height = 8.737
+
+[node name="Right_lung" unique_id=815875278 instance=ExtResource("1_r6gks")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1740220749]
+transform = Transform3D(1, 0, 0, 0, 0.9495512, 0.3136119, 0, -0.3136119, 0.9495512, -0.07782543, -0.20304258, -0.22735536)
+shape = SubResource("CapsuleShape3D_ro2cn")

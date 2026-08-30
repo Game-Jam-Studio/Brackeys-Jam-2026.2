@@ -20,10 +20,8 @@ shipHealthControl = NodePath("CanvasLayer/TerminalText/ShipHealthControl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 layer = 20
-visible = false
 
 [node name="BlurBackground" type="ColorRect" parent="CanvasLayer" unique_id=1958414001]
-visible = false
 material = SubResource("ShaderMaterial_d4jte")
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]
-visible = false
 offset_left = 502.0
 offset_top = 546.0
 offset_right = 572.0
@@ -40,7 +37,6 @@ offset_bottom = 577.0
 text = "Resume"
 
 [node name="TerminalArt" type="TextureRect" parent="CanvasLayer" unique_id=2028318683]
-visible = false
 modulate = Color(0, 0, 0, 1)
 clip_contents = true
 offset_left = 236.0
@@ -54,7 +50,6 @@ expand_mode = 2
 stretch_mode = 1
 
 [node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
-visible = false
 offset_left = 236.0
 offset_top = 36.0
 offset_right = 876.0
@@ -62,7 +57,6 @@ offset_bottom = 516.0
 bbcode_enabled = true
 
 [node name="ShipHealthControl" type="Control" parent="CanvasLayer/TerminalText" unique_id=214551088]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
