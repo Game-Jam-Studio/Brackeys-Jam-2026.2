@@ -7,7 +7,7 @@ var is_locked: bool = true
 @export var on_door_open_dialogue_key: String = ""
 
 @export var is_open: bool = false
-@export var open_angle_degrees: float = -90.0
+@export var open_translation_amount: float = 1.5
 
 ## Duration of the opening animation in seconds
 @export var open_duration: float = 0.6
@@ -25,7 +25,7 @@ func _ready() -> void:
 	sfx_player = get_parent().get_node("AudioStreamPlayer3D")
 	# If marked open at game start, snap rotation immediately
 	if is_open:
-		hinge.rotation_degrees.y = open_angle_degrees
+		hinge.rotation_degrees.y = open_translation_amount
 		trigger_shape.set_deferred("disabled", true)
 
 
@@ -39,6 +39,7 @@ func interact(_player: CharacterBody3D) -> void:
 	if not is_locked and not is_open:
 		sfx_player.stream = door_open_sound
 		sfx_player.play()
+		sfx_player.pitch_scale = randf_range(0.7, 0.8)
 		open_door()
 	else:
 		sfx_player.stream = door_locked_sound
@@ -58,7 +59,7 @@ func open_door() -> void:
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(hinge, "rotation_degrees:y", open_angle_degrees, open_duration)
+	tween.tween_property(hinge, "position", Vector3(open_translation_amount,0,0), open_duration)
 
 ## Helper function to unlock the door externally
 func unlock() -> void:
