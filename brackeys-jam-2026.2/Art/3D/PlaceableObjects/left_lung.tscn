@@ -8,6 +8,9 @@ height = 8.737
 
 [node name="Left_lung" unique_id=904889545 instance=ExtResource("1_n37cb")]
 
+[node name="Cube_001" parent="." index="0" unique_id=1822041422]
+transform = Transform3D(1, 0, 0, 0, 1, -8.742278e-08, 0, 8.742278e-08, 1, 0, 0, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1779930091]
-transform = Transform3D(1, 0, 0, 0, 0.9495512, 0.3136119, 0, -0.3136119, 0.9495512, 0.29474545, -0.20304258, -0.22735536)
+transform = Transform3D(1, 0, 0, 0, 0.9495512, 0.3136119, 0, -0.3136119, 0.9495512, -0.06267977, 0.34939298, 0.16603792)
 shape = SubResource("CapsuleShape3D_i0uuj")

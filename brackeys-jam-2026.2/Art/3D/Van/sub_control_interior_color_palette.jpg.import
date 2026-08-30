@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw4g7nh88u8ll"
-path.s3tc="res://.godot/imported/character_v2_color_palette.jpg-4a68b6cdf3b43f99488dce7fbdb7ff9c.s3tc.ctex"
+uid="uid://c5s8nw2byx1uo"
+path.s3tc="res://.godot/imported/sub_control_interior_color_palette.jpg-d7a6e27829c9f978791bf8e869d89b2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Art/3D/Van/character_v2_color_palette.jpg"
-dest_files=["res://.godot/imported/character_v2_color_palette.jpg-4a68b6cdf3b43f99488dce7fbdb7ff9c.s3tc.ctex"]
+source_file="res://Art/3D/Van/sub_control_interior_color_palette.jpg"
+dest_files=["res://.godot/imported/sub_control_interior_color_palette.jpg-d7a6e27829c9f978791bf8e869d89b2d.s3tc.ctex"]
 
 [params]
 
