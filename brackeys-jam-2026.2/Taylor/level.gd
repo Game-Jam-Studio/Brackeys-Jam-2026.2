@@ -17,10 +17,10 @@ var is_repair_active: bool = false
 
 
 func _ready() -> void:
-	# Connect to all repair stations currently registered in the group without duplicating connections
-	for trigger: RepairTrigger in get_tree().get_nodes_in_group("repair_triggers"):
-		if not trigger.launch_minigame_requested.is_connected(_on_repair_requested):
-			trigger.launch_minigame_requested.connect(_on_repair_requested)
+	# Connect to all terminal triggers currently registered in the group
+	for trigger: ControlTerminalTrigger in get_tree().get_nodes_in_group("terminal_triggers"):
+		if not trigger.terminal_requested.is_connected(_on_terminal_requested):
+			trigger.terminal_requested.connect(_on_terminal_requested)
 	
 	if click_indicator_scene:
 		var instance := click_indicator_scene.instantiate()
@@ -128,3 +128,36 @@ func raycast_to_floor(screen_position: Vector2) -> Vector3:
 	if result:
 		return result.position
 	return Vector3.INF
+
+
+func _on_terminal_requested(trigger: ControlTerminalTrigger) -> void:
+	# Guard against duplicate emissions
+	if is_repair_active:
+		return
+	is_repair_active = true
+	
+	# Lock player physics and interaction inputs
+	if player:
+		player.set_physics_process(false)
+		player.set_process_unhandled_input(false)
+	
+	# Transition camera
+	if camera:
+		await camera.transition_to_station().finished
+	
+	# Display terminal UI and pause execution until the closed signal is emitted
+	if trigger.terminal_ui:
+		trigger.terminal_ui.visible = true
+		await trigger.terminal_ui.terminal_closed
+		trigger.terminal_ui.visible = false
+	
+	# Reset camera
+	if camera:
+		await camera.return_from_station().finished
+		
+	# Restore player control
+	if player:
+		player.set_physics_process(true)
+		player.set_process_unhandled_input(true)
+		
+	is_repair_active = false
