@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://b6wswc28w341e" path="res://Audio/SFX/old_door.wav" id="28_ux67b"]
 [ext_resource type="PackedScene" uid="uid://be22kb8cqnx72" path="res://Art/3D/PlaceableObjects/simple_table.tscn" id="29_a3jn7"]
 [ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="31_rmk5s"]
+[ext_resource type="Script" uid="uid://4idt508xifg7" path="res://Levels/door_unlock.gd" id="36_b607u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,32 +59,25 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5m3m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
 emission = Color(0.494, 0.894, 0.329, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvjxq"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvjxq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
 resource_local_to_scene = true
 albedo_color = Color(0.988, 0.42, 0.008, 1)
 emission_enabled = true
 emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
 emission_energy_multiplier = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvsvu"]
@@ -95,19 +89,26 @@ emission_energy_multiplier = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v43j3"]
 resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heocp"]
+resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heocp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnq1i"]
 resource_local_to_scene = true
 albedo_color = Color(0.988, 0.42, 0.008, 1)
 emission_enabled = true
 emission = Color(0.988, 0.42, 0.008, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnq1i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n22tq"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
@@ -146,6 +147,9 @@ shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4ee0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nlb7l"]
+size = Vector3(1, 1.2254639, 1)
 
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_2a835")
@@ -4610,7 +4614,6 @@ transform = Transform3D(0.1515959, 0, 4.026713e-05, 0, 12.2190275, 0, -0.0005091
 [node name="ExitDoor" parent="Doors" unique_id=202630976 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 507.031, -0.002984099, -1083.4818)
 required_item_name = "CaptainsKey"
-custom_open_sound = ExtResource("28_b5m3m")
 
 [node name="Area1Doors" type="Node3D" parent="Doors" unique_id=594892891]
 
@@ -4659,9 +4662,11 @@ transform = Transform3D(-4.86709, 0, 4.4524765, 0, 0.081839584, 0, -56.313602, 0
 
 [node name="A2LeftRoomEnter" parent="Doors/Area2Doors" unique_id=142235720 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-1.3098933, 0, -6.4650817, 0, 0.081839584, 0, 81.76854, 0, -16.567087, 495.77237, -0.002984099, 828.849)
+is_locked = false
 
 [node name="A2RightRoomExit" parent="Doors/Area2Doors" unique_id=990596616 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5917435, 0, 0.24906309, 0, 0.081839584, 0, -3.1500082, 0, -83.370514, 483.11334, -0.002984099, -2212.7769)
+is_locked = false
 
 [node name="Door6" parent="Doors/Area2Doors" unique_id=501905773 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 524.87823, -0.002984099, -317.14215)
@@ -4670,7 +4675,6 @@ transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953,
 transform = Transform3D(6.5964127, 0, -0.022159524, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 657.2457, -0.0029840171, -2031.3503)
 door_variant = 1
 required_item_name = "PowerCell"
-is_locked = false
 
 [node name="Door5" parent="Doors/Area2Doors" unique_id=1573186085 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964103, 0, 0.022158943, 0, 0.081839584, 0, -0.2801888, 0, -83.42953, 646.60583, -0.002984099, -20.965698)
@@ -4761,7 +4765,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 
 transform = Transform3D(0.01937657, 0, 0.99981225, 0, 1, 0, -0.99981225, 0, 0.01937657, 0, 0, 0)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b5m3m")
+material_override = SubResource("StandardMaterial3D_b607u")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
@@ -4782,7 +4786,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b607u")
+material_override = SubResource("StandardMaterial3D_mvjxq")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
@@ -4803,7 +4807,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_mvjxq")
+material_override = SubResource("StandardMaterial3D_exdgp")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
@@ -4824,7 +4828,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_exdgp")
+material_override = SubResource("StandardMaterial3D_wvsvu")
 
 [node name="Heart" parent="RepairStations/Area1" unique_id=1854801038 instance=ExtResource("24_thtfx")]
 transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9453884, -60.460575, 5.364929, 18.429985)
@@ -4850,7 +4854,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_wvsvu")
+material_override = SubResource("StandardMaterial3D_v43j3")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
@@ -4871,7 +4875,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_v43j3")
+material_override = SubResource("StandardMaterial3D_heocp")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973, 0, 0.4996089, 5.296033, 1.3086255, 28.410582)
@@ -4892,7 +4896,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_heocp")
+material_override = SubResource("StandardMaterial3D_mnq1i")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
@@ -4901,7 +4905,7 @@ transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0
 on_interact_dialogue_key = "A2A1-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_mnq1i")
+material_override = SubResource("StandardMaterial3D_n22tq")
 
 [node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("24_7k0iy")]
 transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.598535, 0.087592125, 1.6944573)
@@ -7632,7 +7636,7 @@ transform = Transform3D(-0.0067484095, 0.8596983, -0.51075757, -0.9999692, -0.00
 transform = Transform3D(-0.0035911007, 0.45748016, -0.8892126, -0.9999692, -0.0078495005, 6.7304445e-10, -0.0069798753, 0.8891852, 0.45749426, 3.7018716, 0.3436975, 23.620861)
 
 [node name="Simple_chair28" parent="." unique_id=1997412131 instance=ExtResource("28_5jq4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3780794, 4.7683716e-07, 2.8295403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3780794, 4.7683716e-07, 1.782136)
 
 [node name="Simple_chair25" parent="." unique_id=1592720373 instance=ExtResource("28_5jq4l")]
 transform = Transform3D(0.0052419105, -0.6677813, 0.7443391, -0.9999692, -0.0078495, 0, 0.0058426894, -0.74431616, -0.66780186, -22.5206, 0.34369653, 18.633976)
@@ -8951,6 +8955,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.089355, 0, 18.592348)
 transform = Transform3D(0.0048957933, 1.0452277e-09, -1.3009658, 2.7292957e-12, 1, 1.3599325e-09, 0.6277725, -1.24981085e-11, 0.010145806, -3.0228436, 2.343, 0.811845)
 rotation_order = 0
 mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="DoorUnlock" type="Area3D" parent="." unique_id=327580905 node_paths=PackedStringArray("doors_to_unlock")]
+transform = Transform3D(6.191605, 0, -0.23284806, 0, 3.8898923, 0, 1.4824512, 0, 0.97251314, -17.606995, 1.9215932, -3.2339926)
+script = ExtResource("36_b607u")
+doors_to_unlock = [NodePath("../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../Doors/Area2Doors/Door6"), NodePath("../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../Doors/Area2Doors/A2LeftRoomExit"), NodePath("../Doors/Area2Doors/Door5")]
+
+[node name="DoorUnlockTrigger" type="CollisionShape3D" parent="DoorUnlock" unique_id=82933919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 1.1920929e-07, 0, 1, 0.014885902, 0, 0.023984998)
+shape = SubResource("BoxShape3D_nlb7l")
 
 [editable path="Doors/Area1Doors/A1LeftRoomDoor1"]
 [editable path="Doors/Area1Doors/A1LeftRoomDoor2"]
