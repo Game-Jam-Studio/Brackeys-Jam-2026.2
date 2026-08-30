@@ -130,7 +130,7 @@ theme_override_constants/margin_bottom = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-value = 74.99
+value = 100.0
 
 [node name="Boiler" type="Panel" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1" unique_id=363707889]
 custom_minimum_size = Vector2(128, 128)
@@ -164,7 +164,7 @@ theme_override_constants/margin_bottom = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-value = 74.99
+value = 100.0
 
 [node name="Row2" type="HBoxContainer" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer" unique_id=1401519523]
 layout_mode = 2
@@ -202,7 +202,7 @@ theme_override_constants/margin_bottom = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-value = 74.99
+value = 100.0
 
 [node name="Sonar" type="Panel" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2" unique_id=906328070]
 custom_minimum_size = Vector2(128, 128)
@@ -236,7 +236,7 @@ theme_override_constants/margin_bottom = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-value = 74.99
+value = 100.0
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1245461469]
 custom_minimum_size = Vector2(128, 128)
