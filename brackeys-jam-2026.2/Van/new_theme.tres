@@ -1,0 +1,46 @@
+[gd_resource type="Theme" format=3 uid="uid://bw7ak4rl34f82"]
+
+[ext_resource type="FontFile" uid="uid://cnybxyn8iq5at" path="res://Resources/Fonts/AI_base.ttf" id="1_ewgrn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flgj2"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.15247649, 0.15247649, 0.15247646, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypwsc"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnnjp"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewgrn"]
+bg_color = Color(0, 0, 0, 0.12156863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i72gw"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kc616"]
+
+[resource]
+default_font = ExtResource("1_ewgrn")
+Button/styles/hover = SubResource("StyleBoxFlat_flgj2")
+Button/styles/normal = SubResource("StyleBoxFlat_ypwsc")
+HBoxContainer/constants/separation = 0
+Panel/styles/panel = SubResource("StyleBoxFlat_fnnjp")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ewgrn")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_i72gw")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_kc616")
+VBoxContainer/constants/separation = 0

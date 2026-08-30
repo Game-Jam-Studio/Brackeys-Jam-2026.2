@@ -5,13 +5,19 @@ var slotted: bool
 var line_2d: Line2D
 var wire_ID: int
 var tick: float
+var dial_sound: AudioStreamWAV
 const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
+const UI_DIAL_CORRUPTED = preload("uid://j0q4lsv21hnn")
 @onready var wire_minigame: Control = $"../.."
 @onready var wire_visual: TextureRect = $WireVisual
 @export var wire_visual_offset: float = -43
 
 func _ready() -> void:
 	await $"../..".ready
+	if ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH) == 3:
+		dial_sound = UI_DIAL_CORRUPTED
+	else:
+		dial_sound = UI_DIAL_SHORT
 	line_2d = Line2D.new()
 	add_child(line_2d)
 	wire_visual.position.x = wire_visual_offset
@@ -28,8 +34,7 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and !slotted:
-		%AudioStreamPlayer.stream = UI_DIAL_SHORT
-		%AudioStreamPlayer.pitch_scale = 1.5
+		%AudioStreamPlayer.stream = dial_sound
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 			#Mouse held
@@ -45,6 +50,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		line_2d.set_point_position(0, Vector2(position.x + size.x / 2, position.y + size.y / 2))
 		tick += clamp(event.screen_relative.length(), 0, 50)
 		if tick > 200:
+			%AudioStreamPlayer.pitch_scale = randf_range(1.45, 1.55)
 			%AudioStreamPlayer.play()
 			tick = 0
 	offset_transform_rotation = position.angle_to_point(line_2d.get_point_position(1) - size / 2) + PI

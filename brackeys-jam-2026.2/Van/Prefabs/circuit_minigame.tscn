@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://bw7m3wve2gnn2"]
 
 [ext_resource type="Texture2D" uid="uid://bt2l263daesuv" path="res://icon.svg" id="1_0bh60"]
-[ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/circuit_minigame.gd" id="1_vofu2"]
+[ext_resource type="Script" uid="uid://bqd8l176vwkj5" path="res://Van/Scripts/Minigame/circuit_minigame.gd" id="1_vofu2"]
 [ext_resource type="AudioStream" uid="uid://f5we04nn8mkj" path="res://Audio/SFX/UI_dial_short.wav" id="2_1vx7c"]
 [ext_resource type="Texture2D" uid="uid://c8hynmaqimcs3" path="res://Art/2D/Circuit/Wires/wire_end_base.png" id="2_4dl43"]
 [ext_resource type="Texture2D" uid="uid://bmkc5jlykxl0b" path="res://Art/2D/Circuit/Slots/slot_base_blue.png" id="2_8iqbv"]
-[ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/wire.gd" id="2_hbgru"]
+[ext_resource type="Script" uid="uid://pd1kqymggm4q" path="res://Van/Scripts/Minigame/wire.gd" id="2_hbgru"]
 [ext_resource type="Texture2D" uid="uid://dydmvaw7syi5y" path="res://Art/2D/Circuit/Wires/wire_end_corrupted.png" id="2_ppcvw"]
 [ext_resource type="Texture2D" uid="uid://7xfbwvi13t2h" path="res://Art/2D/Circuit/Slots/slot_base_gray.png" id="3_4dl43"]
-[ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/slot.gd" id="3_hbgru"]
+[ext_resource type="Script" uid="uid://cpsk04aclcrog" path="res://Van/Scripts/Minigame/slot.gd" id="3_hbgru"]
 [ext_resource type="Texture2D" uid="uid://cawum31f5fhvv" path="res://Art/2D/Circuit/Wires/wire_middle_corrupted.png" id="3_ppcvw"]
 [ext_resource type="Texture2D" uid="uid://fp67nfmlgfv5" path="res://Art/2D/Circuit/Slots/slot_corrupted_blue.png" id="4_jcdj3"]
 [ext_resource type="Texture2D" uid="uid://bkygmtmnk6iir" path="res://Art/2D/Circuit/Slots/slot_base_orange.png" id="4_ppcvw"]
 [ext_resource type="Texture2D" uid="uid://cawij4dxevshd" path="res://Art/2D/Circuit/Slots/slot_corrupted_olive.png" id="5_np15x"]
 [ext_resource type="Texture2D" uid="uid://cl44j7et8yex0" path="res://Art/2D/Circuit/Slots/slot_corrupted_green.png" id="6_0el0v"]
-[ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/slot_placement.gd" id="6_wjvfx"]
+[ext_resource type="Script" uid="uid://xp2sp8w5te3d" path="res://Van/Scripts/Minigame/slot_placement.gd" id="6_wjvfx"]
 [ext_resource type="Texture2D" uid="uid://kxdnvio0p8c5" path="res://Art/2D/Circuit/Slots/slot_base_green.png" id="7_23i6a"]
 [ext_resource type="Texture2D" uid="uid://b5o5va3u5hnu3" path="res://Art/2D/Circuit/Slots/slot_corrupted_orange.png" id="7_xf8k3"]
 [ext_resource type="Texture2D" uid="uid://bq4govfq2cc4v" path="res://Art/2D/Circuit/Slots/slot_corrupted_pink.png" id="8_pvfh2"]
@@ -26,7 +26,7 @@ size = Vector2(8, 128)
 [sub_resource type="CircleShape2D" id="CircleShape2D_i72gw"]
 radius = 64.0
 
-[node name="WireMinigame" type="Control" unique_id=380570598]
+[node name="CircuitMinigame" type="Control" unique_id=380570598]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -374,6 +374,7 @@ offset_bottom = 64.0
 offset_transform_enabled = true
 mouse_filter = 2
 texture = ExtResource("2_8iqbv")
+stretch_mode = 5
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation2" type="Node2D" parent="WireLocations" unique_id=617373659 groups=["wires"]]
@@ -390,6 +391,7 @@ offset_bottom = 64.0
 offset_transform_enabled = true
 mouse_filter = 2
 texture = ExtResource("3_4dl43")
+stretch_mode = 5
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation3" type="Node2D" parent="WireLocations" unique_id=581840271 groups=["wires"]]
@@ -406,6 +408,7 @@ offset_bottom = 64.0
 offset_transform_enabled = true
 mouse_filter = 2
 texture = ExtResource("7_23i6a")
+stretch_mode = 5
 script = ExtResource("6_wjvfx")
 
 [node name="WireLocation4" type="Node2D" parent="WireLocations" unique_id=496690030 groups=["wires"]]
@@ -422,6 +425,7 @@ offset_bottom = 64.0
 offset_transform_enabled = true
 mouse_filter = 2
 texture = ExtResource("4_ppcvw")
+stretch_mode = 5
 script = ExtResource("6_wjvfx")
 
 [connection signal="wire_connected" from="Slots/Slot" to="." method="_on_slot_wire_connected"]

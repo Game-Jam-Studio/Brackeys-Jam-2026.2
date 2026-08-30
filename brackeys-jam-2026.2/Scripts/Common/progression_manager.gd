@@ -10,6 +10,12 @@ const FRAME_BASE = preload("res://Art/2D/ShipHealth/health_frame_base.png")
 const FRAME_MID = preload("res://Art/2D/ShipHealth/health_frame_mid.png")
 const FRAME_CORRUPTED = preload("res://Art/2D/ShipHealth/health_frame_corrupted.png")
 
+# Sound Effects
+const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
+const UI_DIAL_CORRUPTED = preload("uid://j0q4lsv21hnn")
+const UI_ACCEPT = preload("uid://ci0u00xywksjx")
+const UI_ACCEPT_CORRUPTED = preload("uid://ddqgwbhtje3a2")
+
 func get_frame_texture(tier: int) -> Texture2D:
 	match tier:
 		3: return FRAME_CORRUPTED

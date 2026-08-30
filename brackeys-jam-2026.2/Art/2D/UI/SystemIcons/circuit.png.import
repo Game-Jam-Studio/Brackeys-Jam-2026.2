@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqb2ymn1tv4nf"
-path="res://.godot/imported/circuit.png-17159834071697d4b90a8237139c8720.ctex"
+path="res://.godot/imported/circuit.png-49b49c068e8b98e4200e0f791de6f1aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/SystemIcons/circuit.png"
-dest_files=["res://.godot/imported/circuit.png-17159834071697d4b90a8237139c8720.ctex"]
+source_file="res://Art/2D/UI/SystemIcons/circuit.png"
+dest_files=["res://.godot/imported/circuit.png-49b49c068e8b98e4200e0f791de6f1aa.ctex"]
 
 [params]
 

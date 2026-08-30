@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwleniukldab6"
-path="res://.godot/imported/ballast.png-a80a52f6bc3239fec0b2b36b4ca19465.ctex"
+uid="uid://hfnji17mmtku"
+path="res://.godot/imported/boiler.png-a476e3bfaf2f56d9eae912f23292fb68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/SystemIcons/ballast.png"
-dest_files=["res://.godot/imported/ballast.png-a80a52f6bc3239fec0b2b36b4ca19465.ctex"]
+source_file="res://Art/2D/UI/SystemIcons/boiler.png"
+dest_files=["res://.godot/imported/boiler.png-a476e3bfaf2f56d9eae912f23292fb68.ctex"]
 
 [params]
 

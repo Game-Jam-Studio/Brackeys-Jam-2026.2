@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctyhxkbxcj10e"
-path="res://.godot/imported/sonar.png-e5a1009b5561debde096adb0597eee94.ctex"
+uid="uid://dma8n5ikcmv1q"
+path="res://.godot/imported/Asset_2D_Textbox_mid.png-0ffd5e3405923bdd261092a0e870ce01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/SystemIcons/sonar.png"
-dest_files=["res://.godot/imported/sonar.png-e5a1009b5561debde096adb0597eee94.ctex"]
+source_file="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_mid.png"
+dest_files=["res://.godot/imported/Asset_2D_Textbox_mid.png-0ffd5e3405923bdd261092a0e870ce01.ctex"]
 
 [params]
 
