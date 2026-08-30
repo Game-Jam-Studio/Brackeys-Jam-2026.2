@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://okbdr4e45i2k" path="res://Scripts/Common/door.gd" id="1_65tkf"]
 [ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="1_dn2we"]
-[ext_resource type="ArrayMesh" uid="uid://vbntc66awkow" path="res://Art/3D/Walls&Doors/Wall.tres" id="2_mw5ax"]
+[ext_resource type="ArrayMesh" uid="uid://bct6tvw6jygbi" path="res://Art/3D/Walls&Doors/Wall.tres" id="2_mw5ax"]
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="3_huc0b"]
 [ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="3_sqdgx"]
-[ext_resource type="ArrayMesh" uid="uid://cc4xvdqcljmdn" path="res://Art/3D/Walls&Doors/Door.tres" id="4_a1bq7"]
+[ext_resource type="ArrayMesh" uid="uid://btbjvx70e2rky" path="res://Art/3D/Walls&Doors/Door.tres" id="4_a1bq7"]
 [ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="4_lwysg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65tkf"]
