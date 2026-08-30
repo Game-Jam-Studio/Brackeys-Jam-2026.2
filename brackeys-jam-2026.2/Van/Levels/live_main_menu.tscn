@@ -1,10 +1,23 @@
 [gd_scene format=4 uid="uid://clcuikhu5nfi5"]
 
 [ext_resource type="Script" uid="uid://bkqwb4p2d8osm" path="res://Van/Scripts/MainMenu/live_main_menu_flicker.gd" id="1_0m0b3"]
-[ext_resource type="LightmapGIData" uid="uid://b3xssuxlqkvne" path="res://Van/Lightmaps/LiveMainMenu.lmbake" id="2_ddyxe"]
+[ext_resource type="LightmapGIData" uid="uid://83u0u4g641cj" path="res://Van/Lightmaps/LiveMainMenu.lmbake" id="2_ddyxe"]
 [ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/gore_swirl.gdshader" id="4_ddyxe"]
 [ext_resource type="Script" uid="uid://d3ba834ve3f6p" path="res://Van/Scripts/MainMenu/main_menu_camera_wobble.gd" id="4_ip0nw"]
 [ext_resource type="Texture2D" uid="uid://cxf4ddv0m6h13" path="res://Art/3D/Van/character_color_palette.jpg" id="5_gnmlk"]
+
+[sub_resource type="Environment" id="Environment_8yvyb"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ssao_radius = 0.11
+ssao_intensity = 9.37
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.0
+sdfgi_min_cell_size = 0.25
+sdfgi_energy = 10.0
+glow_strength = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1hd16"]
 
@@ -27,15 +40,6 @@ as_normal_map = true
 render_priority = 0
 shader = ExtResource("4_ddyxe")
 shader_parameter/noise = SubResource("NoiseTexture2D_ip0nw")
-
-[sub_resource type="Environment" id="Environment_8yvyb"]
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.0
-ssao_intensity = 4.0
-sdfgi_read_sky_light = false
-sdfgi_y_scale = 0
-glow_enabled = true
-glow_strength = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4ycw"]
 
@@ -79,9 +83,14 @@ emission = Color(1, 1, 1, 1)
 [node name="LiveMainMenu" type="Node3D" unique_id=1395601679]
 script = ExtResource("1_0m0b3")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1760147734]
+environment = SubResource("Environment_8yvyb")
+
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=967079310]
 transform = Transform3D(1.9106855e-15, 1, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 1, 0, -4.371139e-08, 1.0029104, 3.5, 0.5)
+visible = false
 light_energy = 0.025
+light_bake_mode = 0
 light_cull_mask = 4294967294
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=395634872]
@@ -91,24 +100,40 @@ gi_mode = 0
 mesh = SubResource("PlaneMesh_1hd16")
 surface_material_override/0 = SubResource("ShaderMaterial_0m0b3")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1760147734]
-environment = SubResource("Environment_8yvyb")
-
 [node name="Light" type="Node3D" parent="." unique_id=1283433391]
 
+[node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1003129821]
+quality = 3
+bounces = 12
+texel_scale = 5.0
+light_data = ExtResource("2_ddyxe")
+
 [node name="SpotLight3D2" type="SpotLight3D" parent="Light" unique_id=76550797]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9144282, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5548841, 1.8848639, 1.1626194)
 layers = 2
+light_energy = 0.1
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-spot_angle = 82.75
+spot_angle = 77.25
 
-[node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=47495439]
-quality = 3
-interior = true
-texel_scale = 5.0
-light_data = ExtResource("2_ddyxe")
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light" unique_id=2123537899]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43165538, 1.9152445, 0)
+layers = 2
+light_energy = 0.25
+light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+spot_angle = 44.24
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Light" unique_id=93742]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.4244843, 1.9442995, -1.2035613)
+layers = 2
+light_energy = 0.1
+light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+spot_angle = 49.6
 
 [node name="Camera3D" type="Camera3D" parent="Light" unique_id=431016351]
 transform = Transform3D(-0.5935429, 0.248682, -0.76541764, 0, 0.95106286, 0.3089976, 0.8048024, 0.1834033, -0.5644966, -1.4638098, 1.7625147, -1.8004483)

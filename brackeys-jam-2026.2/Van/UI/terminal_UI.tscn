@@ -126,7 +126,8 @@ theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Ballast/VBoxContainer/MarginContainer" unique_id=531850726]
+[node name="BallastHealth" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Ballast/VBoxContainer/MarginContainer" unique_id=531850726]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 value = 74.99
@@ -159,7 +160,8 @@ theme_override_constants/margin_left = 1
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Boiler/VBoxContainer/MarginContainer" unique_id=53263077]
+[node name="BoilerHealth" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row1/Boiler/VBoxContainer/MarginContainer" unique_id=53263077]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 value = 74.99
@@ -196,7 +198,8 @@ theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Circuit/VBoxContainer/MarginContainer" unique_id=814072012]
+[node name="CircuitHealth" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Circuit/VBoxContainer/MarginContainer" unique_id=814072012]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 value = 74.99
@@ -229,7 +232,8 @@ theme_override_constants/margin_left = 1
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Sonar/VBoxContainer/MarginContainer" unique_id=1351737112]
+[node name="Sonar Health" type="ProgressBar" parent="PanelContainer/MonitorBackground/PanelContainer/MarginContainer/VContainer/Row2/Sonar/VBoxContainer/MarginContainer" unique_id=1351737112]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 value = 74.99
