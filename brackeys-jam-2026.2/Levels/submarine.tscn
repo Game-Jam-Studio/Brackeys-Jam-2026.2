@@ -8461,9 +8461,6 @@ material_override = ExtResource("16_x47f5")
 
 [node name="MonitorDecals" type="Node3D" parent="." unique_id=1766421775]
 
-[node name="Node3D" type="Node3D" parent="." unique_id=2089276492]
-transform = Transform3D(0.40723377, 0, 0, 0, 1.0379134, 0, 0, 0, 0.37602448, 14.110427, 1.7116451, 1.7124226)
-
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]
 [editable path="RepairStations/Area1/RepairStation2"]
@@ -8472,3 +8469,4 @@ transform = Transform3D(0.40723377, 0, 0, 0, 1.0379134, 0, 0, 0, 0.37602448, 14.
 [editable path="RepairStations/Area2/RepairStation8"]
 [editable path="RepairStations/Area2/RepairStation6"]
 [editable path="RepairStations/Area2/RepairStation7"]
+[editable path="Simple_Computer3"]

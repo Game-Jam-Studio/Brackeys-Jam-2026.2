@@ -27,9 +27,12 @@ func _ready() -> void:
 	if is_open:
 		hinge.rotation_degrees.y = open_translation_amount
 		trigger_shape.set_deferred("disabled", true)
-		
-		if prompt_sprite:
-			prompt_sprite.visible = false
+	
+	if prompt_sprite:
+		prompt_sprite.visible = false
+
+
+
 
 
 ## Overrides base Interactable can_interact()
@@ -45,22 +48,19 @@ func interact(_player: CharacterBody3D) -> void:
 		sfx_player.pitch_scale = randf_range(0.7, 0.8)
 		open_door()
 		if prompt_sprite:
-			print("Deleting prompt sprite for: ", name)
 			prompt_sprite.queue_free()
-		else:
-			print("Prompt sprite is null!")
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
 	super(_player)
 
 
-## Smoothly rotates the hinge and disables future interactions
+## Opens door & disables future interactions
 func open_door() -> void:
 	is_open = true
 	trigger_shape.set_deferred("disabled", true)
 	
-	# Animate the AnimatableBody3D rotation smoothly
+	# Slide the AnimatableBody3D smoothly
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
@@ -69,3 +69,13 @@ func open_door() -> void:
 ## Helper function to unlock the door externally
 func unlock() -> void:
 	is_locked = false
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = true
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = false
