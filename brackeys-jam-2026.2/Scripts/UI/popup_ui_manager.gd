@@ -1,11 +1,29 @@
 extends Node
 
+@export var tier_1_background: Texture2D
+@export var tier_2_background: Texture2D
+@export var tier_3_background: Texture2D
+
+@onready var background_texture: NinePatchRect
+
 var test_narrative_text := {}
-
 var storyTrackerDictionary: Dictionary = {}
-
 var nextTextKey: String = ""
 
+
+func _update_background() -> void:
+	var current_tier: int = ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)	
+	
+	match current_tier:
+		1:
+			background_texture.texture = tier_1_background
+		2:
+			background_texture.texture = tier_2_background
+		3:
+			background_texture.texture = tier_3_background
+		_:
+			background_texture.texture = tier_1_background
+			
 
 func load_csv_to_dictionary(file_path: String, key_column: String = "Line ID", delimiter: String = ",") -> Dictionary:
 	var file := FileAccess.open(file_path, FileAccess.READ)
