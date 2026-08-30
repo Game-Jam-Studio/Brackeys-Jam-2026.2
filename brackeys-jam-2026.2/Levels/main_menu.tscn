@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dp65i8pg1ea8i"]
 
 [ext_resource type="Script" uid="uid://b3e0cj3lj0ydh" path="res://Scripts/UI/main_menu.gd" id="1_6ucrw"]
-[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_jy27m"]
+[ext_resource type="Theme" uid="uid://bcl3qs08e8man" path="res://Van/MainMenuTheme.tres" id="2_3es34"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_3es34"]
+[ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="3_8md67"]
+[ext_resource type="Texture2D" uid="uid://crollf131snet" path="res://Art/2D/Boiler/button_base_press.png" id="5_5qvx8"]
+[ext_resource type="Texture2D" uid="uid://b4x7ekw0jlrum" path="res://Art/2D/Boiler/button_base_hover.png" id="6_hllw6"]
 
 [node name="MainMenu" type="Control" unique_id=1948344224]
 layout_mode = 3
@@ -11,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_3es34")
 script = ExtResource("1_6ucrw")
 
 [node name="button_manager" type="Control" parent="." unique_id=1002316191]
@@ -18,50 +22,107 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=768510217]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 102.640015
-offset_top = -1.0499878
-offset_right = 327.64044
-offset_bottom = 242.95001
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="New Game" type="Button" parent="VBoxContainer" unique_id=288408914]
-custom_minimum_size = Vector2(225, 0)
-layout_mode = 2
-theme = ExtResource("2_jy27m")
-theme_override_font_sizes/font_size = 36
-text = "New Game"
-
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1333945265]
-layout_mode = 2
-theme = ExtResource("2_jy27m")
-theme_override_font_sizes/font_size = 36
-text = "Credits"
-
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=2027421149]
-layout_mode = 2
-theme = ExtResource("2_jy27m")
-theme_override_font_sizes/font_size = 36
-text = "Options
-"
-
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=231071800]
-layout_mode = 2
-theme = ExtResource("2_jy27m")
-theme_override_font_sizes/font_size = 36
-text = "Quit"
-
 [node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_3es34")]
 
-[connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=768510217]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -402.0
+offset_top = -330.0
+offset_right = -155.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1912402713]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="NewGame" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=2038634441]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_8md67")
+texture_pressed = ExtResource("5_5qvx8")
+texture_hover = ExtResource("6_hllw6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=982100871]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "New Game"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1163373330]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Options" type="TextureButton" parent="VBoxContainer/HBoxContainer2" unique_id=1666065868]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_8md67")
+texture_pressed = ExtResource("5_5qvx8")
+texture_hover = ExtResource("6_hllw6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1948035385]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Options"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1411166417]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer/HBoxContainer3" unique_id=779371840]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_8md67")
+texture_pressed = ExtResource("5_5qvx8")
+texture_hover = ExtResource("6_hllw6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=570257472]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Credits"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1834089988]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer/HBoxContainer4" unique_id=1316338381]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_8md67")
+texture_pressed = ExtResource("5_5qvx8")
+texture_hover = ExtResource("6_hllw6")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=2089466848]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer4/Quit" to="." method="_on_quit_pressed"]

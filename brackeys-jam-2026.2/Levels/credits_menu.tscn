@@ -1,33 +1,20 @@
 [gd_scene format=3 uid="uid://b6bgno4ecqu4g"]
 
 [ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
+[ext_resource type="Theme" uid="uid://bcl3qs08e8man" path="res://Van/MainMenuTheme.tres" id="1_gqi8t"]
 [ext_resource type="Texture2D" uid="uid://c4fpndvxjed7a" path="res://Taylor/water-bg.png" id="2_ms1ik"]
-[ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_n3fdw"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_whv12"]
-[ext_resource type="FontFile" uid="uid://cnsvw76kftitr" path="res://Resources/Fonts/AI_corrupted.ttf" id="4_ivq1f"]
-[ext_resource type="FontFile" uid="uid://wo0e24rat8xs" path="res://Resources/Fonts/ChaosTimes_lig.TTF" id="6_6vee4"]
+[ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="5_eo247"]
+[ext_resource type="Texture2D" uid="uid://crollf131snet" path="res://Art/2D/Boiler/button_base_press.png" id="6_gqi8t"]
+[ext_resource type="Texture2D" uid="uid://b4x7ekw0jlrum" path="res://Art/2D/Boiler/button_base_hover.png" id="7_ivq1f"]
 
-[sub_resource type="Theme" id="Theme_05e02"]
-
-[sub_resource type="GDScript" id="GDScript_y0d7i"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[sub_resource type="Theme" id="Theme_eewj2"]
-default_font = ExtResource("6_6vee4")
-default_font_size = 56
-RowA/colors/font_outline_color = Color(0.34509805, 0.69411767, 0.14509805, 1)
-RowA/constants/outline_size = 1
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h2t2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
 
 [node name="Credits" type="Control" unique_id=2135353185]
 layout_mode = 3
@@ -36,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_gqi8t")
 script = ExtResource("1_6vvtk")
 
 [node name="Background" type="TextureRect" parent="." unique_id=907826114]
@@ -43,233 +31,284 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1478.5
-offset_bottom = 823.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ms1ik")
+expand_mode = 5
 
 [node name="Title" type="Label" parent="." unique_id=825116045]
-layout_mode = 0
-offset_left = 481.0
-offset_top = 45.26
-offset_right = 708.0
-offset_bottom = 114.259995
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.5
+offset_top = 23.62
+offset_right = 113.50073
+offset_bottom = 92.62
+grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme = SubResource("Theme_05e02")
-theme_type_variation = &"HeaderLarge"
-theme_override_colors/font_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
-theme_override_colors/font_outline_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
+theme_override_colors/font_color = Color(0.85490197, 0.30588236, 0.29411766, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_ivq1f")
 theme_override_font_sizes/font_size = 82
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="Button" parent="." unique_id=445819736]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -49.0
-offset_top = -104.0
-offset_right = 59.0
-offset_bottom = -42.044983
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-theme = ExtResource("2_n3fdw")
-theme_override_colors/font_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
-theme_override_colors/font_pressed_color = Color(0.85882354, 0.20392157, 0.40392157, 1)
-theme_override_colors/font_hover_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
-theme_override_colors/font_outline_color = Color(0.3764706, 0.7019608, 0.16470589, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("4_ivq1f")
-theme_override_font_sizes/font_size = 52
-text = "Back"
-icon_alignment = 1
-script = SubResource("GDScript_y0d7i")
-
 [node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_whv12")]
 
-[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1059962976]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1943159879]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.0
-offset_top = -134.0
-offset_right = 221.0
-offset_bottom = 134.0
+offset_left = -326.5
+offset_top = -212.5
+offset_right = 326.5
+offset_bottom = 226.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 18
+alignment = 1
 
-[node name="Names" type="VSplitContainer" parent="HSplitContainer" unique_id=1178891613]
+[node name="Names" type="VBoxContainer" parent="HBoxContainer" unique_id=1772503236]
+custom_maximum_size = Vector2(200, -1)
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 58, 93, 128, 163, 198, 233)
-split_offset = 23
+theme_override_constants/separation = 17
+alignment = 1
 
-[node name="Arielle Fantasia" type="Label" parent="HSplitContainer/Names" unique_id=2109733040]
+[node name="Arielle Fantasia" type="Label" parent="HBoxContainer/Names" unique_id=2109733040]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Arielle Fantasia"
 horizontal_alignment = 2
 
-[node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Names" unique_id=1106884151]
+[node name="Jonathan Clinton" type="Label" parent="HBoxContainer/Names" unique_id=1106884151]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+size_flags_horizontal = 8
+size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
 text = "Jonathan Clinton "
 horizontal_alignment = 2
 
-[node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Names" unique_id=44537663]
+[node name="Kaylee Kelly" type="Label" parent="HBoxContainer/Names" unique_id=44537663]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Kaylee Kelly"
 horizontal_alignment = 2
 
-[node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Names" unique_id=1078144323]
+[node name="Maultaschenprinz" type="Label" parent="HBoxContainer/Names" unique_id=1078144323]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Maultaschenprinz"
 horizontal_alignment = 2
 
-[node name="Niv Khurana" type="Label" parent="HSplitContainer/Names" unique_id=392358033]
+[node name="Niv Khurana" type="Label" parent="HBoxContainer/Names" unique_id=392358033]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Niv Khurana"
 horizontal_alignment = 2
 
-[node name="Taylor Merrill" type="Label" parent="HSplitContainer/Names" unique_id=1397066307]
+[node name="Taylor Merrill" type="Label" parent="HBoxContainer/Names" unique_id=1397066307]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Taylor Merrill"
 horizontal_alignment = 2
 
-[node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Names" unique_id=1461932177]
+[node name="Toshi Mitsunaga" type="Label" parent="HBoxContainer/Names" unique_id=1461932177]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Toshi Mitsunaga"
 horizontal_alignment = 2
 
-[node name="Van Patton" type="Label" parent="HSplitContainer/Names" unique_id=114421501]
+[node name="Van Patton" type="Label" parent="HBoxContainer/Names" unique_id=114421501]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Van \"Vanvanderson\" Patton"
 horizontal_alignment = 2
 
-[node name="Roles" type="VSplitContainer" parent="HSplitContainer" unique_id=526584035]
+[node name="SemiColons" type="VBoxContainer" parent="HBoxContainer" unique_id=888025157]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 58, 93, 128, 163, 198, 233)
-split_offset = 23
+theme_override_constants/separation = 17
+alignment = 1
 
-[node name="Arielle" type="Label" parent="HSplitContainer/Roles" unique_id=650698387]
+[node name="SemiColons" type="Label" parent="HBoxContainer/SemiColons" unique_id=1607485381]
 layout_mode = 2
-theme = SubResource("Theme_eewj2")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons2" type="Label" parent="HBoxContainer/SemiColons" unique_id=2118410231]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons3" type="Label" parent="HBoxContainer/SemiColons" unique_id=2067203473]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons4" type="Label" parent="HBoxContainer/SemiColons" unique_id=812106763]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons5" type="Label" parent="HBoxContainer/SemiColons" unique_id=1077138165]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons6" type="Label" parent="HBoxContainer/SemiColons" unique_id=521395688]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons7" type="Label" parent="HBoxContainer/SemiColons" unique_id=1482464746]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="SemiColons8" type="Label" parent="HBoxContainer/SemiColons" unique_id=1534302134]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 2
+
+[node name="Roles" type="VBoxContainer" parent="HBoxContainer" unique_id=1498657624]
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Arielle" type="Label" parent="HBoxContainer/Roles" unique_id=650698387]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Composer, 2D Artist"
 
-[node name="Jonathan Clinton" type="Label" parent="HSplitContainer/Roles" unique_id=1350841466]
+[node name="Jonathan Clinton" type="Label" parent="HBoxContainer/Roles" unique_id=1350841466]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+size_flags_horizontal = 0
+size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
 text = "Developer"
 
-[node name="Kaylee Kelly" type="Label" parent="HSplitContainer/Roles" unique_id=1768950718]
+[node name="Kaylee Kelly" type="Label" parent="HBoxContainer/Roles" unique_id=1768950718]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Level Designer"
 
-[node name="Maultaschenprinz" type="Label" parent="HSplitContainer/Roles" unique_id=919984992]
+[node name="Maultaschenprinz" type="Label" parent="HBoxContainer/Roles" unique_id=919984992]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "2D Artist"
 
-[node name="Niv Khurana" type="Label" parent="HSplitContainer/Roles" unique_id=1029843255]
+[node name="Niv Khurana" type="Label" parent="HBoxContainer/Roles" unique_id=1029843255]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Narrative Designer"
 
-[node name="Taylor Merrill" type="Label" parent="HSplitContainer/Roles" unique_id=1214507831]
+[node name="Taylor Merrill" type="Label" parent="HBoxContainer/Roles" unique_id=1214507831]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Gameplay Programmer"
 
-[node name="Toshi Mitsunaga" type="Label" parent="HSplitContainer/Roles" unique_id=461092406]
+[node name="Toshi Mitsunaga" type="Label" parent="HBoxContainer/Roles" unique_id=461092406]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "3D Artist"
 
-[node name="Van Patton" type="Label" parent="HSplitContainer/Roles" unique_id=1762153119]
+[node name="Van Patton" type="Label" parent="HBoxContainer/Roles" unique_id=1762153119]
 layout_mode = 2
-theme = SubResource("Theme_05e02")
-theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_6vee4")
-theme_override_font_sizes/font_size = 28
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
 text = "Tech Artist"
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1148601085]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -64.0
+offset_right = 77.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7h2t2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer" unique_id=1804137419]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Back" type="TextureButton" parent="PanelContainer/HBoxContainer2" unique_id=266508862]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("5_eo247")
+texture_pressed = ExtResource("6_gqi8t")
+texture_hover = ExtResource("7_ivq1f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer2" unique_id=335699702]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,35 @@
+[gd_resource type="Theme" format=3 uid="uid://bcl3qs08e8man"]
+
+[ext_resource type="FontFile" uid="uid://cnybxyn8iq5at" path="res://Resources/Fonts/AI_base.ttf" id="1_6a8ik"]
+[ext_resource type="Texture2D" uid="uid://dummbcvgyvwi8" path="res://Art/2D/UI/Monitor/minotor_base.png" id="1_7h2t2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a8ik"]
+bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 3.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hd16"]
+texture = ExtResource("1_7h2t2")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 1780, 1610.8091)
+
+[resource]
+default_font = ExtResource("1_6a8ik")
+Button/styles/normal = SubResource("StyleBoxFlat_6a8ik")
+Label/font_sizes/font_size = 40
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_1hd16")
