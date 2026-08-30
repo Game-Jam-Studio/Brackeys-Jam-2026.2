@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dlsb31k4v5ubl" path="res://Prefabs/UI/health_HUD.tscn" id="5_8essj"]
 [ext_resource type="Material" uid="uid://d04uqu72hn0ch" path="res://Art/3D/Materials/M_Area1Floor.tres" id="5_57ps7"]
 [ext_resource type="PackedScene" uid="uid://ci5idjqd5cg5o" path="res://Prefabs/Actors/repair_station.tscn" id="6_4ywd5"]
+[ext_resource type="Script" uid="uid://b4xvsicy40cdv" path="res://Taylor/alert_container.gd" id="8_57ps7"]
+[ext_resource type="PackedScene" uid="uid://bmh775b3h7th6" path="res://Taylor/alert_icon.tscn" id="9_dbulb"]
+[ext_resource type="Texture2D" uid="uid://bwleniukldab6" path="res://Art/2D/UI/SystemIcons/ballast.png" id="10_8ye4u"]
+[ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="11_eei1b"]
+[ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="12_0ydjy"]
+[ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="13_dgd6d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,7 +61,7 @@ script = ExtResource("3_quwsm")
 player_character = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029509306, -0.0124082565, -0.04464817)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00010561943, -0.0124082565, -0.04464817)
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
@@ -75,6 +81,22 @@ shape = SubResource("BoxShape3D_i0uuj")
 unique_name_in_owner = true
 
 [node name="HealthHUD" parent="UI" unique_id=1131370108 instance=ExtResource("5_8essj")]
+
+[node name="AlertContainer" type="HBoxContainer" parent="UI" unique_id=86020042]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+script = ExtResource("8_57ps7")
+alert_icon_scene = ExtResource("9_dbulb")
+ballast_icon = ExtResource("10_8ye4u")
+boiler_icon = ExtResource("11_eei1b")
+sonar_icon = ExtResource("12_0ydjy")
+circuit_icon = ExtResource("13_dgd6d")
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.9999989, 0, -0.0014690533, 0, 1, 0, 0.0014690533, 0, 0.9999989, 1.3999245, 2.5121765, 5.697686)
