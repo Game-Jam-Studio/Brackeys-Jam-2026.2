@@ -7,7 +7,7 @@ var is_locked: bool = true
 @export var on_door_open_dialogue_key: String = ""
 
 @export var is_open: bool = false
-@export var open_translation_amount: float = 2
+@export var open_translation_amount: float = 1.5
 
 ## Duration of the opening animation in seconds
 @export var open_duration: float = 0.6
