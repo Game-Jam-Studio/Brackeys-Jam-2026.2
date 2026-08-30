@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hfnji17mmtku"
-path.s3tc="res://.godot/imported/boiler.png-a476e3bfaf2f56d9eae912f23292fb68.s3tc.ctex"
+uid="uid://bttg6uoiiivdb"
+path.s3tc="res://.godot/imported/ballast_repair_station_color_palette.jpg-fac789bdcb609750d525de9e578ebbe3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8925f8c872718610c5fbaa208a0e80cc"
+}
 
 [deps]
 
-source_file="res://Art/2D/UI/SystemIcons/boiler.png"
-dest_files=["res://.godot/imported/boiler.png-a476e3bfaf2f56d9eae912f23292fb68.s3tc.ctex"]
+source_file="res://Art/3D/Raw Files/ballast_repair_station_color_palette.jpg"
+dest_files=["res://.godot/imported/ballast_repair_station_color_palette.jpg-fac789bdcb609750d525de9e578ebbe3.s3tc.ctex"]
 
 [params]
 

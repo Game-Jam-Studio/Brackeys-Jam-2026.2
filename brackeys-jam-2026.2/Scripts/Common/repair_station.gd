@@ -37,6 +37,8 @@ var flash_tween: Tween
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
+		# Connect to GameState to listen for remote breakdowns
+		GameState.system_state_changed.connect(_on_system_state_changed)
 		GameState.set_system_broken(system_id, is_broken)
 	
 	var trigger = get_node_or_null("RepairTrigger")
@@ -140,3 +142,12 @@ func _update_warning_light() -> void:
 		light.light_energy = 0.0
 		if mat:
 			mat.emission_energy_multiplier = 0.0
+
+func _on_system_state_changed(changed_system_id: String, broken: bool) -> void:
+	# Ignore if the signal is for a different system
+	if changed_system_id != system_id:
+		return
+		
+	# Update the local is_broken variable only if it differs, avoiding infinite loops
+	if is_broken != broken:
+		is_broken = broken

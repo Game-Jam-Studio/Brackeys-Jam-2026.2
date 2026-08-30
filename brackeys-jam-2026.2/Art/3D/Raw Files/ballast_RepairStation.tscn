@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cw2dphf4eh0ps"]
+
+[ext_resource type="PackedScene" uid="uid://bun8h4eoys7rd" path="res://Art/3D/Raw Files/ballast_repair_station.glb" id="1_k8vwf"]
+[ext_resource type="Texture2D" uid="uid://bwleniukldab6" path="res://Art/2D/UI/SystemIcons/ballast.png" id="2_hivmf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlo24"]
+size = Vector3(4, 4.915, 1.89)
+
+[node name="Ballast_repair_station" unique_id=2082674037 instance=ExtResource("1_k8vwf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=225494790]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1458880408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030906409, 0.031583607, 0.050028324)
+shape = SubResource("BoxShape3D_hlo24")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="2" unique_id=821644155]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.19780338, 1.8020194, -0.78572845)
+modulate = Color(0.494, 0.894, 0.329, 1)
+texture = ExtResource("2_hivmf")

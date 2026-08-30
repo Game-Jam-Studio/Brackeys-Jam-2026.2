@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmh775b3h7th6"]
+
+[ext_resource type="Texture2D" uid="uid://clhaps5bxjcih" path="res://Art/2D/UI/danger.png" id="1_teynq"]
+[ext_resource type="Script" uid="uid://dyyxnuj5l461e" path="res://Taylor/alert_icon.gd" id="2_tm1ta"]
+
+[node name="AlertIcon" type="TextureRect" unique_id=1554613872]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 700.0
+offset_bottom = 700.0
+texture = ExtResource("1_teynq")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_tm1ta")

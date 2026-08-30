@@ -36,6 +36,9 @@ func _on_breakdown_tick() -> void:
 	# Generate a random float between 0.0 and 1.0
 	var roll: float = randf()
 	
+	# Output the raw roll value and the required threshold 
+	print("Roll: ", roll, " | Threshold: ", current_chance)
+	
 	if roll <= current_chance:
 		_trigger_breakdown()
 

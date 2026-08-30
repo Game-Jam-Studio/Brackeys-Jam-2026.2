@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dawyovlyymb5w"]
 
 [ext_resource type="PackedScene" uid="uid://cxc1pe7x1ig6c" path="res://Art/3D/Raw Files/Sonar_repair_station.glb" id="1_61gi5"]
+[ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="2_mye6o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jfcd7"]
 size = Vector3(4.035, 5, 2.07)
@@ -12,3 +13,8 @@ size = Vector3(4.035, 5, 2.07)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1237297183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048282444, 0.024603307, -0.04288149)
 shape = SubResource("BoxShape3D_jfcd7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="2" unique_id=447327805]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -1.0493773, -1.3607557, -1.1604843)
+modulate = Color(0.184, 0.651, 1, 1)
+texture = ExtResource("2_mye6o")

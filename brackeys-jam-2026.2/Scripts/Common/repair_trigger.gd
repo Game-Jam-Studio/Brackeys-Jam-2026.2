@@ -41,29 +41,34 @@ func can_interact() -> bool:
 func interact(_player: CharacterBody3D) -> void:
 	if prompt_sprite:
 			prompt_sprite.visible = false
-		
+	
 	if station.is_broken:
+		# Mark the system as repaired to stop the global alarm and flashing lights
 		station.is_broken = false
 		GameState.set_system_broken(station.system_id, false)
+		
+		# Lock the system in GameState so the breakdown manager cannot target it again
+		GameState.set_system_repairing(station.system_id, true)
+		
 		launch_minigame_requested.emit(station.system_id, self)
 	else:
 		PopupUI.launch_terminal("System operational.")
 	super(_player)
-	
 
 
 func end_repair(success: bool) -> void:
-	# we are leaving the state as repaired even if the player
-	# fails the minigame to not allow retries
-	station.is_broken = false
-	if on_repair_end_dialogue_key != "":
-		PopupUI.show_next_text(on_repair_end_dialogue_key)
+	# Release the system lock so the breakdown manager can target it again
+	GameState.set_system_repairing(station.system_id, false)
+	
+	#if on_repair_end_dialogue_key != "":
+	#	PopupUI.show_next_text(on_repair_end_dialogue_key)
+	
 	if success:
-		# System secured, no penalty taken
-		#PopupUI.launch_terminal("System stabilized.")
+		# System restored, no penalty taken
+		PopupUI.launch_terminal("System stabilized.")
 		station_repair_succeeded.emit(station.system_id)
 	else:
 		# Deduct flat penalty from subsystem's health
 		GameState.apply_failure_penalty(station.system_id)
-		#PopupUI.launch_terminal("System damaged during repair attempt.")
+		PopupUI.launch_terminal("System damaged during repair attempt.")
 		station_repair_failed.emit(station.system_id)
