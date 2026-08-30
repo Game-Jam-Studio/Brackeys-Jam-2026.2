@@ -83,7 +83,6 @@ const CIRCUIT_SLOTS = {
 	}
 
 
-
 func get_circuit_slots() -> Array[Texture2D]:
 	var tier = get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH)
 	var key = "corrupted" if tier == 3 else "base"
@@ -108,12 +107,12 @@ func get_ship_tier(health: float, max_health: float) -> int:
 
 func get_minigame_tier(health: float, max_health: float) -> int:
 	# TEMPORARY OVERRIDE FOR TESTING CORRUPTED ART
-	return 1
+	# return 1
 	
-	#var normalized: float = clampf(health / max_health, 0.0, 1.0)
-	#if normalized <= 0.50 or GameState.current_area_level >= 3:
-		#return 3
-	#return 1
+	var normalized: float = clampf(health / max_health, 0.0, 1.0)
+	if normalized <= 0.50 or GameState.current_area_level >= 3:
+		return 3
+	return 1
 
 
 func get_asset_texture(minigame: String, asset_name: String) -> Texture2D:
