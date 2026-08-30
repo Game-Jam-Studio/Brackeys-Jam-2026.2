@@ -1,7 +1,6 @@
 class_name DoorTrigger
 extends Interactable
 
-## Controlled by the root Door script (can also be read directly)
 var is_locked: bool = true
 
 @export var is_open: bool = false
@@ -13,7 +12,7 @@ var is_locked: bool = true
 @onready var hinge: Node3D = $"../Hinge"
 @onready var trigger_shape: CollisionShape3D = $TriggerShape
 
-@export var door_open_sound: AudioStream
+@export var door_special_open_sound: AudioStream
 @export var door_locked_sound: AudioStream
 
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
@@ -28,7 +27,7 @@ var sfx_player: AudioStreamPlayer3D
 
 func _ready() -> void:
 	sfx_player = get_parent().get_node("AudioStreamPlayer3D")
-	# If marked open at game start, snap rotation immediately
+	
 	if is_open:
 		hinge.rotation_degrees.y = open_translation_amount
 		trigger_shape.set_deferred("disabled", true)
@@ -44,13 +43,23 @@ func can_interact() -> bool:
 
 ## Overrides base Interactable interact()
 func interact(_player: CharacterBody3D) -> void:
-	print("Interact was called on: ", name)
+	var main_door = get_parent()
+	if main_door and main_door.has_method("check_item_requirement"):
+		if not main_door.check_item_requirement(_player):
+			return
+			
+	super.interact(_player)
+	
 	if not is_locked and not is_open:
-		sfx_player.stream = door_open_sound
-		sfx_player.play()
-		sfx_player.pitch_scale = randf_range(0.7, 0.8)
-		open_door()
-		if prompt_sprite:
+		sfx_player.stream = main_door.special_open_sound
+	else:
+		sfx_player.stream = door_special_open_sound
+	
+	sfx_player.play()
+	sfx_player.pitch_scale = randf_range(0.7, 0.8)
+	open_door()
+	
+	if prompt_sprite:
 			prompt_sprite.queue_free()
 	else:
 		sfx_player.stream = door_locked_sound
@@ -59,6 +68,9 @@ func interact(_player: CharacterBody3D) -> void:
 	
 	if fog_node and is_instance_valid(fog_node):
 		fog_node.queue_free()
+
+
+
 
 
 ## Opens door & disables future interactions
