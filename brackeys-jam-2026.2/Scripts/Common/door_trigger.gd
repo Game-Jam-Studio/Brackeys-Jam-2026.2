@@ -12,7 +12,7 @@ var is_locked: bool = true
 @onready var hinge: Node3D = $"../Hinge"
 @onready var trigger_shape: CollisionShape3D = $TriggerShape
 
-@export var door_special_open_sound: AudioStream
+@export var door_open_sound: AudioStream
 @export var door_locked_sound: AudioStream
 
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
@@ -51,26 +51,21 @@ func interact(_player: CharacterBody3D) -> void:
 	super.interact(_player)
 	
 	if not is_locked and not is_open:
-		sfx_player.stream = main_door.special_open_sound
-	else:
-		sfx_player.stream = door_special_open_sound
-	
-	sfx_player.play()
-	sfx_player.pitch_scale = randf_range(0.7, 0.8)
-	open_door()
-	
-	if prompt_sprite:
+		if main_door and "custom_open_sound" in main_door and main_door.custom_open_sound:
+			sfx_player.stream = main_door.custom_open_sound
+		else:
+			sfx_player.stream = door_open_sound
+		sfx_player.play()
+		sfx_player.pitch_scale = randf_range(0.7, 0.8)
+		open_door()
+		if prompt_sprite:
 			prompt_sprite.queue_free()
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
-	super(_player)
 	
 	if fog_node and is_instance_valid(fog_node):
 		fog_node.queue_free()
-
-
-
 
 
 ## Opens door & disables future interactions

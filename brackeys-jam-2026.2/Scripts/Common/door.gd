@@ -8,7 +8,7 @@ extends Node3D
 @export var mesh_mouth: Node3D
 
 @export var required_item_name: String = ""
-@export var special_open_sound: AudioStream
+@export var custom_open_sound: AudioStream
 
 @export var is_locked: bool = true:
 	set(value):

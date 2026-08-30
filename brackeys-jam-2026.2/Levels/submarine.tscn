@@ -58,56 +58,56 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4ee0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5m3m"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
 emission = Color(0.494, 0.894, 0.329, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux67b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5m3m"]
-resource_local_to_scene = true
-albedo_color = Color(0.988, 0.42, 0.008, 1)
-emission_enabled = true
-emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
 emission_energy_multiplier = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvjxq"]
 resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
+resource_local_to_scene = true
 albedo_color = Color(0.184, 0.651, 1, 1)
 emission_enabled = true
 emission = Color(0.184, 0.651, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvsvu"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v43j3"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvsvu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heocp"]
 resource_local_to_scene = true
 albedo_color = Color(0.988, 0.42, 0.008, 1)
 emission_enabled = true
 emission = Color(0.988, 0.42, 0.008, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v43j3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnq1i"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
@@ -4609,7 +4609,8 @@ transform = Transform3D(0.1515959, 0, 4.026713e-05, 0, 12.2190275, 0, -0.0005091
 
 [node name="ExitDoor" parent="Doors" unique_id=202630976 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 507.031, -0.002984099, -1083.4818)
-special_open_sound = ExtResource("28_b5m3m")
+required_item_name = "CaptainsKey"
+custom_open_sound = ExtResource("28_b5m3m")
 
 [node name="Area1Doors" type="Node3D" parent="Doors" unique_id=594892891]
 
@@ -4669,6 +4670,7 @@ transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953,
 transform = Transform3D(6.5964127, 0, -0.022159524, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 657.2457, -0.0029840171, -2031.3503)
 door_variant = 1
 required_item_name = "PowerCell"
+is_locked = false
 
 [node name="Door5" parent="Doors/Area2Doors" unique_id=1573186085 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964103, 0, 0.022158943, 0, 0.081839584, 0, -0.2801888, 0, -83.42953, 646.60583, -0.002984099, -20.965698)
@@ -4681,12 +4683,14 @@ transform = Transform3D(2.7694092, 0, -5.9869437, 0, 0.081839584, 0, 75.72114, 0
 [node name="CaptainsQuarters" parent="Doors/Area3Doors" unique_id=601837599 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 25.44748, -0.002984099, 327.4088)
 door_variant = 3
-special_open_sound = ExtResource("28_b5m3m")
+required_item_name = "Biomass"
+custom_open_sound = ExtResource("28_b5m3m")
 
 [node name="A3DoorEnter" parent="Doors/Area3Doors" unique_id=1833439369 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 368.9841, -0.002984099, -197.67682)
 door_variant = 2
-special_open_sound = ExtResource("28_ux67b")
+required_item_name = "Oil"
+custom_open_sound = ExtResource("28_ux67b")
 
 [node name="Heart" type="Node3D" parent="." unique_id=1448710218]
 transform = Transform3D(-0.39466208, 0.97079355, -0.75458485, 0.79892266, 1.1137093, 1.7650267e-08, 0.45383272, -1.1163418, -0.65620226, -56.468605, 13.031638, 15.125582)
@@ -4757,7 +4761,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 
 transform = Transform3D(0.01937657, 0, 0.99981225, 0, 1, 0, -0.99981225, 0, 0.01937657, 0, 0, 0)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_a4ee0")
+material_override = SubResource("StandardMaterial3D_b5m3m")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
@@ -4778,7 +4782,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_ux67b")
+material_override = SubResource("StandardMaterial3D_b607u")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
@@ -4799,7 +4803,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b5m3m")
+material_override = SubResource("StandardMaterial3D_mvjxq")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
@@ -4820,7 +4824,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b607u")
+material_override = SubResource("StandardMaterial3D_exdgp")
 
 [node name="Heart" parent="RepairStations/Area1" unique_id=1854801038 instance=ExtResource("24_thtfx")]
 transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9453884, -60.460575, 5.364929, 18.429985)
@@ -4846,7 +4850,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_mvjxq")
+material_override = SubResource("StandardMaterial3D_wvsvu")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
@@ -4867,7 +4871,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_exdgp")
+material_override = SubResource("StandardMaterial3D_v43j3")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973, 0, 0.4996089, 5.296033, 1.3086255, 28.410582)
@@ -4888,7 +4892,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_wvsvu")
+material_override = SubResource("StandardMaterial3D_heocp")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
@@ -4897,7 +4901,7 @@ transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0
 on_interact_dialogue_key = "A2A1-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_v43j3")
+material_override = SubResource("StandardMaterial3D_mnq1i")
 
 [node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("24_7k0iy")]
 transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.598535, 0.087592125, 1.6944573)
@@ -8797,6 +8801,7 @@ transform = Transform3D(0.06648589, 0, 0.09058298, 0, 49.41132, 0, -0.10630058, 
 material_override = ExtResource("16_x47f5")
 
 [node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
+visible = false
 
 [node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
 transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
@@ -8805,7 +8810,6 @@ mesh = SubResource("BoxMesh_huc0b")
 
 [node name="A1LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1801024593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
-visible = false
 
 [node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1LeftRoom" unique_id=453317494]
 transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -1.4879999)
@@ -8813,7 +8817,6 @@ mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="A1RightRoom" type="Node3D" parent="FogOfWar" unique_id=1007644240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
-visible = false
 
 [node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1RightRoom" unique_id=77157177]
 transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -20.518559)
@@ -8821,7 +8824,6 @@ mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="A2RightRoom" type="Node3D" parent="FogOfWar" unique_id=1925436261]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.293806)
-visible = false
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1249474506]
 transform = Transform3D(1.205097, 0, 0, 0, 1, 0, 0, 0, 1.2727767, -1.3655329, 2.343, -0.5910883)
@@ -8845,7 +8847,6 @@ mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="A3" type="Node3D" parent="FogOfWar" unique_id=1098224871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.26687, 0, 12.60541)
-visible = false
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=841442199]
 transform = Transform3D(0.61377966, 0, 0.04093597, 0, 1, 0, -0.026801238, 0, 0.93748164, 11.30184, 2.343, -1.5709572)
@@ -8874,7 +8875,6 @@ mesh = SubResource("BoxMesh_eot43")
 
 [node name="A2MainRoom" type="Node3D" parent="FogOfWar" unique_id=2143176476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.457752, 0, 11.431965)
-visible = false
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1157731373]
 transform = Transform3D(0.046353605, 1.0452278e-09, -1.300041, -3.341162e-11, 1, 1.359465e-09, 1.2031748, -1.249811e-11, 0.050085474, 2.2032065, 2.343, 1.2812808)
