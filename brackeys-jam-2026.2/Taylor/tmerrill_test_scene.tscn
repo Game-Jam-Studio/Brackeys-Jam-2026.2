@@ -35,8 +35,7 @@ script = ExtResource("1_6yilr")
 
 [node name="BreakdownManager" type="Node" parent="." unique_id=11435526]
 script = ExtResource("2_gd6t7")
-tick_rate = 1.0
-min_breakdown_chance = 0.2
+min_breakdown_chance = 0.25
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")

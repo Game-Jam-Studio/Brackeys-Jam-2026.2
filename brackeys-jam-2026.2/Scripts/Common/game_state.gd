@@ -20,6 +20,8 @@ signal system_state_changed(system_id: String, is_broken: bool)
 const MAX_SHIP_HEALTH: float = 100.0
 const MAX_SYSTEM_HEALTH: float = 100.0
 
+var active_repairs: Array[String] = []
+
 var current_area_level: int = 1
 var is_ballast_broken: bool = false:
 	set(value):
@@ -129,3 +131,29 @@ func apply_failure_penalty(system_id: String) -> void:
 			circuit_health -= repair_fail_penalty
 		_:
 			push_error("Unknown system_id: " + system_id)
+
+
+func set_system_repairing(system_id: String, is_repairing: bool) -> void:
+	if is_repairing and not active_repairs.has(system_id):
+		active_repairs.append(system_id)
+	elif not is_repairing and active_repairs.has(system_id):
+		active_repairs.erase(system_id)
+
+
+func can_system_break(system_id: String) -> bool:
+	# Reject if the player is currently inside the minigame for this system
+	if active_repairs.has(system_id):
+		return false
+		
+	# Reject if the system is already broken
+	match system_id:
+		"Ballast":
+			return not is_ballast_broken
+		"Boiler":
+			return not is_boiler_broken
+		"Sonar":
+			return not is_sonar_broken
+		"Circuit":
+			return not is_circuit_broken
+		_:
+			return false
