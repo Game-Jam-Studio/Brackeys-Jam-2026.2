@@ -46,7 +46,7 @@ func _on_main_menu_button_pressed() -> void:
 	# Must unpause the tree before loading scenes, or the new scene starts paused
 	# 
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Levels/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Van/Levels/live_main_menu.tscn")
 
 
 func _on_quit_button_pressed() -> void:

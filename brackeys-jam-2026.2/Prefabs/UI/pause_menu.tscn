@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://0sadnoulrvwg" path="res://Scripts/UI/pause_menu.gd" id="1_7jw28"]
 [ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/background_blur.gdshader" id="1_240u2"]
 [ext_resource type="Theme" uid="uid://di4ees067onas" path="res://Resources/Themes/UI_theme.tres" id="2_6tovx"]
+[ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="4_oadjm"]
+[ext_resource type="Texture2D" uid="uid://crollf131snet" path="res://Art/2D/Boiler/button_base_press.png" id="5_u50t2"]
+[ext_resource type="Texture2D" uid="uid://b4x7ekw0jlrum" path="res://Art/2D/Boiler/button_base_hover.png" id="6_gad4m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0uuj"]
 shader = ExtResource("1_240u2")
 shader_parameter/blur_amount = 2.5
-
-[sub_resource type="Theme" id="Theme_6tovx"]
-default_font_size = 24
-Label/font_sizes/font_size = 36
 
 [node name="PauseMenu" type="Control" unique_id=1764100914]
 process_mode = 3
@@ -63,36 +62,87 @@ theme = ExtResource("2_6tovx")
 text = "Game Paused"
 horizontal_alignment = 1
 
-[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground" unique_id=706555478]
-custom_minimum_size = Vector2(150, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground" unique_id=1458512369]
+propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -39.3095
-offset_right = 75.0
-offset_bottom = 94.69049
+offset_left = -78.0
+offset_top = -66.0025
+offset_right = 78.0
+offset_bottom = 125.9975
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_group_ = true
 
-[node name="ResumeButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=176723452]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer" unique_id=1492994180]
 layout_mode = 2
-theme = SubResource("Theme_6tovx")
+size_flags_horizontal = 0
+theme_override_constants/separation = 0
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer2" unique_id=1586449836]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.28, 1.28)
+texture_normal = ExtResource("4_oadjm")
+texture_pressed = ExtResource("5_u50t2")
+texture_hover = ExtResource("6_gad4m")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer2" unique_id=448043054]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
 text = "Resume"
 
-[node name="MainMenuButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=687640247]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer" unique_id=507289912]
 layout_mode = 2
-theme = ExtResource("2_6tovx")
+theme_override_constants/separation = 0
+
+[node name="Main Menu" type="TextureButton" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer3" unique_id=257664177]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.28, 1.28)
+texture_normal = ExtResource("4_oadjm")
+texture_pressed = ExtResource("5_u50t2")
+texture_hover = ExtResource("6_gad4m")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer3" unique_id=1571612971]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
 text = "Main Menu"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer" unique_id=1071369502]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer" unique_id=9846314]
 layout_mode = 2
-theme = ExtResource("2_6tovx")
+theme_override_constants/separation = 0
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer4" unique_id=147723566]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.28, 1.28)
+texture_normal = ExtResource("4_oadjm")
+texture_pressed = ExtResource("5_u50t2")
+texture_hover = ExtResource("6_gad4m")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer4" unique_id=1002185854]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer2/Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer3/Main Menu" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer4/Quit" to="." method="_on_quit_button_pressed"]
