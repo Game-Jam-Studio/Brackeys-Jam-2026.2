@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="9_thtfx"]
 [ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="10_d5ggv"]
 [ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="11_5jq4l"]
+[ext_resource type="PackedScene" uid="uid://dtebkpbbx2vbh" path="res://Taylor/ObjectiveDisplay.tscn" id="13_o81ov"]
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="14_gmhmx"]
 [ext_resource type="Material" uid="uid://bjqq84k2cil2x" path="res://Art/3D/Materials/M_FleshWalls.tres" id="15_4ddeu"]
 [ext_resource type="Material" uid="uid://nwfjx3jn1bgk" path="res://Art/3D/Materials/M_Lungs.tres" id="16_x47f5"]
@@ -52,32 +53,25 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3jn7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o81ov"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
 emission = Color(0.494, 0.894, 0.329, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o81ov"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmk5s"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmk5s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eot43"]
 resource_local_to_scene = true
 albedo_color = Color(0.988, 0.42, 0.008, 1)
 emission_enabled = true
 emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eot43"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
 emission_energy_multiplier = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4ee0"]
@@ -89,19 +83,26 @@ emission_energy_multiplier = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux67b"]
 resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5m3m"]
+resource_local_to_scene = true
 albedo_color = Color(1, 0.973, 0.035, 1)
 emission_enabled = true
 emission = Color(1, 0.973, 0.035, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5m3m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
 resource_local_to_scene = true
 albedo_color = Color(0.988, 0.42, 0.008, 1)
 emission_enabled = true
 emission = Color(0.988, 0.42, 0.008, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvjxq"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
@@ -158,6 +159,8 @@ ballast_icon = ExtResource("8_3soee")
 boiler_icon = ExtResource("9_thtfx")
 sonar_icon = ExtResource("10_d5ggv")
 circuit_icon = ExtResource("11_5jq4l")
+
+[node name="ObjectiveDisplay" parent="UI" unique_id=1597933273 instance=ExtResource("13_o81ov")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0380797, -0.005758524, 1.4067845)
@@ -4626,7 +4629,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 
 transform = Transform3D(0.01937657, 0, 0.99981225, 0, 1, 0, -0.99981225, 0, 0.01937657, 0, 0, 0)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_a3jn7")
+material_override = SubResource("StandardMaterial3D_o81ov")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
@@ -4647,7 +4650,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_o81ov")
+material_override = SubResource("StandardMaterial3D_rmk5s")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
@@ -4668,7 +4671,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_rmk5s")
+material_override = SubResource("StandardMaterial3D_eot43")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
@@ -4689,7 +4692,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_eot43")
+material_override = SubResource("StandardMaterial3D_a4ee0")
 
 [node name="Heart" parent="RepairStations/Area1" unique_id=1854801038 instance=ExtResource("24_thtfx")]
 transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9453884, -60.460575, 5.364929, 18.429985)
@@ -4715,7 +4718,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_a4ee0")
+material_override = SubResource("StandardMaterial3D_ux67b")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
@@ -4736,7 +4739,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_ux67b")
+material_override = SubResource("StandardMaterial3D_b5m3m")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973, 0, 0.4996089, 5.296033, 1.3086255, 28.410582)
@@ -4757,7 +4760,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b5m3m")
+material_override = SubResource("StandardMaterial3D_b607u")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
@@ -4766,7 +4769,7 @@ transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0
 on_interact_dialogue_key = "A2A1-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b607u")
+material_override = SubResource("StandardMaterial3D_mvjxq")
 
 [node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("24_7k0iy")]
 transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.598535, 0.087592125, 1.6944573)
@@ -7292,18 +7295,8 @@ cast_shadow = 0
 [node name="A1RightWing" type="Node3D" parent="." unique_id=244765309]
 transform = Transform3D(40.46877, 0, 0, 0, 0.02023828, 0, 0, 0, 5.6325445, 18.324478, 2.336733, -7.743326)
 
-[node name="FogOfWar" type="CSGBox3D" parent="A1RightWing" unique_id=1302529074]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0985284, -0.0037958622, 0, 3.3514504)
-layers = 2
-cast_shadow = 0
-
 [node name="A1LeftWing" type="Node3D" parent="." unique_id=1924792817]
 transform = Transform3D(1637.7213, 0, 0, 0, 0.00040958798, 0, 0, 0, 31.725557, 759.89355, 2.3840246, -51.357956)
-
-[node name="FogOfWar2" type="CSGBox3D" parent="A1LeftWing" unique_id=432799768]
-transform = Transform3D(0.024710411, 0, 0, 0, 49.411316, 0, 0, 0, 0.17753969, -0.4528054, -115.46094, 1.3747473)
-layers = 2
-cast_shadow = 0
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1292611140]
 transform = Transform3D(0.6385554, 0, 0, 0, 0.68658924, 0, 0, 0, 0.5969692, -25.87182, 0.17166102, 13.600912)

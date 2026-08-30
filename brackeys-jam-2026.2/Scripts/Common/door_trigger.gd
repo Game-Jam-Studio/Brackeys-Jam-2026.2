@@ -18,6 +18,8 @@ var is_locked: bool = true
 @export var door_open_sound: AudioStream
 @export var door_locked_sound: AudioStream
 
+@onready var prompt_sprite: Sprite3D = $"Key Prompt"
+
 var sfx_player: AudioStreamPlayer3D
 
 
@@ -27,6 +29,9 @@ func _ready() -> void:
 	if is_open:
 		hinge.rotation_degrees.y = open_translation_amount
 		trigger_shape.set_deferred("disabled", true)
+		
+		if prompt_sprite:
+			prompt_sprite.visible = false
 
 
 ## Overrides base Interactable can_interact()
@@ -41,6 +46,11 @@ func interact(_player: CharacterBody3D) -> void:
 		sfx_player.play()
 		sfx_player.pitch_scale = randf_range(0.7, 0.8)
 		open_door()
+		if prompt_sprite:
+			print("Deleting prompt sprite for: ", name)
+			prompt_sprite.queue_free()
+		else:
+			print("Prompt sprite is null!")
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
