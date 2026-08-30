@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhd83lpnmqvad"]
 
 [ext_resource type="PackedScene" uid="uid://chnwp278agd6t" path="res://Art/3D/Raw Files/Circuit_RepairStation.glb" id="1_8s2ei"]
+[ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="2_3gges"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sysrp"]
 size = Vector3(4.01, 4.955, 1.96)
@@ -12,3 +13,8 @@ size = Vector3(4.01, 4.955, 1.96)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1767696516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023759097, 0.024603426, 0)
 shape = SubResource("BoxShape3D_sysrp")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="2" unique_id=130742460]
+transform = Transform3D(0.12996794, 0, -0.0028864867, 0, 0.13, 0, 0.0028864867, 0, 0.12996794, -0.5247887, 1.848788, -0.7940561)
+modulate = Color(1, 0.973, 0.035, 1)
+texture = ExtResource("2_3gges")
