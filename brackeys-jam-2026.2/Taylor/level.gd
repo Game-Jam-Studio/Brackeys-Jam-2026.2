@@ -35,11 +35,9 @@ func _ready() -> void:
 
 # Orchestrates the repair interaction
 func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
-	print("level.gd received repair request for ", system_id)
 	
 	# Guard against duplicate emissions while a minigame/transition is in progress
 	if is_repair_active:
-		print("Request blocked because is_repair_active is TRUE.")
 		return
 	is_repair_active = true
 	

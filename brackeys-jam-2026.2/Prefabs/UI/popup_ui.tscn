@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://sork7ar11xek" path="res://Scripts/UI/popup_ui_manager.gd" id="1_qry5v"]
 [ext_resource type="Shader" uid="uid://borudwi3h4g4d" path="res://Art/Shaders/background_blur.gdshader" id="2_b6xvc"]
-[ext_resource type="Texture2D" uid="uid://b7wgu2451a1wo" path="res://Art/Placeholder/whitebox.png" id="3_ikf33"]
+[ext_resource type="Texture2D" uid="uid://dma8n5ikcmv1q" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_mid.png" id="3_ikf33"]
+[ext_resource type="Texture2D" uid="uid://b4yq7c4j38ykx" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_sane.png" id="3_qry5v"]
+[ext_resource type="Texture2D" uid="uid://cwhyac0ew2sc4" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_corrupted.png" id="4_l24tj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4jte"]
 shader = ExtResource("2_b6xvc")
@@ -11,11 +13,15 @@ shader_parameter/blur_amount = 2.5
 [node name="PopupUI" type="Node" unique_id=1913051525]
 process_mode = 3
 script = ExtResource("1_qry5v")
+tier_1_background = ExtResource("3_qry5v")
+tier_2_background = ExtResource("3_ikf33")
+tier_3_background = ExtResource("4_l24tj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 layer = 20
 
 [node name="BlurBackground" type="ColorRect" parent="CanvasLayer" unique_id=1958414001]
+visible = false
 material = SubResource("ShaderMaterial_d4jte")
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,18 +36,9 @@ offset_right = 572.0
 offset_bottom = 577.0
 text = "Resume"
 
-[node name="TerminalArt" type="TextureRect" parent="CanvasLayer" unique_id=2028318683]
-modulate = Color(0, 0, 0, 1)
-clip_contents = true
-offset_left = 236.0
-offset_top = 36.0
-offset_right = 876.0
-offset_bottom = 516.0
-focus_mode = 3
-mouse_filter = 0
-texture = ExtResource("3_ikf33")
-expand_mode = 2
-stretch_mode = 1
+[node name="BackgroundTexture" type="NinePatchRect" parent="CanvasLayer" unique_id=1849629406]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
 offset_left = 236.0
