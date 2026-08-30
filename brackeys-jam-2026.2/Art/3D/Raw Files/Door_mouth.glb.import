@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7wagup6o7da5"
-path="res://.godot/imported/Terminal.glb-482d62af2bf2caf5d55aa816053014b7.scn"
+uid="uid://bji1pc2fc2cie"
+path="res://.godot/imported/Door_mouth.glb-029f6b24677a2462db80f923598bde3e.scn"
 
 [deps]
 
-source_file="res://Art/3D/Van/Terminal.glb"
-dest_files=["res://.godot/imported/Terminal.glb-482d62af2bf2caf5d55aa816053014b7.scn"]
+source_file="res://Art/3D/Raw Files/Door_mouth.glb"
+dest_files=["res://.godot/imported/Door_mouth.glb-029f6b24677a2462db80f923598bde3e.scn"]
 
 [params]
 

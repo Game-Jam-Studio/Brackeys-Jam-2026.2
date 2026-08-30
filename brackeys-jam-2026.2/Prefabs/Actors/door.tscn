@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://fa5imaomcpyx"]
 
-[ext_resource type="Script" uid="uid://okbdr4e45i2k" path="res://Scripts/Common/door.gd" id="1_65tkf"]
+[ext_resource type="Script" uid="uid://hbyifi4sowx0" path="res://Scripts/Common/door.gd" id="1_65tkf"]
 [ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="1_dn2we"]
 [ext_resource type="ArrayMesh" uid="uid://bct6tvw6jygbi" path="res://Art/3D/Walls&Doors/Wall.tres" id="2_mw5ax"]
 [ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="3_huc0b"]
 [ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="3_sqdgx"]
 [ext_resource type="ArrayMesh" uid="uid://btbjvx70e2rky" path="res://Art/3D/Walls&Doors/Door.tres" id="4_a1bq7"]
 [ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="4_lwysg"]
+[ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="8_huc0b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65tkf"]
 albedo_color = Color(0.9064933, 0.9064934, 0.9064934, 1)
@@ -59,15 +60,21 @@ visible = false
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="DoorTrigger" type="Area3D" parent="." unique_id=1813961388]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70181394, 2.294, -0.51627344)
 script = ExtResource("1_dn2we")
 door_open_sound = ExtResource("3_sqdgx")
 door_locked_sound = ExtResource("4_lwysg")
+prompt_message = "Open"
 
 [node name="TriggerShape" type="CollisionShape3D" parent="DoorTrigger" unique_id=897058467]
 shape = SubResource("BoxShape3D_dn2we")
 debug_color = Color(0, 0.6, 0.7019608, 0.5882353)
+
+[node name="Key Prompt" type="Sprite3D" parent="DoorTrigger" unique_id=611168281]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.035918713, -0.4382763, 0.3107853)
+visible = false
+billboard = 1
+texture = ExtResource("8_huc0b")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=164148222]
 stream = ExtResource("3_sqdgx")

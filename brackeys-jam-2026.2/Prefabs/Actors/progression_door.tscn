@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cy6ww61ew7w50"]
+
+[ext_resource type="Script" uid="uid://hbyifi4sowx0" path="res://Scripts/Common/door.gd" id="1_f1q4v"]
+[ext_resource type="ArrayMesh" uid="uid://bct6tvw6jygbi" path="res://Art/3D/Walls&Doors/Wall.tres" id="2_t8dwi"]
+[ext_resource type="Material" uid="uid://eaynjnsce11m" path="res://Art/3D/Materials/M_PlainWall.tres" id="3_vtr7y"]
+[ext_resource type="ArrayMesh" uid="uid://cflywretdy5c0" path="res://Taylor/door_mechanical.tres" id="4_f1q4v"]
+[ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="5_yvdiu"]
+[ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="6_xr5ta"]
+[ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="7_kayr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
+size = Vector3(1.5, 2.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn2we"]
+size = Vector3(1.5, 2.5, 2.5)
+
+[node name="Door" type="StaticBody3D" unique_id=490510366]
+script = ExtResource("1_f1q4v")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=798253702]
+transform = Transform3D(0.014177732, 0, 0, 0, -6.197284e-10, -0.014177732, 0, 0.014177732, -6.197284e-10, -0.7675339, -1.3647499, 0)
+mesh = ExtResource("2_t8dwi")
+surface_material_override/0 = ExtResource("3_vtr7y")
+
+[node name="Hinge" type="AnimatableBody3D" parent="." unique_id=1555385922]
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Hinge" unique_id=882992822]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.7675339, -0.028752565, 5.839831e-08)
+mesh = ExtResource("4_f1q4v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=1464446871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="DoorTrigger" type="Area3D" parent="." unique_id=1813961388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+visible = false
+script = ExtResource("5_yvdiu")
+door_open_sound = ExtResource("6_xr5ta")
+door_locked_sound = ExtResource("7_kayr1")
+
+[node name="TriggerShape" type="CollisionShape3D" parent="DoorTrigger" unique_id=897058467]
+shape = SubResource("BoxShape3D_dn2we")
+debug_color = Color(0, 0.6, 0.7019608, 0.5882353)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=164148222]
+stream = ExtResource("6_xr5ta")
+attenuation_model = 3
+volume_db = -8.0
+pitch_scale = 0.8
+panning_strength = 0.0
+bus = &"SFX"
+attenuation_filter_db = 0.0

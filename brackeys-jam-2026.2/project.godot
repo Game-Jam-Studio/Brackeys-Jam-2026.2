@@ -25,6 +25,7 @@ GameState="*uid://b1e2ahys80t3j"
 PopupUI="*uid://m06rh5uwq514"
 ProgressionManager="*uid://cmvpymk7ed77e"
 AlarmManager="*uid://tyl1neg7gsa6"
+ObjectiveManager="*uid://do0uwqtv5cwqv"
 
 [display]
 
