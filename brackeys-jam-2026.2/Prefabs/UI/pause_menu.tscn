@@ -124,6 +124,7 @@ theme_override_font_sizes/font_size = 24
 text = "Main Menu"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer" unique_id=9846314]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 
