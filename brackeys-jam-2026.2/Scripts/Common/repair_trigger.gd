@@ -72,3 +72,5 @@ func end_repair(success: bool) -> void:
 		GameState.apply_failure_penalty(station.system_id)
 		PopupUI.launch_terminal("System damaged during repair attempt.")
 		station_repair_failed.emit(station.system_id)
+		
+	ObjectiveManager.record_minigame_played()

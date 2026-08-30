@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dtebkpbbx2vbh"]
+
+[ext_resource type="Script" uid="uid://cd7esf4cive5x" path="res://Taylor/objective_display.gd" id="1_lfsgl"]
+[ext_resource type="Texture2D" uid="uid://b4yq7c4j38ykx" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_sane.png" id="2_j82i0"]
+[ext_resource type="Texture2D" uid="uid://dma8n5ikcmv1q" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_mid.png" id="3_av61e"]
+[ext_resource type="Texture2D" uid="uid://cwhyac0ew2sc4" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_corrupted.png" id="4_5wq3s"]
+[ext_resource type="Theme" uid="uid://dugoseq388gc8" path="res://Resources/Themes/AI_base_theme.tres" id="5_hbqhx"]
+[ext_resource type="Theme" uid="uid://bguvkxxpo6dft" path="res://Resources/Themes/AI_mid_theme.tres" id="6_ce2s3"]
+[ext_resource type="Theme" uid="uid://b58hxr52vlcyd" path="res://Resources/Themes/AI_corrupted_theme.tres" id="7_2up36"]
+
+[node name="ObjectiveDisplay" type="Control" unique_id=1597933273]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_pivot_ratio = Vector2(0, 0)
+mouse_filter = 2
+script = ExtResource("1_lfsgl")
+tier_1_art = ExtResource("2_j82i0")
+tier_2_art = ExtResource("3_av61e")
+tier_3_art = ExtResource("4_5wq3s")
+tier_1_theme = ExtResource("5_hbqhx")
+tier_2_theme = ExtResource("6_ce2s3")
+tier_3_theme = ExtResource("7_2up36")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=546480650]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
+offset_top = 55.0
+offset_right = 2108.79
+offset_bottom = 2103.0
+grow_horizontal = 0
+scale = Vector2(0.095, 0.05)
+offset_transform_pivot_ratio = Vector2(0, 0)
+texture = ExtResource("2_j82i0")
+
+[node name="Label" type="Label" parent="." unique_id=2013089956]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -183.99988
+offset_top = 72.0
+offset_right = -9.999878
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2

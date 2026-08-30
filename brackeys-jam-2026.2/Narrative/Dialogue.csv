@@ -17,6 +17,7 @@ Logs_A1L1,A1L1-001,Captain,LOG ENTRY: Pressure needle reset done. It comes loose
 Logs_A1L2,A1L2-001,Captain,LOG ENTRY: Adjusting one steam gauge affects the others.,,
 Logs_A1L3,A1L2-001,Captain,LOG ENTRY: Sonar tested. It needs regular checks for safety.,,
 Logs_A1L4,A1L4-001,Captain,LOG ENTRY: Electrical systems stable. I must've repaired the systems a hundred times.,,
+AreaProg_A1,APA1-001,AI,VESSEL: Please insert the power cell to open the door.,,
 Tut_A2AI,A2A1-001,AI,"VESSEL: Captain, hurry and repair the ship. ",,A2A1-002
 ,A2A1-002,AI,VESSEL: You must prevent the damage from festering.,,A2A1-003
 ,A2A1-003,AI,"VESSEL: Captain, fix the pain.",,
@@ -35,6 +36,9 @@ Logs_A2L3,A2L3-001,Captain,LOG ENTRY: I feel her groaning in my soul.,Informs Pl
 Logs_A2L4,A2L4-001,Captain,"LOG ENTRY: I'm quite tired now, and hungry.",Initiation into next area,A2L4-002
 ,A2L4-002,Captain,"LOG ENTRY: I'm ready to go further, to her heart.",,A2L4-003
 ,A2L4-003,Captain,"LOG ENTRY: She has let me in, perhaps sensing my hunger. I want to eat.",,
+AreaProg_A2,APA2-001,Player Action,[The door creaks. It sounds painful.],,APA2-002
+,APA2-002,AI,"VESSEL: Oil the hinges, please.",,
+AreaProg_A3,APA3-001,AI,VESSEL: I'm hungry.,,
 Logs_A3L1,A3L1-001,Captain,LOG ENTRY: She's devoured everything.,,A3L1-002
 ,A3L1-002,Captain,LOG ENTRY: There's nothing else left,,A3L1-003
 ,A3L1-003,Captain,LOG ENTRY: She's going to eat me,,A3L1-004

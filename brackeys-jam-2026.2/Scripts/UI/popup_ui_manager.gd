@@ -42,7 +42,7 @@ func _update_popup_style() -> void:
 			
 	background_texture.texture = active_texture
 	terminal_text.theme = active_theme
-	action_button.theme = active_theme
+	terminal_text
 
 
 func load_csv_to_dictionary(file_path: String, key_column: String = "Line ID", delimiter: String = ",") -> Dictionary:
