@@ -162,6 +162,9 @@ min_breakdown_chance = 0.25
 unique_name_in_owner = true
 script = ExtResource("3_a4ee0")
 area_progression_dictionary = {
+"biomass": NodePath("CaptainsRoomUnlock"),
+"oil": NodePath("Area3Unlock"),
+"power_cell": NodePath("Area2Unlock"),
 "testUnlock": null
 }
 

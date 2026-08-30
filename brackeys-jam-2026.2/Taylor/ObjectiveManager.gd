@@ -1,8 +1,7 @@
 extends Node
 
 signal trigger_objective_dialogue(line_id: String)
-
-signal objective_updated(text: String)
+signal objective_updated(objective_name: String)
 signal objective_tier_changed(tier: int)
 signal set_display_visible(is_visible: bool)
 
@@ -11,6 +10,13 @@ var current_state: ObjectiveState = ObjectiveState.INTRO
 var minigames_played_count: int = 0
 var area_3_completion_count: int = 0
 const AREA_3_REQUIRED_LOOPS: int = 2
+
+
+func _ready() -> void:
+	ObjectiveManager.trigger_objective_dialogue.connect(_on_trigger_objective_dialogue)
+
+func _on_trigger_objective_dialogue(line_id: String) -> void:
+	start_dialogue(line_id)
 
 
 func record_minigame_played() -> void:
@@ -24,6 +30,13 @@ func record_minigame_played() -> void:
 			emit_signal("objective_tier_changed", 1)
 			emit_signal("set_display_visible", true)
 
+func complete_intro() -> void:
+	if current_state == ObjectiveState.INTRO:
+		current_state = ObjectiveState.AREA_1
+		emit_signal("objective_updated", "Insert a Power Cell into the Area 2 Door.")
+		emit_signal("trigger_objective_dialogue", "Obj-Intro-Complete")
+		emit_signal("objective_tier_changed", 1)
+		emit_signal("set_display_visible", true)
 
 func unlock_area_2() -> void:
 	current_state = ObjectiveState.AREA_2
