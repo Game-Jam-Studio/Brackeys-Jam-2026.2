@@ -4,6 +4,10 @@ extends Node
 @export var tier_2_background: Texture2D
 @export var tier_3_background: Texture2D
 
+@export var tier_1_theme: Theme
+@export var tier_2_theme: Theme
+@export var tier_3_theme: Theme
+
 @onready var background_texture: NinePatchRect
 
 var test_narrative_text := {}

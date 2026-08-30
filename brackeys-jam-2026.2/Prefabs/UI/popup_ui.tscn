@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dma8n5ikcmv1q" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_mid.png" id="3_ikf33"]
 [ext_resource type="Texture2D" uid="uid://b4yq7c4j38ykx" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_sane.png" id="3_qry5v"]
 [ext_resource type="Texture2D" uid="uid://cwhyac0ew2sc4" path="res://Art/2D/UI/TextBoxes/Asset_2D_Textbox_corrupted.png" id="4_l24tj"]
+[ext_resource type="Theme" uid="uid://dugoseq388gc8" path="res://Resources/Themes/AI_base_theme.tres" id="5_kvdop"]
+[ext_resource type="Theme" uid="uid://bguvkxxpo6dft" path="res://Resources/Themes/AI_mid_theme.tres" id="6_48cbf"]
+[ext_resource type="Theme" uid="uid://b58hxr52vlcyd" path="res://Resources/Themes/AI_corrupted_theme.tres" id="7_q3dbg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4jte"]
 shader = ExtResource("2_b6xvc")
@@ -16,6 +19,9 @@ script = ExtResource("1_qry5v")
 tier_1_background = ExtResource("3_qry5v")
 tier_2_background = ExtResource("3_ikf33")
 tier_3_background = ExtResource("4_l24tj")
+tier_1_theme = ExtResource("5_kvdop")
+tier_2_theme = ExtResource("6_48cbf")
+tier_3_theme = ExtResource("7_q3dbg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 layer = 20
@@ -29,22 +35,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=989481004]
-offset_left = 502.0
-offset_top = 546.0
-offset_right = 572.0
-offset_bottom = 577.0
-text = "Resume"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1933222531]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = -1024.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_qry5v")
 
-[node name="BackgroundTexture" type="NinePatchRect" parent="CanvasLayer" unique_id=1849629406]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TerminalText" type="RichTextLabel" parent="CanvasLayer" unique_id=1214466658]
-offset_left = 236.0
-offset_top = 36.0
-offset_right = 876.0
-offset_bottom = 516.0
+[node name="TerminalText" type="RichTextLabel" parent="CanvasLayer/TextureRect" unique_id=1214466658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 bbcode_enabled = true
+fit_content = true
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[node name="Button" type="Button" parent="CanvasLayer/TextureRect" unique_id=989481004]
+custom_maximum_size = Vector2(-1, 20.33)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -20.33
+grow_horizontal = 0
+grow_vertical = 0
+text = "OK"
+icon_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/TextureRect/Button" to="." method="_on_button_pressed"]
