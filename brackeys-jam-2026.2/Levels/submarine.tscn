@@ -4243,7 +4243,7 @@ transform = Transform3D(-0.3827128, 0, -0.3535288, 0, 0.44839123, 0, 1.3133519, 
 transform = Transform3D(0.08482824, 0, -0.3679547, 0, 0.44839123, 0, 2.1809106, 0, 0.014311891, -25.751902, 1.2088975, 7.313494)
 
 [node name="Wall_plain67" parent="Walls" unique_id=180790570 instance=ExtResource("2_avjot")]
-transform = Transform3D(0.024282068, 0, -0.3679547, 0, 0.45542413, 0, 0.6242852, 0, 0.014311891, -25.473608, 1.2088975, 14.4683895)
+transform = Transform3D(0.021002762, 0, -0.3680248, 0, 0.45542413, 0, 0.6244042, 0, 0.012379061, -25.473608, 1.2088975, 14.4683895)
 
 [node name="Wall_plain68" parent="Walls" unique_id=973576690 instance=ExtResource("2_avjot")]
 transform = Transform3D(0.7793418, 0, -0.34839797, 0, 0.45373663, 0, 2.277411, 0, 0.11922358, -23.897572, 1.2088975, 20.137545)
@@ -8959,10 +8959,19 @@ mesh = SubResource("PlaneMesh_rmk5s")
 [node name="DoorUnlock" type="Area3D" parent="." unique_id=327580905 node_paths=PackedStringArray("doors_to_unlock")]
 transform = Transform3D(6.191605, 0, -0.23284806, 0, 3.8898923, 0, 1.4824512, 0, 0.97251314, -17.606995, 1.9215932, -3.2339926)
 script = ExtResource("36_b607u")
-doors_to_unlock = [NodePath("../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../Doors/Area2Doors/Door6"), NodePath("../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../Doors/Area2Doors/A2LeftRoomExit"), NodePath("../Doors/Area2Doors/Door5")]
+doors_to_unlock = [NodePath("../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../Doors/Area2Doors/Door6"), NodePath("../Doors/Area2Doors/A2LeftRoomEnter")]
 
 [node name="DoorUnlockTrigger" type="CollisionShape3D" parent="DoorUnlock" unique_id=82933919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 1.1920929e-07, 0, 1, 0.014885902, 0, 0.023984998)
+shape = SubResource("BoxShape3D_nlb7l")
+
+[node name="DoorUnlock2" type="Area3D" parent="." unique_id=37113307 node_paths=PackedStringArray("doors_to_unlock")]
+transform = Transform3D(-1.0735629, 0, -0.98568046, 0, 3.8898923, 0, 6.2754364, 0, -0.1686241, -6.018232, 0.13452816, 23.198542)
+script = ExtResource("36_b607u")
+doors_to_unlock = [NodePath("../Doors/Area2Doors/A2LeftRoomExit"), NodePath("../Doors/Area2Doors/Door5")]
+
+[node name="DoorUnlockTrigger" type="CollisionShape3D" parent="DoorUnlock2" unique_id=2129486053]
+transform = Transform3D(1, 0, -1.8626451e-09, 0, 1, 0, 4.172325e-07, 0, 1, 0.06608629, 0, -0.83321)
 shape = SubResource("BoxShape3D_nlb7l")
 
 [editable path="Doors/Area1Doors/A1LeftRoomDoor1"]

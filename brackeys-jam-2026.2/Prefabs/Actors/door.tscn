@@ -60,6 +60,7 @@ mesh = ExtResource("5_a1bq7")
 [node name="DoorTrigger" type="Area3D" parent="." unique_id=1813961388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792, 0, -0.1755923)
 script = ExtResource("1_dn2we")
+door_open_sound = ExtResource("3_sqdgx")
 door_locked_sound = ExtResource("4_lwysg")
 prompt_message = "Open"
 
