@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrenl60idgq"
-path.s3tc="res://.godot/imported/game_title.png-f27276cccf980ffd3c315296fcdc80ab.s3tc.ctex"
+uid="uid://bn37tnycw00mr"
+path.s3tc="res://.godot/imported/Powercell_item_color_palette.jpg-17b8e385546c84e2bfc586fbde3e1f9e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8925f8c872718610c5fbaa208a0e80cc"
+}
 
 [deps]
 
-source_file="res://Art/2D/game_title.png"
-dest_files=["res://.godot/imported/game_title.png-f27276cccf980ffd3c315296fcdc80ab.s3tc.ctex"]
+source_file="res://Art/3D/Raw Files/Powercell_item_color_palette.jpg"
+dest_files=["res://.godot/imported/Powercell_item_color_palette.jpg-17b8e385546c84e2bfc586fbde3e1f9e.s3tc.ctex"]
 
 [params]
 

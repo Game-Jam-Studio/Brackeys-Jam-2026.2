@@ -1,10 +1,48 @@
 extends Node
 
+@export var tier_1_background: Texture2D
+@export var tier_2_background: Texture2D
+@export var tier_3_background: Texture2D
+
+@export var tier_1_theme: Theme
+@export var tier_2_theme: Theme
+@export var tier_3_theme: Theme
+
+@onready var background_texture: TextureRect = $CanvasLayer/TextureRect
+@onready var terminal_text: RichTextLabel = $CanvasLayer/TerminalText
+@onready var action_button: Button = $CanvasLayer/Button
+
 var test_narrative_text := {}
-
 var storyTrackerDictionary: Dictionary = {}
-
 var nextTextKey: String = ""
+
+func set_popup_text(new_text: String) -> void:
+	terminal_text.text = new_text
+	print("Debug: Terminal text set to -> ", new_text)
+
+func _update_popup_style() -> void:
+	var current_tier: int = ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH) 
+	
+	var active_texture: Texture2D
+	var active_theme: Theme
+	
+	match current_tier:
+		1:
+			active_texture = tier_1_background
+			active_theme = tier_1_theme
+		2:
+			active_texture = tier_2_background
+			active_theme = tier_2_theme
+		3:
+			active_texture = tier_3_background
+			active_theme = tier_3_theme
+		_:
+			active_texture = tier_1_background
+			active_theme = tier_1_theme
+			
+	background_texture.texture = active_texture
+	terminal_text.theme = active_theme
+	action_button.theme = active_theme
 
 
 func load_csv_to_dictionary(file_path: String, key_column: String = "Line ID", delimiter: String = ",") -> Dictionary:
@@ -71,7 +109,10 @@ func launch_terminal(text: String) -> void:
 	# only send pause signal if opening for the first time
 	if $CanvasLayer.visible == false:
 		get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
-	$CanvasLayer/TerminalText.text = "[color=green][font_size=30]"+text+"[/font_size][/color]"
+	
+	_update_popup_style()
+	set_popup_text(text)
+	
 	$CanvasLayer.visible = true
 
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fa5imaomcpyx"]
 
-[ext_resource type="Script" uid="uid://hbyifi4sowx0" path="res://Scripts/Common/door.gd" id="1_65tkf"]
+[ext_resource type="Script" path="res://Scripts/Common/door.gd" id="1_65tkf"]
 [ext_resource type="Script" uid="uid://c7ps5nfkbj1jw" path="res://Scripts/Common/door_trigger.gd" id="1_dn2we"]
 [ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="3_sqdgx"]
 [ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="4_lwysg"]

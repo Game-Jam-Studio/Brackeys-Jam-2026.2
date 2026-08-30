@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrenl60idgq"
-path.s3tc="res://.godot/imported/game_title.png-f27276cccf980ffd3c315296fcdc80ab.s3tc.ctex"
+uid="uid://cm1eeamc3ajh2"
+path.s3tc="res://.godot/imported/Biomass_item_color_palette.jpg-2805df4e5544b4065afe7ff1c7f010fe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8925f8c872718610c5fbaa208a0e80cc"
+}
 
 [deps]
 
-source_file="res://Art/2D/game_title.png"
-dest_files=["res://.godot/imported/game_title.png-f27276cccf980ffd3c315296fcdc80ab.s3tc.ctex"]
+source_file="res://Art/3D/Raw Files/Biomass_item_color_palette.jpg"
+dest_files=["res://.godot/imported/Biomass_item_color_palette.jpg-2805df4e5544b4065afe7ff1c7f010fe.s3tc.ctex"]
 
 [params]
 

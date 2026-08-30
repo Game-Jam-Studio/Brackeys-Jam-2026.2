@@ -1,15 +1,15 @@
 [remap]
 
-importer="ArrayMesh"
+importer="scene"
 importer_version=1
-type="ArrayMesh"
-uid="uid://dinyvb6uuypji"
-path="res://.godot/imported/sub_control_interior.glb-3e1c6a6f68c7185aa8b9efa8b167ae66.res"
+type="PackedScene"
+uid="uid://bbsahrowljfu"
+path="res://.godot/imported/Oil_item.glb-74114bb050203783554777e73908787a.scn"
 
 [deps]
 
-source_file="res://Art/3D/Van/sub_control_interior.glb"
-dest_files=["res://.godot/imported/sub_control_interior.glb-3e1c6a6f68c7185aa8b9efa8b167ae66.res"]
+source_file="res://Art/3D/Raw Files/Oil_item.glb"
+dest_files=["res://.godot/imported/Oil_item.glb-74114bb050203783554777e73908787a.scn"]
 
 [params]
 

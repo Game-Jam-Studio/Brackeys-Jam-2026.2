@@ -38,7 +38,6 @@ func _on_gui_input(event: InputEvent) -> void:
 			#Release Mouse
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				warp_mouse(start_pos)
-				#print(value)
 	elif event is InputEventMouseMotion and dragging and !freeze:
 	
 	#Handle Dial Rotation
@@ -47,14 +46,12 @@ func _on_gui_input(event: InputEvent) -> void:
 			new_value = deg_to_rad(15)
 			value_changed.emit(new_value)
 			value = 0
-			#print(new_value)
 			play_dial_sound()
 		elif value < -0.5:
 			rotation -= deg_to_rad(15)
 			new_value = deg_to_rad(-15)
 			value_changed.emit(new_value)
 			value = 0
-			#print(new_value)
 			play_dial_sound()
 		if event.screen_relative.x > mouse_movement_threshold:
 			value += 0.025

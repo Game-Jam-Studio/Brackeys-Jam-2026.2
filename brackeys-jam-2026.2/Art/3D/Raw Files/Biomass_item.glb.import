@@ -1,15 +1,15 @@
 [remap]
 
-importer="ArrayMesh"
+importer="scene"
 importer_version=1
-type="ArrayMesh"
-uid="uid://dinyvb6uuypji"
-path="res://.godot/imported/sub_control_interior.glb-3e1c6a6f68c7185aa8b9efa8b167ae66.res"
+type="PackedScene"
+uid="uid://xcjywykrsqkx"
+path="res://.godot/imported/Biomass_item.glb-0815f866fc65d99a4e358d334393b68d.scn"
 
 [deps]
 
-source_file="res://Art/3D/Van/sub_control_interior.glb"
-dest_files=["res://.godot/imported/sub_control_interior.glb-3e1c6a6f68c7185aa8b9efa8b167ae66.res"]
+source_file="res://Art/3D/Raw Files/Biomass_item.glb"
+dest_files=["res://.godot/imported/Biomass_item.glb-0815f866fc65d99a4e358d334393b68d.scn"]
 
 [params]
 
