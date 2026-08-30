@@ -10,12 +10,9 @@ extends Node
 @export var max_breakdown_chance: float = 0.8 
 
 const ALL_SYSTEMS: Array[String] = ["Ballast", "Boiler", "Sonar", "Circuit"]
-var system_pool: Array[String] = []
 
 
 func _ready() -> void:
-	_refill_pool()
-	
 	# Create & start the recurring breakdown check timer
 	var timer = Timer.new()
 	timer.wait_time = tick_rate
@@ -24,47 +21,34 @@ func _ready() -> void:
 	add_child(timer)
 
 
-func _refill_pool() -> void:
-	system_pool = ALL_SYSTEMS.duplicate()
-	system_pool.shuffle()
-
-
 func _on_breakdown_tick() -> void:
+	# Block breakdowns if a system is broken or player is currently in a minigame
+	if GameState.get_broken_count() > 0 or not GameState.active_repairs.is_empty():
+		return
+	
 	var health_ratio: float = GameState.ship_health / GameState.MAX_SHIP_HEALTH
 	var current_chance: float = lerp(max_breakdown_chance, min_breakdown_chance, health_ratio)
 	
-	# Generate a random float between 0.0 and 1.0
 	var roll: float = randf()
-	
-	# Output the raw roll value and the required threshold 
 	print("Roll: ", roll, " | Threshold: ", current_chance)
 	
 	if roll <= current_chance:
 		_trigger_breakdown()
 
 
+func _is_any_system_broken() -> bool:
+	return GameState.is_ballast_broken or GameState.is_boiler_broken or GameState.is_sonar_broken or GameState.is_circuit_broken
+
+
 func _trigger_breakdown() -> void:
-	var attempts: int = 0
-	
-	# Loop until we find a valid unbroken system or exhaust all options
-	while attempts < ALL_SYSTEMS.size():
-		if system_pool.is_empty():
-			_refill_pool()
-			
-		var candidate: String = system_pool.pop_front()
-		var is_broken: bool = false
+	# Create a randomized copy so it inspects systems in a different order each time, avoiding immediate repeats
+	var candidate_pool = ALL_SYSTEMS.duplicate()
+	candidate_pool.shuffle()
+
+	for candidate in candidate_pool:
+		if not GameState.can_system_break(candidate):
+			continue
 		
-		# Check the current status directly from GameState
-		match candidate:
-			"Ballast": is_broken = GameState.is_ballast_broken
-			"Boiler": is_broken = GameState.is_boiler_broken
-			"Sonar": is_broken = GameState.is_sonar_broken
-			"Circuit": is_broken = GameState.is_circuit_broken
-			
-		if not is_broken:
-			GameState.set_system_broken(candidate, true)
-			# Placeholder for P0 HUD alert integration
-			print("System Broken: ", candidate)
-			return
-			
-		attempts += 1
+		GameState.set_system_broken(candidate, true)
+		print("System Broken: ", candidate)
+		return

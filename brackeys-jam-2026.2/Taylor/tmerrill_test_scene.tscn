@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hfnji17mmtku" path="res://Art/2D/UI/SystemIcons/boiler.png" id="11_eei1b"]
 [ext_resource type="Texture2D" uid="uid://ctyhxkbxcj10e" path="res://Art/2D/UI/SystemIcons/sonar.png" id="12_0ydjy"]
 [ext_resource type="Texture2D" uid="uid://cqb2ymn1tv4nf" path="res://Art/2D/UI/SystemIcons/circuit.png" id="13_dgd6d"]
+[ext_resource type="PackedScene" uid="uid://dtebkpbbx2vbh" path="res://Taylor/ObjectiveDisplay.tscn" id="14_0ydjy"]
 [ext_resource type="PackedScene" uid="uid://bblr6uwaeevpn" path="res://Taylor/control_terminal.tscn" id="15_eei1b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
@@ -98,6 +99,8 @@ ballast_icon = ExtResource("10_8ye4u")
 boiler_icon = ExtResource("11_eei1b")
 sonar_icon = ExtResource("12_0ydjy")
 circuit_icon = ExtResource("13_dgd6d")
+
+[node name="ObjectiveDisplay" parent="UI" unique_id=1597933273 instance=ExtResource("14_0ydjy")]
 
 [node name="Ballast" parent="." unique_id=1560707899 instance=ExtResource("6_4ywd5")]
 transform = Transform3D(0.6999992, 0, -0.0010283373, 0, 0.7, 0, 0.0010283373, 0, 0.6999992, 1.3999245, 1.6752441, 5.697686)

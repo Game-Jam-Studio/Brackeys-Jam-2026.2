@@ -1,10 +1,7 @@
 class_name DoorTrigger
 extends Interactable
 
-## Controlled by the root Door script (can also be read directly)
 var is_locked: bool = true
-
-@export var on_door_open_dialogue_key: String = ""
 
 @export var is_open: bool = false
 @export var open_translation_amount: float = 1.5
@@ -18,15 +15,25 @@ var is_locked: bool = true
 @export var door_open_sound: AudioStream
 @export var door_locked_sound: AudioStream
 
+@onready var prompt_sprite: Sprite3D = $"Key Prompt"
+
+# For deleting the Area1 Fog
+@export var other_door_trigger: Node3D
+@export var fog_node: Node3D
+var fog_removed: bool = false
+
 var sfx_player: AudioStreamPlayer3D
 
 
 func _ready() -> void:
 	sfx_player = get_parent().get_node("AudioStreamPlayer3D")
-	# If marked open at game start, snap rotation immediately
+	
 	if is_open:
 		hinge.rotation_degrees.y = open_translation_amount
 		trigger_shape.set_deferred("disabled", true)
+	
+	if prompt_sprite:
+		prompt_sprite.visible = false
 
 
 ## Overrides base Interactable can_interact()
@@ -36,26 +43,37 @@ func can_interact() -> bool:
 
 ## Overrides base Interactable interact()
 func interact(_player: CharacterBody3D) -> void:
+	var main_door = get_parent()
+	if main_door and main_door.has_method("check_item_requirement"):
+		if not main_door.check_item_requirement(_player):
+			return
+			
+	super.interact(_player)
+	
 	if not is_locked and not is_open:
-		sfx_player.stream = door_open_sound
+		if main_door and "custom_open_sound" in main_door and main_door.custom_open_sound:
+			sfx_player.stream = main_door.custom_open_sound
+		else:
+			sfx_player.stream = door_open_sound
 		sfx_player.play()
 		sfx_player.pitch_scale = randf_range(0.7, 0.8)
 		open_door()
+		if prompt_sprite:
+			prompt_sprite.queue_free()
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
-	super(_player)
+	
+	if fog_node and is_instance_valid(fog_node):
+		fog_node.queue_free()
 
 
-## Smoothly rotates the hinge and disables future interactions
+## Opens door & disables future interactions
 func open_door() -> void:
 	is_open = true
 	trigger_shape.set_deferred("disabled", true)
 	
-	if on_door_open_dialogue_key != "":
-		PopupUI.show_next_text(on_door_open_dialogue_key)
-	
-	# Animate the AnimatableBody3D rotation smoothly
+	# Slide the AnimatableBody3D smoothly
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
@@ -64,3 +82,13 @@ func open_door() -> void:
 ## Helper function to unlock the door externally
 func unlock() -> void:
 	is_locked = false
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = true
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D and prompt_sprite:
+		prompt_sprite.visible = false

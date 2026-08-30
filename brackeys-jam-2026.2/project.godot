@@ -24,7 +24,9 @@ buses/default_bus_layout="uid://bg7tkttat6wdm"
 GameState="*uid://b1e2ahys80t3j"
 PopupUI="*uid://m06rh5uwq514"
 ProgressionManager="*uid://cmvpymk7ed77e"
+AreaProgressionSystem="*uid://b1klxepxeo4kt"
 AlarmManager="*uid://tyl1neg7gsa6"
+ObjectiveManager="*uid://do0uwqtv5cwqv"
 
 [display]
 
