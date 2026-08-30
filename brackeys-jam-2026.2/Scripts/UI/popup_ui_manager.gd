@@ -1,7 +1,6 @@
 extends Node
 
 var test_narrative_text := {}
-@export var shipHealthControl: Control
 
 var storyTrackerDictionary: Dictionary = {}
 
@@ -77,7 +76,6 @@ func launch_terminal(text: String) -> void:
 
 
 func close_terminal() -> void:
-	shipHealthControl.visible = false
 	get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()
 	$CanvasLayer.visible = false
 

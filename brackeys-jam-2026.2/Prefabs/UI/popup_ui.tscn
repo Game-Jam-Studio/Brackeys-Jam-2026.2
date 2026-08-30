@@ -8,10 +8,9 @@
 shader = ExtResource("2_b6xvc")
 shader_parameter/blur_amount = 2.5
 
-[node name="PopupUI" type="Node" unique_id=1913051525 node_paths=PackedStringArray("shipHealthControl")]
+[node name="PopupUI" type="Node" unique_id=1913051525]
 process_mode = 3
 script = ExtResource("1_qry5v")
-shipHealthControl = NodePath("")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368976715]
 layer = 20
