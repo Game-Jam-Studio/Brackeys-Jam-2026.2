@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://c10sj2b0qxh30" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="Texture2D" uid="uid://bw4g7nh88u8ll" path="res://Art/3D/Van/character_v2_color_palette.jpg" id="2_5m5cv"]
+[ext_resource type="Texture2D" uid="uid://8yd0u7r6hl3s" path="res://Art/2D/color_palette.jpg" id="2_5m5cv"]
 [ext_resource type="Animation" uid="uid://0xq4yfa0jkkt" path="res://Animations/Jump_Full_Long.res" id="3_cisnj"]
 [ext_resource type="Animation" uid="uid://bsqj4yvv21qkb" path="res://Animations/Death_A.res" id="3_uwwlx"]
 [ext_resource type="Animation" uid="uid://dgpl77etuehy2" path="res://Animations/Death_A_Pose.res" id="4_5m5cv"]
