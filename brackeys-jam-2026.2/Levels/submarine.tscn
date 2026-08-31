@@ -238,7 +238,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0380797, -0.005758524, 1.4
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
-transform = Transform3D(0.27302644, 0, 0, 0, 1, 0, 0, 0, 0.08619889, 2.8364687, 0, 0.2968378)
+transform = Transform3D(0.14, 0, 0, 0, 1, 0, 0, 0, 0.086, 0.29303265, 0, 0.2968378)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=63868684]
@@ -247,6 +247,18 @@ material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1176603071]
+shape = SubResource("BoxShape3D_i0uuj")
+
+[node name="Floor2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1669360077]
+transform = Transform3D(0.62408495, 0, 0, 0, 1, 0, 0, 0, 0.27440417, 19.387165, 0, 0.2968378)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor2" unique_id=231993559]
+transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
+material_override = ExtResource("9_ce3kk")
+mesh = SubResource("BoxMesh_gl5qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor2" unique_id=505658512]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor5" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1563725079]
@@ -307,18 +319,6 @@ material_override = ExtResource("9_ce3kk")
 mesh = SubResource("BoxMesh_gl5qx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor9" unique_id=1340149357]
-shape = SubResource("BoxShape3D_i0uuj")
-
-[node name="Floor2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1669360077]
-transform = Transform3D(0.62408495, 0, 0, 0, 1, 0, 0, 0, 0.27440417, 19.387165, 0, 0.2968378)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor2" unique_id=231993559]
-transform = Transform3D(50, 0, 0, 0, 0.2, 0, 0, 0, 50, 0, 0, 0)
-material_override = ExtResource("9_ce3kk")
-mesh = SubResource("BoxMesh_gl5qx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor2" unique_id=505658512]
 shape = SubResource("BoxShape3D_i0uuj")
 
 [node name="Floor3" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1691383662]
@@ -1284,7 +1284,7 @@ shadow_enabled = true
 omni_range = 31.535
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=459914544]
-transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, -12.980187, 1.0411316, -18.032024)
+transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, -12.980189, 2.9475503, -18.032026)
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_energy = 4.219
 light_indirect_energy = 10.539
@@ -1422,6 +1422,7 @@ omni_range = 31.535
 
 [node name="OmniLight3D42" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=1365667499]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 2.6063156, 1.0411307, -23.682076)
+visible = false
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_indirect_energy = 10.539
 light_cull_mask = 4294967293
@@ -1430,6 +1431,7 @@ omni_range = 31.535
 
 [node name="OmniLight3D39" type="OmniLight3D" parent="Lighting/Area1Lights" unique_id=1882487481]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 1.1905963, 1.0411307, -26.582542)
+visible = false
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_indirect_energy = 10.539
 light_cull_mask = 4294967293
@@ -4362,7 +4364,7 @@ transform = Transform3D(0.9782989, 0, 0, 0, 0.44839123, 0, 0, 0, 0.43658704, 13.
 transform = Transform3D(1.919123, 0, 0, 0, 0.44839123, 0, 0, 0, 0.43658704, 3.1148257, 1.2088965, -4.9171576)
 
 [node name="Wall_plain9" parent="Walls" unique_id=1108790183 instance=ExtResource("2_avjot")]
-transform = Transform3D(1.1995628, 0, 0, 0, 0.44839123, 0, 0, 0, 0.43658704, -0.83363986, 1.2088965, 4.0640497)
+transform = Transform3D(1.1995628, 0, 0, 0, 0.4483913, 0, 0, 0, 0.43658707, -0.83363986, 1.2088965, 4.0640497)
 
 [node name="Wall_plain11" parent="Walls" unique_id=1530910929 instance=ExtResource("2_avjot")]
 transform = Transform3D(0.64683324, 0, 0, 0, 0.44839123, 0, 0, 0, 0.43658704, 8.786048, 1.2088965, 8.114288)

@@ -1,8 +1,8 @@
 extends Control
 
-@onready var resume_button: Button = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/ResumeButton
-@onready var main_menu_button: Button = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/MainMenuButton
-@onready var quit_button: Button = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/ButtonContainer/QuitButton
+@onready var resume_button: TextureButton = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer2/Resume
+@onready var main_menu_button: TextureButton = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer3/MainMenu
+@onready var quit_button: TextureButton = $CanvasLayer/BlurBackground/CenterContainer/MenuBackground/VBoxContainer/HBoxContainer4/Quit
 
 var pause_counter: int = 0
 

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dmdn8fxobenak" path="res://Audio/SFX/Door Locked door_lock_handle_locked_01.wav" id="4_lwysg"]
 [ext_resource type="ArrayMesh" uid="uid://cflywretdy5c0" path="res://Taylor/door_mechanical.tres" id="5_6dpcf"]
 [ext_resource type="ArrayMesh" uid="uid://4dvn23fv4ets" path="res://Taylor/door_mouth.tres" id="5_a1bq7"]
-[ext_resource type="ArrayMesh" uid="uid://blyv4x8jj1fwg" path="res://Taylor/door_old.tres" id="6_tnqrh"]
+[ext_resource type="ArrayMesh" path="res://Taylor/door_old.tres" id="6_tnqrh"]
 [ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="8_huc0b"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_huc0b"]

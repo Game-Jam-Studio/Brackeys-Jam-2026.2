@@ -68,7 +68,7 @@ func _on_button_button_down() -> void:
 			minigame_completed.emit(true)
 			queue_free()
 			return
-		progress_bar.rotation_degrees = randi_range(-goal_min_range, -goal_max_range) + 180
+		progress_bar.rotation_degrees = randf_range(-goal_min_range, -goal_max_range) + 180
 		color_rect.rotation = PI / 2
 		speed = speed * speed_multiplier_per_round
 		audio.stream = UI_ACCEPT
