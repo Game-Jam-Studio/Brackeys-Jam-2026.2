@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ywo2ttkmenk8" path="res://Art/3D/Walls&Doors/Wall_recessed_1.fbx" id="3_ce3kk"]
 [ext_resource type="Script" uid="uid://cn1dyylbrayw0" path="res://Scripts/Common/camera_3d.gd" id="3_u361w"]
 [ext_resource type="PackedScene" uid="uid://cyf0si2728nr" path="res://Prefabs/UI/pause_menu.tscn" id="4_br6ap"]
+[ext_resource type="AudioStream" uid="uid://bnqd3xh5j3e8n" path="res://Audio/SFX/Door Open metal_gate_automatic_door_squeak_01.wav" id="4_exdgp"]
 [ext_resource type="PackedScene" uid="uid://slxeo3jjapnw" path="res://Art/3D/Walls&Doors/Wall_recessed_2.fbx" id="4_gmhmx"]
 [ext_resource type="Script" uid="uid://bm7h8ly6eknfw" path="res://Scripts/Common/area_progression_value.gd" id="4_ux67b"]
 [ext_resource type="PackedScene" uid="uid://cpr2lvijkkja0" path="res://Art/3D/Walls&Doors/Outer_corner_plain.fbx" id="5_4ddeu"]
@@ -35,7 +36,8 @@
 [ext_resource type="AudioStream" uid="uid://b6wswc28w341e" path="res://Audio/SFX/old_door.wav" id="28_ux67b"]
 [ext_resource type="PackedScene" uid="uid://be22kb8cqnx72" path="res://Art/3D/PlaceableObjects/simple_table.tscn" id="29_a3jn7"]
 [ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="31_rmk5s"]
-[ext_resource type="Script" uid="uid://4idt508xifg7" path="res://Levels/door_unlock.gd" id="36_b607u"]
+[ext_resource type="PackedScene" uid="uid://cybc4yioslff4" path="res://Taylor/powercell_item.tscn" id="36_b607u"]
+[ext_resource type="PackedScene" uid="uid://4fds2p1ksg0w" path="res://Taylor/oil_item.tscn" id="37_mvjxq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,62 +61,6 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b607u"]
-resource_local_to_scene = true
-albedo_color = Color(0.494, 0.894, 0.329, 1)
-emission_enabled = true
-emission = Color(0.494, 0.894, 0.329, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvjxq"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0.973, 0.035, 1)
-emission_enabled = true
-emission = Color(1, 0.973, 0.035, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
-resource_local_to_scene = true
-albedo_color = Color(0.988, 0.42, 0.008, 1)
-emission_enabled = true
-emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvsvu"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v43j3"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heocp"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0.973, 0.035, 1)
-emission_enabled = true
-emission = Color(1, 0.973, 0.035, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnq1i"]
-resource_local_to_scene = true
-albedo_color = Color(0.988, 0.42, 0.008, 1)
-emission_enabled = true
-emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n22tq"]
-resource_local_to_scene = true
-albedo_color = Color(0.494, 0.894, 0.329, 1)
-emission_enabled = true
-emission = Color(0.494, 0.894, 0.329, 1)
-emission_energy_multiplier = 0.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15cjb"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
@@ -136,26 +82,80 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_rmk5s"]
 material = SubResource("StandardMaterial3D_516el")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8631h"]
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_eot43"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ha2e"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4ee0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nlb7l"]
-size = Vector3(1, 1.2254639, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8631h"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eot43"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exdgp"]
+resource_local_to_scene = true
+albedo_color = Color(0.494, 0.894, 0.329, 1)
+emission_enabled = true
+emission = Color(0.494, 0.894, 0.329, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvsvu"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v43j3"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heocp"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnq1i"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n22tq"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8kx2"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awb4d"]
+resource_local_to_scene = true
+albedo_color = Color(0.494, 0.894, 0.329, 1)
+emission_enabled = true
+emission = Color(0.494, 0.894, 0.329, 1)
+emission_energy_multiplier = 0.0
 
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_2a835")
 
 [node name="BreakdownManager" type="Node" parent="." unique_id=1374321493]
 script = ExtResource("2_7k0iy")
+min_breakdown_chance = 0.2
 
 [node name="AreaProgressionSystem" type="Node" parent="." unique_id=1264359212 node_paths=PackedStringArray("area_progression_dictionary")]
 unique_name_in_owner = true
@@ -166,26 +166,28 @@ area_progression_dictionary = {
 "power_cell": NodePath("Area2Unlock"),
 "testUnlock": null
 }
+door_unlocked_sound = ExtResource("4_exdgp")
 
 [node name="Area2Unlock" type="Node" parent="AreaProgressionSystem" unique_id=748861400 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
-doors_to_unlock = [NodePath("../../Doors/Area2Doors/A2RightRoomDoorEnter"), NodePath("../../Doors/Area2Doors/A2RightRoomExit"), NodePath("../../Doors/Area2Doors/A2MainRoomEnter"), NodePath("../../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../../Doors/Area2Doors/A2LeftRoomExit")]
+doors_to_unlock = [NodePath("../../Doors/Area2Doors/Objective1Door"), NodePath("../../Doors/Area2Doors/CorridorDoor"), NodePath("../../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../../Doors/Area2Doors/A2LeftRoomExit")]
 area_to_unlock = 2
 
 [node name="Area3Unlock" type="Node" parent="AreaProgressionSystem" unique_id=73855927 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
-doors_to_unlock = [NodePath("../../Doors/Area3Doors/A3DoorEnter")]
+doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective2Door")]
 area_to_unlock = 3
 
 [node name="CaptainsRoomUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1178640440 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
-doors_to_unlock = [NodePath("../../Doors/ExitDoor")]
+doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective3Door")]
 area_to_unlock = 4
 
 [node name="ExitDoorUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1213014822 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
-doors_to_unlock = [NodePath("../../Doors/Area3Doors/CaptainsQuarters")]
-area_to_unlock = 5
+doors_to_unlock = [NodePath("../../Doors/ExitDoor")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AreaProgressionSystem" unique_id=391200305]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=506885620]
 environment = SubResource("Environment_v111v")
@@ -235,6 +237,7 @@ circuit_icon = ExtResource("11_5jq4l")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0380797, -0.005758524, 1.4067845)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
@@ -4610,6 +4613,164 @@ transform = Transform3D(-1.8979787e-08, 0, 0.3645974, 0, 0.4483909, 0, -0.434207
 [node name="Inner_corner_plain12" parent="Walls" unique_id=783099506 instance=ExtResource("6_x47f5")]
 transform = Transform3D(0.40970454, 0, 1.04111835e-14, 0, 0.4483909, 0, 5.0283493e-15, 0, 0.42737922, 15.925045, 1.209, -10.770214)
 
+[node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
+
+[node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
+transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
+material_override = SubResource("StandardMaterial3D_15cjb")
+mesh = SubResource("BoxMesh_huc0b")
+
+[node name="A1LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1801024593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1LeftRoom" unique_id=453317494]
+transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -1.4879999)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="A1RightRoom" type="Node3D" parent="FogOfWar" unique_id=1007644240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1RightRoom" unique_id=77157177]
+transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -20.518559)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="A2RightRoom" type="Node3D" parent="FogOfWar" unique_id=1925436261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.293806)
+
+[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1249474506]
+transform = Transform3D(1.205097, 0, 0, 0, 1, 0, 0, 0, 1.2727767, -1.3655329, 2.343, -0.5910883)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1512294722]
+transform = Transform3D(6.024, 0, 0, 0, 2, 0, 0, 0, 6.363, -0.92581534, 1.9232581, -1.1480846)
+mesh = SubResource("BoxMesh_rmk5s")
+
+[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1928919263]
+transform = Transform3D(-0.0019072406, 0, 0.929582, 0, 0.99999994, 0, -0.601553, 0, -0.0029473538, 15.096166, 2.3586195, 1.7193382)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1003842810]
+transform = Transform3D(-0.0009906256, 0, 2.0390012, 0, 0.99999994, 0, -0.31244814, 0, -0.0064649032, -1.0933926, 2.3586195, 2.9730978)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=829509078]
+transform = Transform3D(-0.022980632, 0, 0.3403234, 0, 1, 0, -0.2719431, 0, -0.028759152, -12.6723385, 2.3586195, 0.37093714)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="A2MainRoom" type="Node3D" parent="FogOfWar" unique_id=2143176476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.457752, 0, 11.431965)
+
+[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1157731373]
+transform = Transform3D(0.046353605, 1.0452278e-09, -1.300041, -3.341162e-11, 1, 1.359465e-09, 1.2031748, -1.249811e-11, 0.050085474, 2.2032065, 2.343, 1.2812808)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=453281256]
+transform = Transform3D(-0.7802969, -4.502779e-11, 0.019208154, -2.165543e-11, 1, 1.2136021e-09, -0.012906764, 1.0443322e-09, -1.161256, 2.3614979, 2.343, -15.682837)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog8" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1401514309]
+transform = Transform3D(-0.77978677, -4.5027794e-11, -0.042102676, -6.751091e-11, 1, 1.103263e-09, 0.031024136, 1.0443322e-09, -1.0582442, 11.618975, 2.343, -18.193632)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=2376705]
+transform = Transform3D(-0.7802969, -4.502779e-11, 0.019208154, -2.165543e-11, 1, 1.2136021e-09, -0.012906764, 1.0443322e-09, -1.161256, 7.361813, 2.343, 14.017092)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=829225830]
+transform = Transform3D(0.40445873, 0, -0.1586758, 0, 0.99999976, 0, 0.07892842, 0, 0.8131141, 11.515401, 2.343, 11.128169)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=312039040]
+transform = Transform3D(0.49539688, 0, 0.66300416, 0, 0.99999976, 0, -0.23159909, 0, 1.4181846, 6.628807, 2.537928, 2.8892097)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog7" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=552535330]
+transform = Transform3D(0.5468002, 0, 0.0232099, 0, 0.99999976, 0, -0.00810763, 0, 1.5653381, 1.3923647, 2.4048076, 5.6772723)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="A2LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1405358068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30875, 0, 22.208553)
+
+[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1211420760]
+transform = Transform3D(1.180443, 0, 0, 0, 1, 0, 0, 0, 1.2727767, 1.9110999, 2.343, 3.7414207)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog7" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=953805772]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.8111017, -7.8948956, 3.4574428, 1.2072716)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=888625721]
+transform = Transform3D(0.9599572, 0, 0, 0, 1, 0, 0, 0, 0.5551284, -0.018373966, 2.343, -3.7600822)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1275817762]
+transform = Transform3D(0.4000463, 0, 0.25356555, 0, 1, 0, -0.44333842, 0, 0.22880475, 6.77927, 2.3586195, 1.102459)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1577984010]
+transform = Transform3D(-0.022980632, 0, 0.3403234, 0, 1, 0, -0.2719431, 0, -0.028759152, -8.804467, 2.3586195, 4.499378)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=229062888]
+transform = Transform3D(0.023484757, 0, 0.3380431, 0, 1, 0, -0.16293694, 0, 0.04872349, -8.398122, 2.3586195, 1.4865112)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog6" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1915397923]
+transform = Transform3D(-0.0085818395, 0, 0.70552695, 0, 0.99999994, 0, -0.46879807, 0, -0.012915477, 11.781697, 2.3586195, -3.5819893)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Corridor" type="Node3D" parent="FogOfWar" unique_id=1016450450]
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/Corridor" unique_id=853818553]
+transform = Transform3D(0.24748513, 0, 0.18227445, 0, 0.99999976, 0, -0.10885872, 0, 0.41439238, -7.7000885, 2.3561225, 11.575981)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog1" type="MeshInstance3D" parent="FogOfWar/Corridor" unique_id=621455361]
+transform = Transform3D(0.24767934, 0, 0.0062758964, 0, 0.99999976, 0, -0.003236794, 0, 0.48023444, -4.416275, 2.3561225, 11.025322)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="A3" type="Node3D" parent="FogOfWar" unique_id=1098224871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.26687, 0, 12.60541)
+visible = false
+
+[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=841442199]
+transform = Transform3D(0.61377966, 0, 0.04093597, 0, 1, 0, -0.026801238, 0, 0.93748164, 11.30184, 2.343, -1.5709572)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=1782936467]
+transform = Transform3D(0.82339376, 0, 0.045694284, 0, 1, 0, -0.020131845, 0, 1.8689014, 1.2020531, 2.343, 6.108673)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=871279987]
+transform = Transform3D(0.82339376, 0, 0.05694495, 0, 1, 0, -0.020131845, 0, 2.3290548, -12.074467, 2.343, 6.021805)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog6" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=284824581]
+transform = Transform3D(0.796597, 0, -0.59208995, 0, 1, 0, 0.20932232, 0, 2.2532575, -23.881033, 2.343, 6.705367)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=1493010716]
+transform = Transform3D(0.29972166, 0, 0.020918833, 0, 1, 0, -0.007328146, 0, 0.85558265, -31.12165, 2.343, 7.3849316)
+mesh = SubResource("PlaneMesh_rmk5s")
+
+[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=550265559]
+transform = Transform3D(17.661663, 0, 0.41945645, 0, 19.077381, 0, -0.43182483, 0, 17.155794, -18.255428, 5.644408, 7.217687)
+material_override = SubResource("StandardMaterial3D_8631h")
+mesh = SubResource("BoxMesh_eot43")
+
+[node name="CaptainsRoom" type="Node3D" parent="FogOfWar" unique_id=1708897224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.089355, 0, 18.592348)
+
+[node name="Fog" type="MeshInstance3D" parent="FogOfWar/CaptainsRoom" unique_id=350426044]
+transform = Transform3D(0.0048957933, 1.0452277e-09, -1.3009658, 2.7292957e-12, 1, 1.3599325e-09, 0.6277725, -1.24981085e-11, 0.010145806, -3.0228436, 2.343, 0.811845)
+rotation_order = 0
+mesh = SubResource("PlaneMesh_rmk5s")
+
 [node name="Doors" type="Node3D" parent="." unique_id=112142071]
 transform = Transform3D(0.1515959, 0, 4.026713e-05, 0, 12.2190275, 0, -0.0005091578, 0, 0.011986029, -81.33908, 1.1157174, 14.301016)
 
@@ -4619,40 +4780,25 @@ required_item_name = "CaptainsKey"
 
 [node name="Area1Doors" type="Node3D" parent="Doors" unique_id=594892891]
 
-[node name="A1LeftRoomDoor1" parent="Doors/Area1Doors" unique_id=856032266 instance=ExtResource("6_ipbck")]
+[node name="A1LeftRoomDoor1" parent="Doors/Area1Doors" unique_id=856032266 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964127, 0, 0.022158947, 0, 0.081839584, 0, -0.28018877, 0, -83.42953, 709.74963, -0.002984099, -486.48853)
+fog_node = NodePath("../../../FogOfWar/A1LeftRoom")
 is_locked = false
 
-[node name="DoorTrigger" parent="Doors/Area1Doors/A1LeftRoomDoor1" index="2" unique_id=1813961388 node_paths=PackedStringArray("other_door_trigger", "fog_node")]
-other_door_trigger = NodePath("../../A1LeftRoomDoor2")
-fog_node = NodePath("../../../../FogOfWar/A1LeftRoom")
-
-[node name="A1LeftRoomDoor2" parent="Doors/Area1Doors" unique_id=216903743 instance=ExtResource("6_ipbck")]
+[node name="A1LeftRoomDoor2" parent="Doors/Area1Doors" unique_id=216903743 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964117, 0, 0.022158947, 0, 0.081839584, 0, -0.28018877, 0, -83.42953, 602.8237, -0.002984099, -491.0468)
+fog_node = NodePath("../../../FogOfWar/A1LeftRoom")
 is_locked = false
 
-[node name="DoorTrigger" parent="Doors/Area1Doors/A1LeftRoomDoor2" index="2" unique_id=1813961388 node_paths=PackedStringArray("other_door_trigger", "fog_node")]
-other_door_trigger = NodePath("../../A1LeftRoomDoor1")
-fog_node = NodePath("../../../../FogOfWar/A1LeftRoom")
-
-[node name="A1RightRoomDoor1" parent="Doors/Area1Doors" unique_id=1870667796 instance=ExtResource("6_ipbck")]
+[node name="A1RightRoomDoor1" parent="Doors/Area1Doors" unique_id=1870667796 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(6.5964103, 0, -0.02215952, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 719.99884, -0.002984099, -1564.7743)
+fog_node = NodePath("../../../FogOfWar/A1RightRoom")
 is_locked = false
 
-[node name="DoorTrigger" parent="Doors/Area1Doors/A1RightRoomDoor1" index="2" unique_id=1813961388 node_paths=PackedStringArray("other_door_trigger", "fog_node")]
-other_door_trigger = NodePath("../../A1RightRoomDoor2")
-fog_node = NodePath("../../../../FogOfWar/A1RightRoom")
-
-[node name="TriggerShape" parent="Doors/Area1Doors/A1RightRoomDoor1/DoorTrigger" index="0" unique_id=897058467]
-transform = Transform3D(0.9999913, 0.002424463, -0.00339837, -0.0024248937, 0.999997, -0.00012294167, 0.0033980627, 0.00013116306, 0.9999942, 0, 0, 0)
-
-[node name="A1RightRoomDoor2" parent="Doors/Area1Doors" unique_id=490510366 instance=ExtResource("6_ipbck")]
+[node name="A1RightRoomDoor2" parent="Doors/Area1Doors" unique_id=490510366 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(6.5964103, 0, -0.02215952, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 613.1023, -0.002984099, -1569.315)
+fog_node = NodePath("../../../FogOfWar/A1RightRoom")
 is_locked = false
-
-[node name="DoorTrigger" parent="Doors/Area1Doors/A1RightRoomDoor2" index="2" unique_id=1813961388 node_paths=PackedStringArray("other_door_trigger", "fog_node")]
-other_door_trigger = NodePath("../../A1RightRoomDoor1")
-fog_node = NodePath("../../../../FogOfWar/A1RightRoom")
 
 [node name="Area2Doors" type="Node3D" parent="Doors" unique_id=1986962466]
 
@@ -4661,42 +4807,54 @@ transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953,
 
 [node name="A2LeftRoomExit" parent="Doors/Area2Doors" unique_id=2055258304 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-4.86709, 0, 4.4524765, 0, 0.081839584, 0, -56.313602, 0, -61.557625, 631.6405, -0.0029839203, 353.65186)
-
-[node name="A2LeftRoomEnter" parent="Doors/Area2Doors" unique_id=142235720 instance=ExtResource("6_ipbck")]
-transform = Transform3D(-1.3098933, 0, -6.4650817, 0, 0.081839584, 0, 81.76854, 0, -16.567087, 495.77237, -0.002984099, 828.849)
 is_locked = false
 
-[node name="A2RightRoomExit" parent="Doors/Area2Doors" unique_id=990596616 instance=ExtResource("6_ipbck")]
+[node name="A2LeftRoomEnter" parent="Doors/Area2Doors" unique_id=142235720 node_paths=PackedStringArray("fog_node", "doors_to_unlock_on_open") instance=ExtResource("6_ipbck")]
+transform = Transform3D(-1.3098933, 0, -6.4650817, 0, 0.081839584, 0, 81.76854, 0, -16.567087, 495.77237, -0.002984099, 828.849)
+fog_node = NodePath("../../../FogOfWar/A2LeftRoom")
+doors_to_unlock_on_open = [NodePath("../Door5")]
+is_locked = false
+
+[node name="A2RightRoomExit" parent="Doors/Area2Doors" unique_id=990596616 node_paths=PackedStringArray("fog_node", "doors_to_unlock_on_open") instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5917435, 0, 0.24906309, 0, 0.081839584, 0, -3.1500082, 0, -83.370514, 483.11334, -0.002984099, -2212.7769)
+fog_node = NodePath("../../../FogOfWar/A2MainRoom")
+doors_to_unlock_on_open = [NodePath("../A2MainRoomEnter")]
 is_locked = false
 
 [node name="Door6" parent="Doors/Area2Doors" unique_id=501905773 instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.022159232, 0, 6.5964103, 0, 0.081839584, 0, -83.42953, 0, 0.28019243, 524.87823, -0.002984099, -317.14215)
 
-[node name="A2RightRoomDoorEnter" parent="Doors/Area2Doors" unique_id=2139162812 instance=ExtResource("6_ipbck")]
+[node name="Objective1Door" parent="Doors/Area2Doors" unique_id=2139162812 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(6.5964127, 0, -0.022159524, 0, 0.081839584, 0, 0.2801961, 0, 83.42953, 657.2457, -0.0029840171, -2031.3503)
 door_variant = 1
-required_item_name = "PowerCell"
+required_item_name = "power_cell"
+fog_node = NodePath("../../../FogOfWar/A2RightRoom")
 
 [node name="Door5" parent="Doors/Area2Doors" unique_id=1573186085 instance=ExtResource("6_ipbck")]
 transform = Transform3D(-6.5964103, 0, 0.022158943, 0, 0.081839584, 0, -0.2801888, 0, -83.42953, 646.60583, -0.002984099, -20.965698)
 
-[node name="A2MainRoomMiddleDoor" parent="Doors/Area2Doors" unique_id=2073483653 instance=ExtResource("6_ipbck")]
+[node name="CorridorDoor" parent="Doors/Area2Doors" unique_id=2073483653 node_paths=PackedStringArray("fog_node", "doors_to_unlock_on_open") instance=ExtResource("6_ipbck")]
 transform = Transform3D(2.7694092, 0, -5.9869437, 0, 0.081839584, 0, 75.72114, 0, 35.026768, 472.1741, -0.002984099, -58.072266)
+fog_node = NodePath("../../../FogOfWar/Corridor")
+doors_to_unlock_on_open = [NodePath("../Door6")]
+is_locked = false
 
 [node name="Area3Doors" type="Node3D" parent="Doors" unique_id=1345819926]
 
-[node name="CaptainsQuarters" parent="Doors/Area3Doors" unique_id=601837599 instance=ExtResource("6_ipbck")]
+[node name="Objective3Door" parent="Doors/Area3Doors" unique_id=601837599 node_paths=PackedStringArray("fog_node", "doors_to_unlock_on_open") instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 25.44748, -0.002984099, 327.4088)
 door_variant = 3
-required_item_name = "Biomass"
+required_item_name = "biomass"
 custom_open_sound = ExtResource("28_b5m3m")
+fog_node = NodePath("../../../FogOfWar/CaptainsRoom")
+doors_to_unlock_on_open = [NodePath("../../ExitDoor")]
 
-[node name="A3DoorEnter" parent="Doors/Area3Doors" unique_id=1833439369 instance=ExtResource("6_ipbck")]
+[node name="Objective2Door" parent="Doors/Area3Doors" unique_id=1833439369 node_paths=PackedStringArray("fog_node") instance=ExtResource("6_ipbck")]
 transform = Transform3D(0.21826014, 0, 6.5928354, 0, 0.081839584, 0, -83.384315, 0, 2.760421, 368.9841, -0.002984099, -197.67682)
 door_variant = 2
-required_item_name = "Oil"
+required_item_name = "oil"
 custom_open_sound = ExtResource("28_ux67b")
+fog_node = NodePath("../../../FogOfWar/A3")
 
 [node name="Heart" type="Node3D" parent="." unique_id=1448710218]
 transform = Transform3D(-0.39466208, 0.97079355, -0.75458485, 0.79892266, 1.1137093, 1.7650267e-08, 0.45383272, -1.1163418, -0.65620226, -56.468605, 13.031638, 15.125582)
@@ -4757,25 +4915,19 @@ material_override = ExtResource("15_4ddeu")
 transform = Transform3D(0.012153538, 0, -0.4370561, 0, 0.40838772, 0, 0.49985135, 0, 0.010626715, 18.744612, 1.384057, 0.6864689)
 metadata/_edit_group_ = true
 
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "MG2-001"
-
-[node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" index="0" unique_id=202934905]
+[node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" parent_id_path=PackedInt32Array(845438724, 1598274358) index="0" unique_id=202934905]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 2.7845507)
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation1" index="4" unique_id=2082674037]
 transform = Transform3D(0.01937657, 0, 0.99981225, 0, 1, 0, -0.99981225, 0, 0.01937657, 0, 0, 0)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_b607u")
+material_override = SubResource("StandardMaterial3D_exdgp")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
 system_id = "Circuit"
 metadata/_edit_group_ = true
-
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
 visible = true
@@ -4788,14 +4940,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_mvjxq")
+material_override = SubResource("StandardMaterial3D_wvsvu")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
 system_id = "Boiler"
-
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
 visible = false
@@ -4809,15 +4958,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_exdgp")
+material_override = SubResource("StandardMaterial3D_v43j3")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
 system_id = "Sonar"
 metadata/_edit_group_ = true
-
-[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
 visible = true
@@ -4830,7 +4976,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_wvsvu")
+material_override = SubResource("StandardMaterial3D_heocp")
 
 [node name="Heart" parent="RepairStations/Area1" unique_id=1854801038 instance=ExtResource("24_thtfx")]
 transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9453884, -60.460575, 5.364929, 18.429985)
@@ -4841,9 +4987,6 @@ transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9
 transform = Transform3D(0.3450945, 0, -0.15766822, 0, 0.35902852, 0, 0.11467054, 0, 0.47449353, -1.7547884, 1.2634716, -19.205858)
 system_id = "Sonar"
 metadata/_edit_group_ = true
-
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "A2A1-001"
 
 [node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
 visible = true
@@ -4856,15 +4999,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_v43j3")
+material_override = SubResource("StandardMaterial3D_mnq1i")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
 system_id = "Circuit"
 metadata/_edit_group_ = true
-
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "A2A1-001"
 
 [node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
 visible = true
@@ -4877,15 +5017,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_heocp")
+material_override = SubResource("StandardMaterial3D_n22tq")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973, 0, 0.4996089, 5.296033, 1.3086255, 28.410582)
 system_id = "Boiler"
 metadata/_edit_group_ = true
-
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "A2A1-001"
 
 [node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
 visible = false
@@ -4898,16 +5035,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_mnq1i")
+material_override = SubResource("StandardMaterial3D_y8kx2")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
 
-[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="0" unique_id=1598274358]
-on_interact_dialogue_key = "A2A1-001"
-
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_n22tq")
+material_override = SubResource("StandardMaterial3D_awb4d")
 
 [node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("24_7k0iy")]
 transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.598535, 0.087592125, 1.6944573)
@@ -8806,179 +8940,56 @@ material_override = ExtResource("16_x47f5")
 transform = Transform3D(0.06648589, 0, 0.09058298, 0, 49.41132, 0, -0.10630058, 0, 0.068464875, 0.11484623, 6.280815, -5.6121893)
 material_override = ExtResource("16_x47f5")
 
-[node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
+[node name="ObjectiveItems" type="Node3D" parent="." unique_id=1214866287]
 
-[node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
-transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
-material_override = SubResource("StandardMaterial3D_15cjb")
-mesh = SubResource("BoxMesh_huc0b")
+[node name="Powercell_Item" parent="ObjectiveItems" unique_id=737366620 instance=ExtResource("36_b607u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6326, 1.3498468, -4.581543)
 
-[node name="A1LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1801024593]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
+[node name="Powercell_Item6" parent="ObjectiveItems" unique_id=988380967 instance=ExtResource("36_b607u")]
+transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 43.44465, 0.6135187, -3.5451958)
 
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1LeftRoom" unique_id=453317494]
-transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -1.4879999)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="Powercell_Item7" parent="ObjectiveItems" unique_id=852342187 instance=ExtResource("36_b607u")]
+transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 43.867725, 0.6135187, -3.735184)
 
-[node name="A1RightRoom" type="Node3D" parent="FogOfWar" unique_id=1007644240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
+[node name="Powercell_Item8" parent="ObjectiveItems" unique_id=11770045 instance=ExtResource("36_b607u")]
+transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 43.783154, 0.6135187, -3.270919)
 
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1RightRoom" unique_id=77157177]
-transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -20.518559)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="Powercell_Item9" parent="ObjectiveItems" unique_id=2025978329 instance=ExtResource("36_b607u")]
+transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 44.198338, 0.6135187, -4.120039)
 
-[node name="A2RightRoom" type="Node3D" parent="FogOfWar" unique_id=1925436261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.293806)
+[node name="Powercell_Item10" parent="ObjectiveItems" unique_id=2065068734 instance=ExtResource("36_b607u")]
+transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 44.297478, 0.6135187, -3.537488)
 
-[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1249474506]
-transform = Transform3D(1.205097, 0, 0, 0, 1, 0, 0, 0, 1.2727767, -1.3655329, 2.343, -0.5910883)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="Powercell_Item3" parent="ObjectiveItems" unique_id=692866156 instance=ExtResource("36_b607u")]
+transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 51.317158, 1.3052301, 7.4973283)
 
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1512294722]
-transform = Transform3D(6.024, 0, 0, 0, 2, 0, 0, 0, 6.363, -0.92581534, 1.9232581, -1.1480846)
-mesh = SubResource("BoxMesh_rmk5s")
+[node name="Powercell_Item4" parent="ObjectiveItems" unique_id=1804190521 instance=ExtResource("36_b607u")]
+transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 51.68281, 1.3052301, 7.2028785)
 
-[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1928919263]
-transform = Transform3D(-0.0019072406, 0, 0.929582, 0, 0.99999994, 0, -0.601553, 0, -0.0029473538, 15.096166, 2.3586195, 1.7193382)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="Powercell_Item5" parent="ObjectiveItems" unique_id=1275134742 instance=ExtResource("36_b607u")]
+transform = Transform3D(-0.38434163, 0.92319095, 2.7389728e-08, -4.1976392e-08, 1.219299e-08, -1, -0.92319095, -0.38434163, 3.406594e-08, 51.798756, 1.3052301, 6.5848184)
 
-[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=1003842810]
-transform = Transform3D(-0.0009906256, 0, 2.0390012, 0, 0.99999994, 0, -0.31244814, 0, -0.0064649032, -1.0933926, 2.3586195, 2.9730978)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="Powercell_Item2" parent="ObjectiveItems" unique_id=278323051 instance=ExtResource("36_b607u")]
+transform = Transform3D(-0.14261344, 0.98977864, -7.450581e-09, -0.6401786, -0.09224091, 0.76266843, 0.7548728, 0.10876677, 0.64678985, 50.50898, 1.0652351, -4.183748)
 
-[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=829509078]
-transform = Transform3D(-0.022980632, 0, 0.3403234, 0, 1, 0, -0.2719431, 0, -0.028759152, -12.6723385, 2.3586195, 0.37093714)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="OilItem" parent="ObjectiveItems" unique_id=602892215 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.32517487, 0, -0.94565386, 0, 1, 0, 0.94565386, 0, -0.32517487, 12.684036, 0.4912917, 27.40799)
 
-[node name="A3" type="Node3D" parent="FogOfWar" unique_id=1098224871]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.26687, 0, 12.60541)
+[node name="OilItem2" parent="ObjectiveItems" unique_id=206472703 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-3.684298e-08, -0.8428691, 0.5381186, 1, -4.3711385e-08, 0, 2.352191e-08, 0.53811854, 0.84286916, 11.935439, 0.17470235, 28.185732)
 
-[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=841442199]
-transform = Transform3D(0.61377966, 0, 0.04093597, 0, 1, 0, -0.026801238, 0, 0.93748164, 11.30184, 2.343, -1.5709572)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="OilItem3" parent="ObjectiveItems" unique_id=1264446704 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.40565458, 0, 0.91402644, 0.38866475, 0.9050888, 0.17249352, -0.8272751, 0.42522267, -0.3671534, 13.155386, 0.43638417, 28.35761)
 
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=1782936467]
-transform = Transform3D(0.82339376, 0, 0.045694284, 0, 1, 0, -0.020131845, 0, 1.8689014, 1.2020531, 2.343, 6.108673)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="OilItem4" parent="ObjectiveItems" unique_id=954823657 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 0.99999994, -2.6117945, 0.17940207, 28.153917)
 
-[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=871279987]
-transform = Transform3D(0.82339376, 0, 0.05694495, 0, 1, 0, -0.020131845, 0, 2.3290548, -12.074467, 2.343, 6.021805)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="OilItem5" parent="ObjectiveItems" unique_id=1850437968 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.018480599, 0, -0.99982923, -1.9201983, 0.4912917, 28.46966)
 
-[node name="Fog6" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=284824581]
-transform = Transform3D(0.796597, 0, -0.59208995, 0, 1, 0, 0.20932232, 0, 2.2532575, -23.881033, 2.343, 6.705367)
-mesh = SubResource("PlaneMesh_rmk5s")
+[node name="OilItem6" parent="ObjectiveItems" unique_id=2050907861 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.5138988, 0.4912917, 28.354477)
 
-[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=1493010716]
-transform = Transform3D(0.29972166, 0, 0.020918833, 0, 1, 0, -0.007328146, 0, 0.85558265, -31.12165, 2.343, 7.3849316)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=550265559]
-transform = Transform3D(17.661663, 0, 0.41945645, 0, 19.077381, 0, -0.43182483, 0, 17.155794, -18.255428, 5.644408, 7.217687)
-material_override = SubResource("StandardMaterial3D_8631h")
-mesh = SubResource("BoxMesh_eot43")
-
-[node name="A2MainRoom" type="Node3D" parent="FogOfWar" unique_id=2143176476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.457752, 0, 11.431965)
-
-[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1157731373]
-transform = Transform3D(0.046353605, 1.0452278e-09, -1.300041, -3.341162e-11, 1, 1.359465e-09, 1.2031748, -1.249811e-11, 0.050085474, 2.2032065, 2.343, 1.2812808)
-rotation_order = 0
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=453281256]
-transform = Transform3D(-0.7802969, -4.502779e-11, 0.019208154, -2.165543e-11, 1, 1.2136021e-09, -0.012906764, 1.0443322e-09, -1.161256, 2.3614979, 2.343, -15.682837)
-rotation_order = 0
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog8" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1401514309]
-transform = Transform3D(-0.77978677, -4.5027794e-11, -0.042102676, -6.751091e-11, 1, 1.103263e-09, 0.031024136, 1.0443322e-09, -1.0582442, 11.618975, 2.343, -18.193632)
-rotation_order = 0
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=2376705]
-transform = Transform3D(-0.7802969, -4.502779e-11, 0.019208154, -2.165543e-11, 1, 1.2136021e-09, -0.012906764, 1.0443322e-09, -1.161256, 7.361813, 2.343, 14.017092)
-rotation_order = 0
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=829225830]
-transform = Transform3D(0.40445873, 0, -0.1586758, 0, 0.99999976, 0, 0.07892842, 0, 0.8131141, 11.515401, 2.343, 11.128169)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog6" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=621455361]
-transform = Transform3D(0.66888356, 0, 0, 0, 0.99999976, 0, 0, 0, 1.1620106, 12.838779, 2.343, -0.8223839)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=312039040]
-transform = Transform3D(0.5459864, 0, 0.08846807, 0, 0.99999976, 0, -0.030903464, 0, 1.5630083, 8.441856, 2.537928, 2.8892097)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog7" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=552535330]
-transform = Transform3D(0.5468002, 0, 0.0232099, 0, 0.99999976, 0, -0.00810763, 0, 1.5653381, 1.3923647, 2.4048076, 5.6772723)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="A2LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1405358068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.308751, 0, 22.208553)
-
-[node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1211420760]
-transform = Transform3D(1.180443, 0, 0, 0, 1, 0, 0, 0, 1.2727767, 1.9110999, 2.343, 3.7414207)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog7" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=953805772]
-transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.8111017, -10.190184, 3.4574428, 1.1431293)
-material_override = SubResource("StandardMaterial3D_4ha2e")
-mesh = SubResource("BoxMesh_a4ee0")
-
-[node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=888625721]
-transform = Transform3D(0.9599572, 0, 0, 0, 1, 0, 0, 0, 0.5551284, -0.018373966, 2.343, -3.7600822)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog3" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1275817762]
-transform = Transform3D(0.4000463, 0, 0.25356555, 0, 1, 0, -0.44333842, 0, 0.22880475, 6.77927, 2.3586195, 1.102459)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog4" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1577984010]
-transform = Transform3D(-0.022980632, 0, 0.3403234, 0, 1, 0, -0.2719431, 0, -0.028759152, -8.804467, 2.3586195, 4.499378)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog5" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=229062888]
-transform = Transform3D(0.023484757, 0, 0.3380431, 0, 1, 0, -0.16293694, 0, 0.04872349, -8.398122, 2.3586195, 1.4865112)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="Fog6" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=1915397923]
-transform = Transform3D(-0.0085818395, 0, 0.70552695, 0, 0.99999994, 0, -0.46879807, 0, -0.012915477, 11.781697, 2.3586195, -3.5819893)
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="CaptainsRoom" type="Node3D" parent="FogOfWar" unique_id=1708897224]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.089355, 0, 18.592348)
-
-[node name="Fog" type="MeshInstance3D" parent="FogOfWar/CaptainsRoom" unique_id=350426044]
-transform = Transform3D(0.0048957933, 1.0452277e-09, -1.3009658, 2.7292957e-12, 1, 1.3599325e-09, 0.6277725, -1.24981085e-11, 0.010145806, -3.0228436, 2.343, 0.811845)
-rotation_order = 0
-mesh = SubResource("PlaneMesh_rmk5s")
-
-[node name="DoorUnlock" type="Area3D" parent="." unique_id=327580905 node_paths=PackedStringArray("doors_to_unlock")]
-transform = Transform3D(6.191605, 0, -0.23284806, 0, 3.8898923, 0, 1.4824512, 0, 0.97251314, -17.606995, 1.9215932, -3.2339926)
-script = ExtResource("36_b607u")
-doors_to_unlock = [NodePath("../Doors/Area2Doors/A2MainRoomMiddleDoor"), NodePath("../Doors/Area2Doors/Door6"), NodePath("../Doors/Area2Doors/A2LeftRoomEnter")]
-
-[node name="DoorUnlockTrigger" type="CollisionShape3D" parent="DoorUnlock" unique_id=82933919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 1.1920929e-07, 0, 1, 0.014885902, 0, 0.023984998)
-shape = SubResource("BoxShape3D_nlb7l")
-
-[node name="DoorUnlock2" type="Area3D" parent="." unique_id=37113307 node_paths=PackedStringArray("doors_to_unlock")]
-transform = Transform3D(-1.0735629, 0, -0.98568046, 0, 3.8898923, 0, 6.2754364, 0, -0.1686241, -6.018232, 0.13452816, 23.198542)
-script = ExtResource("36_b607u")
-doors_to_unlock = [NodePath("../Doors/Area2Doors/A2LeftRoomExit"), NodePath("../Doors/Area2Doors/Door5")]
-
-[node name="DoorUnlockTrigger" type="CollisionShape3D" parent="DoorUnlock2" unique_id=2129486053]
-transform = Transform3D(1, 0, -1.8626451e-09, 0, 1, 0, 4.172325e-07, 0, 1, 0.06608629, 0, -0.83321)
-shape = SubResource("BoxShape3D_nlb7l")
-
-[editable path="Doors/Area1Doors/A1LeftRoomDoor1"]
-[editable path="Doors/Area1Doors/A1LeftRoomDoor2"]
-[editable path="Doors/Area1Doors/A1RightRoomDoor1"]
-[editable path="Doors/Area1Doors/A1RightRoomDoor2"]
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]
 [editable path="RepairStations/Area1/RepairStation2"]

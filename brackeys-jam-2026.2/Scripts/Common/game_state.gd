@@ -22,6 +22,8 @@ const MAX_SYSTEM_HEALTH: float = 100.0
 
 var active_repairs: Array[String] = []
 
+var collected_items: Array[String] = []
+
 var current_area_level: int = 1
 var is_ballast_broken: bool = false:
 	set(value):
@@ -114,6 +116,7 @@ func set_system_broken(system_id: String, broken: bool) -> void:
 			push_error("Unknown system_id: " + system_id)
 
 
+# Might be unused? Consider for cleanup
 func take_damage(amount: float) -> void:
 	ship_health -= amount
 
@@ -144,7 +147,7 @@ func can_system_break(system_id: String) -> bool:
 	# Reject if the player is currently inside the minigame for this system
 	if active_repairs.has(system_id):
 		return false
-		
+	
 	# Reject if the system is already broken
 	match system_id:
 		"Ballast":
@@ -157,3 +160,17 @@ func can_system_break(system_id: String) -> bool:
 			return not is_circuit_broken
 		_:
 			return false
+
+
+func collect_item(item_key: String) -> void:
+	if not collected_items.has(item_key):
+		collected_items.append(item_key)
+
+
+func has_item(item_key: String) -> bool:
+	return collected_items.has(item_key)
+
+
+func consume_item(item_key: String) -> void:
+	if collected_items.has(item_key):
+		collected_items.erase(item_key)

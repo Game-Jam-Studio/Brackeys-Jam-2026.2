@@ -2,8 +2,6 @@ extends Node
 
 signal area_unlocked(new_level: int)
 
-var current_area_level: int = 1
-
 # AI Font Progression
 const AI_THEME_BASE = preload("res://Resources/Themes/AI_base_theme.tres")
 const AI_THEME_MID = preload("res://Resources/Themes/AI_mid_theme.tres")
@@ -151,6 +149,5 @@ func get_destination_transform(tier: int) -> Dictionary:
 
 
 func unlock_next_area(level: int) -> void:
-	current_area_level = level
-	area_unlocked.emit(current_area_level)
-	
+	GameState.current_area_level = level
+	area_unlocked.emit(level)

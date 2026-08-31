@@ -1,6 +1,8 @@
 class_name DoorTrigger
 extends Interactable
 
+# door_trigger handles logic for the door being interacted with
+
 var is_locked: bool = true
 
 @export var is_open: bool = false
@@ -17,10 +19,7 @@ var is_locked: bool = true
 
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
-# For deleting the Area1 Fog
-@export var other_door_trigger: Node3D
-@export var fog_node: Node3D
-var fog_removed: bool = false
+var fog_node: Node3D
 
 var sfx_player: AudioStreamPlayer3D
 
@@ -41,16 +40,35 @@ func can_interact() -> bool:
 	return not is_open
 
 
-## Overrides base Interactable interact()
+	# If door is unlocked, just open it
+	# If door is locked & player doesn't have required item, play locked sound, do nothing
+	# If door is locked & player has required item, consume item, call complete_unlock_key (which unlocks all doors and handles progression)
 func interact(_player: CharacterBody3D) -> void:
 	var main_door = get_parent()
-	if main_door and main_door.has_method("check_item_requirement"):
-		if not main_door.check_item_requirement(_player):
-			return
-			
-	super.interact(_player)
 	
-	if not is_locked and not is_open:
+	if is_locked:
+		# Check if this door requires an item
+		if main_door and main_door.has_method("check_item_requirement"):
+			if not main_door.check_item_requirement(_player):
+				# Play locked sound, do nothing
+				sfx_player.stream = door_locked_sound
+				sfx_player.play()
+				return
+		
+		# If door has an item requirement, trigger area progression
+		if main_door and main_door.required_item_name != "":
+			var area_progression = get_tree().current_scene.get_node_or_null("AreaProgressionSystem")
+			if area_progression:
+				area_progression.complete_unlock_key(main_door.required_item_name, main_door)
+			return
+		else:
+			# Locked door with no item requirement — do not open
+			sfx_player.stream = door_locked_sound
+			sfx_player.play()
+			return
+	
+	# Door is unlocked, open it directly
+	if not is_open:
 		if main_door and "custom_open_sound" in main_door and main_door.custom_open_sound:
 			sfx_player.stream = main_door.custom_open_sound
 		else:
@@ -63,15 +81,24 @@ func interact(_player: CharacterBody3D) -> void:
 	else:
 		sfx_player.stream = door_locked_sound
 		sfx_player.play()
-	
-	if fog_node and is_instance_valid(fog_node):
-		fog_node.queue_free()
 
 
+## Opens door & disables future interactions
 ## Opens door & disables future interactions
 func open_door() -> void:
 	is_open = true
 	trigger_shape.set_deferred("disabled", true)
+	
+	# Remove fog of war for the room this door leads into
+	if fog_node and is_instance_valid(fog_node):
+		fog_node.queue_free()
+		fog_node = null  # Prevent duplicate removal attempts
+	
+	# Unlock any doors associated with this room
+	var main_door = get_parent()
+	if main_door and "doors_to_unlock_on_open" in main_door:
+		for door in main_door.doors_to_unlock_on_open:
+			door.unlock()
 	
 	# Slide the AnimatableBody3D smoothly
 	var tween: Tween = create_tween()
