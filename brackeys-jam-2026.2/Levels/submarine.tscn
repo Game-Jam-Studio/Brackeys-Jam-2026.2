@@ -237,7 +237,6 @@ circuit_icon = ExtResource("11_5jq4l")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0380797, -0.005758524, 1.4067845)
-visible = false
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1647781016]
@@ -4736,7 +4735,6 @@ mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="A3" type="Node3D" parent="FogOfWar" unique_id=1098224871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.26687, 0, 12.60541)
-visible = false
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/A3" unique_id=841442199]
 transform = Transform3D(0.61377966, 0, 0.04093597, 0, 1, 0, -0.026801238, 0, 0.93748164, 11.30184, 2.343, -1.5709572)
