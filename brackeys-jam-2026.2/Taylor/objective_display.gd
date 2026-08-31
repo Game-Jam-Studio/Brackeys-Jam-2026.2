@@ -9,7 +9,7 @@ extends Control
 @export var tier_3_theme: Theme
 
 @onready var background_texture: TextureRect = $TextureRect
-@onready var objective_label: Label = $Label
+@onready var objective_label: Label = $TextureRect/Label
 
 
 func _ready() -> void:
