@@ -10,6 +10,10 @@ extends Node3D
 @export var required_item_name: String = ""
 @export var custom_open_sound: AudioStream
 
+# Progression nodes
+@export var fog_node: Node3D
+@export var doors_to_unlock_on_open: Array[Door] = []
+
 @export var is_locked: bool = true:
 	set(value):
 		is_locked = value
@@ -24,6 +28,8 @@ extends Node3D
 func _ready() -> void:
 	# Push the root export value down to the trigger on startup
 	door_trigger.is_locked = is_locked
+	if fog_node:
+		door_trigger.fog_node = fog_node
 	_update_variants()
 
 
@@ -31,7 +37,7 @@ func _update_variants() -> void:
 	if mesh_basic: mesh_basic.visible = (door_variant == 0)
 	if mesh_mechanical: mesh_mechanical.visible = (door_variant == 1)
 	if mesh_old: mesh_old.visible = (door_variant == 2)
-	if mesh_mouth: mesh_mouth.visible = (door_variant == 2)
+	if mesh_mouth: mesh_mouth.visible = (door_variant == 3)
 
 
 ## Public helper to unlock the door externally
@@ -40,9 +46,13 @@ func unlock() -> void:
 	door_trigger.unlock()
 
 
-func check_item_requirement(player: Node3D) -> bool:
-	if required_item_name != "" and player.has_method("has_item"):
-		if not player.has_item(required_item_name):
+func check_item_requirement(_player: Node3D) -> bool:
+	if required_item_name != "":
+		if not GameState.has_item(required_item_name):
 			print("Missing required item: ", required_item_name)
 			return false
+		
+		# Consume the item so it must be collected again for future objectives
+		GameState.consume_item(required_item_name)
+	
 	return true

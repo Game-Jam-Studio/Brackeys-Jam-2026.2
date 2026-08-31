@@ -62,7 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792, 0, -0.1755923)
 script = ExtResource("1_dn2we")
 door_open_sound = ExtResource("3_sqdgx")
 door_locked_sound = ExtResource("4_lwysg")
-prompt_message = "Open"
 
 [node name="TriggerShape" type="CollisionShape3D" parent="DoorTrigger" unique_id=897058467]
 shape = SubResource("BoxShape3D_dn2we")
