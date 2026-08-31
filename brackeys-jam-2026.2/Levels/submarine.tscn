@@ -38,23 +38,23 @@
 [ext_resource type="AudioStream" uid="uid://7k77cnqmiyuh" path="res://Audio/Music/Menu Sounds underwater_sea_diving_bubbles_loop_01.wav" id="30_exdgp"]
 [ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="31_rmk5s"]
 [ext_resource type="Script" uid="uid://4idt508xifg7" path="res://Levels/door_unlock.gd" id="36_b607u"]
-[ext_resource type="ArrayMesh" uid="uid://23obbfrjmjjl" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_001.res" id="40_mnq1i"]
-[ext_resource type="ArrayMesh" uid="uid://bpo8s856wwbvq" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_008.res" id="41_awb4d"]
-[ext_resource type="ArrayMesh" uid="uid://dsyj3ghla2gum" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_003.res" id="41_n22tq"]
-[ext_resource type="ArrayMesh" uid="uid://b53nnvnobr0jj" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97.res" id="42_y8kx2"]
-[ext_resource type="ArrayMesh" uid="uid://bi8m3ysfb8i3c" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_010.res" id="43_7kyku"]
-[ext_resource type="ArrayMesh" uid="uid://dxm52c3mt8kn3" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_002.res" id="43_awb4d"]
+[ext_resource type="ArrayMesh" uid="uid://c1docswneurjh" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_001.res" id="40_mnq1i"]
+[ext_resource type="ArrayMesh" uid="uid://covd5ttb6fh4j" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_008.res" id="41_awb4d"]
+[ext_resource type="ArrayMesh" uid="uid://bl3aogwsgqgfu" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_003.res" id="41_n22tq"]
+[ext_resource type="ArrayMesh" uid="uid://bql0jshctonen" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97.res" id="42_y8kx2"]
+[ext_resource type="ArrayMesh" uid="uid://dv7kmktykwyg3" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_010.res" id="43_7kyku"]
+[ext_resource type="ArrayMesh" uid="uid://bwfvt8sh6fmyo" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_002.res" id="43_awb4d"]
 [ext_resource type="PackedScene" uid="uid://bx1e1shvjdkq4" path="res://Art/3D/Raw Files/Heart.glb" id="43_n22tq"]
-[ext_resource type="ArrayMesh" uid="uid://b2ppeydivbkt1" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_004.res" id="44_484ck"]
-[ext_resource type="ArrayMesh" uid="uid://detv00ffckev0" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_012.res" id="44_rv5mm"]
-[ext_resource type="ArrayMesh" uid="uid://csb1g7gl1fyud" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_005.res" id="45_7g3ui"]
-[ext_resource type="ArrayMesh" uid="uid://bhpwo7ev6g1pf" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_006.res" id="46_3g157"]
+[ext_resource type="ArrayMesh" uid="uid://dvgh15ft6ktwf" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_004.res" id="44_484ck"]
+[ext_resource type="ArrayMesh" uid="uid://h6a6j3if4ya4" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_012.res" id="44_rv5mm"]
+[ext_resource type="ArrayMesh" uid="uid://bjyjviualhu7m" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_005.res" id="45_7g3ui"]
+[ext_resource type="ArrayMesh" uid="uid://b0d3mvh0ei06" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_006.res" id="46_3g157"]
 [ext_resource type="ArrayMesh" uid="uid://bbnr16fjdfxw4" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_007.res" id="47_78fsk"]
-[ext_resource type="ArrayMesh" uid="uid://cuv6mfo0sg5rx" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_008.res" id="48_484ck"]
-[ext_resource type="ArrayMesh" uid="uid://fftd202ofqlq" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_009.res" id="49_7g3ui"]
-[ext_resource type="ArrayMesh" uid="uid://bow8kpevrkyx1" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_010.res" id="50_3g157"]
-[ext_resource type="ArrayMesh" uid="uid://ciwf61s3mrn5v" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_011.res" id="54_s0iu0"]
-[ext_resource type="ArrayMesh" uid="uid://d1doe85msovcc" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_012.res" id="55_e0g8k"]
+[ext_resource type="ArrayMesh" uid="uid://dprywbb5nknyc" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_008.res" id="48_484ck"]
+[ext_resource type="ArrayMesh" uid="uid://dm6j7defjfkxq" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_009.res" id="49_7g3ui"]
+[ext_resource type="ArrayMesh" uid="uid://bbi680jo00whg" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_010.res" id="50_3g157"]
+[ext_resource type="ArrayMesh" uid="uid://b0s1ubjhyphdp" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_011.res" id="54_s0iu0"]
+[ext_resource type="ArrayMesh" uid="uid://1ten8vgcjlnk" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_012.res" id="55_e0g8k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -68,9 +68,8 @@ background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_vlngc")
 ssao_enabled = true
-ssao_radius = 2.56
-ssao_intensity = 16.0
-glow_enabled = true
+ssao_radius = 0.71
+ssao_intensity = 11.66
 glow_intensity = 1.5
 glow_bloom = 0.5
 fog_light_color = Color(0.1272242, 0.6640055, 7.70092e-07, 1)
@@ -88,56 +87,56 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0uuj"]
 size = Vector3(50, 0.2, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8kx2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4hid"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
 emission = Color(0.494, 0.894, 0.329, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awb4d"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0.973, 0.035, 1)
-emission_enabled = true
-emission = Color(1, 0.973, 0.035, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_484ck"]
-resource_local_to_scene = true
-albedo_color = Color(0.988, 0.42, 0.008, 1)
-emission_enabled = true
-emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g3ui"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3g157"]
-resource_local_to_scene = true
-albedo_color = Color(0.184, 0.651, 1, 1)
-emission_enabled = true
-emission = Color(0.184, 0.651, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78fsk"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0.973, 0.035, 1)
-emission_enabled = true
-emission = Color(1, 0.973, 0.035, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4hid"]
-resource_local_to_scene = true
-albedo_color = Color(0.988, 0.42, 0.008, 1)
-emission_enabled = true
-emission = Color(0.988, 0.42, 0.008, 1)
-emission_energy_multiplier = 0.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kyku"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv5mm"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0iu0"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0g8k"]
+resource_local_to_scene = true
+albedo_color = Color(0.184, 0.651, 1, 1)
+emission_enabled = true
+emission = Color(0.184, 0.651, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2as3"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.973, 0.035, 1)
+emission_enabled = true
+emission = Color(1, 0.973, 0.035, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brlv2"]
+resource_local_to_scene = true
+albedo_color = Color(0.988, 0.42, 0.008, 1)
+emission_enabled = true
+emission = Color(0.988, 0.42, 0.008, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6swp"]
 resource_local_to_scene = true
 albedo_color = Color(0.494, 0.894, 0.329, 1)
 emission_enabled = true
@@ -184,6 +183,9 @@ size = Vector3(1, 1.2254639, 1)
 script = ExtResource("1_2a835")
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=144421792]
+quality = 2
+interior = true
+texel_scale = 5.0
 light_data = ExtResource("2_m4hid")
 
 [node name="BreakdownManager" type="Node" parent="." unique_id=1374321493]
@@ -266,6 +268,7 @@ circuit_icon = ExtResource("11_5jq4l")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1597373376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0380797, -0.005758524, 1.4067845)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_i0uuj")
 
 [node name="NavProps" type="Node3D" parent="NavigationRegion3D" unique_id=397376297]
@@ -1907,7 +1910,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 
 transform = Transform3D(0.01937657, 0, 0.99981225, 0, 1, 0, -0.99981225, 0, 0.01937657, 0, 0, 0)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation1/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(845438724, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_y8kx2")
+material_override = SubResource("StandardMaterial3D_m4hid")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
@@ -1928,7 +1931,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation4/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1990939064, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_awb4d")
+material_override = SubResource("StandardMaterial3D_7kyku")
 
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
@@ -1949,7 +1952,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation2/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1628563511, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_484ck")
+material_override = SubResource("StandardMaterial3D_rv5mm")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
@@ -1970,7 +1973,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area1/RepairStation3/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(52942347, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_7g3ui")
+material_override = SubResource("StandardMaterial3D_s0iu0")
 
 [node name="Heart" parent="RepairStations/Area1" unique_id=1854801038 instance=ExtResource("24_thtfx")]
 transform = Transform3D(-0.9453884, 0, -0.32594612, 0, 1, 0, 0.32594612, 0, -0.9453884, -60.460575, 5.364929, 18.429985)
@@ -1996,7 +1999,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.9635
 light_color = Color(0.184, 0.651, 1, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation5/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(148449380, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_3g157")
+material_override = SubResource("StandardMaterial3D_e0g8k")
 
 [node name="RepairStation8" parent="RepairStations/Area2" unique_id=1117594498 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
@@ -2017,7 +2020,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323
 light_color = Color(1, 0.973, 0.035, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation8/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1117594498, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_78fsk")
+material_override = SubResource("StandardMaterial3D_a2as3")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973, 0, 0.4996089, 5.296033, 1.3086255, 28.410582)
@@ -2038,7 +2041,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629
 light_color = Color(0.988, 0.42, 0.008, 1)
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation6/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(331700711, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_m4hid")
+material_override = SubResource("StandardMaterial3D_brlv2")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
@@ -2047,12 +2050,13 @@ transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0
 on_interact_dialogue_key = "A2A1-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
-material_override = SubResource("StandardMaterial3D_7kyku")
+material_override = SubResource("StandardMaterial3D_b6swp")
 
 [node name="ControlTerminal" parent="." unique_id=983148202 instance=ExtResource("24_7k0iy")]
 transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.598535, 0.087592125, 1.6944573)
 
 [node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
+visible = false
 
 [node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
 transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
@@ -2316,10 +2320,10 @@ required_item_name = "Oil"
 custom_open_sound = ExtResource("28_ux67b")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=2072177211]
-visible = false
 
 [node name="Walls" type="Node3D" parent="Geometry" unique_id=1601092983]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 3.8146973e-06, 1.1920929e-07, 9.536743e-07)
+visible = false
 
 [node name="Wall22" type="StaticBody3D" parent="Geometry/Walls" unique_id=2072018513]
 transform = Transform3D(-7.3914816e-09, 0, 0.010713836, 0, 12.219037, 0, -0.16909738, 0, -4.6831666e-10, 54.110813, 1.1157157, 1.7005479)
@@ -5190,6 +5194,7 @@ transform = Transform3D(-1.8979787e-08, 0, 0.3645974, 0, 0.4483909, 0, -0.434207
 transform = Transform3D(0.40970454, 0, 1.04111835e-14, 0, 0.4483909, 0, 5.0283493e-15, 0, 0.42737922, 15.925045, 1.209, -10.770214)
 
 [node name="Shapes" type="Node3D" parent="Geometry" unique_id=392391485]
+visible = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geometry/Shapes" unique_id=1844612740]
 transform = Transform3D(0.40723377, 0, 0, 0, 1.0379134, 0, 0, 0, 0.37602448, 14.110427, 1.7116451, 1.7124226)
@@ -7729,6 +7734,7 @@ material_override = ExtResource("9_ce3kk")
 
 [node name="Eggs?" type="Node3D" parent="Geometry" unique_id=1514250987]
 transform = Transform3D(0.08079763, 0, -4.9463525, 0, 0.013895387, 0, 5.433447, 0, 0.06428565, -77.67174, 1.7760369, 24.857399)
+visible = false
 
 [node name="CSGSphere3D138" type="CSGSphere3D" parent="Geometry/Eggs?" unique_id=1620143141]
 transform = Transform3D(0.08321367, 0, 0.07756728, 0, 49.411304, 0, -0.09097234, 0, 0.0856169, -0.7105696, -115.46103, -0.98868275)
@@ -8976,6 +8982,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2971026, 2.1669278, -16.916
 transform = Transform3D(0.69584405, 0, -0.7181929, 0, 1, 0, 0.7181929, 0, 0.69584405, -19.393894, 1.4993831, 10.57817)
 
 [node name="Chairs" type="Node3D" parent="Geometry/Props" unique_id=1784782826]
+visible = false
 
 [node name="Simple_chair" parent="Geometry/Props/Chairs" unique_id=1376692835 instance=ExtResource("28_5jq4l")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15.607375, 0.10186499, 0.22448349)
@@ -9090,9 +9097,11 @@ transform = Transform3D(0.0052419105, -0.6677813, 0.7443391, -0.9999692, -0.0078
 
 [node name="Right_lung" parent="Geometry" unique_id=815875278 instance=ExtResource("26_d5ggv")]
 transform = Transform3D(-4.3380822e-08, 2.1436653, -0.14729883, -0.99999994, -9.4416606e-08, 7.391453e-17, -5.36553e-09, 0.26513785, 1.1909252, -59, 1, 25.571833)
+visible = false
 
 [node name="Right_lung2" parent="Geometry" unique_id=1517183430 instance=ExtResource("26_d5ggv")]
 transform = Transform3D(2.2254506e-08, -2.1339672, 0.18574609, -0.5153347, -9.441662e-08, 8.245352e-16, 3.4867629e-09, -0.3343429, -1.1855373, -60.715298, 0.8379679, 12.210491)
+visible = false
 
 [node name="Heart" type="Node3D" parent="Geometry" unique_id=1448710218]
 transform = Transform3D(-0.39466208, 0.97079355, -0.75458485, 0.79892266, 1.1137093, 1.7650267e-08, 0.45383272, -1.1163418, -0.65620226, -56.468605, 13.031638, 15.125582)
@@ -9150,52 +9159,52 @@ transform = Transform3D(-0.5218847, 0.8060627, 0.2791052, 0.45835665, 0.282609, 
 
 [node name="NewGeometry" type="Node3D" parent="." unique_id=1242463075]
 
-[node name="SubmarineLevelObjectTestMesh5001" type="MeshInstance3D" parent="." unique_id=815949967]
+[node name="SubmarineLevelObjectTestMesh5001" type="MeshInstance3D" parent="NewGeometry" unique_id=815949967]
 mesh = ExtResource("40_mnq1i")
 
-[node name="SubmarineLevelObjectTestMesh5003" type="MeshInstance3D" parent="." unique_id=1206206172]
+[node name="SubmarineLevelObjectTestMesh5003" type="MeshInstance3D" parent="NewGeometry" unique_id=1206206172]
 mesh = ExtResource("41_n22tq")
 
-[node name="SubmarineLevelObjectTestMesh5008" type="MeshInstance3D" parent="." unique_id=2019743156]
+[node name="SubmarineLevelObjectTestMesh5008" type="MeshInstance3D" parent="NewGeometry" unique_id=2019743156]
 mesh = ExtResource("41_awb4d")
 
-[node name="SubmarineLevelObjectTestMesh5010" type="MeshInstance3D" parent="." unique_id=269012798]
+[node name="SubmarineLevelObjectTestMesh5010" type="MeshInstance3D" parent="NewGeometry" unique_id=269012798]
 mesh = ExtResource("43_7kyku")
 
-[node name="SubmarineLevelObjectTestMesh5012" type="MeshInstance3D" parent="." unique_id=892489656]
+[node name="SubmarineLevelObjectTestMesh5012" type="MeshInstance3D" parent="NewGeometry" unique_id=892489656]
 mesh = ExtResource("44_rv5mm")
 
-[node name="SubmarineLevelObjectTestMesh97" type="MeshInstance3D" parent="." unique_id=1344823982]
+[node name="SubmarineLevelObjectTestMesh97" type="MeshInstance3D" parent="NewGeometry" unique_id=1344823982]
 mesh = ExtResource("42_y8kx2")
 
-[node name="SubmarineLevelObjectTestMesh97002" type="MeshInstance3D" parent="." unique_id=940281415]
+[node name="SubmarineLevelObjectTestMesh97002" type="MeshInstance3D" parent="NewGeometry" unique_id=940281415]
 mesh = ExtResource("43_awb4d")
 
-[node name="SubmarineLevelObjectTestMesh97004" type="MeshInstance3D" parent="." unique_id=2111816859]
+[node name="SubmarineLevelObjectTestMesh97004" type="MeshInstance3D" parent="NewGeometry" unique_id=2111816859]
 mesh = ExtResource("44_484ck")
 
-[node name="SubmarineLevelObjectTestMesh97005" type="MeshInstance3D" parent="." unique_id=1095500931]
+[node name="SubmarineLevelObjectTestMesh97005" type="MeshInstance3D" parent="NewGeometry" unique_id=1095500931]
 mesh = ExtResource("45_7g3ui")
 
-[node name="SubmarineLevelObjectTestMesh97006" type="MeshInstance3D" parent="." unique_id=1758660369]
+[node name="SubmarineLevelObjectTestMesh97006" type="MeshInstance3D" parent="NewGeometry" unique_id=1758660369]
 mesh = ExtResource("46_3g157")
 
-[node name="SubmarineLevelObjectTestMesh97007" type="MeshInstance3D" parent="." unique_id=1385126016]
+[node name="SubmarineLevelObjectTestMesh97007" type="MeshInstance3D" parent="NewGeometry" unique_id=1385126016]
 mesh = ExtResource("47_78fsk")
 
-[node name="SubmarineLevelObjectTestMesh97008" type="MeshInstance3D" parent="." unique_id=326493349]
+[node name="SubmarineLevelObjectTestMesh97008" type="MeshInstance3D" parent="NewGeometry" unique_id=326493349]
 mesh = ExtResource("48_484ck")
 
-[node name="SubmarineLevelObjectTestMesh97009" type="MeshInstance3D" parent="." unique_id=1731594467]
+[node name="SubmarineLevelObjectTestMesh97009" type="MeshInstance3D" parent="NewGeometry" unique_id=1731594467]
 mesh = ExtResource("49_7g3ui")
 
-[node name="SubmarineLevelObjectTestMesh97010" type="MeshInstance3D" parent="." unique_id=1917148446]
+[node name="SubmarineLevelObjectTestMesh97010" type="MeshInstance3D" parent="NewGeometry" unique_id=1917148446]
 mesh = ExtResource("50_3g157")
 
-[node name="SubmarineLevelObjectTestMesh97011" type="MeshInstance3D" parent="." unique_id=459303350]
+[node name="SubmarineLevelObjectTestMesh97011" type="MeshInstance3D" parent="NewGeometry" unique_id=459303350]
 mesh = ExtResource("54_s0iu0")
 
-[node name="SubmarineLevelObjectTestMesh97012" type="MeshInstance3D" parent="." unique_id=69288264]
+[node name="SubmarineLevelObjectTestMesh97012" type="MeshInstance3D" parent="NewGeometry" unique_id=69288264]
 mesh = ExtResource("55_e0g8k")
 
 [editable path="RepairStations/Area1/RepairStation1"]
