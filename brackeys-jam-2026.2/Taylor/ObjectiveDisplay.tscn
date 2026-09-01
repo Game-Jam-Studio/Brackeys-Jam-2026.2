@@ -43,17 +43,16 @@ stretch_mode = 5
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="TextureRect" unique_id=2013089956]
-custom_minimum_size = Vector2(150, 30)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.5
-offset_top = -32.5
-offset_right = 81.5
-offset_bottom = 29.5
+offset_left = -70.5
+offset_top = -25.5
+offset_right = 70.5
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12
