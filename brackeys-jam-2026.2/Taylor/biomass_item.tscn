@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bbambqhrueqof"]
+[gd_scene format=3 uid="uid://chof2wem8gb27"]
 
 [ext_resource type="Script" uid="uid://c1jk2wornkaar" path="res://Scripts/ObjectiveItems/objective_item.gd" id="1_x4upl"]
 [ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="2_5glse"]
-[ext_resource type="ArrayMesh" uid="uid://1aa00o23ckna" path="res://Taylor/biomass_item.tres" id="2_x4upl"]
+[ext_resource type="ArrayMesh" uid="uid://cm74t2mtxettt" path="res://Taylor/biomass_item.tres" id="2_x4upl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s8jrq"]
 
