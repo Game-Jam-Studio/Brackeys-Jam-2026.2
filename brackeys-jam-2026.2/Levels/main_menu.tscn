@@ -32,28 +32,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -402.0
-offset_top = -330.0
-offset_right = -155.0
-offset_bottom = -33.0
+offset_left = -322.0
+offset_top = -270.0
+offset_right = -38.0
+offset_bottom = -29.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
-theme_override_constants/separation = 7
 metadata/_edit_group_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1912402713]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="NewGame" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=2038634441]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
-offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -61,21 +61,21 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=982100871]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 text = "New Game"
 vertical_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1411166417]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 10
 
 [node name="Credits" type="TextureButton" parent="VBoxContainer/HBoxContainer3" unique_id=779371840]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
-offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -83,21 +83,19 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=570257472]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 text = "Credits"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1834089988]
-visible = false
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 10
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer/HBoxContainer4" unique_id=1316338381]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.75, 1.75)
-offset_transform_pivot_ratio = Vector2(0.5, 0.2)
 texture_normal = ExtResource("3_8md67")
 texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
@@ -105,8 +103,13 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=2089466848]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=133095396]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer3/Credits" to="." method="_on_credits_pressed"]
