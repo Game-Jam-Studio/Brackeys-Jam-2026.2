@@ -43,7 +43,7 @@ _subresources={
 "animations": {
 "Jump_Full_Long": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/Jump_Full_Long.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/Jump_Full_Long.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://0xq4yfa0jkkt",
 "settings/loop_mode": 0,
@@ -2099,7 +2099,7 @@ _subresources={
 },
 "Jump_Full_Short": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/Jump_Full_Short.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/Jump_Full_Short.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://cib1e0uyip5r4",
 "settings/loop_mode": 0,
@@ -4155,7 +4155,7 @@ _subresources={
 },
 "Jump_Idle": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/Jump_Idle.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/Jump_Idle.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://cbvl70v64wh0f",
 "settings/loop_mode": 0,
@@ -6211,7 +6211,7 @@ _subresources={
 },
 "Jump_Land": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/Jump_Land.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/Jump_Land.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://bnqgnqynyvsa0",
 "settings/loop_mode": 0,
@@ -8267,7 +8267,7 @@ _subresources={
 },
 "Jump_Start": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/Jump_Start.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/Jump_Start.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://b4hgkqfqfw5ny",
 "settings/loop_mode": 0,
@@ -14435,7 +14435,7 @@ _subresources={
 },
 "T-Pose": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/T-Pose.res",
+"save_to_file/fallback_path": "res://Animations/Unusable/T-Pose.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://c823j43edb3nr",
 "settings/loop_mode": 0,
