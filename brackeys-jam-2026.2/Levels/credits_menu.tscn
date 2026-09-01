@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://xecbygg2rgvj" path="res://Scripts/UI/credits_menu.gd" id="1_6vvtk"]
 [ext_resource type="Theme" uid="uid://bcl3qs08e8man" path="res://Van/MainMenuTheme.tres" id="1_gqi8t"]
 [ext_resource type="Texture2D" uid="uid://c4fpndvxjed7a" path="res://Taylor/water-bg.png" id="2_ms1ik"]
-[ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_whv12"]
 [ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="5_eo247"]
 [ext_resource type="Texture2D" uid="uid://crollf131snet" path="res://Art/2D/Boiler/button_base_press.png" id="6_gqi8t"]
 [ext_resource type="Texture2D" uid="uid://b4x7ekw0jlrum" path="res://Art/2D/Boiler/button_base_hover.png" id="7_ivq1f"]
@@ -53,8 +52,6 @@ theme_override_font_sizes/font_size = 82
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MenuBackgroundSound" parent="." unique_id=1328179579 instance=ExtResource("3_whv12")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1943159879]
 layout_mode = 1
