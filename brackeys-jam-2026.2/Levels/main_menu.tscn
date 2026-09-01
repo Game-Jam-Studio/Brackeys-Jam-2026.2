@@ -42,14 +42,14 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1912402713]
+[node name="NewGame" type="HBoxContainer" parent="VBoxContainer" unique_id=1912402713]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="NewGame" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=2038634441]
+[node name="Button" type="TextureButton" parent="VBoxContainer/NewGame" unique_id=2038634441]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
@@ -59,19 +59,19 @@ texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=982100871]
+[node name="Label" type="Label" parent="VBoxContainer/NewGame" unique_id=982100871]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "New Game"
 vertical_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1411166417]
+[node name="Credits" type="HBoxContainer" parent="VBoxContainer" unique_id=1411166417]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 theme_override_constants/separation = 10
 
-[node name="Credits" type="TextureButton" parent="VBoxContainer/HBoxContainer3" unique_id=779371840]
+[node name="Button" type="TextureButton" parent="VBoxContainer/Credits" unique_id=779371840]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
@@ -81,17 +81,18 @@ texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=570257472]
+[node name="Label" type="Label" parent="VBoxContainer/Credits" unique_id=570257472]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Credits"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1834089988]
+[node name="Quit" type="HBoxContainer" parent="VBoxContainer" unique_id=1834089988]
+visible = false
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_constants/separation = 10
 
-[node name="Quit" type="TextureButton" parent="VBoxContainer/HBoxContainer4" unique_id=1316338381]
+[node name="Button" type="TextureButton" parent="VBoxContainer/Quit" unique_id=1316338381]
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
@@ -101,7 +102,7 @@ texture_pressed = ExtResource("5_5qvx8")
 texture_hover = ExtResource("6_hllw6")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=2089466848]
+[node name="Label" type="Label" parent="VBoxContainer/Quit" unique_id=2089466848]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit"
@@ -111,6 +112,6 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer4/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGame/Button" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits/Button" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit/Button" to="." method="_on_quit_pressed"]
