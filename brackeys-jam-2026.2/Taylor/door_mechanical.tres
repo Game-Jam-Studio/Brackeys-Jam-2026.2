@@ -1,7 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://cflywretdy5c0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vfj5v"]
-load_path = "res://.godot/imported/Door_mechanical_color_palette.jpg-036a521db6b1d0055582a2c28819c7e1.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1yp4"]
 resource_name = "rogue.002"

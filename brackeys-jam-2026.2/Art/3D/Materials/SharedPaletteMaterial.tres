@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://50ew7w8e2ond"]
+
+[ext_resource type="Texture2D" uid="uid://8yd0u7r6hl3s" path="res://Art/2D/color_palette.jpg" id="1_8j7wv"]
+
+[resource]
+albedo_texture = ExtResource("1_8j7wv")
+roughness = 0.5

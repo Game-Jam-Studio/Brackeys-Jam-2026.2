@@ -40,6 +40,13 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"rogue.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Art/3D/Materials/SharedPaletteMaterial.tres",
+"use_external/path": "uid://50ew7w8e2ond"
+}
+},
 "meshes": {
 "Powercell_item_Mesh_009": {
 "generate/lightmap_uv": 0,

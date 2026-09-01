@@ -1,7 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://4dvn23fv4ets"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ybm5u"]
-load_path = "res://.godot/imported/Door_mouth_color_palette.jpg-e1db0dd64820cb52d6283b2d7c50488d.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32sc5"]
 resource_name = "rogue.002"

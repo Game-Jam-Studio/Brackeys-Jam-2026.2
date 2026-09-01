@@ -40,150 +40,148 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"Palette": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Art/3D/Materials/SharedPaletteMaterial.tres",
+"use_external/path": "uid://50ew7w8e2ond"
+}
+},
 "meshes": {
-"submarine_level_object_test_Mesh_5_001": {
+"submarine_level_object_test_Command": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_5_001.res",
-"save_to_file/path": "uid://c1docswneurjh"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Command.res",
+"save_to_file/path": "uid://b41yysowoioc3"
 },
-"submarine_level_object_test_Mesh_5_003": {
+"submarine_level_object_test_Common1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_5_003.res",
-"save_to_file/path": "uid://bl3aogwsgqgfu"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Common1.res",
+"save_to_file/path": "uid://bns0bpjq8wxpa"
 },
-"submarine_level_object_test_Mesh_5_008": {
+"submarine_level_object_test_Common2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_5_008.res",
-"save_to_file/path": "uid://covd5ttb6fh4j"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Common2.res",
+"save_to_file/path": "uid://ca1da1sbkakab"
 },
-"submarine_level_object_test_Mesh_5_010": {
+"submarine_level_object_test_Office1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_5_010.res",
-"save_to_file/path": "uid://dv7kmktykwyg3"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Office1.res",
+"save_to_file/path": "uid://chlwc3herue7o"
 },
-"submarine_level_object_test_Mesh_5_012": {
+"submarine_level_object_test_OilHall1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_5_012.res",
-"save_to_file/path": "uid://h6a6j3if4ya4"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_OilHall1.res",
+"save_to_file/path": "uid://bcc38ka3bhd7h"
 },
-"submarine_level_object_test_Mesh_97": {
+"submarine_level_object_test_OilHall2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97.res",
-"save_to_file/path": "uid://bql0jshctonen"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_OilHall2.res",
+"save_to_file/path": "uid://5b38ekf53d4w"
 },
-"submarine_level_object_test_Mesh_97_002": {
+"submarine_level_object_test_OilRoom": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_002.res",
-"save_to_file/path": "uid://bwfvt8sh6fmyo"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_OilRoom.res",
+"save_to_file/path": "uid://bb7f66kc1vta0"
 },
-"submarine_level_object_test_Mesh_97_004": {
+"submarine_level_object_test_ShipStomach": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_004.res",
-"save_to_file/path": "uid://dvgh15ft6ktwf"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_ShipStomach.res",
+"save_to_file/path": "uid://donw6xl6oqqkj"
 },
-"submarine_level_object_test_Mesh_97_005": {
+"submarine_level_object_test_Side1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_005.res",
-"save_to_file/path": "uid://bjyjviualhu7m"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Side1.res",
+"save_to_file/path": "uid://bm2ce2tgideih"
 },
-"submarine_level_object_test_Mesh_97_006": {
+"submarine_level_object_test_Side2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_006.res",
-"save_to_file/path": "uid://b0d3mvh0ei06"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Side2.res",
+"save_to_file/path": "uid://dotlb1fyfhu1e"
 },
-"submarine_level_object_test_Mesh_97_007": {
+"submarine_level_object_test_SideHall1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_007.res",
-"save_to_file/path": "uid://bbnr16fjdfxw4"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_SideHall1.res",
+"save_to_file/path": "uid://dwnn726f4ttwq"
 },
-"submarine_level_object_test_Mesh_97_008": {
+"submarine_level_object_test_SideHall2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_008.res",
-"save_to_file/path": "uid://dprywbb5nknyc"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_SideHall2.res",
+"save_to_file/path": "uid://dbft8pdsfjxmh"
 },
-"submarine_level_object_test_Mesh_97_009": {
+"submarine_level_object_test_VesselChest": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_009.res",
-"save_to_file/path": "uid://dm6j7defjfkxq"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_VesselChest.res",
+"save_to_file/path": "uid://bdb3061qablij"
 },
-"submarine_level_object_test_Mesh_97_010": {
+"submarine_level_object_test_VesselCore": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_010.res",
-"save_to_file/path": "uid://bbi680jo00whg"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_VesselCore.res",
+"save_to_file/path": "uid://p6pb4gtpq310"
 },
-"submarine_level_object_test_Mesh_97_011": {
+"submarine_level_object_test_VesselHall": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_011.res",
-"save_to_file/path": "uid://b0s1ubjhyphdp"
-},
-"submarine_level_object_test_Mesh_97_012": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_Mesh_97_012.res",
-"save_to_file/path": "uid://1ten8vgcjlnk"
+"save_to_file/fallback_path": "res://Art/3D/Levels/submarine_level_object_test_VesselHall.res",
+"save_to_file/path": "uid://b2po0lqk3e6b4"
 }
 }
 }

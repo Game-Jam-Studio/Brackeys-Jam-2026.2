@@ -40,22 +40,21 @@
 [ext_resource type="PackedScene" uid="uid://cybc4yioslff4" path="res://Taylor/powercell_item.tscn" id="36_b607u"]
 [ext_resource type="PackedScene" uid="uid://4fds2p1ksg0w" path="res://Taylor/oil_item.tscn" id="37_mvjxq"]
 [ext_resource type="PackedScene" uid="uid://bbambqhrueqof" path="res://Taylor/biomass_item.tscn" id="39_15cjb"]
-[ext_resource type="ArrayMesh" uid="uid://c1docswneurjh" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_001.res" id="40_mnq1i"]
-[ext_resource type="ArrayMesh" uid="uid://covd5ttb6fh4j" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_008.res" id="41_awb4d"]
-[ext_resource type="ArrayMesh" uid="uid://bl3aogwsgqgfu" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_003.res" id="41_n22tq"]
-[ext_resource type="ArrayMesh" uid="uid://bql0jshctonen" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97.res" id="42_y8kx2"]
-[ext_resource type="ArrayMesh" uid="uid://dv7kmktykwyg3" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_010.res" id="43_7kyku"]
-[ext_resource type="ArrayMesh" uid="uid://bwfvt8sh6fmyo" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_002.res" id="43_awb4d"]
-[ext_resource type="ArrayMesh" uid="uid://dvgh15ft6ktwf" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_004.res" id="44_484ck"]
-[ext_resource type="ArrayMesh" uid="uid://h6a6j3if4ya4" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_5_012.res" id="44_rv5mm"]
-[ext_resource type="ArrayMesh" uid="uid://bjyjviualhu7m" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_005.res" id="45_7g3ui"]
-[ext_resource type="ArrayMesh" uid="uid://b0d3mvh0ei06" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_006.res" id="46_3g157"]
-[ext_resource type="ArrayMesh" uid="uid://bbnr16fjdfxw4" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_007.res" id="47_78fsk"]
-[ext_resource type="ArrayMesh" uid="uid://dprywbb5nknyc" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_008.res" id="48_484ck"]
-[ext_resource type="ArrayMesh" uid="uid://dm6j7defjfkxq" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_009.res" id="49_7g3ui"]
-[ext_resource type="ArrayMesh" uid="uid://bbi680jo00whg" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_010.res" id="50_3g157"]
-[ext_resource type="ArrayMesh" uid="uid://b0s1ubjhyphdp" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_011.res" id="54_s0iu0"]
-[ext_resource type="ArrayMesh" uid="uid://1ten8vgcjlnk" path="res://Art/3D/Levels/submarine_level_object_test_Mesh_97_012.res" id="55_e0g8k"]
+[ext_resource type="ArrayMesh" uid="uid://bux45o777e2tw" path="res://Art/3D/Levels/submarine_level_object_test_Command.res" id="42_7kyku"]
+[ext_resource type="ArrayMesh" uid="uid://d31ysvevg0nm0" path="res://Art/3D/Levels/submarine_level_object_test_Common1.res" id="43_rv5mm"]
+[ext_resource type="ArrayMesh" uid="uid://cx8xr8kqw6rk4" path="res://Art/3D/Levels/submarine_level_object_test_Common2.res" id="44_s0iu0"]
+[ext_resource type="ArrayMesh" uid="uid://l7d41avkk32i" path="res://Art/3D/Levels/submarine_level_object_test_Office1.res" id="45_e0g8k"]
+[ext_resource type="ArrayMesh" uid="uid://b3gu7wcyk3wgi" path="res://Art/3D/Levels/submarine_level_object_test_OilHall1.res" id="46_a2as3"]
+[ext_resource type="ArrayMesh" uid="uid://d02k7nin4ujnm" path="res://Art/3D/Levels/submarine_level_object_test_OilHall2.res" id="47_brlv2"]
+[ext_resource type="ArrayMesh" uid="uid://c8yed3tt78dr" path="res://Art/3D/Levels/submarine_level_object_test_OilRoom.res" id="48_b6swp"]
+[ext_resource type="ArrayMesh" uid="uid://ce1my0jrbta88" path="res://Art/3D/Levels/submarine_level_object_test_ShipStomach.res" id="49_ya33b"]
+[ext_resource type="ArrayMesh" uid="uid://fjuf7ed7jdxu" path="res://Art/3D/Levels/submarine_level_object_test_Side1.res" id="50_jx4ah"]
+[ext_resource type="ArrayMesh" uid="uid://c2w576tbrx54m" path="res://Art/3D/Levels/submarine_level_object_test_Side2.res" id="51_tbjkx"]
+[ext_resource type="ArrayMesh" uid="uid://dykgbmk2632yf" path="res://Art/3D/Levels/submarine_level_object_test_SideHall1.res" id="52_e8hil"]
+[ext_resource type="ArrayMesh" uid="uid://dwmii0ivj6h4v" path="res://Art/3D/Levels/submarine_level_object_test_SideHall2.res" id="53_402of"]
+[ext_resource type="ArrayMesh" uid="uid://ctlh0sq08fcpm" path="res://Art/3D/Levels/submarine_level_object_test_VesselChest.res" id="54_tu7xj"]
+[ext_resource type="ArrayMesh" uid="uid://cgjw4t8hiqccp" path="res://Art/3D/Levels/submarine_level_object_test_VesselCore.res" id="55_a8guc"]
+[ext_resource type="ArrayMesh" uid="uid://dmvmd0mh3pkn4" path="res://Art/3D/Levels/submarine_level_object_test_VesselHall.res" id="56_msdvl"]
 [ext_resource type="AudioStream" uid="uid://d6x1gbg8hc5p" path="res://Audio/Music/spaceshipgambient.wav" id="57_rv5mm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
@@ -171,6 +170,12 @@ emission_energy_multiplier = 0.0
 
 [node name="World" type="Node3D" unique_id=1609880321]
 script = ExtResource("1_2a835")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1762744742]
+stream = ExtResource("57_rv5mm")
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1350521381]
 quality = 3
@@ -9155,59 +9160,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.48969707, 25.01
 
 [node name="NewGeometry" type="Node3D" parent="." unique_id=1303294284]
 
-[node name="SubmarineLevelObjectTestMesh5001" type="MeshInstance3D" parent="NewGeometry" unique_id=1965953346]
-mesh = ExtResource("40_mnq1i")
+[node name="SubmarineLevelObjectTestCommand" type="MeshInstance3D" parent="NewGeometry" unique_id=1933202447]
+mesh = ExtResource("42_7kyku")
 
-[node name="SubmarineLevelObjectTestMesh5003" type="MeshInstance3D" parent="NewGeometry" unique_id=1090872873]
-mesh = ExtResource("41_n22tq")
+[node name="SubmarineLevelObjectTestCommon1" type="MeshInstance3D" parent="NewGeometry" unique_id=1564676040]
+mesh = ExtResource("43_rv5mm")
 
-[node name="SubmarineLevelObjectTestMesh5008" type="MeshInstance3D" parent="NewGeometry" unique_id=2123425898]
-mesh = ExtResource("41_awb4d")
+[node name="SubmarineLevelObjectTestCommon2" type="MeshInstance3D" parent="NewGeometry" unique_id=175852072]
+mesh = ExtResource("44_s0iu0")
 
-[node name="SubmarineLevelObjectTestMesh5010" type="MeshInstance3D" parent="NewGeometry" unique_id=446432370]
-mesh = ExtResource("43_7kyku")
+[node name="SubmarineLevelObjectTestOffice1" type="MeshInstance3D" parent="NewGeometry" unique_id=1089143287]
+mesh = ExtResource("45_e0g8k")
 
-[node name="SubmarineLevelObjectTestMesh5012" type="MeshInstance3D" parent="NewGeometry" unique_id=261964105]
-mesh = ExtResource("44_rv5mm")
+[node name="SubmarineLevelObjectTestOilHall1" type="MeshInstance3D" parent="NewGeometry" unique_id=1471979347]
+mesh = ExtResource("46_a2as3")
 
-[node name="SubmarineLevelObjectTestMesh97" type="MeshInstance3D" parent="NewGeometry" unique_id=170558179]
-mesh = ExtResource("42_y8kx2")
+[node name="SubmarineLevelObjectTestOilHall2" type="MeshInstance3D" parent="NewGeometry" unique_id=1081216774]
+mesh = ExtResource("47_brlv2")
 
-[node name="SubmarineLevelObjectTestMesh97002" type="MeshInstance3D" parent="NewGeometry" unique_id=719424852]
-mesh = ExtResource("43_awb4d")
+[node name="SubmarineLevelObjectTestOilRoom" type="MeshInstance3D" parent="NewGeometry" unique_id=1910044887]
+mesh = ExtResource("48_b6swp")
 
-[node name="SubmarineLevelObjectTestMesh97004" type="MeshInstance3D" parent="NewGeometry" unique_id=978069246]
-mesh = ExtResource("44_484ck")
+[node name="SubmarineLevelObjectTestShipStomach" type="MeshInstance3D" parent="NewGeometry" unique_id=646886731]
+mesh = ExtResource("49_ya33b")
 
-[node name="SubmarineLevelObjectTestMesh97005" type="MeshInstance3D" parent="NewGeometry" unique_id=756722067]
-mesh = ExtResource("45_7g3ui")
+[node name="SubmarineLevelObjectTestSide1" type="MeshInstance3D" parent="NewGeometry" unique_id=1689003447]
+mesh = ExtResource("50_jx4ah")
 
-[node name="SubmarineLevelObjectTestMesh97006" type="MeshInstance3D" parent="NewGeometry" unique_id=2008380535]
-mesh = ExtResource("46_3g157")
+[node name="SubmarineLevelObjectTestSide2" type="MeshInstance3D" parent="NewGeometry" unique_id=1723751742]
+mesh = ExtResource("51_tbjkx")
 
-[node name="SubmarineLevelObjectTestMesh97007" type="MeshInstance3D" parent="NewGeometry" unique_id=911996343]
-mesh = ExtResource("47_78fsk")
+[node name="SubmarineLevelObjectTestSideHall1" type="MeshInstance3D" parent="NewGeometry" unique_id=1225825441]
+mesh = ExtResource("52_e8hil")
 
-[node name="SubmarineLevelObjectTestMesh97008" type="MeshInstance3D" parent="NewGeometry" unique_id=1475797641]
-mesh = ExtResource("48_484ck")
+[node name="SubmarineLevelObjectTestSideHall2" type="MeshInstance3D" parent="NewGeometry" unique_id=137837729]
+mesh = ExtResource("53_402of")
 
-[node name="SubmarineLevelObjectTestMesh97009" type="MeshInstance3D" parent="NewGeometry" unique_id=1041555959]
-mesh = ExtResource("49_7g3ui")
+[node name="SubmarineLevelObjectTestVesselChest" type="MeshInstance3D" parent="NewGeometry" unique_id=1959527037]
+mesh = ExtResource("54_tu7xj")
 
-[node name="SubmarineLevelObjectTestMesh97010" type="MeshInstance3D" parent="NewGeometry" unique_id=1108059201]
-mesh = ExtResource("50_3g157")
+[node name="SubmarineLevelObjectTestVesselCore" type="MeshInstance3D" parent="NewGeometry" unique_id=1662355324]
+mesh = ExtResource("55_a8guc")
 
-[node name="SubmarineLevelObjectTestMesh97011" type="MeshInstance3D" parent="NewGeometry" unique_id=1255485358]
-mesh = ExtResource("54_s0iu0")
-
-[node name="SubmarineLevelObjectTestMesh97012" type="MeshInstance3D" parent="NewGeometry" unique_id=1720520588]
-mesh = ExtResource("55_e0g8k")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1762744742]
-stream = ExtResource("57_rv5mm")
-volume_db = -6.0
-autoplay = true
-bus = &"Music"
+[node name="SubmarineLevelObjectTestVesselHall" type="MeshInstance3D" parent="NewGeometry" unique_id=509331287]
+mesh = ExtResource("56_msdvl")
 
 [editable path="Geometry/Computers/Simple_Computer3"]
 [editable path="RepairStations/Area1/RepairStation1"]

@@ -1,7 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://b2c32iyuisocs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgt72"]
-load_path = "res://.godot/imported/Oil_item_color_palette.jpg-d39f5d01b7d889b43f595ffdea854e59.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6x5m"]
 resource_name = "rogue.002"
