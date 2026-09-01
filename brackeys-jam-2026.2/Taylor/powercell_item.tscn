@@ -1,8 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://eofx8aqfthd7"]
 
 [ext_resource type="Script" uid="uid://c1jk2wornkaar" path="res://Scripts/ObjectiveItems/objective_item.gd" id="1_1paxj"]
 [ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="2_2octy"]
-[ext_resource type="ArrayMesh" uid="uid://dxfmn71ds6xdv" path="res://Taylor/powercell_item.tres" id="2_s8jrq"]
+[ext_resource type="ArrayMesh" uid="uid://dxfmn71ds6xdv" path="res://Taylor/power_cell_item.tres" id="2_s8jrq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s8jrq"]
 
