@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://blq2phnwpp4fb"]
+
+[ext_resource type="Texture2D" uid="uid://dxrenl60idgq" path="res://Art/2D/game_title.png" id="1_nnjmt"]
+[ext_resource type="Script" uid="uid://bpvlmo7ekobny" path="res://Scripts/loading.gd" id="1_vrvqp"]
+
+[node name="Loading" type="Control" unique_id=1007440757]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrvqp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=275370195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=796766256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nnjmt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1374425756]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -56.0
+offset_right = 349.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0

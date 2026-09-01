@@ -1,5 +1,7 @@
 extends Node
 
+var scene_to_load: String
+
 # Emitted whenever the submarine's health value changes
 signal ship_health_changed(new_health: float)
 
