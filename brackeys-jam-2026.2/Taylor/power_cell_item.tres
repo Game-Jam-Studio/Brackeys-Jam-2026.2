@@ -1,11 +1,12 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dxfmn71ds6xdv"]
 
-[ext_resource type="Texture2D" uid="uid://bn37tnycw00mr" path="res://Art/3D/Raw Files/Powercell_item_color_palette.jpg" id="1_h8v7d"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d1lgf"]
+load_path = "res://.godot/imported/Powercell_item_color_palette.jpg-17b8e385546c84e2bfc586fbde3e1f9e.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42oof"]
 resource_name = "rogue.002"
 cull_mode = 2
-albedo_texture = ExtResource("1_h8v7d")
+albedo_texture = SubResource("CompressedTexture2D_d1lgf")
 roughness = 0.5
 metadata/_gltf_primary_texture_coord = 0
 
