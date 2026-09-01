@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/gore_swirl.gdshader" id="4_ddyxe"]
 [ext_resource type="Script" uid="uid://d3ba834ve3f6p" path="res://Van/Scripts/MainMenu/main_menu_camera_wobble.gd" id="4_ip0nw"]
 [ext_resource type="Texture2D" uid="uid://dxrenl60idgq" path="res://Art/2D/game_title.png" id="4_w5tlo"]
-[ext_resource type="Texture2D" uid="uid://cxf4ddv0m6h13" path="res://Art/3D/Van/character_color_palette.jpg" id="5_gnmlk"]
+[ext_resource type="Texture2D" uid="uid://8yd0u7r6hl3s" path="res://Art/2D/color_palette.jpg" id="5_gnmlk"]
 [ext_resource type="PackedScene" uid="uid://dp65i8pg1ea8i" path="res://Levels/main_menu.tscn" id="7_gnmlk"]
 
 [sub_resource type="Environment" id="Environment_8yvyb"]
