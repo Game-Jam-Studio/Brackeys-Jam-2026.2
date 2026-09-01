@@ -50,7 +50,7 @@ func unlock_area_3() -> void:
 	emit_signal("objective_tier_changed", 3)
 
 
-func complete_area_3_loop() -> void:
+func unlock_area_4() -> void:
 	if current_state == ObjectiveState.AREA_3_LOOP:
 		area_3_completion_count += 1
 		if area_3_completion_count >= AREA_3_REQUIRED_LOOPS:
