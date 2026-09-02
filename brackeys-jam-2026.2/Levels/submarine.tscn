@@ -173,6 +173,7 @@ emission_energy_multiplier = 0.0
 script = ExtResource("1_2a835")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1762744742]
+process_mode = 3
 stream = ExtResource("57_rv5mm")
 volume_db = -6.0
 autoplay = true
