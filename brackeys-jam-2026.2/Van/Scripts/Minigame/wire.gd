@@ -6,8 +6,8 @@ var line_2d: Line2D
 var wire_ID: int
 var tick: float
 var dial_sound: AudioStreamWAV
-const UI_DIAL_SHORT = preload("uid://f5we04nn8mkj")
-const UI_DIAL_CORRUPTED = preload("uid://j0q4lsv21hnn")
+const UI_DIAL_SHORT = preload("res://Audio/SFX/UI_dial_short.wav")
+const UI_DIAL_CORRUPTED = preload("res://Audio/SFX/UI_dial_corrupted.wav")
 @onready var wire_minigame: Control = $"../.."
 @onready var wire_visual: TextureRect = $WireVisual
 @export var wire_visual_offset: float = -43

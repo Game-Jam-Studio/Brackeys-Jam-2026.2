@@ -11,6 +11,9 @@ var start_pos: Vector2
 var current_rot: float
 var freeze: bool = false
 var mouse_movement_threshold: float
+var dial_sound: AudioStreamWAV
+const UI_DIAL = preload("res://Audio/SFX/UI_dial.wav")
+const UI_DIAL_CORRUPTED = preload("res://Audio/SFX/UI_dial_corrupted.wav")
 
 #Exposed variables
 @export var max_rotation: float = 180
@@ -20,6 +23,10 @@ var mouse_movement_threshold: float
 func _ready() -> void:
 #Make sure root node's random values are ready
 	await ballast_minigame.ready
+	if ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH) == 3:
+		dial_sound = UI_DIAL_CORRUPTED
+	else:
+		dial_sound = UI_DIAL
 
 
 func _on_gui_input(event: InputEvent) -> void:
@@ -59,5 +66,6 @@ func _on_gui_input(event: InputEvent) -> void:
 			value -= 0.025
 
 func play_dial_sound():
-	%AudioStreamPlayer.pitch_scale = randf_range(0.975, 1.025)
+	%AudioStreamPlayer.stream = dial_sound
+	%AudioStreamPlayer.pitch_scale = randf_range(0.95, 1.05)
 	%AudioStreamPlayer.play()
