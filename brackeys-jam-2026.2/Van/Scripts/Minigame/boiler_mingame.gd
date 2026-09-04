@@ -3,14 +3,19 @@ extends Control
 @onready var accept_button: TextureButton = %Accept
 @onready var progress_bar: TextureProgressBar = $ValidArea
 @onready var audio: AudioStreamPlayer = %AudioStreamPlayer
-const UI_ACCEPT = preload("uid://ci0u00xywksjx")
-const UI_ERROR = preload("uid://44cjuy6hy1ge")
+const UI_ACCEPT = preload("res://Audio/SFX/UI_accept.wav")
+const UI_ACCEPT_CORRUPTED = preload("res://Audio/SFX/UI_accept_corrupted.wav")
+const UI_ERROR = preload("res://Audio/SFX/UI_error.wav")
+const UI_ERROR_CORRUPTED = preload("res://Audio/SFX/UI_error_corrupted.wav")
 
 # Emitted on outcome so the caller can return the camera and call end_repair() on the trigger.
 signal minigame_completed(success: bool)
 
 var submitted: bool
 var completed_rounds: float
+var error_sound: AudioStreamWAV
+var accept_sound: AudioStreamWAV
+
 
 @export var tolerance: float = 15
 @export var number_of_rounds: int = 3
@@ -22,6 +27,12 @@ var completed_rounds: float
 @export var goal_max_range: float = 90
 
 func _ready() -> void:
+	if ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH) == 3:
+		accept_sound = UI_ACCEPT_CORRUPTED
+		error_sound = UI_ERROR_CORRUPTED
+	else:
+		accept_sound = UI_ACCEPT
+		error_sound = UI_ERROR
 	var needle_texture = ProgressionManager.get_asset_texture("boiler", "needle")
 	var meter_texture = ProgressionManager.get_asset_texture("boiler", "meter")
 	var button_texture = ProgressionManager.get_asset_texture("boiler", "button")
@@ -40,7 +51,7 @@ func _process(delta: float) -> void:
 		if  color_rect.rotation < progress_bar.rotation - PI - deg_to_rad(tolerance) and !submitted:
 			accept_button.visible = false
 			submitted = true
-			$AudioStreamPlayer.stream = UI_ERROR
+			$AudioStreamPlayer.stream = error_sound
 			$AudioStreamPlayer.play()
 			await get_tree().create_timer(.5).timeout
 			minigame_completed.emit(false)
@@ -62,7 +73,7 @@ func _on_button_button_down() -> void:
 		completed_rounds += 1
 		if completed_rounds >= number_of_rounds:
 			submitted = true
-			audio.stream = UI_ACCEPT
+			audio.stream = accept_sound
 			audio.play()
 			await get_tree().create_timer(.5).timeout
 			minigame_completed.emit(true)
@@ -71,12 +82,12 @@ func _on_button_button_down() -> void:
 		progress_bar.rotation_degrees = randf_range(-goal_min_range, -goal_max_range) + 180
 		color_rect.rotation = PI / 2
 		speed = speed * speed_multiplier_per_round
-		audio.stream = UI_ACCEPT
+		audio.stream = accept_sound
 		audio.play()
 	else:
 		accept_button.visible = false
 		submitted = true
-		$AudioStreamPlayer.stream = UI_ERROR
+		$AudioStreamPlayer.stream = error_sound
 		$AudioStreamPlayer.play()
 		await get_tree().create_timer(.5).timeout
 		minigame_completed.emit(false)
