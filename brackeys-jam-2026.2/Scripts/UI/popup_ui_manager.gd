@@ -82,10 +82,6 @@ func load_csv_to_dictionary(file_path: String, key_column: String = "Line ID", d
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	test_narrative_text = load_csv_to_dictionary("res://Narrative/Dialogue.csv")
-	for row in test_narrative_text:
-		#print(test_narrative_text[row]["Line ID"] + " " + test_narrative_text[row]["Next ID"])
-		pass
-	#show_next_text("Intro-001")
 	
 	# Explicitly hide the UI on launch to override the editor visibility state
 	$CanvasLayer.visible = false

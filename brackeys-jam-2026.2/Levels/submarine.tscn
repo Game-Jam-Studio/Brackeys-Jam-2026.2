@@ -56,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://cybc4yioslff4" path="res://Taylor/powercell_item.tscn" id="56_7kyku"]
 [ext_resource type="ArrayMesh" uid="uid://b2po0lqk3e6b4" path="res://Art/3D/Levels/submarine_level_object_test_VesselHall.res" id="56_msdvl"]
 [ext_resource type="AudioStream" uid="uid://d6x1gbg8hc5p" path="res://Audio/Music/spaceshipgambient.wav" id="57_rv5mm"]
+[ext_resource type="PackedScene" uid="uid://dyhg127d1afoi" path="res://Prefabs/Actors/one_time_narrative_collider.tscn" id="57_s0iu0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -241,6 +242,7 @@ player_character = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_op4vt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.697569, 0.17531681, 1.7121282)
+collision_layer = 3
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=81569447]
 
@@ -9254,6 +9256,11 @@ mesh = ExtResource("55_a8guc")
 
 [node name="SubmarineLevelObjectTestVesselHall" type="MeshInstance3D" parent="NewGeometry" unique_id=509331287]
 mesh = ExtResource("56_msdvl")
+
+[node name="OneTimeNarrativeColliders" type="Node" parent="." unique_id=1603017528]
+
+[node name="OneTimeNarrativeCollider" parent="OneTimeNarrativeColliders" unique_id=641552390 instance=ExtResource("57_s0iu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.713244, 0.18142796, 1.7519546)
 
 [editable path="Geometry/Computers/Simple_Computer3"]
 [editable path="RepairStations/Area1/RepairStation1"]
