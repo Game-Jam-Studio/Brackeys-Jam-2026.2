@@ -10,7 +10,7 @@ signal station_repair_succeeded(system_id: String)
 @onready var station: Node = get_parent()
 @onready var prompt_sprite: Sprite3D = $"Key Prompt"
 
-#@export var on_repair_end_dialogue_key: String = ""
+@export var on_repair_success_dialogue_key: String = ""
 @export var on_first_repair_start_dialogue_key: String = ""
 var has_been_repaired_previously = false
 
@@ -65,12 +65,12 @@ func end_repair(success: bool) -> void:
 	# Release the system lock so the breakdown manager can target it again
 	GameState.set_system_repairing(station.system_id, false)
 	
-	#if on_repair_end_dialogue_key != "":
-	#	PopupUI.show_next_text(on_repair_end_dialogue_key)
-	
 	if success:
 		# System restored, no penalty taken
-		PopupUI.launch_terminal("System stabilized.")
+		if on_repair_success_dialogue_key != "":
+			PopupUI.show_next_text(on_repair_success_dialogue_key)
+		else:
+			PopupUI.launch_terminal("System stabilized.")
 		station_repair_succeeded.emit(station.system_id)
 	else:
 		# Deduct flat penalty from subsystem's health

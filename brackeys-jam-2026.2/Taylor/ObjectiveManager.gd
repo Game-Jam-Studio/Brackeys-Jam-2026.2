@@ -21,6 +21,7 @@ func record_minigame_played() -> void:
 		minigames_played_count += 1
 		if minigames_played_count >= 1:
 			print("Intro complete! Showing objectives.")
+			PopupUI.show_next_text("APA1-001")
 			current_state = ObjectiveState.AREA_1
 			emit_signal("objective_updated", "Insert a Power Cell into the Area 2 Door.")
 			emit_signal("trigger_objective_dialogue", "Obj-Intro-Complete")

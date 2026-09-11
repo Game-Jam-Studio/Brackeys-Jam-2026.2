@@ -21,6 +21,9 @@ func complete_unlock_key(key: String, interacting_door: Door = null):
 		else:
 			door.unlock()  # Just unlock other doors in this group
 	
+	if area_progression_dictionary[key].narrative_to_show != "":
+		PopupUI.show_next_text(area_progression_dictionary[key].narrative_to_show)
+	
 	if area_progression_dictionary[key].area_to_unlock >= 0 :
 		sfx_player.stream = door_unlocked_sound
 		sfx_player.play()

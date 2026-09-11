@@ -18,7 +18,6 @@ var nextTextKey: String = ""
 
 func set_popup_text(new_text: String) -> void:
 	terminal_text.text = new_text
-	print("Debug: Terminal text set to -> ", new_text)
 
 func _update_popup_style() -> void:
 	var current_tier: int = ProgressionManager.get_minigame_tier(GameState.ship_health, GameState.MAX_SHIP_HEALTH) 
@@ -94,8 +93,8 @@ func show_next_text(LineID: String) -> void:
 		nextTextKey = test_narrative_text[LineID]["Next ID"]
 		launch_terminal(test_narrative_text[LineID]["Line"])
 	else:
-		push_error("ERROR - tried to launch narrative text that has no key in the narrative dictionary")
-		launch_terminal("This subsystem doesn't exist.")
+		push_error("ERROR - tried to launch narrative text that has no key in the narrative dictionary: " + LineID)
+		#launch_terminal("This subsystem doesn't exist.")
 
 
 # Example usage of launchTerminal - TerminalUI.launch_terminal("show some text\nsomemoretext")

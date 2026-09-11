@@ -205,16 +205,19 @@ door_unlocked_sound = ExtResource("4_exdgp")
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area2Doors/Objective1Door"), NodePath("../../Doors/Area2Doors/CorridorDoor"), NodePath("../../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../../Doors/Area2Doors/A2LeftRoomExit")]
 area_to_unlock = 2
+narrative_to_show = "APA2-001"
 
 [node name="Area3Unlock" type="Node" parent="AreaProgressionSystem" unique_id=73855927 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective2Door")]
 area_to_unlock = 3
+narrative_to_show = "APA3-001"
 
 [node name="CaptainsRoomUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1178640440 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective3Door")]
 area_to_unlock = 4
+narrative_to_show = "A3L1-001"
 
 [node name="ExitDoorUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1213014822 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
@@ -9000,6 +9003,7 @@ transform = Transform3D(0.012153538, 0, -0.4370561, 0, 0.40838772, 0, 0.49985135
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L2-001"
 on_first_repair_start_dialogue_key = "MG2-001"
 
 [node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" index="0" unique_id=202934905]
@@ -9017,6 +9021,7 @@ system_id = "Circuit"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L4-001"
 on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
@@ -9037,6 +9042,7 @@ transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 
 system_id = "Boiler"
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L1-001"
 on_first_repair_start_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
@@ -9059,6 +9065,7 @@ system_id = "Sonar"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L3-001"
 on_first_repair_start_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
@@ -9085,6 +9092,7 @@ system_id = "Sonar"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L3-001"
 on_first_repair_start_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
@@ -9106,6 +9114,7 @@ system_id = "Circuit"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L4-001"
 on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
@@ -9127,6 +9136,7 @@ system_id = "Boiler"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L1-001"
 on_first_repair_start_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
@@ -9146,6 +9156,7 @@ material_override = SubResource("StandardMaterial3D_b6swp")
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L2-001"
 on_first_repair_start_dialogue_key = "MG2-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
@@ -9262,6 +9273,13 @@ mesh = ExtResource("56_msdvl")
 [node name="OneTimeNarrativeCollider" parent="OneTimeNarrativeColliders" unique_id=641552390 instance=ExtResource("57_s0iu0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.713244, 0.18142796, 1.7519546)
 
+[node name="OneTimeNarrativeCollider2" parent="OneTimeNarrativeColliders" unique_id=1280993102 instance=ExtResource("57_s0iu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7959366, 0, 2.2025654)
+line_id = "End-001"
+
+[node name="CollisionShape3D" parent="OneTimeNarrativeColliders/OneTimeNarrativeCollider2" index="0" unique_id=1668611086]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.036471367, 0, 0)
+
 [editable path="Geometry/Computers/Simple_Computer3"]
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]
@@ -9271,3 +9289,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.713244, 0.18142796, 1.75195
 [editable path="RepairStations/Area2/RepairStation8"]
 [editable path="RepairStations/Area2/RepairStation6"]
 [editable path="RepairStations/Area2/RepairStation7"]
+[editable path="OneTimeNarrativeColliders/OneTimeNarrativeCollider2"]
