@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://be22kb8cqnx72" path="res://Art/3D/PlaceableObjects/simple_table.tscn" id="29_a3jn7"]
 [ext_resource type="Texture2D" uid="uid://cj58ff8yecjh0" path="res://Art/Placeholder/Screen1.jpg" id="31_rmk5s"]
 [ext_resource type="PackedScene" uid="uid://4fds2p1ksg0w" path="res://Taylor/oil_item.tscn" id="37_mvjxq"]
-[ext_resource type="PackedScene" uid="uid://chof2wem8gb27" path="res://Taylor/biomass_item.tscn" id="39_15cjb"]
+[ext_resource type="PackedScene" uid="uid://bbambqhrueqof" path="res://Taylor/biomass_item.tscn" id="39_15cjb"]
 [ext_resource type="ArrayMesh" uid="uid://b41yysowoioc3" path="res://Art/3D/Levels/submarine_level_object_test_Command.res" id="42_7kyku"]
 [ext_resource type="ArrayMesh" uid="uid://bns0bpjq8wxpa" path="res://Art/3D/Levels/submarine_level_object_test_Common1.res" id="43_rv5mm"]
 [ext_resource type="ArrayMesh" uid="uid://ca1da1sbkakab" path="res://Art/3D/Levels/submarine_level_object_test_Common2.res" id="44_s0iu0"]
@@ -53,9 +53,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dbft8pdsfjxmh" path="res://Art/3D/Levels/submarine_level_object_test_SideHall2.res" id="53_402of"]
 [ext_resource type="ArrayMesh" uid="uid://bdb3061qablij" path="res://Art/3D/Levels/submarine_level_object_test_VesselChest.res" id="54_tu7xj"]
 [ext_resource type="ArrayMesh" uid="uid://p6pb4gtpq310" path="res://Art/3D/Levels/submarine_level_object_test_VesselCore.res" id="55_a8guc"]
-[ext_resource type="PackedScene" uid="uid://eofx8aqfthd7" path="res://Taylor/powercell_item.tscn" id="56_7kyku"]
+[ext_resource type="PackedScene" uid="uid://cybc4yioslff4" path="res://Taylor/powercell_item.tscn" id="56_7kyku"]
 [ext_resource type="ArrayMesh" uid="uid://b2po0lqk3e6b4" path="res://Art/3D/Levels/submarine_level_object_test_VesselHall.res" id="56_msdvl"]
 [ext_resource type="AudioStream" uid="uid://d6x1gbg8hc5p" path="res://Audio/Music/spaceshipgambient.wav" id="57_rv5mm"]
+[ext_resource type="PackedScene" uid="uid://dyhg127d1afoi" path="res://Prefabs/Actors/one_time_narrative_collider.tscn" id="57_s0iu0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0tpda"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -204,16 +205,19 @@ door_unlocked_sound = ExtResource("4_exdgp")
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area2Doors/Objective1Door"), NodePath("../../Doors/Area2Doors/CorridorDoor"), NodePath("../../Doors/Area2Doors/A2LeftRoomEnter"), NodePath("../../Doors/Area2Doors/A2LeftRoomExit")]
 area_to_unlock = 2
+narrative_to_show = "APA2-001"
 
 [node name="Area3Unlock" type="Node" parent="AreaProgressionSystem" unique_id=73855927 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective2Door")]
 area_to_unlock = 3
+narrative_to_show = "APA3-001"
 
 [node name="CaptainsRoomUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1178640440 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective3Door")]
 area_to_unlock = 4
+narrative_to_show = "A3L1-001"
 
 [node name="ExitDoorUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1213014822 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
@@ -241,6 +245,7 @@ player_character = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=2087870960 instance=ExtResource("2_op4vt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.697569, 0.17531681, 1.7121282)
+collision_layer = 3
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=81569447]
 
@@ -8997,7 +9002,11 @@ material_override = ExtResource("15_4ddeu")
 transform = Transform3D(0.012153538, 0, -0.4370561, 0, 0.40838772, 0, 0.49985135, 0, 0.010626715, 18.744612, 1.384057, 0.6864689)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" parent_id_path=PackedInt32Array(845438724, 1598274358) index="0" unique_id=202934905]
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L2-001"
+on_first_repair_start_dialogue_key = "MG2-001"
+
+[node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" index="0" unique_id=202934905]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 2.7845507)
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation1" index="4" unique_id=2082674037]
@@ -9010,6 +9019,10 @@ material_override = SubResource("StandardMaterial3D_7kyku")
 transform = Transform3D(0.41320133, 0, 0, 0, 0.44454077, 0, 0, 0, 0.5, 35.65908, 1.2069082, -5.716363)
 system_id = "Circuit"
 metadata/_edit_group_ = true
+
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L4-001"
+on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
 visible = true
@@ -9027,6 +9040,10 @@ material_override = SubResource("StandardMaterial3D_rv5mm")
 [node name="RepairStation2" parent="RepairStations/Area1" unique_id=1628563511 instance=ExtResource("5_r2qih")]
 transform = Transform3D(0.43369538, 0, 0, 0, 0.41920418, 0, 0, 0, 0.5, 24.6142, 0.91858387, 13.08552)
 system_id = "Boiler"
+
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L1-001"
+on_first_repair_start_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
 visible = false
@@ -9046,6 +9063,10 @@ material_override = SubResource("StandardMaterial3D_s0iu0")
 transform = Transform3D(0.45483652, 0, 0, 0, 0.43745923, 0, 0, 0, 0.87813115, 48.436646, 1.1988581, 8.073327)
 system_id = "Sonar"
 metadata/_edit_group_ = true
+
+[node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L3-001"
+on_first_repair_start_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
 visible = true
@@ -9070,6 +9091,10 @@ transform = Transform3D(0.3450945, 0, -0.15766822, 0, 0.35902852, 0, 0.11467054,
 system_id = "Sonar"
 metadata/_edit_group_ = true
 
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L3-001"
+on_first_repair_start_dialogue_key = "MG3-001"
+
 [node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
 visible = true
 
@@ -9087,6 +9112,10 @@ material_override = SubResource("StandardMaterial3D_a2as3")
 transform = Transform3D(0.45171458, 0, 0.07732771, 0, 0.44751823, 0, -0.070710845, 0, 0.49398437, -16.260506, 1.181886, 24.874512)
 system_id = "Circuit"
 metadata/_edit_group_ = true
+
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L4-001"
+on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
 visible = true
@@ -9106,6 +9135,10 @@ transform = Transform3D(0.4479604, 0, 0.019684693, 0, 0.40240523, 0, -0.01764973
 system_id = "Boiler"
 metadata/_edit_group_ = true
 
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L1-001"
+on_first_repair_start_dialogue_key = "MG1-001"
+
 [node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
 visible = false
 
@@ -9121,6 +9154,10 @@ material_override = SubResource("StandardMaterial3D_b6swp")
 
 [node name="RepairStation7" parent="RepairStations/Area2" unique_id=1265757862 instance=ExtResource("5_r2qih")]
 transform = Transform3D(-1.6808949e-08, 0, -0.5, 0, 0.42537725, 0, 0.38454393, 0, -2.1855694e-08, -25.086061, 1.1133091, 7.473637)
+
+[node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="0" unique_id=1598274358]
+on_repair_success_dialogue_key = "A1L2-001"
+on_first_repair_start_dialogue_key = "MG2-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
 material_override = SubResource("StandardMaterial3D_ya33b")
@@ -9178,6 +9215,9 @@ transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.01
 [node name="OilItem6" parent="ObjectiveItems" unique_id=2050907861 instance=ExtResource("37_mvjxq")]
 transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.5138988, 0.4912917, 28.354477)
 
+[node name="BiomassItem2" parent="." unique_id=1323746431 instance=ExtResource("39_15cjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.97939414, 23.342892)
+
 [node name="BiomassItem" parent="." unique_id=1689702807 instance=ExtResource("39_15cjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.48969707, 25.018768)
 
@@ -9228,6 +9268,18 @@ mesh = ExtResource("55_a8guc")
 [node name="SubmarineLevelObjectTestVesselHall" type="MeshInstance3D" parent="NewGeometry" unique_id=509331287]
 mesh = ExtResource("56_msdvl")
 
+[node name="OneTimeNarrativeColliders" type="Node" parent="." unique_id=1603017528]
+
+[node name="OneTimeNarrativeCollider" parent="OneTimeNarrativeColliders" unique_id=641552390 instance=ExtResource("57_s0iu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.713244, 0.18142796, 1.7519546)
+
+[node name="OneTimeNarrativeCollider2" parent="OneTimeNarrativeColliders" unique_id=1280993102 instance=ExtResource("57_s0iu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7959366, 0, 2.2025654)
+line_id = "End-001"
+
+[node name="CollisionShape3D" parent="OneTimeNarrativeColliders/OneTimeNarrativeCollider2" index="0" unique_id=1668611086]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.036471367, 0, 0)
+
 [editable path="Geometry/Computers/Simple_Computer3"]
 [editable path="RepairStations/Area1/RepairStation1"]
 [editable path="RepairStations/Area1/RepairStation4"]
@@ -9237,3 +9289,4 @@ mesh = ExtResource("56_msdvl")
 [editable path="RepairStations/Area2/RepairStation8"]
 [editable path="RepairStations/Area2/RepairStation6"]
 [editable path="RepairStations/Area2/RepairStation7"]
+[editable path="OneTimeNarrativeColliders/OneTimeNarrativeCollider2"]
