@@ -43,7 +43,7 @@ Logs_A3L1,A3L1-001,Captain,LOG ENTRY: She's devoured everything.,,A3L1-002
 ,A3L1-002,Captain,LOG ENTRY: There's nothing else left,,A3L1-003
 ,A3L1-003,Captain,LOG ENTRY: She's going to eat me,,A3L1-004
 ,A3L1-004,Captain,LOG ENTRY: I need to escape,,A3L1-005
-,A3L1-005,Captain,LOG ENTRY: The suits the code,,A3L1-006
+,A3L1-005,Captain,LOG ENTRY: The suits the key,,A3L1-006
 ,A3L1-006,Captain,LOG ENTRY: I'm sorry,,
 End_Sc,End-001,Vessel,"VESSEL: It's alright, rest now.",,End-002
 ,End-002,Vessel,"VESSEL: We shall be one again, until you next awaken.",,End-003

@@ -11,14 +11,15 @@ var minigames_played_count: int = 0
 var area_3_completion_count: int = 0
 const AREA_3_REQUIRED_LOOPS: int = 2
 
+var has_shown_this_area = false
 
 func _ready() -> void:
 	pass
 
 
 func record_minigame_played() -> void:
+	minigames_played_count += 1
 	if current_state == ObjectiveState.INTRO:
-		minigames_played_count += 1
 		if minigames_played_count >= 1:
 			print("Intro complete! Showing objectives.")
 			PopupUI.show_next_text("APA1-001")
@@ -27,6 +28,15 @@ func record_minigame_played() -> void:
 			emit_signal("trigger_objective_dialogue", "Obj-Intro-Complete")
 			emit_signal("objective_tier_changed", 1)
 			emit_signal("set_display_visible", true)
+	elif not has_shown_this_area and current_state == ObjectiveState.AREA_1:
+		has_shown_this_area = true
+		PopupUI.show_next_text("A2L1-001")
+	elif not has_shown_this_area and current_state == ObjectiveState.AREA_2:
+		has_shown_this_area = true
+		PopupUI.show_next_text("A2L2-001")
+	elif not has_shown_this_area and current_state == ObjectiveState.AREA_3_LOOP:
+		has_shown_this_area = true
+		PopupUI.show_next_text("A2L3-001")
 
 func complete_intro() -> void:
 	if current_state == ObjectiveState.INTRO:
@@ -37,6 +47,7 @@ func complete_intro() -> void:
 		emit_signal("set_display_visible", true)
 
 func unlock_area_2() -> void:
+	has_shown_this_area = false
 	current_state = ObjectiveState.AREA_2
 	emit_signal("objective_updated", "Add Oil to the hinges of my Area 3 door.")
 	emit_signal("trigger_objective_dialogue", "Obj-Area2-Unlock")
@@ -44,6 +55,7 @@ func unlock_area_2() -> void:
 
 
 func unlock_area_3() -> void:
+	has_shown_this_area = false
 	current_state = ObjectiveState.AREA_3_LOOP
 	area_3_completion_count = 0
 	emit_signal("objective_updated", "Feed Me.")
@@ -52,6 +64,7 @@ func unlock_area_3() -> void:
 
 
 func unlock_area_4() -> void:
+	has_shown_this_area = false
 	if current_state == ObjectiveState.AREA_3_LOOP:
 		area_3_completion_count += 1
 		if area_3_completion_count >= AREA_3_REQUIRED_LOOPS:
