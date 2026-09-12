@@ -17,7 +17,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_s8jrq")
 
 [node name="Key Prompt" type="Sprite3D" parent="CollisionShape3D" unique_id=858083748]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.022612095, 0.88390493, 0.022033334)
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 0.022612095, 0.88390493, 0.022033334)
 billboard = 1
 texture = ExtResource("2_2octy")
 

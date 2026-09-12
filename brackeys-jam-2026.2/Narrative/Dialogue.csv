@@ -1,18 +1,18 @@
 Chat ID,Line ID,Speaker,Line,Purpose,Next ID
-Tut_Intro,Intro-001,AI,VESSEL: Good morning captain.,Introduce Player,Intro-002
+Tut_Intro,Intro-001,AI,"VESSEL: Good morning, captain.",Introduce Player,Intro-002
 ,Intro-002,AI,VESSEL: The ship is in need of repairs.,Objectives,Intro-003
 ,Intro-003,AI,VESSEL: Areas that need your attention are highlighted. Kindly navigate to the stations.,Movement explained,Intro-004
-,Intro-004,AI,VESSEL: Use the mouse to navigate,,Intro-005
-,Intro-005,AI,VESSEL: Ship's defence is currently activated. Damage will be slowed.,Ship Damage explained,Intro-006
+,Intro-004,AI,VESSEL: Use the mouse to navigate.,,Intro-005
+,Intro-005,AI,VESSEL: Ship's defense is currently activated. Damage will be slowed.,Ship Damage explained,Intro-006
 ,Intro-006,AI,VESSEL: Please fix the faulty systems to prevent further harm.,,
 Tut_MG1,MG1-001,AI,VESSEL: The pressure needle is out of control.,Needle Pressure Minigame Tutorial,MG1-002
-,MG1-002,AI,VESSEL: Click to stop the needle within the correct range,,
-Tut_MG2,MG2-001,AI,VESSEL: The steam gauge needs to be adjusted,Steam Gauge Minigame Tutorial,MG2-002
-,MG2-002,AI,VESSEL: Turn each of the dials until all three pins are in the green range,,
-Tut_MG3,MG3-001,AI,VESSEL: Check the sonar's accuracy,Sonar Minigame Tutorial,MG3-002
-,MG3-002,AI,VESSEL: Press the buttons as the highlights reach them,,
+,MG1-002,AI,VESSEL: Click to stop the needle within the correct range.,,
+Tut_MG2,MG2-001,AI,VESSEL: The steam gauge needs to be adjusted.,Steam Gauge Minigame Tutorial,MG2-002
+,MG2-002,AI,VESSEL: Turn each of the dials until all three pins are in the green range.,,
+Tut_MG3,MG3-001,AI,VESSEL: Check the sonar's accuracy.,Sonar Minigame Tutorial,MG3-002
+,MG3-002,AI,VESSEL: Press the buttons as the highlights reach them.,,
 Tut_MG4,MG4-001,AI,VESSEL: Electrical systems have degraded.,Circut Minigame Tutorial,MG4-002
-,MG4-002,AI,VESSEL: Connect each wire to it's corresponding pin.,,
+,MG4-002,AI,VESSEL: Connect each wire to its corresponding pin.,,
 Logs_A1L1,A1L1-001,Captain,LOG ENTRY: Pressure needle reset done. It comes loose often.,Minigame Comments,
 Logs_A1L2,A1L2-001,Captain,LOG ENTRY: Adjusting one steam gauge affects the others.,,
 Logs_A1L3,A1L3-001,Captain,LOG ENTRY: Sonar tested. It needs regular checks for safety.,,
@@ -31,7 +31,7 @@ Logs_A2L2,A2L2-001,Captain,LOG ENTRY: The walls are soft under here. Like a shel
 Logs_A2L3,A2L3-001,Captain,LOG ENTRY: I feel her groaning in my soul.,Informs Player that repair never stops,A2L3-002
 ,A2L3-002,Captain,LOG ENTRY: She's in pain. We're in pain. It never stops.,,A2L3-003
 ,A2L3-003,Captain,LOG ENTRY: How many times have I fixed this patch?,,A2L3-004
-,A2L3-004,Player Action,[There is a long tally in the log. You add one notch],,A2L3-005
+,A2L3-004,Player Action,[There is a long tally in the log. You add one notch.],,A2L3-005
 ,A2L3-005,Captain,LOG ENTRY: My arms ache from her appetite. But the beast must be fed for our journey.,,
 Logs_A2L4,A2L4-001,Captain,"LOG ENTRY: I'm quite tired now, and hungry.",Initiation into next area,A2L4-002
 ,A2L4-002,Captain,"LOG ENTRY: I'm ready to go further, to her heart.",,A2L4-003
@@ -40,12 +40,12 @@ AreaProg_A2,APA2-001,Player Action,[The door creaks. It sounds painful.],,APA2-0
 ,APA2-002,AI,"VESSEL: Oil the hinges, please.",,
 AreaProg_A3,APA3-001,AI,VESSEL: I'm hungry.,,
 Logs_A3L1,A3L1-001,Captain,LOG ENTRY: She's devoured everything.,,A3L1-002
-,A3L1-002,Captain,LOG ENTRY: There's nothing else left,,A3L1-003
-,A3L1-003,Captain,LOG ENTRY: She's going to eat me,,A3L1-004
-,A3L1-004,Captain,LOG ENTRY: I need to escape,,A3L1-005
-,A3L1-005,Captain,LOG ENTRY: The suits the key,,A3L1-006
-,A3L1-006,Captain,LOG ENTRY: I'm sorry,,
-End_Sc,End-001,Vessel,"VESSEL: It's alright, rest now.",,End-002
+,A3L1-002,Captain,LOG ENTRY: There's nothing else left.,,A3L1-003
+,A3L1-003,Captain,LOG ENTRY: She's going to eat me.,,A3L1-004
+,A3L1-004,Captain,LOG ENTRY: I need to escape.,,A3L1-005
+,A3L1-005,Captain,LOG ENTRY: The suit is the key.,,A3L1-006
+,A3L1-006,Captain,LOG ENTRY: I'm sorry.,,
+End_Sc,End-001,Vessel,VESSEL: It's alright; rest now.,,End-002
 ,End-002,Vessel,"VESSEL: We shall be one again, until you next awaken.",,End-003
 ,End-003,Vessel,VESSEL: A shame to have departed so soon.,,End-004
 ,End-004,Vessel,"VESSEL: Perhaps in your next life, you will want to stay with me.",,

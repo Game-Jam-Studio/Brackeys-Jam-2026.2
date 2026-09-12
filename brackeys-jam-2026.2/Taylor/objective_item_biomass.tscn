@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xcjywykrsqkx" path="res://Art/3D/Raw Files/Biomass_item.glb" id="1_10jxk"]
 [ext_resource type="Script" uid="uid://c1jk2wornkaar" path="res://Scripts/ObjectiveItems/objective_item.gd" id="2_swpfg"]
+[ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="3_qgc4k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_swpfg"]
 
@@ -20,7 +21,12 @@ unlock_key = "biomass"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.12859723, 0)
 shape = SubResource("SphereShape3D_swpfg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sphere" parent_id_path=PackedInt32Array(460227283) index="0" unique_id=2065475315]
+[node name="Key Prompt" type="Sprite3D" parent="InteractionArea/CollisionShape3D" index="0" unique_id=1251167374]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.022612095, 0.88390493, 0.022033334)
+billboard = 1
+texture = ExtResource("3_qgc4k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sphere" parent_id_path=PackedInt32Array(1265542481) index="0" unique_id=2065475315]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere/StaticBody3D" index="0" unique_id=655196026]
 shape = SubResource("ConcavePolygonShape3D_swpfg")

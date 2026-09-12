@@ -43,7 +43,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.004636824, 0.37573123)
 shape = SubResource("BoxShape3D_rjqtq")
 
 [node name="Key Prompt" type="Sprite3D" parent="RepairTrigger" unique_id=2043661568]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.21560718, 3.484087, 2.4240665)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 4.147543, 2.424)
 billboard = 1
 texture = ExtResource("3_j654s")
 

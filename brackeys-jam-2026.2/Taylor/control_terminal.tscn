@@ -16,7 +16,7 @@ size = Vector3(1, 0.7, 0.7502686)
 [node name="Terminal" parent="." unique_id=945361046 instance=ExtResource("1_w2cg0")]
 transform = Transform3D(1.5885078, 0, 0, 0, 1.2020144, 0, 0, 0, 1.0000001, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Terminal/Terminal" parent_id_path=PackedInt32Array(945361046, 1519156140) index="0" unique_id=1795480147]
+[node name="StaticBody3D" type="StaticBody3D" parent="Terminal/Terminal" parent_id_path=PackedInt32Array(945361046, 353761723) index="0" unique_id=1795480147]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/Terminal/StaticBody3D" unique_id=1757101895]
 shape = SubResource("ConcavePolygonShape3D_xcj76")
@@ -35,7 +35,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.6818652, 1.5732025)
 shape = SubResource("BoxShape3D_4lt70")
 
 [node name="Key Prompt" type="Sprite3D" parent="ControlTerminalTrigger" unique_id=950659962]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.3620055, 2.655516)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 2.3620055, 2.655516)
 billboard = 1
 texture = ExtResource("3_xcj76")
 
