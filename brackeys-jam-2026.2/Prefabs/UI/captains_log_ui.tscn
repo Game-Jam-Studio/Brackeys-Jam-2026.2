@@ -55,7 +55,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 30
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 120
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum diam eu mattis vehicula. Sed ex lorem, finibus quis venenatis non, efficitur vel urna. "
 scroll_active = false
 justification_flags = 160
 
@@ -73,7 +72,7 @@ offset_right = 15.0
 offset_bottom = 163.82501
 grow_horizontal = 2
 grow_vertical = 2
-text = "OK"
+text = "Next"
 icon_alignment = 1
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]

@@ -16,6 +16,7 @@ func show_log(line_id: String) -> void:
 		var entry = PopupUI.test_narrative_text[line_id]
 		next_text_key = entry["Next ID"]
 		log_text.text = entry["Line"]
+		close_button.text = "Next" if next_text_key != "" else "Close"
 		if not visible:
 			visible = true
 			get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
