@@ -11,7 +11,7 @@ var minigames_played_count: int = 0
 var area_3_completion_count: int = 0
 const AREA_3_REQUIRED_LOOPS: int = 2
 
-var has_shown_this_area = false
+#var has_shown_this_area = false
 
 func _ready() -> void:
 	pass
@@ -46,7 +46,7 @@ func complete_intro() -> void:
 		emit_signal("set_display_visible", true)
 
 func unlock_area_2() -> void:
-	has_shown_this_area = false
+	#has_shown_this_area = false
 	current_state = ObjectiveState.AREA_2
 	emit_signal("objective_updated", "Add Oil to the hinges of my Area 3 door.")
 	emit_signal("trigger_objective_dialogue", "Obj-Area2-Unlock")
@@ -54,7 +54,7 @@ func unlock_area_2() -> void:
 
 
 func unlock_area_3() -> void:
-	has_shown_this_area = false
+	#has_shown_this_area = false
 	current_state = ObjectiveState.AREA_3_LOOP
 	area_3_completion_count = 0
 	emit_signal("objective_updated", "Feed Me.")
@@ -63,7 +63,7 @@ func unlock_area_3() -> void:
 
 
 func unlock_area_4() -> void:
-	has_shown_this_area = false
+	#has_shown_this_area = false
 	if current_state == ObjectiveState.AREA_3_LOOP:
 		area_3_completion_count += 1
 		if area_3_completion_count >= AREA_3_REQUIRED_LOOPS:

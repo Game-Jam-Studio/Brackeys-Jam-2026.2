@@ -27,12 +27,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func pause() -> void:
 	pause_counter += 1
-	print("pause called, counter: ", pause_counter)
 	get_tree().paused = true
 	
 func try_resume() -> void:
 	pause_counter -= 1
-	print("try_resume called, counter: ", pause_counter)
 	if pause_counter <= 0:
 		pause_counter = 0
 		get_tree().paused = false

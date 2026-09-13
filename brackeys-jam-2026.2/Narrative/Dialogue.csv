@@ -37,7 +37,7 @@ Logs_A2L4,A2L4-001,Captain,"I'm quite tired now, and hungry.",Initiation into ne
 ,A2L4-002,Captain,"I'm ready to go further, to her heart.",,A2L4-003
 ,A2L4-003,Captain,"She has let me in, perhaps sensing my hunger. I want to eat.",,
 AreaProg_A2,APA2-001,Player Action,[The door creaks. It sounds painful.],,APA2-002
-,APA2-002,AI,"VESSEL: Oil the hinges, please.",,
+,APA2-002,AI,"VESSEL: Oil the hinges to the door of area 3, please.",,
 AreaProg_A3,APA3-001,AI,VESSEL: I'm hungry.,,
 Logs_A3L1,A3L1-001,Captain,She's devoured everything.,,A3L1-002
 ,A3L1-002,Captain,There's nothing else left.,,

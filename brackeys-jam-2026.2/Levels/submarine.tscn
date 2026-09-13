@@ -219,7 +219,6 @@ narrative_to_show = "APA3-001"
 script = ExtResource("4_ux67b")
 doors_to_unlock = [NodePath("../../Doors/Area3Doors/Objective3Door")]
 area_to_unlock = 4
-narrative_to_show = "A3L1-001"
 
 [node name="ExitDoorUnlock" type="Node" parent="AreaProgressionSystem" unique_id=1213014822 node_paths=PackedStringArray("doors_to_unlock")]
 script = ExtResource("4_ux67b")
@@ -891,8 +890,8 @@ shadow_enabled = true
 omni_range = 30.0
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="Lighting/Area3Lights" unique_id=495631801]
-transform = Transform3D(-0.90088505, 0.433938, -0.0101984795, 0, 0.023495672, 0.999724, 0.4340578, 0.9006364, -0.0211669, 65.678535, 2.3867216, -74.898445)
-light_color = Color(0.3978778, 0.99999994, 0.45543724, 1)
+transform = Transform3D(-0.90088505, 0.433938, -0.0101984795, 0, 0.023495672, 0.999724, 0.4340578, 0.9006364, -0.0211669, 65.936584, 2.3867216, -75.02278)
+light_color = Color(0.81134224, 0.9056798, 0.5077174, 1)
 light_energy = 4.0
 light_cull_mask = 4294967293
 shadow_enabled = true
@@ -8700,7 +8699,6 @@ affect_navigation_mesh = true
 avoidance_enabled = false
 
 [node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
-visible = false
 
 [node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
 transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
@@ -9032,7 +9030,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18.744612, 1.3295074, 0
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation1" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L2-001"
 on_first_repair_start_dialogue_key = "MG2-001"
 
 [node name="CollisionShape3D" parent="RepairStations/Area1/RepairStation1/RepairTrigger" index="0" unique_id=202934905]
@@ -9047,7 +9044,6 @@ system_id = "Circuit"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L4-001"
 on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
@@ -9068,7 +9064,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24.6142, 1.323235, 13.0
 system_id = "Boiler"
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L1-001"
 on_first_repair_start_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
@@ -9091,7 +9086,6 @@ system_id = "Sonar"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L3-001"
 on_first_repair_start_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
@@ -9119,7 +9113,6 @@ system_id = "Sonar"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L3-001"
 on_first_repair_start_dialogue_key = "MG3-001"
 
 [node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
@@ -9141,7 +9134,6 @@ system_id = "Circuit"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L4-001"
 on_first_repair_start_dialogue_key = "MG4-001"
 
 [node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
@@ -9163,7 +9155,6 @@ system_id = "Boiler"
 metadata/_edit_group_ = true
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L1-001"
 on_first_repair_start_dialogue_key = "MG1-001"
 
 [node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
@@ -9183,7 +9174,6 @@ material_override = SubResource("StandardMaterial3D_tbjkx")
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -25.086061, 1.3123271, 7.473637)
 
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation7" index="0" unique_id=1598274358]
-on_repair_success_dialogue_key = "A1L2-001"
 on_first_repair_start_dialogue_key = "MG2-001"
 
 [node name="Bulb" parent="RepairStations/Area2/RepairStation7/StatusLight/BulbMesh" parent_id_path=PackedInt32Array(1265757862, 429221442) index="2" unique_id=1125073236]
@@ -9270,24 +9260,30 @@ transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.778
 transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 50.764683, 1.3052301, 7.9422226)
 
 [node name="OilItem" parent="ObjectiveItems" unique_id=602892215 instance=ExtResource("37_mvjxq")]
-transform = Transform3D(-0.32517487, 0, -0.94565386, 0, 1, 0, 0.94565386, 0, -0.32517487, 12.684036, 0.4912917, 27.40799)
+transform = Transform3D(-0.78119075, 0, -0.62429225, 0, 1, 0, 0.62429225, 0, -0.78119075, 12.158587, 0.4912917, 27.827904)
 
-[node name="OilItem2" parent="ObjectiveItems" unique_id=206472703 instance=ExtResource("37_mvjxq")]
-transform = Transform3D(-3.684298e-08, -0.8428691, 0.5381186, 1, -4.3711385e-08, 0, 2.352191e-08, 0.53811854, 0.84286916, 11.935439, 0.17470235, 28.185732)
+[node name="OilItem4" parent="ObjectiveItems" unique_id=1323746431 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.78119075, 0, -0.62429225, 0, 1, 0, 0.62429225, 0, -0.78119075, 13.703476, 0.4912917, 27.143423)
+
+[node name="OilItem7" parent="ObjectiveItems" unique_id=810237444 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.78119075, 0, -0.62429225, 0, 1, 0, 0.62429225, 0, -0.78119075, 15.665138, 0.4912917, 24.677341)
+
+[node name="OilItem8" parent="ObjectiveItems" unique_id=541957951 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.78119075, 0, -0.62429225, 0, 1, 0, 0.62429225, 0, -0.78119075, 3.4722803, 0.4912917, 27.61691)
+
+[node name="OilItem2" parent="ObjectiveItems" unique_id=925006346 instance=ExtResource("37_mvjxq")]
+transform = Transform3D(-0.32517487, 0, -0.94565386, 0, 1, 0, 0.94565386, 0, -0.32517487, 12.684036, 0.4912917, 27.40799)
 
 [node name="OilItem3" parent="ObjectiveItems" unique_id=1264446704 instance=ExtResource("37_mvjxq")]
 transform = Transform3D(-0.40565458, 0, 0.91402644, 0.38866475, 0.9050888, 0.17249352, -0.8272751, 0.42522267, -0.3671534, 13.155386, 0.43638417, 28.35761)
 
-[node name="OilItem4" parent="ObjectiveItems" unique_id=954823657 instance=ExtResource("37_mvjxq")]
-transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 0.99999994, -2.6117945, 0.17940207, 28.153917)
-
 [node name="OilItem5" parent="ObjectiveItems" unique_id=1850437968 instance=ExtResource("37_mvjxq")]
-transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.018480599, 0, -0.99982923, -1.9201983, 0.4912917, 28.46966)
+transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.018480599, 0, -0.99982923, -1.7757719, 0.4912917, 28.149054)
 
 [node name="OilItem6" parent="ObjectiveItems" unique_id=2050907861 instance=ExtResource("37_mvjxq")]
-transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.5138988, 0.4912917, 28.354477)
+transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.2474034, 0.4912917, 27.965555)
 
-[node name="BiomassItem2" parent="." unique_id=1323746431 instance=ExtResource("39_15cjb")]
+[node name="BiomassItem2" parent="." unique_id=1308617831 instance=ExtResource("39_15cjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.50563926, 23.342892)
 
 [node name="BiomassItem" parent="." unique_id=1689702807 instance=ExtResource("39_15cjb")]

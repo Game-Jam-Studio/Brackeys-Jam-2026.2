@@ -30,7 +30,7 @@ func _on_breakdown_tick() -> void:
 	var current_chance: float = lerp(max_breakdown_chance, min_breakdown_chance, health_ratio)
 	
 	var roll: float = randf()
-	print("Roll: ", roll, " | Threshold: ", current_chance)
+	#print("Roll: ", roll, " | Threshold: ", current_chance)
 	
 	if roll <= current_chance:
 		_trigger_breakdown()
@@ -50,5 +50,5 @@ func _trigger_breakdown() -> void:
 			continue
 		
 		GameState.set_system_broken(candidate, true)
-		print("System Broken: ", candidate)
+		#print("System Broken: ", candidate)
 		return

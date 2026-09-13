@@ -4,10 +4,6 @@ extends Control
 @export var tier_2_art: Texture2D
 @export var tier_3_art: Texture2D
 
-@export var tier_1_theme: Theme
-@export var tier_2_theme: Theme
-@export var tier_3_theme: Theme
-
 @onready var background_texture: TextureRect = $TextureRect
 @onready var objective_label: Label = $TextureRect/Label
 
@@ -36,3 +32,4 @@ func _on_objective_tier_changed(tier: int) -> void:
 			background_texture.texture = tier_2_art
 		3:
 			background_texture.texture = tier_3_art
+	objective_label.theme = ProgressionManager.get_ai_theme(tier)

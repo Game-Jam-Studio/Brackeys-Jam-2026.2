@@ -49,7 +49,7 @@ func unlock() -> void:
 func check_item_requirement(_player: Node3D) -> bool:
 	if required_item_name != "":
 		if not GameState.has_item(required_item_name):
-			print("Missing required item: ", required_item_name)
+			#print("Missing required item: ", required_item_name)
 			return false
 		
 		# Consume the item so it must be collected again for future objectives
