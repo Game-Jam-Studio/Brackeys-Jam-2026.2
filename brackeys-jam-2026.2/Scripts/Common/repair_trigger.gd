@@ -12,7 +12,6 @@ signal station_repair_succeeded(system_id: String)
 
 @export var on_repair_success_dialogue_key: String = ""
 @export var on_first_repair_start_dialogue_key: String = ""
-var has_been_repaired_previously = false
 
 
 func _ready() -> void:
@@ -45,9 +44,10 @@ func interact(_player: CharacterBody3D) -> void:
 			prompt_sprite.visible = false
 	
 	if station.is_broken:
-		if not has_been_repaired_previously and on_first_repair_start_dialogue_key != "":
+		if not GameState.has_seen_repair_tutorial(station.system_id) and on_first_repair_start_dialogue_key != "":
 			PopupUI.show_next_text(on_first_repair_start_dialogue_key)
-		has_been_repaired_previously = true
+			GameState.mark_repair_tutorial_seen(station.system_id)
+		
 		# Mark the system as repaired to stop the global alarm and flashing lights
 		station.is_broken = false
 		GameState.set_system_broken(station.system_id, false)
