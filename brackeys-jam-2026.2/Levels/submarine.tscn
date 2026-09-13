@@ -89,6 +89,12 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_huc0b"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ha2e"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a4ee0"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mm0y"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
@@ -103,12 +109,6 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rmk5s"]
 material = SubResource("StandardMaterial3D_516el")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ha2e"]
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_a4ee0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8631h"]
 shading_mode = 0
@@ -758,7 +758,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D19" type="OmniLight3D" parent="Lighting/Area2Lights" unique_id=1031320796]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 7.5536995, 1.0411316, -11.173124)
-visible = false
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_energy = 4.219
 light_indirect_energy = 10.539
@@ -769,7 +768,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D25" type="OmniLight3D" parent="Lighting/Area2Lights" unique_id=1924247192]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 16.35176, 1.0411316, -33.034378)
-visible = false
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_energy = 4.219
 light_indirect_energy = 10.539
@@ -845,7 +843,6 @@ spot_angle = 28.33
 
 [node name="OmniLight3D37" type="OmniLight3D" parent="Lighting/Area3Lights" unique_id=1974416438]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 40.281303, 1.0411316, -60.605934)
-visible = false
 light_color = Color(0.9803857, 0, 0.015297686, 1)
 light_energy = 2.14
 light_indirect_energy = 10.539
@@ -856,7 +853,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D21" type="OmniLight3D" parent="Lighting/Area3Lights" unique_id=1202138303]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 52.76102, 4.3113723, -63.254135)
-visible = false
 light_color = Color(0.9803857, 0, 0.015297686, 1)
 light_energy = 2.14
 light_indirect_energy = 10.539
@@ -867,7 +863,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D36" type="OmniLight3D" parent="Lighting/Area3Lights" unique_id=1807675588]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 31.875534, 1.0411316, -57.8063)
-visible = false
 light_color = Color(0.9803857, 0, 0.015297686, 1)
 light_energy = 2.14
 light_indirect_energy = 10.539
@@ -878,7 +873,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D35" type="OmniLight3D" parent="Lighting/Area3Lights" unique_id=70221524]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 30.258537, 1.0411316, -45.93371)
-visible = false
 light_color = Color(0.9803857, 0, 0.015297686, 1)
 light_energy = 2.14
 light_indirect_energy = 10.539
@@ -889,7 +883,6 @@ omni_range = 30.0
 
 [node name="OmniLight3D41" type="OmniLight3D" parent="Lighting/Area3Lights" unique_id=1642630764]
 transform = Transform3D(-0.90088505, 0, -0.4340578, 0, 1, 0, 0.4340578, 0, -0.90088505, 69.53598, 1.0411321, -76.74523)
-visible = false
 light_color = Color(1, 0.4, 0.039215688, 1)
 light_indirect_energy = 10.539
 light_bake_mode = 1
@@ -898,7 +891,7 @@ shadow_enabled = true
 omni_range = 30.0
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="Lighting/Area3Lights" unique_id=495631801]
-transform = Transform3D(-0.90088505, 0.433938, -0.0101984795, 0, 0.023495672, 0.999724, 0.4340578, 0.9006364, -0.0211669, 66.12244, 2.3867216, -75.11232)
+transform = Transform3D(-0.90088505, 0.433938, -0.0101984795, 0, 0.023495672, 0.999724, 0.4340578, 0.9006364, -0.0211669, 65.678535, 2.3867216, -74.898445)
 light_color = Color(0.3978778, 0.99999994, 0.45543724, 1)
 light_energy = 4.0
 light_cull_mask = 4294967293
@@ -8707,6 +8700,7 @@ affect_navigation_mesh = true
 avoidance_enabled = false
 
 [node name="FogOfWar" type="Node3D" parent="." unique_id=516748653]
+visible = false
 
 [node name="ExitFog" type="MeshInstance3D" parent="FogOfWar" unique_id=280348642]
 transform = Transform3D(3.1655815, 0, 0, 0, 3.0198467, 0, 0, 0, 3.2768347, -6.426887, 0.85135865, 1.9253068)
@@ -8716,12 +8710,22 @@ mesh = SubResource("BoxMesh_huc0b")
 [node name="A1LeftRoom" type="Node3D" parent="FogOfWar" unique_id=1801024593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
 
+[node name="Fog9" type="MeshInstance3D" parent="FogOfWar/A1LeftRoom" unique_id=466226247]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.811102, 2.8121786, 1.7931361, 0.17101097)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
+
 [node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1LeftRoom" unique_id=453317494]
 transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -1.4879999)
 mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="A1RightRoom" type="Node3D" parent="FogOfWar" unique_id=1007644240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.27206, 0, 12.60541)
+
+[node name="Fog10" type="MeshInstance3D" parent="FogOfWar/A1RightRoom" unique_id=1134690100]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.811102, 14.441532, 1.7931361, -19.768045)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
 
 [node name="Fog2" type="MeshInstance3D" parent="FogOfWar/A1RightRoom" unique_id=77157177]
 transform = Transform3D(2.070935, 0, 0, 0, 1, 0, 0, 0, 0.597008, -2.9065475, 2.343, -20.518559)
@@ -8750,8 +8754,23 @@ mesh = SubResource("PlaneMesh_rmk5s")
 transform = Transform3D(-0.022980632, 0, 0.3403234, 0, 1, 0, -0.2719431, 0, -0.028759152, -12.6723385, 2.3586195, 0.37093714)
 mesh = SubResource("PlaneMesh_rmk5s")
 
+[node name="Fog12" type="MeshInstance3D" parent="FogOfWar/A2RightRoom" unique_id=711641487]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.811102, -1.5013638, 1.7931361, -1.3160648)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
+
 [node name="A2MainRoom" type="Node3D" parent="FogOfWar" unique_id=2143176476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.457752, 0, 11.431965)
+
+[node name="Fog10" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=168061791]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.811102, -2.8876839, 1.7931361, -3.6506615)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
+
+[node name="Fog11" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1566936139]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.811102, 5.132495, 1.7931361, 13.350803)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
 
 [node name="Fog" type="MeshInstance3D" parent="FogOfWar/A2MainRoom" unique_id=1157731373]
 transform = Transform3D(0.046353605, 1.0452278e-09, -1.300041, -3.341162e-11, 1, 1.359465e-09, 1.2031748, -1.249811e-11, 0.050085474, 2.2032065, 2.343, 1.2812808)
@@ -8794,6 +8813,11 @@ mesh = SubResource("PlaneMesh_rmk5s")
 
 [node name="Fog7" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=953805772]
 transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.8111017, -7.8948956, 3.4574428, 1.2072716)
+material_override = SubResource("StandardMaterial3D_4ha2e")
+mesh = SubResource("BoxMesh_a4ee0")
+
+[node name="Fog8" type="MeshInstance3D" parent="FogOfWar/A2LeftRoom" unique_id=951370994]
+transform = Transform3D(3.6249363, 0, 0, 0, 2.9481163, 0, 0, 0, 3.8111017, 1.7844267, 2.3774867, 5.2546964)
 material_override = SubResource("StandardMaterial3D_4ha2e")
 mesh = SubResource("BoxMesh_a4ee0")
 
@@ -9018,7 +9042,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.5879354e-09, 0.004636824, 
 material_override = SubResource("StandardMaterial3D_e0g8k")
 
 [node name="RepairStation4" parent="RepairStations/Area1" unique_id=1990939064 instance=ExtResource("5_r2qih")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 35.65908, 1.331339, -5.716363)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 35.659, 1.216, -5.716)
 system_id = "Circuit"
 metadata/_edit_group_ = true
 
@@ -9051,6 +9075,7 @@ on_first_repair_start_dialogue_key = "MG1-001"
 visible = false
 
 [node name="BoilerModel" parent="RepairStations/Area1/RepairStation2" index="5" unique_id=1502648631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.061523438, 0)
 visible = true
 
 [node name="StatusLight" parent="RepairStations/Area1/RepairStation2" index="6" unique_id=1656704472]
@@ -9061,7 +9086,7 @@ light_color = Color(0.988, 0.42, 0.008, 1)
 material_override = SubResource("StandardMaterial3D_brlv2")
 
 [node name="RepairStation3" parent="RepairStations/Area1" unique_id=52942347 instance=ExtResource("5_r2qih")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 48.436646, 1.2582299, 8.073327)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 48.436646, 1.2161156, 8.073327)
 system_id = "Sonar"
 metadata/_edit_group_ = true
 
@@ -9133,7 +9158,7 @@ light_color = Color(1, 0.973, 0.035, 1)
 material_override = SubResource("StandardMaterial3D_jx4ah")
 
 [node name="RepairStation6" parent="RepairStations/Area2" unique_id=331700711 instance=ExtResource("5_r2qih")]
-transform = Transform3D(0.49961236, 0, 0.019684829, 0, 0.5, 0, -0.019684829, 0, 0.49961236, 5.296033, 1.3711615, 28.410582)
+transform = Transform3D(0.49961236, 0, 0.019684829, 0, 0.5, 0, -0.019684829, 0, 0.49961236, 5.296033, 1.3603277, 28.410582)
 system_id = "Boiler"
 metadata/_edit_group_ = true
 
@@ -9171,8 +9196,52 @@ transform = Transform3D(-2.8212997e-07, 0, 1, 0, 1, 0, -1, 0, -2.8212997e-07, 7.
 transform = Transform3D(0.8971399, 0, 0.44174647, 0, 1, 0, -0.44174647, 0, 0.8971399, 50.67652, 0.9493511, 7.3487453)
 
 [node name="Log01" parent="CaptainsLogs" unique_id=1537444207 instance=ExtResource("20_e0g8k")]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+transform = Transform3D(0.8205406, 0, 0.5715884, 0, 1, 0, -0.5715884, 0, 0.8205406, 1.4721526, -0.024108887, -0.22504808)
+line_id = "A1L3-001"
+
+[node name="Log02" parent="CaptainsLogs" unique_id=2006367944 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.96439403, 0, -0.26446998, 0, 1, 0, 0.26446998, 0, 0.96439403, -10.340354, 0.13922119, -19.752073)
+line_id = "A1L4-001"
+
+[node name="Log03" parent="CaptainsLogs" unique_id=601704476 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.96439403, 0, -0.26446998, 0, 1, 0, 0.26446998, 0, 0.96439403, -22.096645, 0.15948486, -4.553999)
 line_id = "A1L1-001"
+
+[node name="Log04" parent="CaptainsLogs" unique_id=1232135289 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.96439403, 0, -0.26446998, 0, 1, 0, 0.26446998, 0, 0.96439403, -24.011011, 0.19989014, -19.133673)
+line_id = "A1L2-001"
+
+[node name="Log05" parent="CaptainsLogs" unique_id=1161228859 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.2243703, 0, -0.9745041, 0, 1, 0, 0.9745041, 0, 0.2243703, -33.422066, 0.17010498, -44.84706)
+line_id = "A2L1-001"
+
+[node name="Log06" parent="CaptainsLogs" unique_id=413272674 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.3245789, 0, -0.9458587, 0, 1, 0, 0.9458587, 0, 0.3245789, -59.428417, -0.82211304, -33.16338)
+line_id = "A2L2-001"
+
+[node name="Log07" parent="CaptainsLogs" unique_id=1487888318 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.9083301, 0, -0.41825426, 0, 1, 0, 0.41825426, 0, 0.9083301, -69.91894, -0.82211304, -18.620207)
+line_id = "A2L3-001"
+
+[node name="Log08" parent="CaptainsLogs" unique_id=843849123 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(0.912892, 0, 0.40820134, 0, 1, 0, -0.40820134, 0, 0.912892, -46.525387, -0.7737732, -4.723139)
+line_id = "A2L4-001"
+
+[node name="Log09" parent="CaptainsLogs" unique_id=1507097717 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(-0.8420528, 0, 0.5393956, 0, 1, 0, -0.5393956, 0, -0.8420528, -114.522575, -0.7142639, -39.64921)
+line_id = "A3L1-001"
+
+[node name="Log10" parent="CaptainsLogs" unique_id=223448116 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(-0.29648715, 0, 0.9550371, 0, 1, 0, -0.9550371, 0, -0.29648715, -126.26015, -0.7825012, -47.167976)
+line_id = "A3L4-001"
+
+[node name="Log11" parent="CaptainsLogs" unique_id=1024969803 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(-0.9887193, 0, -0.14978231, 0, 1, 0, 0.14978231, 0, -0.9887193, -124.41559, -0.7446594, -49.624928)
+line_id = "A3L2-001"
+
+[node name="Log12" parent="CaptainsLogs" unique_id=1026271882 instance=ExtResource("20_e0g8k")]
+transform = Transform3D(-0.9887193, 0, -0.14978231, 0, 1, 0, 0.14978231, 0, -0.9887193, -122.94564, -0.6494446, -45.263634)
+line_id = "A3L3-001"
 
 [node name="ObjectiveItems" type="Node3D" parent="." unique_id=1214866287]
 
@@ -9195,10 +9264,10 @@ transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.5203
 transform = Transform3D(0.52037585, 0, 0.8539373, 0, 1, 0, -0.8539373, 0, 0.52037585, 44.297478, 0.6135187, -3.537488)
 
 [node name="Powercell_Item3" parent="ObjectiveItems" unique_id=692866156 instance=ExtResource("56_7kyku")]
-transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 52.08361, 1.3052301, 6.880125)
+transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 50.340775, 1.3052301, 7.87805)
 
 [node name="Powercell_Item4" parent="ObjectiveItems" unique_id=1804190521 instance=ExtResource("56_7kyku")]
-transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 52.528618, 1.3052301, 6.5217752)
+transform = Transform3D(-0.7788619, 0, -0.6271955, 0, 1, 0, 0.6271955, 0, -0.7788619, 50.764683, 1.3052301, 7.9422226)
 
 [node name="OilItem" parent="ObjectiveItems" unique_id=602892215 instance=ExtResource("37_mvjxq")]
 transform = Transform3D(-0.32517487, 0, -0.94565386, 0, 1, 0, 0.94565386, 0, -0.32517487, 12.684036, 0.4912917, 27.40799)
@@ -9219,10 +9288,10 @@ transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.01
 transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.5138988, 0.4912917, 28.354477)
 
 [node name="BiomassItem2" parent="." unique_id=1323746431 instance=ExtResource("39_15cjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.97939414, 23.342892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.50563926, 23.342892)
 
 [node name="BiomassItem" parent="." unique_id=1689702807 instance=ExtResource("39_15cjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.48969707, 25.018768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.5769774, 25.018768)
 
 [node name="NewGeometry" type="Node3D" parent="." unique_id=1303294284]
 

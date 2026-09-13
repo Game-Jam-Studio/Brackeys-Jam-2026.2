@@ -16,14 +16,14 @@ func show_log(line_id: String) -> void:
 		var entry = PopupUI.test_narrative_text[line_id]
 		next_text_key = entry["Next ID"]
 		log_text.text = entry["Line"]
-		visible = true
-		get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
+		if not visible:
+			visible = true
+			get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
 	else:
 		push_error("Captains log line_id not found: " + line_id)
 
 
 func _on_close_pressed() -> void:
-	print("close pressed")
 	if next_text_key != "":
 		show_log(next_text_key)
 	else:

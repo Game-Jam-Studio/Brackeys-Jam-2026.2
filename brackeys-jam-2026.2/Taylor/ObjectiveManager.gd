@@ -21,22 +21,21 @@ func record_minigame_played() -> void:
 	minigames_played_count += 1
 	if current_state == ObjectiveState.INTRO:
 		if minigames_played_count >= 1:
-			print("Intro complete! Showing objectives.")
 			PopupUI.show_next_text("APA1-001")
 			current_state = ObjectiveState.AREA_1
 			emit_signal("objective_updated", "Insert a Power Cell into the Area 2 Door.")
 			emit_signal("trigger_objective_dialogue", "Obj-Intro-Complete")
 			emit_signal("objective_tier_changed", 1)
 			emit_signal("set_display_visible", true)
-	elif not has_shown_this_area and current_state == ObjectiveState.AREA_1:
-		has_shown_this_area = true
-		PopupUI.show_next_text("A2L1-001")
-	elif not has_shown_this_area and current_state == ObjectiveState.AREA_2:
-		has_shown_this_area = true
-		PopupUI.show_next_text("A2L2-001")
-	elif not has_shown_this_area and current_state == ObjectiveState.AREA_3_LOOP:
-		has_shown_this_area = true
-		PopupUI.show_next_text("A2L3-001")
+	#elif not has_shown_this_area and current_state == ObjectiveState.AREA_1:
+		#has_shown_this_area = true
+		#PopupUI.show_next_text("A2L1-001")
+	#elif not has_shown_this_area and current_state == ObjectiveState.AREA_2:
+		#has_shown_this_area = true
+		#PopupUI.show_next_text("A2L2-001")
+	#elif not has_shown_this_area and current_state == ObjectiveState.AREA_3_LOOP:
+		#has_shown_this_area = true
+		#PopupUI.show_next_text("A2L3-001")
 
 func complete_intro() -> void:
 	if current_state == ObjectiveState.INTRO:
