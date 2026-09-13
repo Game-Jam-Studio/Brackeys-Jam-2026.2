@@ -1,11 +1,31 @@
 extends CanvasLayer
 
+@onready var log_text: RichTextLabel = $TextureRect/LogText
+@onready var close_button: Button = $CloseButton
 
-# Called when the node enters the scene tree for the first time.
+var next_text_key: String = ""
+
 func _ready() -> void:
-	pass # Replace with function body.
+	visible = false
+	close_button.pressed.connect(_on_close_pressed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func show_log(line_id: String) -> void:
+	next_text_key = ""
+	if PopupUI.test_narrative_text.has(line_id):
+		var entry = PopupUI.test_narrative_text[line_id]
+		next_text_key = entry["Next ID"]
+		log_text.text = entry["Line"]
+		visible = true
+		get_tree().current_scene.get_node_or_null("%PauseMenu").pause()
+	else:
+		push_error("Captains log line_id not found: " + line_id)
+
+
+func _on_close_pressed() -> void:
+	print("close pressed")
+	if next_text_key != "":
+		show_log(next_text_key)
+	else:
+		visible = false
+		get_tree().current_scene.get_node_or_null("%PauseMenu").try_resume()

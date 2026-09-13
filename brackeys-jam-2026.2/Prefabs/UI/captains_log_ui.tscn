@@ -5,7 +5,6 @@
 [ext_resource type="Theme" uid="uid://b7iicfrm54kgb" path="res://Resources/Themes/captains_log.tres" id="2_67dat"]
 
 [node name="CaptainsLog" type="CanvasLayer" unique_id=1093980888]
-visible = false
 script = ExtResource("1_b1c6s")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=629951420]
@@ -19,7 +18,28 @@ offset_bottom = 1525.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
+mouse_filter = 2
 texture = ExtResource("1_3skga")
+
+[node name="Header" type="RichTextLabel" parent="TextureRect" unique_id=1046032906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -145.275
+offset_bottom = -145.27527
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.65)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("2_67dat")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 30
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 148
+text = "Captain's Log:"
+scroll_active = false
+justification_flags = 160
 
 [node name="LogText" type="RichTextLabel" parent="TextureRect" unique_id=1836796478]
 layout_mode = 1
@@ -35,10 +55,12 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 30
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 120
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum diam eu mattis vehicula. Sed ex lorem, finibus quis venenatis non, efficitur vel urna. "
 scroll_active = false
 justification_flags = 160
 
 [node name="CloseButton" type="Button" parent="." unique_id=26365170]
+process_mode = 3
 custom_maximum_size = Vector2(-1, 22.825)
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,5 +73,7 @@ offset_right = 15.0
 offset_bottom = 163.82501
 grow_horizontal = 2
 grow_vertical = 2
-text = "Close"
+text = "OK"
 icon_alignment = 1
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]

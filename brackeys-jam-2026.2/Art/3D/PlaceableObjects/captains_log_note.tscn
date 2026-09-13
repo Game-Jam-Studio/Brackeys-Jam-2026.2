@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c3adsqoi2uoh0"]
+
+[ext_resource type="ArrayMesh" uid="uid://c1tpo22d5v3nu" path="res://Art/3D/Raw Files/captains_log.tres" id="1_2w0a5"]
+[ext_resource type="Script" uid="uid://clf0tgl3caj7o" path="res://Scripts/UI/captains_log_note.gd" id="1_n1ilh"]
+[ext_resource type="Texture2D" uid="uid://b7seyrkpihk72" path="res://Art/Placeholder/E.png" id="2_edwbv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_402of"]
+
+[node name="CaptainsLogNote" type="Area3D" unique_id=1537444207]
+script = ExtResource("1_n1ilh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=8332362]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_402of")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=2090812563]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = ExtResource("1_2w0a5")
+
+[node name="Key Prompt" type="Sprite3D" parent="CollisionShape3D" unique_id=1479921899]
+transform = Transform3D(0.53, 0, 0, 0, 0.53, 0, 0, 0, 0.53, 0.022612095, 0.8836608, 0.022033334)
+billboard = 1
+texture = ExtResource("2_edwbv")
