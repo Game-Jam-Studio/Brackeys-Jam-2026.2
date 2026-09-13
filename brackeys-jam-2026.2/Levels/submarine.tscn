@@ -9046,13 +9046,13 @@ metadata/_edit_group_ = true
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation4" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG4-001"
 
-[node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="2" unique_id=1772422821]
+[node name="CircuitModel" parent="RepairStations/Area1/RepairStation4" index="1" unique_id=1772422821]
 visible = true
 
-[node name="BallastModel" parent="RepairStations/Area1/RepairStation4" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation4" index="3" unique_id=2082674037]
 visible = false
 
-[node name="StatusLight" parent="RepairStations/Area1/RepairStation4" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation4" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323677)
 light_color = Color(1, 0.973, 0.035, 1)
 
@@ -9066,14 +9066,14 @@ system_id = "Boiler"
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation2" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG1-001"
 
-[node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation2" index="3" unique_id=2082674037]
 visible = false
 
-[node name="BoilerModel" parent="RepairStations/Area1/RepairStation2" index="5" unique_id=1502648631]
+[node name="BoilerModel" parent="RepairStations/Area1/RepairStation2" index="4" unique_id=1502648631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.061523438, 0)
 visible = true
 
-[node name="StatusLight" parent="RepairStations/Area1/RepairStation2" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation2" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629315)
 light_color = Color(0.988, 0.42, 0.008, 1)
 
@@ -9088,14 +9088,14 @@ metadata/_edit_group_ = true
 [node name="RepairTrigger" parent="RepairStations/Area1/RepairStation3" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG3-001"
 
-[node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=606471648]
+[node name="SonarModel" parent="RepairStations/Area1/RepairStation3" index="2" unique_id=606471648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16795921, 0)
 visible = true
 
-[node name="BallastModel" parent="RepairStations/Area1/RepairStation3" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area1/RepairStation3" index="3" unique_id=2082674037]
 visible = false
 
-[node name="StatusLight" parent="RepairStations/Area1/RepairStation3" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area1/RepairStation3" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
 light_color = Color(0.184, 0.651, 1, 1)
 
@@ -9115,13 +9115,13 @@ metadata/_edit_group_ = true
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation5" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG3-001"
 
-[node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=606471648]
+[node name="SonarModel" parent="RepairStations/Area2/RepairStation5" index="2" unique_id=606471648]
 visible = true
 
-[node name="BallastModel" parent="RepairStations/Area2/RepairStation5" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation5" index="3" unique_id=2082674037]
 visible = false
 
-[node name="StatusLight" parent="RepairStations/Area2/RepairStation5" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation5" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0140195, 1.896205, -0.96353227)
 light_color = Color(0.184, 0.651, 1, 1)
 
@@ -9136,13 +9136,13 @@ metadata/_edit_group_ = true
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation8" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG4-001"
 
-[node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="2" unique_id=1772422821]
+[node name="CircuitModel" parent="RepairStations/Area2/RepairStation8" index="1" unique_id=1772422821]
 visible = true
 
-[node name="BallastModel" parent="RepairStations/Area2/RepairStation8" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation8" index="3" unique_id=2082674037]
 visible = false
 
-[node name="StatusLight" parent="RepairStations/Area2/RepairStation8" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation8" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4046655, 1.896205, -0.8323677)
 light_color = Color(1, 0.973, 0.035, 1)
 
@@ -9157,13 +9157,13 @@ metadata/_edit_group_ = true
 [node name="RepairTrigger" parent="RepairStations/Area2/RepairStation6" index="0" unique_id=1598274358]
 on_first_repair_start_dialogue_key = "MG1-001"
 
-[node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=2082674037]
+[node name="BallastModel" parent="RepairStations/Area2/RepairStation6" index="3" unique_id=2082674037]
 visible = false
 
-[node name="BoilerModel" parent="RepairStations/Area2/RepairStation6" index="5" unique_id=1502648631]
+[node name="BoilerModel" parent="RepairStations/Area2/RepairStation6" index="4" unique_id=1502648631]
 visible = true
 
-[node name="StatusLight" parent="RepairStations/Area2/RepairStation6" index="6" unique_id=1656704472]
+[node name="StatusLight" parent="RepairStations/Area2/RepairStation6" index="5" unique_id=1656704472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54540545, 1.602837, -0.9629315)
 light_color = Color(0.988, 0.42, 0.008, 1)
 
@@ -9235,6 +9235,12 @@ line_id = "A3L3-001"
 
 [node name="ObjectiveItems" type="Node3D" parent="." unique_id=1214866287]
 
+[node name="BiomassItem" parent="ObjectiveItems" unique_id=1689702807 instance=ExtResource("39_15cjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.5769774, 25.018768)
+
+[node name="BiomassItem2" parent="ObjectiveItems" unique_id=1308617831 instance=ExtResource("39_15cjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.50563926, 23.342892)
+
 [node name="Powercell_Item" parent="ObjectiveItems" unique_id=737366620 instance=ExtResource("56_7kyku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6326, 1.3498468, -4.581543)
 
@@ -9282,12 +9288,6 @@ transform = Transform3D(-0.99982923, 0, 0.018480599, 0, 1, -4.2351647e-22, -0.01
 
 [node name="OilItem6" parent="ObjectiveItems" unique_id=2050907861 instance=ExtResource("37_mvjxq")]
 transform = Transform3D(-0.93650514, 0, -0.35065407, 0, 1, -4.440892e-15, 0.3506541, 0, -0.93650514, -1.2474034, 0.4912917, 27.965555)
-
-[node name="BiomassItem2" parent="." unique_id=1308617831 instance=ExtResource("39_15cjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83841, 0.50563926, 23.342892)
-
-[node name="BiomassItem" parent="." unique_id=1689702807 instance=ExtResource("39_15cjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.711365, 0.5769774, 25.018768)
 
 [node name="NewGeometry" type="Node3D" parent="." unique_id=1303294284]
 

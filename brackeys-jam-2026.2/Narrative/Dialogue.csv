@@ -31,8 +31,9 @@ Logs_A2L2,A2L2-001,Captain,The walls are soft under here. Like a shell.,Captain 
 Logs_A2L3,A2L3-001,Captain,I feel her groaning in my soul.,Informs Player that repair never stops,A2L3-002
 ,A2L3-002,Captain,She's in pain. We're in pain. It never stops.,,A2L3-003
 ,A2L3-003,Captain,How many times have I fixed this patch?,,A2L3-004
-,A2L3-004,Player Action,[There is a long tally in the log. You add one notch.],,A2L3-005
-,A2L3-005,Captain,My arms ache from her appetite. But the beast must be fed for our journey.,,
+,A2L3-004,Player Action,,,A2L3-005
+,A2L3-005,Player Action,,,A2L3-006
+,A2L3-006,Captain,My arms ache from her appetite. But the beast must be fed for our journey.,,
 Logs_A2L4,A2L4-001,Captain,"I'm quite tired now, and hungry.",Initiation into next area,A2L4-002
 ,A2L4-002,Captain,"I'm ready to go further, to her heart.",,A2L4-003
 ,A2L4-003,Captain,"She has let me in, perhaps sensing my hunger. I want to eat.",,

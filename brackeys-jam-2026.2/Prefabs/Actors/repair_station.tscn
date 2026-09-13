@@ -11,8 +11,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjqtq"]
 size = Vector3(1.775, 1.665, 1.1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_i0uuj"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjqtq"]
 albedo_color = Color(0.22352941, 0.22352941, 0.21568628, 1)
 
@@ -46,11 +44,6 @@ shape = SubResource("BoxShape3D_rjqtq")
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 4.147543, 2.424)
 billboard = 1
 texture = ExtResource("3_j654s")
-
-[node name="Column" type="MeshInstance3D" parent="." unique_id=238773181]
-transform = Transform3D(0.3, 0, 0, 0, 2.256, 0, 0, 0, 0.3, 0, 3.155, -0.17050298)
-visible = false
-mesh = SubResource("CylinderMesh_i0uuj")
 
 [node name="CircuitModel" parent="." unique_id=1772422821 instance=ExtResource("4_rjqtq")]
 visible = false

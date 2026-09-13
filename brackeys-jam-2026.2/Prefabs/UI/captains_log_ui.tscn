@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bv8lrtc635tbv" path="res://Art/2D/UI/paper_log.png" id="1_3skga"]
 [ext_resource type="Script" uid="uid://cgrfhhvxdqo0s" path="res://Scripts/UI/captains_log_ui.gd" id="1_b1c6s"]
 [ext_resource type="Theme" uid="uid://b7iicfrm54kgb" path="res://Resources/Themes/captains_log.tres" id="2_67dat"]
+[ext_resource type="Texture2D" uid="uid://ca2bdckugb2k2" path="res://Art/2D/UI/Tallies/tally_base.png" id="4_0ko6d"]
+[ext_resource type="Texture2D" uid="uid://lvygcelbcxxm" path="res://Art/2D/UI/Tallies/tally_2.png" id="5_bwrjf"]
+[ext_resource type="Texture2D" uid="uid://j80fl5lrxe4x" path="res://Art/2D/UI/Tallies/tally_3.png" id="6_e40i0"]
 
 [node name="CaptainsLog" type="CanvasLayer" unique_id=1093980888]
 script = ExtResource("1_b1c6s")
@@ -57,6 +60,88 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 120
 scroll_active = false
 justification_flags = 160
+
+[node name="TallyOverlay" type="Control" parent="TextureRect" unique_id=820205649]
+visible = false
+anchors_preset = 0
+offset_left = 359.99988
+offset_top = 643.3848
+offset_right = 399.99988
+offset_bottom = 683.3848
+
+[node name="Tally2" type="TextureRect" parent="TextureRect/TallyOverlay" unique_id=716550782]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 506.6151
+offset_right = 859.0
+offset_bottom = 699.6151
+texture = ExtResource("5_bwrjf")
+
+[node name="Tally3" type="TextureRect" parent="TextureRect/TallyOverlay" unique_id=1106608128]
+visible = false
+layout_mode = 0
+offset_left = 661.9995
+offset_top = 511.6151
+offset_right = 861.9995
+offset_bottom = 704.6151
+scale = Vector2(0.98174685, 0.9641165)
+texture = ExtResource("6_e40i0")
+
+[node name="TallyBase" type="Control" parent="TextureRect/TallyOverlay" unique_id=1743161073]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tallies1" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=622091990]
+layout_mode = 0
+offset_top = -228.38489
+offset_right = 700.0
+offset_bottom = 11.615448
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies2" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=247191277]
+layout_mode = 0
+offset_left = 550.0
+offset_top = -228.38489
+offset_right = 1250.0
+offset_bottom = 11.615448
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies3" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=25889091]
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 240.0
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies4" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=1108907714]
+layout_mode = 0
+offset_left = 550.0
+offset_right = 1250.0
+offset_bottom = 240.0
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies5" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=1517215993]
+layout_mode = 0
+offset_top = 241.61511
+offset_right = 700.0
+offset_bottom = 481.6161
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies6" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=312954239]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 241.61511
+offset_right = 1255.0
+offset_bottom = 481.61597
+texture = ExtResource("4_0ko6d")
+
+[node name="Tallies7" type="TextureRect" parent="TextureRect/TallyOverlay/TallyBase" unique_id=1474773002]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 491.6151
+offset_right = 705.0
+offset_bottom = 731.6151
+texture = ExtResource("4_0ko6d")
 
 [node name="CloseButton" type="Button" parent="." unique_id=26365170]
 process_mode = 3
