@@ -1,3 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://b7iicfrm54kgb"]
 
+[ext_resource type="FontFile" uid="uid://bijp50hm4x3sd" path="res://Resources/Fonts/captains_logs.ttf" id="1_t3fqu"]
+
 [resource]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/fonts/normal_font = ExtResource("1_t3fqu")

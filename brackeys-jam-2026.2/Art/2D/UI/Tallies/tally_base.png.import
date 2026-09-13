@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhaps5bxjcih"
-path="res://.godot/imported/danger.png-4a4ccea5fb6d9ceb53a673655851635f.ctex"
+uid="uid://ca2bdckugb2k2"
+path="res://.godot/imported/tally_base.png-3da7cc6ba849b59886b844fe4724fe8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/UI/danger.png"
-dest_files=["res://.godot/imported/danger.png-4a4ccea5fb6d9ceb53a673655851635f.ctex"]
+source_file="res://Art/2D/UI/Tallies/tally_base.png"
+dest_files=["res://.godot/imported/tally_base.png-3da7cc6ba849b59886b844fe4724fe8f.ctex"]
 
 [params]
 
