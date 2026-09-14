@@ -51,12 +51,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func update_tier_presentation(tier: int) -> void:
-	if label_node:
-		label_node.theme = ProgressionManager.get_ai_theme(tier)
-		if tier == 3:
-			label_node.add_theme_color_override("font_color", Color(1.0, 0.973, 0.035, 1.0))
-		else:
-			label_node.remove_theme_color_override("font_color")
+	#if label_node:
+		#label_node.theme = ProgressionManager.get_ai_theme(tier)
+		#if tier == 3:
+			#label_node.add_theme_color_override("font_color", Color("fff809ff"))
+		#else:
+			#label_node.remove_theme_color_override("font_color")
 	
 	if texture_node:
 		texture_node.texture = ProgressionManager.get_asset_texture("sonar", "destination")

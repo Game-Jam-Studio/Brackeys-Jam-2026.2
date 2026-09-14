@@ -23,8 +23,8 @@ const MAX_SHIP_HEALTH: float = 100.0
 const MAX_SYSTEM_HEALTH: float = 100.0
 
 var active_repairs: Array[String] = []
-
 var collected_items: Array[String] = []
+var seen_repair_tutorials: Array[String] = []
 
 var current_area_level: int = 1
 var is_ballast_broken: bool = false:
@@ -162,6 +162,15 @@ func can_system_break(system_id: String) -> bool:
 			return not is_circuit_broken
 		_:
 			return false
+
+
+func has_seen_repair_tutorial(system_id: String) -> bool:
+	return seen_repair_tutorials.has(system_id)
+
+
+func mark_repair_tutorial_seen(system_id: String) -> void:
+	if not seen_repair_tutorials.has(system_id):
+		seen_repair_tutorials.append(system_id)
 
 
 func collect_item(item_key: String) -> void:

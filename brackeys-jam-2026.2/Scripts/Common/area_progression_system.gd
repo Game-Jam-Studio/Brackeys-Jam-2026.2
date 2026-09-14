@@ -8,8 +8,8 @@ extends Node
 
 
 func complete_unlock_key(key: String, interacting_door: Door = null):
-	print("complete_unlock_key called with key: ", key)
-	print("Dictionary keys: ", area_progression_dictionary.keys())
+	#print("complete_unlock_key called with key: ", key)
+	#print("Dictionary keys: ", area_progression_dictionary.keys())
 	
 	if key not in area_progression_dictionary:
 		# print("Unlock key  [", key, "] doesn't exist.")
