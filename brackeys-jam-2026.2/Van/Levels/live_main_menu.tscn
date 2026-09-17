@@ -124,8 +124,8 @@ surface_material_override/0 = SubResource("ShaderMaterial_0m0b3")
 [node name="Light" type="Node3D" parent="." unique_id=1283433391]
 
 [node name="LightmapGI" type="LightmapGI" parent="Light" unique_id=1003129821]
-quality = 3
-texel_scale = 5.0
+quality = 2
+max_texture_size = 4096
 light_data = ExtResource("2_ddyxe")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Light" unique_id=76550797]

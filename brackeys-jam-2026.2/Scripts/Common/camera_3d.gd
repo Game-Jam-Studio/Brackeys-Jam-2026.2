@@ -5,7 +5,6 @@ extends Camera3D
 
 var fixed_height: float
 var horizontal_offset: Vector2
-var return_transform: Transform3D
 var active_tween: Tween
 
 func _ready() -> void:
@@ -20,9 +19,6 @@ func _ready() -> void:
 			global_position.x - player_character.global_position.x,
 			global_position.z - player_character.global_position.z
 		)
-		# Cache the current overhead transform before moving
-		return_transform = global_transform
-		print(global_transform)
 
 
 func _physics_process(delta: float) -> void:
