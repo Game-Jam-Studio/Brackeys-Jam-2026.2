@@ -1,20 +1,32 @@
-shader_type spatial;
-uniform sampler2D noise;
+shader_type canvas_item;
+
+// Fog shader by Big Boy Games (Jesse)
+
+uniform vec2 pos = vec2(0,0);
+uniform float textureResolution = 1280.0;
+uniform vec2 moveDir = vec2(1.0,0.0);
+uniform sampler2D noise : repeat_enable;
+uniform sampler2D noise2 : repeat_enable;
+
+varying vec4 col;
+
+float sin_range(float minNum, float maxNum, float t) {
+	float halfRange = (maxNum - minNum)/2.0;
+	return minNum + halfRange + sin(t) * halfRange;
+}
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	col = COLOR;
 }
 
 void fragment() {
-	vec3 Color;
-	//NORMAL = texture(noise, UV * (texture(noise, UV).xy) * 10.0).xyz;
-	Color.r = texture(noise, UV - TIME / 100.0).x + texture(noise, UV * 2.0 + TIME / 50.0).y - texture(noise, UV + 10.0).x * 1.0;
-	Color.g = 0.0;
-	Color.b = 0.0;
-	ALBEDO = Color;
+	vec2 offset = pos/textureResolution;
+	
+	vec4 col1 = texture(noise, UV + offset - (moveDir*TIME/100.0));
+	vec4 col2 = texture(noise2, UV + offset - (moveDir*TIME/20.0));
+	
+	col1.a = sin_range(col1.a/3.0, col1.a, TIME);
+	col2.a = sin_range(col2.a/1.1, col2.a, TIME*4.0);
+	
+	COLOR = mix(col1, col2, col2.a)*col * vec4(0.04,0.0,0.0,1.0);
 }
-
-//void light() {
-//	// Called for every pixel for every light affecting the material.
-//	// Uncomment to replace the default light processing function with this one.
-//}

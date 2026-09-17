@@ -1,7 +1,12 @@
 extends Node3D
+var scene_3d: String = "res://Van/Levels/MainMenuScenes/main_menu_3d.tscn"
+var scene: Node
 
-var sceneTime: float = 0.0
-var pulseTime: float
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	await get_tree().create_timer(.5).timeout
+	scene = load(scene_3d).instantiate()
+	for object in scene.get_children():
+		scene.call_deferred("remove_child", object)
+		call_deferred("add_child", object)
+		print(object)
+		await get_tree().process_frame

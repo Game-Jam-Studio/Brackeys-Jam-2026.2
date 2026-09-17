@@ -4,8 +4,38 @@
 [ext_resource type="Theme" uid="uid://bcl3qs08e8man" path="res://Van/MainMenuTheme.tres" id="2_3es34"]
 [ext_resource type="PackedScene" uid="uid://bnr5xdgqee4aw" path="res://Prefabs/Actors/menu_background_sound.tscn" id="3_3es34"]
 [ext_resource type="Texture2D" uid="uid://nx4cykmpmd6q" path="res://Art/2D/Boiler/button_base.png" id="3_8md67"]
+[ext_resource type="Script" uid="uid://d3ba834ve3f6p" path="res://Van/Scripts/MainMenu/main_menu_camera_wobble.gd" id="4_qor8d"]
 [ext_resource type="Texture2D" uid="uid://crollf131snet" path="res://Art/2D/Boiler/button_base_press.png" id="5_5qvx8"]
+[ext_resource type="Texture2D" uid="uid://dg6hawiu0hl7d" path="res://Van/main_menu.exr" id="5_6e2af"]
+[ext_resource type="Shader" uid="uid://bqq11u3qtxtuq" path="res://Van/Shaders/gore_swirl.gdshader" id="5_yw3yt"]
 [ext_resource type="Texture2D" uid="uid://b4x7ekw0jlrum" path="res://Art/2D/Boiler/button_base_hover.png" id="6_hllw6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yw3yt"]
+frequency = 0.0188
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6e2af"]
+noise = SubResource("FastNoiseLite_yw3yt")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mepdl"]
+frequency = 0.0631
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_plsnf"]
+noise = SubResource("FastNoiseLite_mepdl")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1brcv"]
+shader = ExtResource("5_yw3yt")
+shader_parameter/pos = Vector2(0, 0)
+shader_parameter/textureResolution = 1280.0
+shader_parameter/moveDir = Vector2(0.1, 0)
+shader_parameter/noise = SubResource("NoiseTexture2D_6e2af")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_plsnf")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1hd16"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qor8d"]
+blend_mode = 4
 
 [node name="MainMenu" type="Control" unique_id=1948344224]
 layout_mode = 3
@@ -16,6 +46,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_3es34")
 script = ExtResource("1_6ucrw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2090925368]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1383659937]
+texture_filter = 2
+material = SubResource("ShaderMaterial_1brcv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("ViewportTexture_1hd16")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=820024059]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_qor8d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.0552838)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_6e2af")
+expand_mode = 3
+stretch_mode = 6
+script = ExtResource("4_qor8d")
 
 [node name="button_manager" type="Control" parent="." unique_id=1002316191]
 anchors_preset = 0

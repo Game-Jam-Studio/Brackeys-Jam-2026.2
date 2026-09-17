@@ -1,11 +1,10 @@
 extends Node3D
 
-const BALLAST_GAME_SCENE = preload("res://Van/Prefabs/ballast_minigame.tscn")
-const BOILER_GAME_SCENE = preload("res://Van/Prefabs/boiler_minigame.tscn")
-const SONAR_GAME_SCENE = preload("res://Levels/sonar_minigame.tscn")
-const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/circuit_minigame.tscn")
-
-@export var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
+const BALLAST_GAME_SCENE: PackedScene = preload("res://Van/Prefabs/ballast_minigame.tscn")
+const BOILER_GAME_SCENE: PackedScene = preload("res://Van/Prefabs/boiler_minigame.tscn")
+const SONAR_GAME_SCENE: PackedScene = preload("res://Levels/sonar_minigame.tscn")
+const CIRCUIT_GAME_SCENE: PackedScene = preload("res://Van/Prefabs/circuit_minigame.tscn")
+var click_indicator_scene: PackedScene = preload("res://Prefabs/UI/click_indicator.tscn")
 
 @onready var camera: Camera3D = $Camera3D
 @onready var player: CharacterBody3D = $Player
@@ -19,6 +18,8 @@ var original_camera_transform: Transform3D
 
 
 func _ready() -> void:
+	await get_tree().physics_frame
+
 	# Connect to all repair triggers currently registered in the group
 	for trigger: RepairTrigger in get_tree().get_nodes_in_group("repair_triggers"):
 		if not trigger.launch_minigame_requested.is_connected(_on_repair_requested):

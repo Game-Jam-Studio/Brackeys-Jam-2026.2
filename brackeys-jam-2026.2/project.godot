@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SubMerged"
-run/main_scene="uid://clcuikhu5nfi5"
+run/main_scene="uid://dp65i8pg1ea8i"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.21600002, 0.26500002, 0.3, 1)
 boot_splash/image="uid://2ht755h7nksc"
@@ -32,7 +32,9 @@ ObjectiveManager="*uid://do0uwqtv5cwqv"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
 
