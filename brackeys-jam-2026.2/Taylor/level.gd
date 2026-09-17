@@ -14,6 +14,8 @@ const CIRCUIT_GAME_SCENE = preload("res://Van/Prefabs/circuit_minigame.tscn")
 var click_indicator: MeshInstance3D = null
 var is_mouse_held: bool = false
 var is_repair_active: bool = false
+var is_terminal_active: bool = false
+var original_camera_transform: Transform3D
 
 
 func _ready() -> void:
@@ -35,7 +37,6 @@ func _ready() -> void:
 
 # Orchestrates the repair interaction
 func _on_repair_requested(system_id: String, trigger: RepairTrigger) -> void:
-	
 	# Guard against duplicate emissions while a minigame/transition is in progress
 	if is_repair_active:
 		return
@@ -136,11 +137,18 @@ func raycast_to_floor(screen_position: Vector2) -> Vector3:
 
 
 func _on_terminal_requested(trigger: ControlTerminalTrigger) -> void:
+	
+	
+	# Guard against duplicate emissions while a terminal is active
+	if is_terminal_active:
+		return
+
+	is_terminal_active = true
+	original_camera_transform = camera.global_transform
+
 	if player:
 		player.set_physics_process(false)
 		player.set_process_unhandled_input(false)
-	
-	var original_camera_transform := Transform3D()
 	
 	# Explicitly tween to the marker instead of using the generic station zoom
 	if camera and trigger.camera_focus_point:
@@ -148,7 +156,6 @@ func _on_terminal_requested(trigger: ControlTerminalTrigger) -> void:
 		camera.set_process(false)
 		camera.set_physics_process(false)
 		
-		original_camera_transform = camera.global_transform
 		var tween: Tween = create_tween()
 		tween.tween_property(camera, "global_transform", trigger.camera_focus_point.global_transform, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 		await tween.finished
@@ -171,3 +178,4 @@ func _on_terminal_requested(trigger: ControlTerminalTrigger) -> void:
 	if player:
 		player.set_physics_process(true)
 		player.set_process_unhandled_input(true)
+	is_terminal_active = false

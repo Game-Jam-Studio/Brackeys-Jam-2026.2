@@ -20,6 +20,9 @@ func _ready() -> void:
 			global_position.x - player_character.global_position.x,
 			global_position.z - player_character.global_position.z
 		)
+		# Cache the current overhead transform before moving
+		return_transform = global_transform
+		print(global_transform)
 
 
 func _physics_process(delta: float) -> void:
@@ -38,9 +41,6 @@ func _physics_process(delta: float) -> void:
 
 
 func transition_to_station(duration: float = 0.6) -> Tween:
-	# Cache the current overhead transform before moving
-	return_transform = global_transform
-	
 	# Stop any running tween to avoid conflicts
 	if active_tween and active_tween.is_running():
 		active_tween.kill()
